@@ -12,12 +12,9 @@ export const Login = ({ isOpen }: ModalLoginProps) => {
   return (
     <div
       className="flex fixed w-full h-full bg-black bg-opacity-25 justify-center items-center z-20"
-      onClick={() => {
-        setOpen(false);
-      }}
     >
       <div className=" w-2/5 h-3/5 max-sm:w-4/5 bg-white rounded-lg flex justify-center flex-col items-center">
-        <div className="p-5 text-lg font-medium text-center">
+        <div className="p-5 text-lg font-medium text-center cursor-pointer" onClick={() => isOpen(false)}>
           Faça seu Login
         </div>
         <form onSubmit={(e) => handleLogin(e)} className="flex gap-3 justify-center items-center w-3/5 flex-col items-center">

@@ -8,6 +8,10 @@ const AuthContext = createContext<IContextAuth>({} as IContextAuth);
 export function AuthProvider(props: any) {
   const [longitude, setLongitude] = useState<number>(0);
   const [latitude, setLatitude] = useState<number>(0);
+  const [modalLogin, setModalLogin] = useState<boolean>(false);
+  const [user,setUser] = useState();
+  const [userExists, setUserExists] = useState<boolean>(false);
+  const [isLogged, setisLogged] = useState<boolean>(false);
 
   const [bodyLogin, setBodyLogin] = useState({
     email: "",
@@ -32,6 +36,7 @@ export function AuthProvider(props: any) {
             const access_token = res?.data?.access;
             // Armazenar o token no localStorage
             localStorage.setItem("token", access_token);
+            getUserByToken();
           } else {
             throw new Error("Token inválido, faça o login para prosseguir!");
           }
@@ -40,12 +45,56 @@ export function AuthProvider(props: any) {
           if (error.response) {
             const message = error.response.data.detail;
             toast.error(message);
+            localStorage.removeItem("token");
           }
         });
     } catch (error) {
       console.log(error);
     }
   };
+
+  const getUserByToken = async () => {
+    try {
+      const response = await fetch("http://54.76.180.109/api/v2/user/", {
+        method: "GET",
+        cache: "no-cache",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
+      const userData = await response.json();
+      setUser(userData);
+      if (response.status === 200) {
+        setUserExists(true);
+      } else {
+        toast.error("Faça login novamente!");
+        setUserExists(false);
+        localStorage.removeItem("token");
+        setModalLogin(true);
+      }
+      return response;
+    } catch (error) {}
+  };
+
+  useEffect(() => {
+    if (localStorage.getItem("token") != null && !userExists) {
+      getUserByToken();
+    }
+  }, [localStorage.getItem("token"), userExists]);
+
+  useEffect(() => {
+    if (userExists) {
+      setisLogged(true);
+    } else {
+      setisLogged(false);
+    }
+  }, [user]);
+
+const logout = () => {
+  localStorage.removeItem("token");
+  setisLogged(false);
+}
   
   const getUserLocation = () => {
     if ("geolocation" in navigator) {
@@ -65,9 +114,12 @@ export function AuthProvider(props: any) {
     <AuthContext.Provider value={{
         latitude,
         longitude,
+        modalLogin,
         handleEmailChange,
         handlePasswordChange,
         handleLogin,
+        logout,
+        setModalLogin,
     }}>{props.children}</AuthContext.Provider>
   );
 }
