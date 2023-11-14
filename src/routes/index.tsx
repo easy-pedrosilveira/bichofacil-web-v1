@@ -1,11 +1,11 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Home } from 'pages';
-import { Navbar, Error } from 'components'
+import { Header, Error } from 'components'
 
 export const Rotas = () => {
   return <main>
     <BrowserRouter>
-      <Navbar />
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="*" element={<Error />} />
