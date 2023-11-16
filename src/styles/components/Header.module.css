@@ -1,0 +1,49 @@
+.header {
+    width: 90%;
+    height: 85px;
+    border-radius: 20px;
+    border-bottom: 2px solid #302E3F;
+    border-left: 2px solid #302E3F;
+    background: #201F2C;
+    display: flex;
+    justify-content: center;
+}
+
+.innerHeader {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 100px;
+    height: 100%;
+    background-color: aliceblue;
+}
+
+.btns {
+    display: flex;
+    justify-content: space-evenly;
+    width: auto;
+    height: 100%;
+    color: white;
+    font-weight: 700;
+    align-items: center;
+    gap: 20px;
+}
+
+.login {
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    background: var(--blue, #524DF5);
+    box-shadow: -2px -5px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+.register{
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    border: 2px solid white;
+}
