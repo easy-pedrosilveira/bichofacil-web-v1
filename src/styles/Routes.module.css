@@ -21,6 +21,7 @@
         'menu content content content content content'
         'footer footer footer footer footer footer';
     width: 100%;
+    background-image: url("../assets/images/background.svg");
 }
 
 .header {
@@ -44,5 +45,5 @@
 }
 
 .footer {
-    background-color: rgb(90, 184, 205);
+    height: auto;
 }

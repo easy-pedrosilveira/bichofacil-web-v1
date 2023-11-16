@@ -8,9 +8,7 @@
     flex-direction: column;
     align-items: center;
     border-radius: 20px;
-    border-top: 2px solid #302e3f;
-    border-right: 2px solid #302e3f;
-    border-bottom: 2px solid #302e3f;
+    box-shadow: -2px -2px 0px 0px #302e3f inset, 0px 2px 0px 0px #302e3f inset;
     background: #201f2c;
     transition: width 0.7s;
     gap: 2vh;

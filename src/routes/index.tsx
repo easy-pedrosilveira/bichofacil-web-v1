@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Home } from "pages";
-import { Header, Error, Navbar } from "components";
+import { Header, Error, Navbar, Footer } from "components";
 import styles from "../styles/Routes.module.css";
 
 export const Rotas = () => {
@@ -20,7 +20,7 @@ export const Rotas = () => {
           </Routes>
         </div> */}
         <div className={styles.footer}>
-          {/* <Footer /> */}
+          <Footer />
         </div>
       </BrowserRouter>
     </main>

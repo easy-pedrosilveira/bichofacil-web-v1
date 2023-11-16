@@ -1,9 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 .header {
     width: 90%;
     height: 85px;
     border-radius: 20px;
-    border-bottom: 2px solid #302E3F;
-    border-left: 2px solid #302E3F;
+    box-shadow: 2px -2px 0px 0px #302e3f inset, 0px 0px 0px 0px #302e3f inset;
     background: #201F2C;
     display: flex;
     justify-content: center;
