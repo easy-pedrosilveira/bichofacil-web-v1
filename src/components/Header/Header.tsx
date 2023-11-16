@@ -1,6 +1,6 @@
 import styles from "../../styles/components/Header.module.css";
 import { useState } from "react";
-import { Login } from "components/Modals";
+import { Login, Notifications } from "components";
 import useAuthContext from "data/hooks/useAuthContext";
 import Logo from "../../assets/images/logo.svg";
 import Bell from "../../assets/images/bell.svg";
@@ -9,6 +9,11 @@ import Credits from "../../assets/images/credits.svg";
 export const Header = () => {
   const { modalLogin, setModalLogin } = useAuthContext();
   const [logado, setLogado] = useState(true);
+  const [notifications, setNotifications] = useState(false);
+
+  const toggleNotifications = () => {
+    setNotifications(!notifications);
+  };
 
   return (
     <header className={styles.header}>
@@ -23,8 +28,11 @@ export const Header = () => {
             <div className={styles.icon} id={styles.credits}>
               <img src={Credits} alt="" />
             </div>
-            <div className={styles.icon} id={styles.bell}>
+            <div className={styles.icon} id={styles.bell} onClick={toggleNotifications}>
               <img src={Bell} alt="" />
+              {notifications ? (
+                <Notifications onModalChange={toggleNotifications} />
+              ) :null}
             </div>
           </div>
         ) : (
