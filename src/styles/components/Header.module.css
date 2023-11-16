@@ -19,7 +19,9 @@
 .logo {
     width: 100px;
     height: 100%;
-    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btns {

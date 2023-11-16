@@ -1,30 +1,23 @@
+import styles from "../../styles/components/Header.module.css";
 import { useState } from "react";
 import { Login } from "components/Modals";
 import useAuthContext from "data/hooks/useAuthContext";
-import styles from '../../styles/components/Header.module.css';
-
-const navigation = [
-  { name: "Jogos", href: "#" },
-  { name: "Contato", href: "#" },
-  { name: "FAQ", href: "#" },
-  { name: "Sobre nós", href: "#" },
-];
+import Logo from "../../assets/images/logo.svg";
 
 export const Header = () => {
   const { modalLogin, setModalLogin } = useAuthContext();
 
   return (
-    <>
+    <header className={styles.header}>
       {modalLogin ? <Login isOpen={setModalLogin} /> : null}
-      <header className={styles.header}>
-        <div className={styles.innerHeader}>
-          <div className={styles.logo}></div>
-          <div className={styles.btns}>
-            <button className={styles.login}>Entrar</button>
-            <button className={styles.register}>Registrar</button>
-          </div>
+      <div className={styles.innerHeader}>
+        <div className={styles.logo}>
+          <img src={Logo} alt="" />
         </div>
-      </header>
-    </>
+        <div className={styles.btns}>
+          <div className={styles.login}>Entrar</div>
+        </div>
+      </div>
+    </header>
   );
 };
