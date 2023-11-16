@@ -24,28 +24,66 @@
     justify-content: center;
 }
 
+.itensLogged,
 .btns {
-    display: flex;
-    justify-content: space-evenly;
     width: auto;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btns {
     color: white;
     font-weight: 700;
-    align-items: center;
-    gap: 20px;
 }
 
 .login {
     width: 150px;
     height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
     border-radius: 5px;
-    background: var(--blue, #524DF5);
+    background: #524DF5;
     box-shadow: -2px -5px 4px 0px rgba(0, 0, 0, 0.25) inset;
 }
 
-.register{
-    width: 150px;
+.itensLogged {
+    gap: 2vw;
+}
+
+.balence {
+    width: 120px;
     height: 50px;
-    border-radius: 5px;
-    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    text-align: right;
+    text-shadow: 0px 0px 1px #FFF;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 10px;
+    background: transparent;
+    box-shadow: 2px 2px 0px 0px #524DF5 inset, -2px -3px 0px 0px #3D50DF inset;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#credits {
+    border-bottom: 2px solid #FA8A00;
+}
+
+#bell {
+    border-bottom: 2px solid #9A1AFF;
 }

@@ -36,7 +36,7 @@ export const Navbar = () => {
       </div>
       <div className={styles.profile}>
         <div className={styles.person}>
-          <img src="" alt="foto do usuario" />
+          <img src="" alt="" />
         </div>
         {expanded ? (
           <div className={styles.userInfo}>

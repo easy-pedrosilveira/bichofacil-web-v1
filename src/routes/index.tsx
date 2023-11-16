@@ -13,13 +13,15 @@ export const Rotas = () => {
         <div className={styles.menu}>
           <Navbar />
         </div>
-        <div className={styles.content}>
+        {/* <div className={styles.content}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="*" element={<Error />} />
           </Routes>
+        </div> */}
+        <div className={styles.footer}>
+          {/* <Footer /> */}
         </div>
-        <div className={styles.footer}></div>
       </BrowserRouter>
     </main>
   );
