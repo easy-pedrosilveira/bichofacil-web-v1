@@ -1,11 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
+.backDrop {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.224);
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    backdrop-filter: blur(1px);
+    z-index: 10;
+}
+
 .modal {
-    position: absolute;
-    top: 9vh;
-    right: -0.5vh;
     width: 350px;
-    height: auto;
+    height: 100%;
     display: flex;
     flex-direction: column;
     border-radius: 12px;
@@ -13,16 +24,6 @@
     z-index: 1;
 }
 
-.union {
-    position: absolute;
-    top: -5px;
-    right: 15px;
-    width: 25px;
-    height: 25px;
-    background: #9A1AFF;
-    border-radius: 5px;
-    transform: rotate(45deg);
-}
 
 .header {
     width: 100%;
@@ -31,7 +32,6 @@
     align-items: center;
     justify-content: flex-start;
     text-indent: 20px;
-    border-radius: 12px 12px 0px 0px;
     background: linear-gradient(92deg, #524DF5 0.13%, #9A1AFF 93.6%);
     border-bottom: 3px solid #9A1AFF;
 }
