@@ -5,6 +5,7 @@ import useAuthContext from "data/hooks/useAuthContext";
 import Logo from "../../assets/images/logo.svg";
 import Bell from "../../assets/images/bell.svg";
 import Credits from "../../assets/images/credits.svg";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   const { modalLogin, setModalLogin } = useAuthContext();
@@ -23,9 +24,9 @@ export const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.innerHeader}>
-        <div className={styles.logo}>
+        <Link to="/" className={styles.logo}>
           <img src={Logo} alt="" />
-        </div>
+        </Link>
         {logado === true ? (
           <div className={styles.itensLogged}>
             <div className={styles.balence}>+9999</div>
