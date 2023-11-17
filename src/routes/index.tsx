@@ -14,11 +14,13 @@ export const Rotas = () => {
           <Navbar />
         </div>
         <div className={styles.content}>
+          <div className={styles.pages}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/" element={<Help />} />
             <Route path="*" element={<Error />} />
           </Routes>
+          </div>
         </div>
         <div className={styles.footer}>
           <Footer />

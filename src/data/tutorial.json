@@ -1,0 +1,20 @@
+[
+   {
+      "title":"Como fazer login",
+      "content":"Para fazer login na nossa página, basta clicar no botão 'Entrar' na parte superior direita da página e inserir seu nome de usuário e senha.",
+      "video_url":"https://www.youtube.com/watch?v=nzJICUhVoaE",
+      "page_code":"LGN"
+   },
+   {
+      "title":"Como redefinir a senha",
+      "content":"Se você esqueceu sua senha, clique em 'Esqueceu a senha?' na página de login. Você receberá um e-mail com instruções para redefinir sua senha.",
+      "video_url":"https://www.youtube.com/watch?v=nzJICUhVoaE",
+      "page_code":"RST"
+   },
+   {
+      "title":"Como criar uma conta",
+      "content":"Para criar uma conta, clique no botão 'Registrar' na página de login e preencha as informações necessárias. Após a confirmação, você poderá fazer login.",
+      "video_url":"https://www.youtube.com/watch?v=nzJICUhVoaE",
+      "page_code":"CRT"
+   }
+]

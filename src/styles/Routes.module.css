@@ -25,11 +25,10 @@
 }
 
 .header {
-    height: 20vh;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    position: relative;
 }
 
 .menu {
@@ -41,7 +40,19 @@
 }
 
 .content {
-    background-color: slateblue;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 65vh;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.pages{
+    width: 100%;
+    height: 95%;
+    border-radius: 20px;
+    background-color:#201F2C;
 }
 
 .footer {
