@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Home, Help } from "pages";
+import { Home, Help, Profile} from "pages";
 import { Header, Error, Navbar, Footer } from "components";
 import styles from "../styles/Routes.module.css";
 
@@ -18,6 +18,8 @@ export const Rotas = () => {
             <Route path="/" element={<Home />} />
             <Route path="/" element={<Help />} />
             <Route path="*" element={<Error />} />
+            <Route path="/Profile" element={<Profile/>}/>
+          
           </Routes>
         </div>
         <div className={styles.footer}>
