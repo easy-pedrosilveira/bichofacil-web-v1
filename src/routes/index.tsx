@@ -16,7 +16,7 @@ export const Rotas = () => {
         <div className={styles.content}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/" element={<Help />} />
+            <Route path="/help" element={<Help />} />
             <Route path="*" element={<Error />} />
           </Routes>
         </div>

@@ -1,0 +1,26 @@
+.accordeon {
+    width: 405px;
+    border-radius: 10px;
+    border: 1px solid #302E3F;
+}
+
+
+.collapse {
+    width: 100%;
+    height: 0;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    border: 1px solid #302E3F;
+    background: #524DF5;
+    box-shadow: -2px -5px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    overflow: hidden;
+    transition: height 0.5s ease;
+}
+
+.collapse.show {
+    height: auto;
+    padding: 20px 0px;
+    border-radius: 5px 5px 10px 8px;
+}

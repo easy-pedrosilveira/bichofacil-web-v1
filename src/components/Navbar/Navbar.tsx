@@ -32,9 +32,13 @@ export const Navbar = () => {
       className={`${styles.nav} ${expanded === true ? styles.expanded : null}`}
     >
       <div className={styles.toggle} onClick={toggleSidebar}>
-        <img src={ToggleArrow} alt="" />
       </div>
-      <div className={styles.profile}>
+    </nav>
+  );
+};
+
+{
+  /* <div className={styles.profile}>
         <div className={styles.person}>
           <img src="" alt="" />
         </div>
@@ -149,6 +153,5 @@ export const Navbar = () => {
         </div>
       </div>
       {buyCredits === true ? <></> : null}
-    </nav>
-  );
-};
+     */
+}
