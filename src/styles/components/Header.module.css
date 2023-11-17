@@ -1,9 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 .header {
     width: 90%;
     height: 85px;
     border-radius: 20px;
-    border-bottom: 2px solid #302E3F;
-    border-left: 2px solid #302E3F;
+    box-shadow: 2px -2px 0px 0px #302e3f inset, 0px 0px 0px 0px #302e3f inset;
     background: #201F2C;
     display: flex;
     justify-content: center;
@@ -19,31 +20,73 @@
 .logo {
     width: 100px;
     height: 100%;
-    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.itensLogged,
+.btns {
+    width: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btns {
-    display: flex;
-    justify-content: space-evenly;
-    width: auto;
-    height: 100%;
     color: white;
     font-weight: 700;
-    align-items: center;
-    gap: 20px;
 }
 
 .login {
     width: 150px;
     height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
     border-radius: 5px;
-    background: var(--blue, #524DF5);
+    background: #524DF5;
     box-shadow: -2px -5px 4px 0px rgba(0, 0, 0, 0.25) inset;
 }
 
-.register{
-    width: 150px;
+.itensLogged {
+    gap: 2vw;
+}
+
+.balence {
+    width: 120px;
     height: 50px;
-    border-radius: 5px;
-    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    text-align: right;
+    text-shadow: 0px 0px 1px #FFF;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 10px;
+    background: transparent;
+    box-shadow: 2px 2px 0px 0px #524DF5 inset, -2px -3px 0px 0px #3D50DF inset;
+}
+
+.icon {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#credits {
+    border-bottom: 2px solid #FA8A00;
+}
+
+#bell {
+    border-bottom: 2px solid #9A1AFF;
 }

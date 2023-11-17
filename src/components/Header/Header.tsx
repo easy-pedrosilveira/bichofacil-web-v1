@@ -1,30 +1,69 @@
+import styles from "../../styles/components/Header.module.css";
 import { useState } from "react";
-import { Login } from "components/Modals";
+import { Login, Notifications, BuyCredits } from "components";
 import useAuthContext from "data/hooks/useAuthContext";
-import styles from '../../styles/components/Header.module.css';
-
-const navigation = [
-  { name: "Jogos", href: "#" },
-  { name: "Contato", href: "#" },
-  { name: "FAQ", href: "#" },
-  { name: "Sobre nós", href: "#" },
-];
+import Logo from "../../assets/images/logo.svg";
+import Bell from "../../assets/images/bell.svg";
+import Credits from "../../assets/images/credits.svg";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   const { modalLogin, setModalLogin } = useAuthContext();
+  const [logado, setLogado] = useState(true);
+  const [notifications, setNotifications] = useState(false);
+  const [buyCredits, setBuyCredits] = useState(false);
+
+  const toggleNotifications = () => {
+    setNotifications(!notifications);
+  };
+
+  const toggleBuyCredits = () => {
+    setBuyCredits(!buyCredits);
+  };
 
   return (
-    <>
-      {modalLogin ? <Login isOpen={setModalLogin} /> : null}
-      <header className={styles.header}>
-        <div className={styles.innerHeader}>
-          <div className={styles.logo}></div>
-          <div className={styles.btns}>
-            <button className={styles.login}>Entrar</button>
-            <button className={styles.register}>Registrar</button>
+    <header className={styles.header}>
+      <div className={styles.innerHeader}>
+        <Link to="/" className={styles.logo}>
+          <img src={Logo} alt="" />
+        </Link>
+        {logado === true ? (
+          <div className={styles.itensLogged}>
+            <div className={styles.balence}>+9999</div>
+            <div className={styles.balence}>+9999</div>
+            <div
+              className={styles.icon}
+              id={styles.credits}
+              onClick={toggleBuyCredits}
+            >
+              <img src={Credits} alt="" />
+              {buyCredits === true ? (
+                <BuyCredits onModalChange={toggleBuyCredits} />
+              ) : null}
+            </div>
+            <div
+              className={styles.icon}
+              id={styles.bell}
+              onClick={toggleNotifications}
+            >
+              <img src={Bell} alt="" />
+              {notifications === true ? (
+                <Notifications onModalChange={toggleNotifications} />
+              ) : null}
+            </div>
           </div>
-        </div>
-      </header>
-    </>
+        ) : (
+          <div className={styles.btns}>
+            <div
+              onClick={() => setModalLogin(!modalLogin)}
+              className={styles.login}
+            >
+              Entrar
+            </div>
+          </div>
+        )}
+      </div>
+      {modalLogin ? <Login isOpen={setModalLogin} /> : null}
+    </header>
   );
 };
