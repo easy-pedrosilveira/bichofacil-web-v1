@@ -1,4 +1,4 @@
-import styles from "../../styles/components/Navbar.module.css";
+import styles from "./Navbar.module.css";
 import { useState } from "react";
 import ToggleArrow from "../../assets/images/toggle-arrow.svg";
 import Credits from "../../assets/images/credits.svg";

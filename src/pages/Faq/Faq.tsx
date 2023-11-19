@@ -1,10 +1,9 @@
-import styles from "../styles/pages/Help.module.css";
-import Search from "../assets/images/search.svg";
-import { AccordeonHelp } from "components";
+import styles from "./Faq.module.css";
+import Search from "../../assets/images/search.svg";
 import { ChangeEvent, useState } from "react";
 import { motion } from "framer-motion";
 
-export const Help = () => {
+export const Faq = () => {
   const [searchHelp, setSearchHelp] = useState("");
   const [activeAccordion, setActiveAccordion] = useState(null);
 
@@ -67,6 +66,7 @@ export const Help = () => {
             className={styles.search}
             type="text"
             placeholder="Pesquise por sua duvida."
+            onChange={handleSearchChange}
           />
           <img src={Search} alt="" style={{ width: "10%", height: "100%" }} />
         </div>
@@ -89,12 +89,12 @@ export const Help = () => {
                 },
               }}
             >
-              <AccordeonHelp
+              {/* <AccordeonFaq
                 key={index}
                 helps={helps}
                 isActive={activeAccordion === index}
                 onClick={() => handleAccordionClick(index)}
-              />
+              /> */}
             </motion.div>
           ))
         ) : (

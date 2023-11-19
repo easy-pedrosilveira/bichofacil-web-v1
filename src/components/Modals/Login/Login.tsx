@@ -1,4 +1,4 @@
-import styles from "../../../styles/components/Modals/Login.module.css";
+import styles from "./Login.module.css";
 import { useState } from "react";
 import useAuthContext from "data/hooks/useAuthContext";
 

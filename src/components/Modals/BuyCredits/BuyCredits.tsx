@@ -1,4 +1,4 @@
-import styles from "../../../styles/components/Modals/BuyCredits.module.css";
+import styles from "./BuyCredits.module.css";
 
 interface ModalProps {
   onModalChange: (isOpen: boolean) => void;

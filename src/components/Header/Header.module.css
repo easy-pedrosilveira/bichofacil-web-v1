@@ -23,6 +23,11 @@
     justify-content: center;
 }
 
+.logo img{
+    width: 130px;
+    height: 130px;
+}
+
 .itensLogged,
 .btns {
     width: auto;

@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import styles from "../../styles/components/AccordeonHelp.module.css";
+import styles from "./AccordeonFaq.module.css";
 
 interface AccordeonProps {
   helps: {title: string, content: string};
@@ -7,7 +7,7 @@ interface AccordeonProps {
   onClick: () => void;
 }
 
-export const AccordeonHelp = ({helps, isActive, onClick }: AccordeonProps) => {
+export const AccordeonFaq = ({helps, isActive, onClick }: AccordeonProps) => {
   const contentEl = useRef<HTMLDivElement>(null);
 
   return (

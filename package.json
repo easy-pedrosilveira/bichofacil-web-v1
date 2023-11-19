@@ -19,6 +19,7 @@
     "framer-motion": "^10.16.5",
     "jsx-runtime": "^1.2.0",
     "lodash": "^4.17.21",
+    "popmotion": "^11.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",

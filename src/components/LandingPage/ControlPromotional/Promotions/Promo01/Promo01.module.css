@@ -1,0 +1,6 @@
+.container {
+    width: 95%;
+    height: 95%;
+    border-radius: 10px;
+    background: rgba(154, 26, 255, 0.20);
+}

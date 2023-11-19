@@ -1,4 +1,4 @@
-import styles from "../../styles/components/Header.module.css";
+import styles from "./Header.module.css";
 import { useState } from "react";
 import { Login, Notifications, BuyCredits } from "components";
 import useAuthContext from "data/hooks/useAuthContext";
