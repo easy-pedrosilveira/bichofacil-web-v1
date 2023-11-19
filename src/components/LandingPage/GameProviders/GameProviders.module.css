@@ -1,0 +1,51 @@
+.container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5vh 0vw;
+}
+
+.sliderWrapper {
+    position: relative;
+    width: 200%;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid #302E3F;
+    border-bottom: 1px solid #302E3F;
+    overflow: hidden;
+}
+
+.slideTrack {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 20px;
+    justify-content: space-around;
+    animation: scroll 40s linear infinite;
+    gap: 20px;
+}
+
+.sponsors {
+    width: 150px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #302E3F;
+    border-radius: 8px;
+    color: #fff;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-20rem * 14));
+    }
+}
