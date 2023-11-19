@@ -16,7 +16,10 @@ export const BuyCredits = ({ onModalChange }: ModalProps) => {
         }
       }}
     >
-      <div className={styles.modal}>BuyCredits</div>
+      <div className={styles.modal}>
+        <header>Header</header>
+        <div>corpo</div>
+      </div>
     </main>
   );
 };
