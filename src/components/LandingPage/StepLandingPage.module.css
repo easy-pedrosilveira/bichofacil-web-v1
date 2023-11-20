@@ -37,6 +37,24 @@
     font-family: "Inter", sans-serif;
 }
 
+.divBtn{
+    width: 15%;
+    display: flex;
+    justify-content: flex-end;
+
+}
+.button{
+    width: 150px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+    background: #524DF5;
+    box-shadow: -2px -5px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
 .content {
     width: 90%;
     display: flex;
@@ -92,12 +110,13 @@
 }
 
 .btnPlay{
-    width: 80%;
+    width: 200px;
     height: 100%;
     border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    background: #524DF5;
+    background: #9A1AFF;
+    box-shadow: -2px -5px 4px 0px rgba(0, 0, 0, 0.25) inset;
 }

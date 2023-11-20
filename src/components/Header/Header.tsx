@@ -63,7 +63,7 @@ export const Header = () => {
           </div>
         )}
       </div>
-      {modalLogin ? <Login isOpen={setModalLogin} /> : null}
+      {modalLogin ? <Login onModalChange={setModalLogin} /> : null}
     </header>
   );
 };

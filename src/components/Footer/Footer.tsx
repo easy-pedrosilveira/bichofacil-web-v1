@@ -63,10 +63,10 @@ export const Footer = () => {
           receber e-mails ou mensagens SMS.
         </div>
         <div className={styles.links}>
-          <Link to="/policy-privacy" onClick={scrollToTop}>
+          <Link to="/policy-privacy" className={styles.ancora} onClick={scrollToTop}>
             Policy Privacy
           </Link>
-          <Link to="/terms-conditions" onClick={scrollToTop}>
+          <Link to="/terms-conditions" className={styles.ancora} onClick={scrollToTop}>
             Terms & Conditions
           </Link>
         </div>

@@ -3,16 +3,25 @@ import { useState } from "react";
 import useAuthContext from "data/hooks/useAuthContext";
 
 interface ModalLoginProps {
-  isOpen: (value: boolean) => void;
+  onModalChange: (value: boolean) => void;
 }
 
-export const Login = ({ isOpen }: ModalLoginProps) => {
+export const Login = ({ onModalChange }: ModalLoginProps) => {
   const { handleEmailChange, handlePasswordChange, handleLogin } =
     useAuthContext();
   const [open, setOpen] = useState(true);
 
   return (
-    <main className={styles.backDrop}>
+    <main
+      className={styles.backDrop}
+      onClick={(e) => {
+        const containerElement = e.currentTarget as HTMLElement;
+        const clickedElement = e.target as HTMLElement;
+        if (containerElement === clickedElement) {
+          onModalChange(false);
+        }
+      }}
+    >
       <div className={styles.modal}>
         <div className={styles.introduction}>Faça seu Login</div>
         <form onSubmit={(e) => handleLogin(e)} className={styles.form}>
@@ -38,12 +47,9 @@ export const Login = ({ isOpen }: ModalLoginProps) => {
               required
               onChange={(e) => handlePasswordChange(e)}
               className={styles.input}
-              />
+            />
           </div>
-          <button
-            type="submit"
-            className={styles.btn}
-          >
+          <button type="submit" className={styles.btn}>
             Sign in
           </button>
         </form>
