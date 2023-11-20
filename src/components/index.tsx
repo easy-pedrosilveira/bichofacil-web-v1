@@ -5,3 +5,4 @@ export * from './Modals';
 export * from './Footer';
 export * from './AccordeonFaq';
 export * from './LandingPage';
+export * from './ProfilePanes';
