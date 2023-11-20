@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-.container {
+.container, .containerGradient {
     width: 100%;
     height: 80vh;
     display: flex;
@@ -9,6 +9,9 @@
     justify-content: center;
     gap: 25px;
     color: #fff;
+}
+
+.containerGradient{
     background: linear-gradient(218deg, #201f2c5f 0%, #302E3F00 100%);
 }
 

@@ -1,7 +1,7 @@
-import styles from "./Opportunity.module.css";
+import styles from "../StepLandingPage.module.css";
 import games from "data/games.json";
 import Help from "../../../assets/images/help.svg";
-import { SetStateAction, useState } from "react";
+import { useState } from "react";
 
 export const Opportunity = () => {
   const [showFullDescription, setShowFullDescription] = useState(false);
@@ -17,7 +17,7 @@ export const Opportunity = () => {
   };
   
   return (
-    <main className={styles.container}>
+    <main className={styles.containerGradient}>
       <div className={styles.introduction}>
         <div className={styles.texts}>
           <div className={styles.title}>Tendência</div>

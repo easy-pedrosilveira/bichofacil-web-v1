@@ -3,7 +3,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { wrap } from "popmotion";
 import { Promo01 } from "./Promotions";
-import Arrow from "../../../assets/Arrow-right.svg";
+import Arrow from "../../../assets/images/Arrow-right.svg";
 
 export const ControlPromotional = () => {
   const [[page, direction], setPage] = useState([0, 0]);
