@@ -5,6 +5,7 @@
     align-items: center;
     justify-content: center;
     padding: 5vh 0vw;
+    background: linear-gradient(218deg, #201F2C80 0%, #302E3F00 100%);
 }
 
 .sliderWrapper {
@@ -30,14 +31,15 @@
 }
 
 .sponsors {
-    width: 150px;
-    height: 50px;
+    width: 210px;
+    height: 55px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #302E3F;
     border-radius: 8px;
     color: #fff;
+    border: 2px solid #302E3F33;
+    background: linear-gradient(218deg, rgba(19, 22, 32, 0.50) 0%, rgba(19, 22, 32, 0.00) 100%);
 }
 
 @keyframes scroll {

@@ -1,9 +1,9 @@
+import styles from "./ControlPromotional.module.css";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { wrap } from "popmotion";
 import { Promo01 } from "./Promotions";
 import Arrow from "../../../assets/Arrow-right.svg";
-import styles from "./ControlPromotional.module.css";
 
 export const ControlPromotional = () => {
   const [[page, direction], setPage] = useState([0, 0]);
