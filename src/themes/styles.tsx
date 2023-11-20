@@ -14,7 +14,7 @@ export const GlobalStyles = createGlobalStyle<{ theme: ThemeType }>`
     font-family: 'Poppins', sans-serif;
   }
   body{
-    background: #1E1D26;
+    background: url(${Background}) center/cover no-repeat;  
   }
   main{
     display:flex;
