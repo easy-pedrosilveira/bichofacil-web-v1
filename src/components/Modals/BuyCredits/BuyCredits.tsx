@@ -1,4 +1,4 @@
-import styles from "../../../styles/components/Modals/BuyCredits.module.css";
+import styles from "./BuyCredits.module.css";
 
 interface ModalProps {
   onModalChange: (isOpen: boolean) => void;
@@ -16,7 +16,10 @@ export const BuyCredits = ({ onModalChange }: ModalProps) => {
         }
       }}
     >
-      <div className={styles.modal}>BuyCredits</div>
+      <div className={styles.modal}>
+        <header>Header</header>
+        <div>corpo</div>
+      </div>
     </main>
   );
 };

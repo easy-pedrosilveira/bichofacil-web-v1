@@ -1,31 +1,23 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Home, Help, Profile} from "pages";
-import { Header, Error, Navbar, Footer } from "components";
-import styles from "../styles/Routes.module.css";
+import { Home, Faq, Policy, Terms, Profile } from "pages";
+import { Header, Error, Footer } from "components";
+
 
 export const Rotas = () => {
   return (
-    <main className={styles.main}>
+    <>
       <BrowserRouter>
-        <div className={styles.header}>
-          <Header />
-        </div>
-        <div className={styles.menu}>
-          <Navbar />
-        </div>
-        <div className={styles.content}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/" element={<Help />} />
-            <Route path="*" element={<Error />} />
-            <Route path="/Profile" element={<Profile/>}/>
-          
-          </Routes>
-        </div>
-        <div className={styles.footer}>
-          <Footer />
-        </div>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/faq" element={<Faq />} />
+          <Route path="/terms-conditions" element={<Terms />} />
+          <Route path="/policy-privacy" element={<Policy />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+        <Footer />
       </BrowserRouter>
-    </main>
+    </>
   );
 };

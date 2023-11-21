@@ -1,4 +1,4 @@
-import styles from "../../../styles/components/Modals/Notifications.module.css";
+import styles from "./Notifications.module.css";
 import { Link } from "react-router-dom";
 import useAuthContext from "data/hooks/useAuthContext";
 import { format } from "date-fns";

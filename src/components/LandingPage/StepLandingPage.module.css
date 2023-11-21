@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+.container, .containerGradient {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    color: #fff;
+}
+
+.containerGradient{
+    background: linear-gradient(0deg, #201F2C80 0%, #302E3F00 100%);
+}
+
+.introduction {
+    width: 90%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.texts {
+    width: 60%;
+}
+
+.title {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.paragraph {
+    font-size: 17px;
+    font-family: "Inter", sans-serif;
+}
+
+.divBtn{
+    width: 15%;
+    display: flex;
+    justify-content: flex-end;
+
+}
+.button{
+    width: 150px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+    background: #524DF5;
+    box-shadow: -2px -5px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+.content {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cardGame{
+    width: 270px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    justify-content: space-between;
+}
+
+.gameContent {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    border-radius: 8px;
+}
+
+.info {
+    position: absolute;
+    bottom: 25px;
+    width: 100%;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-indent: 20px;
+    gap: 5px;
+    background: linear-gradient(227deg, rgba(255, 242, 242, 0.03) 25.7%, rgba(255, 250, 250, 0.07) 94.73%);
+    backdrop-filter: blur(64px);
+}
+
+.gameName{
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.description{
+    font-size: 14px;
+    text-overflow: ellipsis; 
+}
+
+.play{
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btnPlay{
+    width: 200px;
+    height: 100%;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: #9A1AFF;
+    box-shadow: -2px -5px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}

@@ -1,4 +1,4 @@
-import styles from "../../styles/components/Header.module.css";
+import styles from "./Header.module.css";
 import { useState } from "react";
 import { Login, Notifications, BuyCredits } from "components";
 import useAuthContext from "data/hooks/useAuthContext";
@@ -63,7 +63,7 @@ export const Header = () => {
           </div>
         )}
       </div>
-      {modalLogin ? <Login isOpen={setModalLogin} /> : null}
+      {modalLogin ? <Login onModalChange={setModalLogin} /> : null}
     </header>
   );
 };
