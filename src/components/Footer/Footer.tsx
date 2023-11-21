@@ -1,4 +1,4 @@
-import styles from "../../styles/components/Footer.module.css";
+import styles from "./Footer.module.css";
 import Logo from "../../assets/images/logo.svg";
 import ToggleArrow from "../../assets/images/toggle-arrow.svg";
 import { Link } from "react-router-dom";
@@ -53,17 +53,20 @@ export const Footer = () => {
       </div>
       <div className={styles.middle}>
         <div className={styles.txt}>
-          This website is operated by Doublex Group Technology & Entertainment
-          N.V., registered in Curaçao under the number 160170, with the address
-          at Heelsumstraat 51, Willemstad, Curaçao, authorized by General
-          Governor of Curaçao through Antillephone N.V. under the gaming license
-          number 8048/JAZ2022-000 which operates this website.
+          O casino online garante a privacidade dos seus utilizadores, pelo que
+          nesta secção fornecemos-lhe informações sobre como recolhemos, como
+          utilizamos e como protegemos os dados pessoais recebidos dos nossos
+          utilizadores. A administração dos casinos online garante que todos os
+          dados pessoais do utilizador não serão transferidos para agências
+          governamentais ou outras organizações. Ao respeitar a privacidade dos
+          nossos utilizadores, concedemos a cada jogador o direito de recusar
+          receber e-mails ou mensagens SMS.
         </div>
         <div className={styles.links}>
-          <Link to="/policy-privacy" onClick={scrollToTop}>
+          <Link to="/policy-privacy" className={styles.ancora} onClick={scrollToTop}>
             Policy Privacy
           </Link>
-          <Link to="/terms-conditions" onClick={scrollToTop}>
+          <Link to="/terms-conditions" className={styles.ancora} onClick={scrollToTop}>
             Terms & Conditions
           </Link>
         </div>
