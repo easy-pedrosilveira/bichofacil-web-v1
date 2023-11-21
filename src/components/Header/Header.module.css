@@ -12,21 +12,56 @@
 .innerHeader {
     width: 90%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
 .logo {
-    width: 100px;
+    width: 65%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.logo img {
+    width: 130px;
+    height: 100%;
+}
+
+.menu {
+    width: 10%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.logo img{
-    width: 130px;
-    height: 130px;
+.menu img {
+    cursor: pointer;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 125px;
+    height: 85px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #201f2c;
+    background: red;
+    transition: width 0.7s;
+    gap: 2vh;
+    z-index: 2;
+}
+
+.expanded {
+    width: 205px;
+    height: 100%;
+    transition: width 0.7s;
+    z-index: 2;
 }
 
 .itensLogged,
@@ -91,7 +126,6 @@
     border-bottom: 2px solid #9A1AFF;
 }
 
-#profile{
-    background: linear-gradient(92deg, rgba(82, 77, 245, 0.80) 0.13%, rgba(154, 26, 255, 0.80) 93.6%);
-    border: 2px solid #524df5;
+#profile {
+    border-bottom: 2px solid #524df5;
 }

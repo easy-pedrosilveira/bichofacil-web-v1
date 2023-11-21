@@ -10,7 +10,11 @@ import ExitIcon from "../../assets/images/exit.svg";
 import ExitSelected from "../../assets/images/exit.svg";
 import { Link } from "react-router-dom";
 
-export const Navbar = () => {
+interface NavBarProps {
+  onNavBarChange: (isOpen: boolean) => void;
+}
+
+export const Navbar = ({ onNavBarChange }: NavBarProps) => {
   const [expanded, setExpanded] = useState(false);
   const [activeIcon, setActiveIcon] = useState("Games");
   const [buyCredits, setBuyCredits] = useState(false);
@@ -31,8 +35,7 @@ export const Navbar = () => {
     <nav
       className={`${styles.nav} ${expanded === true ? styles.expanded : null}`}
     >
-      <div className={styles.toggle} onClick={toggleSidebar}>
-      </div>
+      <div className={styles.toggle} onClick={toggleSidebar}></div>
     </nav>
   );
 };
