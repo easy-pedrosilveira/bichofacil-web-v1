@@ -1,5 +1,5 @@
 import styles from "./CreditsIcon.module.css";
-import Credits from "../../assets/images/credits.svg";
+import Credits from "../../assets/images/buy-credits.svg";
 import { useState } from "react";
 import { BuyCredits } from "components";
 
