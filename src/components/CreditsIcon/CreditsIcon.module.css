@@ -1,0 +1,19 @@
+.icon {
+    position: fixed;
+    right: 5%;
+    bottom: 5%;
+    width: 55px;
+    height: 55px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    background: #FA8A00;
+    box-shadow: -2px -5px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+#credits {
+    border: 2px solid #FA8A00;
+}

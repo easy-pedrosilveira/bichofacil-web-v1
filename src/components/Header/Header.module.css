@@ -87,10 +87,11 @@
     cursor: pointer;
 }
 
-#credits {
-    border-bottom: 2px solid #FA8A00;
-}
-
 #bell {
     border-bottom: 2px solid #9A1AFF;
+}
+
+#profile{
+    background: linear-gradient(92deg, rgba(82, 77, 245, 0.80) 0.13%, rgba(154, 26, 255, 0.80) 93.6%);
+    border: 2px solid #524df5;
 }

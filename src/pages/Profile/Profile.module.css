@@ -87,6 +87,10 @@
     border-radius: 1px;
 }
 
+.tab{
+    cursor: pointer;
+}
+
 .underline {
     position: absolute;
     bottom: 0;

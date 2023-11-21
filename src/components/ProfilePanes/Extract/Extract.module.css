@@ -9,6 +9,7 @@
     gap: 15px;
     overflow-y: scroll;
     padding: 2.5vh 0vw;
+    cursor: pointer;
 }
 
 .extract {
