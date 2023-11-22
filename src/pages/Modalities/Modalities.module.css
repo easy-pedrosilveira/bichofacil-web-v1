@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+.container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    padding-bottom: 10vh;
+    color: #fff;
+}
+
+.introduction {
+    width: 90%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2vh 0vw;
+    background: linear-gradient(0deg, #201F2C80 0%, #302E3F00 100%);
+    box-shadow: 0px -2px 0px 0px #302e3f inset;
+    border-radius: 5px;
+}
+
+
+.moreGames {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.cards {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2vh;
+}
+
+.card {
+    width: 25%;
+    height: 300px;
+    border-radius: 8px;
+    background: blue;
+}

@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 export const Header = () => {
   const { modalLogin, setModalLogin } = useAuthContext();
-  const [logado, setLogado] = useState(true);
+  const [logado, setLogado] = useState(false);
   const [notifications, setNotifications] = useState(false);
   const [navBar, setNavBar] = useState(false);
   const [expanded, setExpanded] = useState(false);
@@ -34,16 +34,20 @@ export const Header = () => {
           <Link to="/" className={styles.logo}>
             <img src={Logo} alt="" />
           </Link>
-          <div className={styles.menu} onClick={toggleSidebar}>
-            <img src={Menu} alt="" />
-          </div>
-          <nav
-            className={`${styles.nav} ${
-              expanded === true ? styles.expanded : null
-            }`}
-          >
-            <Navbar onNavBarChange={setNavBar} />
-          </nav>
+          {logado === true ? (
+            <>
+              <div className={styles.menu} onClick={toggleSidebar}>
+                <img src={Menu} alt="" />
+              </div>
+              <nav
+                className={`${styles.nav} ${
+                  expanded === true ? styles.expanded : null
+                }`}
+              >
+                <Navbar onNavBarChange={setNavBar} />
+              </nav>
+            </>
+          ) : null}
         </div>
         {logado === true ? (
           <div className={styles.itensLogged}>

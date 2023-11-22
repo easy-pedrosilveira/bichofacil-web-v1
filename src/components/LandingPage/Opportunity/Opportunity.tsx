@@ -1,20 +1,10 @@
 import styles from "../StepLandingPage.module.css";
-import games from "data/games.json";
-import Help from "../../../assets/images/help.svg";
+import modalitiesGames from "data/modalitiesGames.json";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export const Opportunity = () => {
-  const [showFullDescription, setShowFullDescription] = useState(false);
-  const [selectedGame, setSelectedGame] = useState(null);
-
-  const handleHelpClick = (games: any) => {
-    setSelectedGame(games);
-    setShowFullDescription(true);
-  };
-
-  const handleCloseDescription = () => {
-    setShowFullDescription(false);
-  };
+  const dataTD = modalitiesGames.find((modality) => modality.game_id === "TD");
   
   return (
     <main className={styles.containerGradient}>
@@ -28,11 +18,11 @@ export const Opportunity = () => {
           </div>
         </div>
         <div className={styles.divBtn}>
-          <div className={styles.button}>Veja tudo</div>
+          <Link to={`/modalities?opportunity`} className={styles.button}>Veja tudo</Link>
         </div>
       </div>
       <div className={styles.content}>
-        {games.map((game, index) => (
+      {dataTD && dataTD.results[0].map((game, index) => (
           <div className={styles.cardGame} key={index}>
             <div
               className={styles.gameContent}

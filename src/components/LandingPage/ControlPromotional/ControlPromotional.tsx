@@ -2,7 +2,7 @@ import styles from "./ControlPromotional.module.css";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { wrap } from "popmotion";
-import { Promo01 } from "./Promotions";
+// import { Promo01 } from "./Promotions";
 import Arrow from "../../../assets/images/Arrow-right.svg";
 
 export const ControlPromotional = () => {
@@ -34,15 +34,15 @@ export const ControlPromotional = () => {
     return Math.abs(offset) * velocity;
   };
 
-  const componentsArray = [Promo01];
+  // const componentsArray = [Promo01];
 
-  const componentIndex = wrap(0, componentsArray.length, page);
+  // const componentIndex = wrap(0, componentsArray.length, page);
 
   const paginate = (newDirection: number) => {
     setPage([page + newDirection, newDirection]);
   };
 
-  const CurrentComponent = componentsArray[componentIndex];
+  // const CurrentComponent = componentsArray[componentIndex];
 
   return (
     <main className={styles.container}>
@@ -72,7 +72,7 @@ export const ControlPromotional = () => {
           }}
           className={styles.promotions}
         >
-          <CurrentComponent />
+          
         </motion.div>
       </AnimatePresence>
       <div className={styles.controls}>
