@@ -1,6 +1,6 @@
 import styles from "./Header.module.css";
 import { useState } from "react";
-import { Login, Notifications, BuyCredits } from "components";
+import { Login, Notifications, BuyCredits, Register } from "components";
 import useAuthContext from "data/hooks/useAuthContext";
 import Logo from "../../assets/images/logo.svg";
 import Bell from "../../assets/images/bell.svg";
@@ -8,8 +8,8 @@ import Credits from "../../assets/images/credits.svg";
 import { Link } from "react-router-dom";
 
 export const Header = () => {
-  const { modalLogin, setModalLogin } = useAuthContext();
-  const [logado, setLogado] = useState(true);
+  const { modalLogin, setModalLogin, modalRegister } = useAuthContext();
+  const [logado, setLogado] = useState(false);
   const [notifications, setNotifications] = useState(false);
   const [buyCredits, setBuyCredits] = useState(false);
 
@@ -63,7 +63,8 @@ export const Header = () => {
           </div>
         )}
       </div>
-      {modalLogin ? <Login onModalChange={setModalLogin} /> : null}
+      {modalLogin && !modalRegister? <Login /> : null}
+      {modalRegister && !modalLogin ? <Register /> : null}
     </header>
   );
 };

@@ -9,6 +9,7 @@ export function AuthProvider(props: any) {
   const [longitude, setLongitude] = useState<number>(0);
   const [latitude, setLatitude] = useState<number>(0);
   const [modalLogin, setModalLogin] = useState<boolean>(false);
+  const [modalRegister, setModalRegister] = useState<boolean>(false);
   const [user,setUser] = useState();
   const [userExists, setUserExists] = useState<boolean>(false);
   const [isLogged, setisLogged] = useState<boolean>(false);
@@ -115,11 +116,13 @@ const logout = () => {
         latitude,
         longitude,
         modalLogin,
+        modalRegister,
         handleEmailChange,
         handlePasswordChange,
         handleLogin,
         logout,
         setModalLogin,
+        setModalRegister,
     }}>{props.children}</AuthContext.Provider>
   );
 }
