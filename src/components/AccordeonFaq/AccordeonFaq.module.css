@@ -43,4 +43,43 @@
     height: auto;
     padding: 20px 0px;
     border-radius: 5px 5px 10px 8px;
+    background-color: #534df5bc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+}
+
+@media (min-width:200px) {
+    @media (max-width:767px) {
+
+    .header{
+        display: flex;
+        width:154px;
+    }
+
+    .accordeon {
+        width: 100%;
+        border-radius: 10px;
+        border: 1px solid #302E3F; 
+    }
+    
+    .title{
+        width: 500px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .arrow{
+        width:50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+ 
+    }
 }
