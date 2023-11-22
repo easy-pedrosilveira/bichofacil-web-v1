@@ -28,6 +28,7 @@
     width: 50%;
     height: 100%;
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
@@ -146,8 +147,34 @@
         .header {
             height: auto;
         }
+
+        .innerHeader {
+            width: 100%;
+        }
+
         .login {
             width: 120px;
+        }
+
+        .topHeader {
+            width: 55%;
+            flex-direction: row-reverse;
+        }
+
+        .logo img{
+            width: 80px;
+        }
+
+        .itensLogged {
+            width: 45%;
+        }
+
+        .icon {
+            display: none;
+        }
+
+        .nav{
+            top: 80px;
         }
     }
 }

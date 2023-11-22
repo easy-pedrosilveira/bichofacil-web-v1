@@ -1,6 +1,6 @@
 import styles from "./Header.module.css";
 import { useState } from "react";
-import { Login, Notifications, BuyCredits, Register } from "components";
+import { Login, Notifications, BuyCredits, Register, Navbar } from "components";
 import useAuthContext from "data/hooks/useAuthContext";
 import Logo from "../../assets/images/logo.svg";
 import Menu from "../../assets/images/menu.svg";
@@ -10,17 +10,12 @@ import { Link } from "react-router-dom";
 
 export const Header = () => {
   const { modalLogin, setModalLogin, modalRegister } = useAuthContext();
-  const [logado, setLogado] = useState(false);
+  const [logado, setLogado] = useState(true);
   const [notifications, setNotifications] = useState(false);
-  const [navBar, setNavBar] = useState(false);
   const [expanded, setExpanded] = useState(false);
 
   const toggleNotifications = () => {
     setNotifications(!notifications);
-  };
-
-  const toggleNavBar = () => {
-    setNavBar(!navBar);
   };
 
   const toggleSidebar = () => {
@@ -44,7 +39,7 @@ export const Header = () => {
                   expanded === true ? styles.expanded : null
                 }`}
               >
-                <Navbar onNavBarChange={setNavBar} />
+                <Navbar />
               </nav>
             </>
           ) : null}
@@ -75,7 +70,7 @@ export const Header = () => {
               Entrar
             </div>
             {modalLogin === true ? (
-              <Login onModalChange={setModalLogin} />
+              <Login />
             ) : null}
           </div>
         )}
