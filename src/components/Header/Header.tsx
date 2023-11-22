@@ -1,12 +1,13 @@
 import styles from "./Header.module.css";
 import { useState } from "react";
-import { Login, Notifications, BuyCredits, Register } from "components";
+import { Login, Notifications, BuyCredits, Register, Navbar } from "components";
 import useAuthContext from "data/hooks/useAuthContext";
 import Logo from "../../assets/images/logo.svg";
 import Menu from "../../assets/images/menu.svg";
 import Bell from "../../assets/images/bell.svg";
 import Profile from "../../assets/images/profile.svg";
 import { Link } from "react-router-dom";
+
 
 export const Header = () => {
   const { modalLogin, setModalLogin, modalRegister } = useAuthContext();
@@ -75,7 +76,7 @@ export const Header = () => {
               Entrar
             </div>
             {modalLogin === true ? (
-              <Login onModalChange={setModalLogin} />
+              <Login />
             ) : null}
           </div>
         )}
