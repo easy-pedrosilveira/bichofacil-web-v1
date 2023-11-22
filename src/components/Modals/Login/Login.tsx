@@ -35,6 +35,7 @@ export const Login = () => {
               className={styles.input}
               placeholder="Insira seu Email"
               onChange={(e) => handleEmailChange(e)}
+              autoComplete="username"
             />
           </div>
           <div className={styles.info}>
