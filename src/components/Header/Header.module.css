@@ -1,27 +1,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 .header {
+    position: relative;
     width: 100%;
     height: 85px;
     background: #201F2C;
     display: flex;
     justify-content: center;
-    box-shadow: 0px -2px 0px 0px #302e3f inset;
+    box-shadow: 0px -3px 0px 0px #302e3f inset;
 }
 
 .innerHeader {
     width: 90%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
+.topHeader {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
 .logo {
-    width: 65%;
+    width: 50%;
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
 }
 
 .logo img {
@@ -30,7 +37,7 @@
 }
 
 .menu {
-    width: 10%;
+    width: 50%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -43,23 +50,23 @@
 
 .nav {
     position: fixed;
-    top: 0;
-    right: 0;
-    width: 125px;
-    height: 85px;
+    top: 85px;
+    left: 0;
+    width: 0px;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #201f2c;
-    background: red;
+    background: #201F2C;
+    box-shadow: -3px 0px 0px 0px #302e3f inset;
     transition: width 0.7s;
     gap: 2vh;
-    z-index: 2;
+    z-index: 10;
 }
 
 .expanded {
-    width: 205px;
-    height: 100%;
+    width: 235px;
+    height: 100vh;
     transition: width 0.7s;
     z-index: 2;
 }
@@ -128,4 +135,56 @@
 
 #profile {
     border-bottom: 2px solid #524df5;
+}
+
+.responsiveItems {
+    display: none;
+}
+
+@media (min-width: 400px) {
+    @media (max-width: 500px) {
+        .header {
+            height: auto;
+            padding: 10px 0vh;
+        }
+
+        .innerHeader {
+            flex-direction: column;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .topHeader {
+            width: 100%;
+            justify-content: space-between;
+            height: 60px;
+        }
+
+        .logo{
+            width: 90%;
+            justify-content: center;
+        }
+
+        .menu {
+            width: 10%;
+            justify-content: flex-end;
+        }
+
+        .nav {
+            top: 160px;
+        }
+
+        .itensLogged {
+            display: none;
+        }
+
+        .responsiveItems {
+            width: 100%;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+    }
 }

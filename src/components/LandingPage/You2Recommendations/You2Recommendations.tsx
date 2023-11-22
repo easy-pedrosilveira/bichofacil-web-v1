@@ -50,12 +50,6 @@ export const You2Recommendations = () => {
             </div>
             <div className={styles.play}>
               <div className={styles.btnPlay}>Jogar</div>
-              <img
-                src={Help}
-                alt=""
-                style={{ cursor: "pointer" }}
-                onClick={() => handleHelpClick(game)}
-              />
             </div>
           </div>
         ))}

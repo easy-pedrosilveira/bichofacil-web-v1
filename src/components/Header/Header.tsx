@@ -28,11 +28,23 @@ export const Header = () => {
   };
 
   return (
-    <header className={styles.header}>
+    <main className={styles.header}>
       <div className={styles.innerHeader}>
-        <Link to="/" className={styles.logo}>
-          <img src={Logo} alt="" />
-        </Link>
+        <div className={styles.topHeader}>
+          <Link to="/" className={styles.logo}>
+            <img src={Logo} alt="" />
+          </Link>
+          <div className={styles.menu} onClick={toggleSidebar}>
+            <img src={Menu} alt="" />
+          </div>
+          <nav
+            className={`${styles.nav} ${
+              expanded === true ? styles.expanded : null
+            }`}
+          >
+            <Navbar onNavBarChange={setNavBar} />
+          </nav>
+        </div>
         {logado === true ? (
           <div className={styles.itensLogged}>
             <div className={styles.balence}>+9999</div>
@@ -63,22 +75,26 @@ export const Header = () => {
             ) : null}
           </div>
         )}
-        {logado === true ? (
-          <div className={styles.menu}>
-            <img src={Menu} alt="" onClick={toggleNavBar} />
-            {navBar === true ? (
-              <nav
-                className={`${styles.nav} ${
-                  expanded === true ? styles.expanded : null
-                }`}
-              >
-                CARALHo
-                <div className={styles.toggle} onClick={toggleSidebar}></div>
-              </nav>
-            ) : null}
+        {logado === true && (
+          <div className={styles.responsiveItems}>
+            <div
+              className={styles.icon}
+              id={styles.bell}
+              onClick={toggleNotifications}
+            >
+              <img src={Bell} alt="" />
+              {notifications === true ? (
+                <Notifications onModalChange={toggleNotifications} />
+              ) : null}
+            </div>
+            <div className={styles.balence}>+9999</div>
+
+            <div className={styles.icon} id={styles.profile}>
+              <img src={Profile} alt="" />
+            </div>
           </div>
-        ) : null}
+        )}
       </div>
-    </header>
+    </main>
   );
 };

@@ -19,10 +19,6 @@ export const Navbar = ({ onNavBarChange }: NavBarProps) => {
   const [activeIcon, setActiveIcon] = useState("Games");
   const [buyCredits, setBuyCredits] = useState(false);
 
-  const toggleSidebar = () => {
-    setExpanded(!expanded);
-  };
-
   const handleActiveIcon = (iconName: string) => {
     setActiveIcon(iconName);
   };
@@ -32,16 +28,18 @@ export const Navbar = ({ onNavBarChange }: NavBarProps) => {
   };
 
   return (
+    <main
+      className={`${expanded === true ? styles.expanded : styles.invisible}`}
+    >Pode aparecer</main>
+  );
+};
+{
+  /*
     <nav
       className={`${styles.nav} ${expanded === true ? styles.expanded : null}`}
     >
       <div className={styles.toggle} onClick={toggleSidebar}></div>
-    </nav>
-  );
-};
-
-{
-  /* <div className={styles.profile}>
+      <div className={styles.profile}>
         <div className={styles.person}>
           <img src="" alt="" />
         </div>
@@ -156,5 +154,6 @@ export const Navbar = ({ onNavBarChange }: NavBarProps) => {
         </div>
       </div>
       {buyCredits === true ? <></> : null}
-     */
+    </nav>
+*/
 }
