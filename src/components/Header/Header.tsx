@@ -3,44 +3,55 @@ import { useState } from "react";
 import { Login, Notifications, BuyCredits, Register } from "components";
 import useAuthContext from "data/hooks/useAuthContext";
 import Logo from "../../assets/images/logo.svg";
+import Menu from "../../assets/images/menu.svg";
 import Bell from "../../assets/images/bell.svg";
-import Credits from "../../assets/images/credits.svg";
+import Profile from "../../assets/images/profile.svg";
 import { Link } from "react-router-dom";
 
 export const Header = () => {
   const { modalLogin, setModalLogin, modalRegister } = useAuthContext();
   const [logado, setLogado] = useState(false);
   const [notifications, setNotifications] = useState(false);
-  const [buyCredits, setBuyCredits] = useState(false);
+  const [navBar, setNavBar] = useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   const toggleNotifications = () => {
     setNotifications(!notifications);
   };
 
-  const toggleBuyCredits = () => {
-    setBuyCredits(!buyCredits);
+  const toggleNavBar = () => {
+    setNavBar(!navBar);
+  };
+
+  const toggleSidebar = () => {
+    setExpanded(!expanded);
   };
 
   return (
-    <header className={styles.header}>
+    <main className={styles.header}>
       <div className={styles.innerHeader}>
-        <Link to="/" className={styles.logo}>
-          <img src={Logo} alt="" />
-        </Link>
+        <div className={styles.topHeader}>
+          <Link to="/" className={styles.logo}>
+            <img src={Logo} alt="" />
+          </Link>
+          {logado === true ? (
+            <>
+              <div className={styles.menu} onClick={toggleSidebar}>
+                <img src={Menu} alt="" />
+              </div>
+              <nav
+                className={`${styles.nav} ${
+                  expanded === true ? styles.expanded : null
+                }`}
+              >
+                <Navbar onNavBarChange={setNavBar} />
+              </nav>
+            </>
+          ) : null}
+        </div>
         {logado === true ? (
           <div className={styles.itensLogged}>
             <div className={styles.balence}>+9999</div>
-            <div className={styles.balence}>+9999</div>
-            <div
-              className={styles.icon}
-              id={styles.credits}
-              onClick={toggleBuyCredits}
-            >
-              <img src={Credits} alt="" />
-              {buyCredits === true ? (
-                <BuyCredits onModalChange={toggleBuyCredits} />
-              ) : null}
-            </div>
             <div
               className={styles.icon}
               id={styles.bell}
@@ -51,6 +62,9 @@ export const Header = () => {
                 <Notifications onModalChange={toggleNotifications} />
               ) : null}
             </div>
+            <div className={styles.icon} id={styles.profile}>
+              <img src={Profile} alt="" />
+            </div>
           </div>
         ) : (
           <div className={styles.btns}>
@@ -60,11 +74,33 @@ export const Header = () => {
             >
               Entrar
             </div>
+            {modalLogin === true ? (
+              <Login onModalChange={setModalLogin} />
+            ) : null}
+          </div>
+        )}
+        {logado === true && (
+          <div className={styles.responsiveItems}>
+            <div
+              className={styles.icon}
+              id={styles.bell}
+              onClick={toggleNotifications}
+            >
+              <img src={Bell} alt="" />
+              {notifications === true ? (
+                <Notifications onModalChange={toggleNotifications} />
+              ) : null}
+            </div>
+            <div className={styles.balence}>+9999</div>
+
+            <div className={styles.icon} id={styles.profile}>
+              <img src={Profile} alt="" />
+            </div>
           </div>
         )}
       </div>
-      {modalLogin && !modalRegister? <Login /> : null}
+            {modalLogin && !modalRegister? <Login /> : null}
       {modalRegister && !modalLogin ? <Register /> : null}
-    </header>
+    </main>
   );
 };

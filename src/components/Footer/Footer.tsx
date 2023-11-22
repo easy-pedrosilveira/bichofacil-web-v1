@@ -29,26 +29,6 @@ export const Footer = () => {
         </div>
         <div className={styles.getstarted}>
           <div className={styles.age}>18+</div>
-          <div className={styles.select} onClick={() => handleSelectedLanguage}>
-            <div className={styles.languageOptions}>
-              <div
-                className={`${styles.languageOption} ${
-                  selectedLanguage === "pt-BR" ? styles.selected : ""
-                }`}
-                onClick={() => handleSelectedLanguage("pt-BR")}
-              >
-                🇧🇷 Português
-              </div>
-              <div
-                className={`${styles.languageOption} ${
-                  selectedLanguage === "en-US" ? styles.selected : ""
-                }`}
-                onClick={() => handleSelectedLanguage("en-US")}
-              >
-                🇺🇸 English
-              </div>
-            </div>
-          </div>
         </div>
       </div>
       <div className={styles.middle}>

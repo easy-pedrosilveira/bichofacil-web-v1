@@ -87,6 +87,10 @@
     border-radius: 1px;
 }
 
+.tab{
+    cursor: pointer;
+}
+
 .underline {
     position: absolute;
     bottom: 0;
@@ -98,5 +102,6 @@
 
 .panes{
     width: 95%;
+    padding: 3.5vh 0vw;
     height: auto;
 }

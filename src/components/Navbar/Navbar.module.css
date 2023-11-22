@@ -1,26 +1,49 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
-
-.nav {
-    position: absolute;
-    width: 125px;
-    height: 85px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #201f2c;
-    transition: width 0.7s;
-    transition: height 0.4s;
-    gap: 2vh;
-    z-index: 2;
+.invisible {
+    visibility: hidden;
 }
 
 .expanded {
     width: 205px;
     height: 100%;
+    background: red;
     transition: width 0.7s;
-    transition: height 0.4s;
     z-index: 2;
 }
+
+/* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+.backDrop{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.224);
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    backdrop-filter: blur(1px);
+    z-index: 11;
+}
+
+.navBar{
+    width: 0px;
+}
+
+.nav {
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: blue;
+    transition: width 0.7s;
+    gap: 2vh;
+    z-index: 2;
+}
+
+
 
 .toggle {
     width: 100%;
@@ -133,4 +156,4 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
