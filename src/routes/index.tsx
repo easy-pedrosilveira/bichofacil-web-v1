@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Home, Faq, Policy, Terms, Profile } from "pages";
-import { Header, Error, Footer } from "components";
+import { Home, Faq, Policy, Terms, Profile, Modalities } from "pages";
+import { Header, Error, Footer, CreditsIcon } from "components";
 
 
 export const Rotas = () => {
@@ -14,8 +14,10 @@ export const Rotas = () => {
           <Route path="/terms-conditions" element={<Terms />} />
           <Route path="/policy-privacy" element={<Policy />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/modalities?" element={<Modalities />} />
           <Route path="*" element={<Error />} />
         </Routes>
+        <CreditsIcon />
         <Footer />
       </BrowserRouter>
     </>

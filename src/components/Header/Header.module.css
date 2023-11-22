@@ -1,12 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 .header {
+    position: relative;
     width: 100%;
     height: 85px;
     background: #201F2C;
     display: flex;
     justify-content: center;
-    box-shadow: 0px -2px 0px 0px #302e3f inset;
+    box-shadow: 0px -3px 0px 0px #302e3f inset;
 }
 
 .innerHeader {
@@ -16,17 +17,58 @@
     align-items: center;
 }
 
+.topHeader {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
 .logo {
-    width: 100px;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 130px;
+    height: 100%;
+}
+
+.menu {
+    width: 50%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.logo img{
-    width: 130px;
-    height: 130px;
+.menu img {
+    cursor: pointer;
+}
+
+.nav {
+    position: fixed;
+    top: 85px;
+    left: 0;
+    width: 0px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #201F2C;
+    box-shadow: -3px 0px 0px 0px #302e3f inset;
+    transition: width 0.7s;
+    gap: 2vh;
+    z-index: 10;
+}
+
+.expanded {
+    width: 235px;
+    height: 100vh;
+    transition: width 0.7s;
+    z-index: 2;
 }
 
 .itensLogged,
@@ -87,10 +129,25 @@
     cursor: pointer;
 }
 
-#credits {
-    border-bottom: 2px solid #FA8A00;
-}
-
 #bell {
     border-bottom: 2px solid #9A1AFF;
+}
+
+#profile {
+    border-bottom: 2px solid #524df5;
+}
+
+.responsiveItems {
+    display: none;
+}
+
+@media (min-width: 200px) {
+    @media (max-width: 500px) {
+        .header {
+            height: auto;
+        }
+        .login {
+            width: 120px;
+        }
+    }
 }
