@@ -1,6 +1,6 @@
 import styles from "./Header.module.css";
 import { useEffect, useState } from "react";
-import { Login, Notifications, BuyCredits, Register, Navbar } from "components";
+import { Login, Notifications, Register, Navbar } from "components";
 import useAuthContext from "data/hooks/useAuthContext";
 import Logo from "../../assets/images/logo.svg";
 import Menu from "../../assets/images/menu.svg";
@@ -56,7 +56,7 @@ export const Header = () => {
                   expanded === true ? styles.expanded : null
                 }`}
               >
-                <Navbar />
+                <Navbar onNavChange={() => toggleSidebar()}/>
               </nav>
             </>
           ) : null}

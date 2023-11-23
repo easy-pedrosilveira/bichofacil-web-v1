@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import user from "data/user.json";
 import Profile from "../../assets/images/profile.svg";
-import Coins from "../../assets/images/coins.svg";
+import Coins from "../../assets/images/buy-credits.svg";
 import Games from "../../assets/images/games.svg";
 import Config from "../../assets/images/settings.svg";
 import Bell from "../../assets/images/bell.svg";
@@ -11,11 +11,8 @@ import Icon from "../../assets/images/icon.svg";
 import IconSelected from "../../assets/images/icon-selected.svg";
 import Arrow from "../../assets/images/arrow.svg";
 
-interface NavItem {
-  name: string;
-  path: string;
-  icon: string;
-  selectedIcon: string;
+interface NavbarProps {
+  onNavChange: (isOpen: boolean) => void;
 }
 
 interface MenuSection {
@@ -24,7 +21,14 @@ interface MenuSection {
   items: NavItem[];
 }
 
-export const Navbar = () => {
+interface NavItem {
+  name: string;
+  path: string;
+  icon: string;
+  selectedIcon: string;
+}
+
+export const Navbar = ({ onNavChange }: NavbarProps) => {
   const [activeIcon, setActiveIcon] = useState("Jackpots");
   const [buyCredits, setBuyCredits] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>("Games");
@@ -64,7 +68,7 @@ export const Navbar = () => {
       icon: Config,
       title: "Geral",
       items: [
-        { name: "Ajuda", path: "", icon: Icon, selectedIcon: IconSelected },
+        { name: "Ajuda", path: "/faq", icon: Icon, selectedIcon: IconSelected },
         { name: "Sair", path: "/", icon: Bell, selectedIcon: IconSelected },
       ],
     },
@@ -139,6 +143,7 @@ export const Navbar = () => {
                         : styles.default
                     }
                     onClick={() => {
+                      onNavChange(false)
                       handleActiveIcon(item.name);
                       if (section.title === "Geral" && item.name === "Sair") {
                         console.log("lougth");
