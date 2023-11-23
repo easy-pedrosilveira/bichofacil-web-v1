@@ -19,8 +19,7 @@ export const Terms = () => {
           Praesent convallis et enim eget elementum. Fusce consectetur odio non volutpat mollis. Donec lectus eros, gravida ut tincidunt a, faucibus ut nisi. Nulla convallis, leo id commodo bibendum, odio turpis pharetra nibh, ac sollicitudin lacus purus sit amet urna. In lacinia turpis non bibendum sodales. Cras malesuada ullamcorper sapien, at ultricies odio cursus sed. Nunc scelerisque eleifend justo, ut ornare tortor. Morbi faucibus eget ex quis venenatis.
           <br></br><br></br>
           Integer fermentum varius leo, eu tristique justo fermentum eu. Vestibulum erat turpis, egestas at pulvinar eu, consequat sit amet leo. Suspendisse potenti. Nunc condimentum aliquam bibendum. Maecenas mattis est at augue convallis luctus. In mollis finibus nisl a efficitur. Sed laoreet neque vitae ipsum dignissim dignissim. Cras gravida tortor turpis, at imperdiet sem placerat eu. Etiam accumsan dolor leo, eget imperdiet eros consequat quis.
-          <br></br><br></br>
-          Maecenas pellentesque at libero eget molestie. Integer lectus dui, ullamcorper a turpis vitae, congue ullamcorper ante. Donec ultrices, dui id semper aliquam, orci odio gravida libero, quis dictum odio dolor sit amet nulla. Curabitur vitae neque nunc. Sed rhoncus ex in ipsum suscipit, non facilisis ipsum congue. Morbi eleifend gravida gravida. Morbi in augue at tortor aliquam suscipit. Integer quis posuere lectus, vitae mattis leo. Sed dapibus sodales diam ac maximus. Vivamus laoreet, ante nec vestibulum viverra, lacus erat ultrices magna, ac scelerisque elit lorem quis magna. Morbi vel commodo massa.
+        
           </p>
         </div>
 
