@@ -3,74 +3,59 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import user from "data/user.json";
 import Profile from "../../assets/images/profile.svg";
-import Coins from "../../assets/images/buy-credits.svg";
+import Credits from "../../assets/images/credits.svg";
+import Home from "../../assets/images/home.svg";
+import HomeSelected from "../../assets/images/home-selected.svg";
 import Games from "../../assets/images/games.svg";
-import Config from "../../assets/images/settings.svg";
+import GamesSelected from "../../assets/images/games-selected.svg";
+import Help from "../../assets/images/help.svg";
 import Bell from "../../assets/images/bell.svg";
-import Icon from "../../assets/images/icon.svg";
-import IconSelected from "../../assets/images/icon-selected.svg";
-import Arrow from "../../assets/images/arrow.svg";
+import Opportunity from "../../assets/images/opportunity.svg";
+import OpportunitySelected from "../../assets/images/opportunity-selected.svg";
+import Recommendations from "../../assets/images/recommendations.svg";
+import RecommendationsSelected from "../../assets/images/recommendations-selected.svg";
+import JackPots from "../../assets/images/jackpot.svg";
+import JackPotsSelected from "../../assets/images/jackpot-selected.svg";
+import Logout from "../../assets/images/logout.svg";
 
 interface NavbarProps {
   onNavChange: (isOpen: boolean) => void;
 }
 
-interface MenuSection {
-  icon: string;
-  title: string;
-  items: NavItem[];
-}
-
-interface NavItem {
-  name: string;
-  path: string;
-  icon: string;
-  selectedIcon: string;
-}
-
 export const Navbar = ({ onNavChange }: NavbarProps) => {
-  const [activeIcon, setActiveIcon] = useState("Jackpots");
+  const [activeIcon, setActiveIcon] = useState("Inicio");
   const [buyCredits, setBuyCredits] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<string | null>("Games");
 
-  const menuSections: MenuSection[] = [
+  const menuSections = [
     {
-      icon: Games,
-      title: "Games",
-      items: [
-        {
-          name: "Tendencias",
-          path: "/modalities?opportunity",
-          icon: Icon,
-          selectedIcon: IconSelected,
-        },
-        {
-          name: "Recomendacoes",
-          path: "/modalities?recommendations",
-          icon: Icon,
-          selectedIcon: IconSelected,
-        },
-        {
-          name: "Jackpots",
-          path: "/modalities?jackpots",
-          icon: Icon,
-          selectedIcon: IconSelected,
-        },
-        {
-          name: "Novos Jogos",
-          path: "/modalities?newgames",
-          icon: Icon,
-          selectedIcon: IconSelected,
-        },
-      ],
+      name: "Inicio",
+      path: "/",
+      icon: Home,
+      selectedIcon: HomeSelected,
     },
     {
-      icon: Config,
-      title: "Geral",
-      items: [
-        { name: "Ajuda", path: "/faq", icon: Icon, selectedIcon: IconSelected },
-        { name: "Sair", path: "/", icon: Bell, selectedIcon: IconSelected },
-      ],
+      name: "Tendencias",
+      path: "/modalities?opportunity",
+      icon: Opportunity,
+      selectedIcon: OpportunitySelected,
+    },
+    {
+      name: "Recomendacoes",
+      path: "/modalities?recommendations",
+      icon: Recommendations,
+      selectedIcon: RecommendationsSelected,
+    },
+    {
+      name: "Jackpots",
+      path: "/modalities?jackpots",
+      icon: JackPots,
+      selectedIcon: JackPotsSelected,
+    },
+    {
+      name: "Novos Jogos",
+      path: "/modalities?newgames",
+      icon: Games,
+      selectedIcon: GamesSelected,
     },
   ];
 
@@ -80,10 +65,6 @@ export const Navbar = ({ onNavChange }: NavbarProps) => {
 
   const toggleBuyCredits = () => {
     setBuyCredits(!buyCredits);
-  };
-
-  const toggleDropdown = (sectionTitle: string) => {
-    setOpenDropdown(openDropdown === sectionTitle ? null : sectionTitle);
   };
 
   return (
@@ -96,82 +77,59 @@ export const Navbar = ({ onNavChange }: NavbarProps) => {
           <div className={styles.hi}>Olá</div>
           <div className={styles.userName}>{user?.first_name}</div>
         </div>
+      </div>
+      <div className={styles.itemsUser}>
         <div className={styles.noti}>
-          <img src={Bell} alt="" />
+          <img src={Bell} alt="bell" />
+        </div>
+        <div className={styles.help}>
+          <img src={Help} alt="help" />
+        </div>
+        <div className={styles.credits} onClick={toggleBuyCredits}>
+          <img src={Credits} alt="buy credits" />
         </div>
       </div>
-      <div className={styles.underline}></div>
       <div className={styles.links}>
-        <div className={styles.credits}>
-          <div className={styles.iconSection}>
-            <img src={Coins} alt="" />
-          </div>
-          <div className={styles.titleCredits}>Depositar</div>
-        </div>
-        {menuSections.map((section) => (
-          <div key={section.title} className={styles.section}>
-            <div className={styles.introSection}>
+        {menuSections.map((link, index) => (
+          <Link
+            to={link.path}
+            className={`${styles.default} ${
+              activeIcon === link.name ? styles.selected : ""
+            }`}
+            key={index}
+            onClick={() => {
+              handleActiveIcon(link.name);
+              onNavChange(false);
+            }}
+          >
+            <div className={styles.icon}>
               <img
-                src={section.icon}
-                alt={section.title}
-                className={styles.iconSection}
+                src={activeIcon === link.name ? link.selectedIcon : link.icon}
+                alt=""
               />
-              <div className={styles.titleSection}>{section.title}</div>
-              <div className={styles.arrow}>
-                <img
-                  onClick={() => toggleDropdown(section.title)}
-                  src={Arrow}
-                  alt=""
-                  style={{
-                    transform:
-                      openDropdown === section.title
-                        ? "rotate(180deg)"
-                        : "rotate(0)",
-                  }}
-                />
-              </div>
             </div>
-            {openDropdown === section.title && (
-              <div className={styles.dropdown}>
-                {section.items.map((item) => (
-                  <Link
-                    key={item.name}
-                    to={item.path}
-                    className={
-                      activeIcon === item.name
-                        ? styles.selected
-                        : styles.default
-                    }
-                    onClick={() => {
-                      onNavChange(false)
-                      handleActiveIcon(item.name);
-                      if (section.title === "Geral" && item.name === "Sair") {
-                        console.log("lougth");
-                      }
-                    }}
-                  >
-                    <img
-                      src={
-                        activeIcon === item.name ? item.selectedIcon : item.icon
-                      }
-                      alt={item.name}
-                      className={styles.icon}
-                    />
-                    <div
-                      className={
-                        activeIcon === item.name
-                          ? styles.nameSelected
-                          : styles.name
-                      }
-                    >
-                      {item.name}
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
+            <div
+              className={
+                activeIcon === link.name ? styles.titleSelected : styles.title
+              }
+            >
+              {link.name}
+            </div>
+          </Link>
         ))}
+      </div>
+      <div className={styles.logout}>
+        <div className={styles.default}>
+          <div className={styles.icon}>
+            <img src={Logout} alt="" />
+          </div>
+          <div
+            className={styles.title}
+            style={{ color: "#302E3F", fontWeight: "600" }}
+          >
+            Sair
+          </div>
+        </div>
       </div>
     </main>
   );

@@ -1,4 +1,5 @@
 import styles from "./Header.module.css";
+import user from "data/user.json";
 import { useEffect, useState } from "react";
 import { Login, Notifications, Register, Navbar } from "components";
 import useAuthContext from "data/hooks/useAuthContext";
@@ -63,7 +64,7 @@ export const Header = () => {
         </div>
         {logado === true ? (
           <div className={styles.itensLogged}>
-            <div className={styles.balence}>+9999</div>
+            <div className={styles.balence}>{user?.winner_balance}</div>
             <div
               className={styles.icon}
               id={styles.bell}
