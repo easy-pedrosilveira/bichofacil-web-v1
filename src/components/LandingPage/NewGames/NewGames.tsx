@@ -12,7 +12,7 @@ export const NewGames = () => {
         <div className={styles.texts}>
           <div className={styles.title}>Novos jogos</div>
           <div className={styles.paragraph}>
-            A maioria dos jogos de azar em constante atualização.{" "}
+            A maioria dos jogos de azar em constante atualização.
           </div>
         </div>
         <div className={styles.divBtn}>

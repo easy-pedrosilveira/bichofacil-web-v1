@@ -1,5 +1,5 @@
 import styles from "./Header.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Login, Notifications, BuyCredits, Register, Navbar } from "components";
 import useAuthContext from "data/hooks/useAuthContext";
 import Logo from "../../assets/images/logo.svg";
@@ -13,23 +13,35 @@ export const Header = () => {
   const { modalLogin, setModalLogin, modalRegister } = useAuthContext();
   const [logado, setLogado] = useState(false);
   const [notifications, setNotifications] = useState(false);
-  const [navBar, setNavBar] = useState(false);
   const [expanded, setExpanded] = useState(false);
+  const [headerFixed, setHeaderFixed] = useState(false);
 
   const toggleNotifications = () => {
     setNotifications(!notifications);
-  };
-
-  const toggleNavBar = () => {
-    setNavBar(!navBar);
   };
 
   const toggleSidebar = () => {
     setExpanded(!expanded);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setHeaderFixed(true);
+      } else {
+        setHeaderFixed(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <main className={styles.header}>
+    <main className={`${styles.header} ${headerFixed ? styles.fixed : ""}`}>
       <div className={styles.innerHeader}>
         <div className={styles.topHeader}>
           <Link to="/" className={styles.logo}>
@@ -45,7 +57,7 @@ export const Header = () => {
                   expanded === true ? styles.expanded : null
                 }`}
               >
-                <Navbar onNavBarChange={setNavBar} />
+                <Navbar />
               </nav>
             </>
           ) : null}
@@ -75,9 +87,7 @@ export const Header = () => {
             >
               Entrar
             </div>
-            {modalLogin === true ? (
-              <Login />
-            ) : null}
+            {modalLogin === true ? <Login /> : null}
           </div>
         )}
         {logado === true && (
@@ -94,13 +104,13 @@ export const Header = () => {
             </div>
             <div className={styles.balence}>+9999</div>
 
-            <div className={styles.icon} id={styles.profile}>
+            <Link to="/profile" className={styles.icon} id={styles.profile}>
               <img src={Profile} alt="" />
-            </div>
+            </Link>
           </div>
         )}
       </div>
-            {modalLogin && !modalRegister? <Login /> : null}
+      {modalLogin && !modalRegister ? <Login /> : null}
       {modalRegister && !modalLogin ? <Register /> : null}
     </main>
   );
