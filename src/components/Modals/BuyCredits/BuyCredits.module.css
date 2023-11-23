@@ -26,7 +26,10 @@
     border-radius: 10px;
 }
 
-.modal div{
+.header,
+.selectValue,
+.valueSelected,
+.payment {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -47,7 +50,6 @@
 .selectValue {
     width: 90%;
     height: auto;
-    background: blue;
 }
 
 .subTitle {
@@ -57,18 +59,30 @@
     font-weight: 400;
 }
 
-.coins{
+.values {
     width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 5vw;
+    overflow-x: scroll;
     background: yellow;
 }
 
-.coin{
-    width: 30px;
-    height: 30px;
-    background-image: url('../../../assets/images/coins.svg');
-    background-position: center;
-    background-size: cover;
+.coin {
+    min-width: 90px;
+    min-height: 90px;
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    background-image: url('../../../assets/images/coins-credits.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.payment{
+    background: blue;
 }

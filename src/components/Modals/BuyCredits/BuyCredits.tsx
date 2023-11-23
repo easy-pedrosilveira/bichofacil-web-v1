@@ -8,7 +8,7 @@ interface ModalProps {
 export const BuyCredits = ({ onModalChange }: ModalProps) => {
   const [selectedValue, setSelectedValue] = useState<number | null>(null);
 
-  const coins = [1, 5, 20, 45];
+  const coins = [1, 2, 5, 10, 20, 50, 100, 200, 250, 300, 500, 750, 1000];
 
   return (
     <main
@@ -27,7 +27,7 @@ export const BuyCredits = ({ onModalChange }: ModalProps) => {
         </div>
         <div className={styles.selectValue}>
           <div className={styles.subTitle}>Selecione o valor</div>
-          <div className={styles.coins}>
+          <div className={styles.values}>
             {coins.map((value, index) => (
               <div
                 key={index}
@@ -36,17 +36,20 @@ export const BuyCredits = ({ onModalChange }: ModalProps) => {
                 }`}
                 onClick={() => setSelectedValue(value)}
               >
-                {value}
+                <div className={styles.value}>{value}</div>
               </div>
             ))}
           </div>
         </div>
-        <div className="valueSelected">
+        <div className={styles.valueSelected}>
           {selectedValue && (
             <div className={styles.selectedValue}>
               Valor selecionado: {selectedValue}
             </div>
           )}
+        </div>
+        <div className={styles.payment}>
+          oi
         </div>
       </div>
     </main>

@@ -61,6 +61,7 @@
 .content {
     width: 90%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
@@ -126,7 +127,7 @@
 }
 
 @media (min-width: 270px) {
-    @media (max-width: 500px) {
+    @media (max-width: 1100px) {
 
         .container,
         .containerGradient {
@@ -156,9 +157,18 @@
 
         .content {
             height: auto;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            gap: 5vh;
+            gap: 2vh;
+        }
+    }
+}
+
+
+@media (min-width: 620px) {
+    @media (max-width: 1100px) {
+        .button {
+            width: 100%;
         }
     }
 }
