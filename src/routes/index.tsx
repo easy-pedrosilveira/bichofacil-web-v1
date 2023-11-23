@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Home, Faq, Policy, Terms, Profile, Modalities } from "pages";
+import { Home, Faq, Policy, Terms, Profile, Modalities, Sobre } from "pages";
 import { Header, Error, Footer, CreditsIcon } from "components";
 
 
@@ -15,6 +15,7 @@ export const Rotas = () => {
           <Route path="/policy-privacy" element={<Policy />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/modalities?" element={<Modalities />} />
+          <Route path="/sobre-nos" element={<Sobre />} />
           <Route path="*" element={<Error />} />
         </Routes>
         <CreditsIcon />
