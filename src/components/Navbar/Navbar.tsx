@@ -6,8 +6,9 @@ import Profile from "../../assets/images/profile.svg";
 import Coins from "../../assets/images/coins.svg";
 import Games from "../../assets/images/games.svg";
 import Config from "../../assets/images/settings.svg";
-import Help from "../../assets/images/help.svg";
 import Bell from "../../assets/images/bell.svg";
+import Icon from "../../assets/images/icon.svg";
+import IconSelected from "../../assets/images/icon-selected.svg";
 import Arrow from "../../assets/images/arrow.svg";
 
 interface NavItem {
@@ -36,26 +37,26 @@ export const Navbar = () => {
         {
           name: "Tendencias",
           path: "/modalities?opportunity",
-          icon: Help,
-          selectedIcon: Help,
+          icon: Icon,
+          selectedIcon: IconSelected,
         },
         {
           name: "Recomendacoes",
           path: "/modalities?recommendations",
-          icon: Help,
-          selectedIcon: Help,
+          icon: Icon,
+          selectedIcon: IconSelected,
         },
         {
           name: "Jackpots",
           path: "/modalities?jackpots",
-          icon: Help,
-          selectedIcon: Help,
+          icon: Icon,
+          selectedIcon: IconSelected,
         },
         {
           name: "Novos Jogos",
           path: "/modalities?newgames",
-          icon: Help,
-          selectedIcon: Help,
+          icon: Icon,
+          selectedIcon: IconSelected,
         },
       ],
     },
@@ -63,8 +64,8 @@ export const Navbar = () => {
       icon: Config,
       title: "Geral",
       items: [
-        { name: "Ajuda", path: "", icon: Help, selectedIcon: Help },
-        { name: "Sair", path: "/", icon: Bell, selectedIcon: Bell },
+        { name: "Ajuda", path: "", icon: Icon, selectedIcon: IconSelected },
+        { name: "Sair", path: "/", icon: Bell, selectedIcon: IconSelected },
       ],
     },
   ];
@@ -98,7 +99,9 @@ export const Navbar = () => {
       <div className={styles.underline}></div>
       <div className={styles.links}>
         <div className={styles.credits}>
-          <img src={Help} alt="" className={styles.iconSection} />
+          <div className={styles.iconSection}>
+            <img src={Coins} alt="" />
+          </div>
           <div className={styles.titleCredits}>Depositar</div>
         </div>
         {menuSections.map((section) => (
@@ -149,7 +152,15 @@ export const Navbar = () => {
                       alt={item.name}
                       className={styles.icon}
                     />
-                    <div className={styles.name}>{item.name}</div>
+                    <div
+                      className={
+                        activeIcon === item.name
+                          ? styles.nameSelected
+                          : styles.name
+                      }
+                    >
+                      {item.name}
+                    </div>
                   </Link>
                 ))}
               </div>
