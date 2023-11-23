@@ -59,7 +59,7 @@
     position: fixed;
     top: 85px;
     left: -50%;
-    width: 200px;
+    width: 275px;
     height: 100vh;
     background: #201F2C;
     box-shadow: -3px 0px 0px 0px #302e3f inset;
@@ -69,7 +69,7 @@
 }
 
 .expanded {
-    width: 200px;
+    width: 275px;
     height: 100vh;
     left: 0;
     transition: all 0.7s ease-in-out;
@@ -174,7 +174,7 @@
         }
 
         .nav {
-            left: -80%;
+            left: -100%;
         }
 
         .expanded {
