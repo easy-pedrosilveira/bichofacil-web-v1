@@ -13,7 +13,7 @@
 .fixed {
     position: fixed;
     transition: position 0.3s;
-    z-index: 12;
+    z-index: 10;
 }
 
 .innerHeader {
@@ -174,7 +174,7 @@
         }
 
         .nav {
-            left: -100%;
+            left: -150%;
         }
 
         .expanded {
