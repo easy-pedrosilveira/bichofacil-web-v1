@@ -1,3 +1,4 @@
+import { apiAuth } from "providers";
 import styles from "./DeleteModal.module.css";
 
 interface DeleteModalProps {
@@ -5,6 +6,25 @@ interface DeleteModalProps {
 }
 
 export const DeleteModal = ({ onModalChange }: DeleteModalProps) => {
+  const deleteAccount = () => {
+    apiAuth
+      .post("/disable", {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      })
+      .then((response) => {
+        if (response.status === 200) {
+          console.log("Usuário excluído!");
+        } else {
+          console.error("Houve algum erro!");
+        }
+      })
+      .catch((error) => {
+        console.error("Erro na requisição:", error);
+      });
+  };
+
   return (
     <main
       className={styles.backDrop}
@@ -19,7 +39,8 @@ export const DeleteModal = ({ onModalChange }: DeleteModalProps) => {
       <div className={styles.modal}>
         <div className={styles.title}>Excluir Conta</div>
         <div className={styles.paragraph}>
-          Tem certeza de que deseja excluir permanentemente sua conta? Esta ação não pode ser desfeita.
+          Tem certeza de que deseja excluir permanentemente sua conta? Esta ação
+          não pode ser desfeita.
         </div>
         <div className={styles.btns}>
           <div
@@ -28,7 +49,9 @@ export const DeleteModal = ({ onModalChange }: DeleteModalProps) => {
           >
             Cancelar
           </div>
-          <div className={styles.btnConfirm}>Confirmar</div>
+          <div className={styles.btnConfirm} onClick={deleteAccount}>
+            Confirmar
+          </div>
         </div>
       </div>
     </main>

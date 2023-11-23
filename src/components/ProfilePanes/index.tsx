@@ -1,4 +1,4 @@
 export * from './Account';
-export * from './Receipts';
+export * from './Withdraw';
 export * from './Extract';
 export * from './Settings';

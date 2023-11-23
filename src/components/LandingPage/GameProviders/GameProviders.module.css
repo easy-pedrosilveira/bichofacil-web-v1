@@ -26,7 +26,7 @@
     align-items: center;
     height: 20px;
     justify-content: space-around;
-    animation: scroll 40s linear infinite;
+    animation: scroll 600s linear infinite;
     gap: 20px;
 }
 
@@ -42,11 +42,11 @@
 }
 
 @keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
+  0% {
+    transform: translateX(0);
+  }
 
-    100% {
-        transform: translateX(calc(-20rem * 14));
-    }
+  100% {
+    transform: translateX(-100%);
+  }
 }
