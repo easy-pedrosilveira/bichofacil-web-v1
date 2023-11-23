@@ -14,7 +14,7 @@
     color: #fff;
 }
 
-.toTop{
+.toTop {
     width: 30px;
     height: 30px;
     position: absolute;
@@ -29,7 +29,7 @@
     box-shadow: -3px 0px 0px 0px rgba(0, 0, 0, 0.15) inset;
 }
 
-.toTop{
+.toTop {
     rotate: -90deg;
 }
 
@@ -92,15 +92,34 @@
     text-align: left;
 }
 
-.ancora{
+.ancora {
     text-decoration: none;
     color: #fff;
 }
 
-.bottom{
+.bottom {
     height: 55px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #302e3f;
+}
+
+@media (min-width: 200px) {
+    @media (max-width: 1100px) {
+        .middle{
+            height: auto;
+            flex-direction: column;
+            gap: 4vh;
+        }
+        .txt{
+            text-align: center;
+            width: 95%;
+        }
+        .links{
+            width: 100%;
+            height: auto;
+            align-items: center;
+        }
+    }
 }
