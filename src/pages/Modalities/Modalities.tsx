@@ -17,11 +17,11 @@ import modalitiesGames from "data/modalitiesGames.json";
 export const Modalities = () => {
   const location = useLocation();
   const query = new URLSearchParams(location.search).get("type");
-  const [dataModality, setDataModality] = useState();
+  const [dataModality, setDataModality] = useState<{ game_id: string; results: { game_name: string; game_description: string; game_full_description: string; game_link: string; game_banner: string }[] } | null>(null);
 
   useEffect(() => {
     let game_id: any;
-
+  
     switch (query) {
       case "opportunity":
         game_id = "TD";
@@ -38,24 +38,38 @@ export const Modalities = () => {
       default:
         break;
     }
-
-    const filteredData = modalitiesGames.filter(
-      (modality) => modality.game_id === game_id
-    );
-    // setDataModality(filteredData);
-    console.log("dataModality", dataModality);
-    console.log("game_id:", game_id);
+  
+    const filteredData = modalitiesGames.find((modality) => modality.game_id === game_id);
+  
+    setDataModality(filteredData);
   }, [query]);
-
+  
   return (
     <div className={styles.container}>
-      <div className={styles.modalities}></div>
+      <div className={styles.modalities}>
+        {dataModality && (
+          <>
+            <div className={styles.title}>{dataModality.game_id}</div>
+            <div className={styles.cards}>
+              {dataModality.results.map((result, index) => (
+                <div className={styles.card} key={index}>
+                  <div className={styles.title}>{result.game_name}</div>
+                  <div className={styles.play}>
+                    <div className={styles.btnPlay}>Jogar</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
+      </div>
       <div className={styles.moreGames}>
         <div className={styles.title}>Explore outras modalidades</div>
         <div className={styles.cards}>
-          {modalitiesGames.map((modalities, index) => (
+          {modalitiesGames.map((modality, index) => (
             <div className={styles.card} key={index}>
-              <div className={styles.title}></div>
+              {/* Adicione as informações necessárias para exibir aqui */}
+              <div className={styles.title}>{modality.game_id}</div>
               <div className={styles.play}>
                 <div className={styles.btnPlay}>Jogar</div>
               </div>
@@ -65,4 +79,5 @@ export const Modalities = () => {
       </div>
     </div>
   );
+  
 };
