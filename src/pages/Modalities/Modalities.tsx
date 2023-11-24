@@ -41,7 +41,7 @@ export const Modalities = () => {
   
     const filteredData = modalitiesGames.find((modality) => modality.game_id === game_id);
   
-    setDataModality(filteredData);
+    /*setDataModality(filteredData);*/
   }, [query]);
   
   return (
