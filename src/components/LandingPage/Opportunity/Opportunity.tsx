@@ -22,7 +22,7 @@ export const Opportunity = () => {
         </div>
       </div>
       <div className={styles.content}>
-      {dataTD && dataTD.results[0].map((game, index) => (
+      {dataTD && dataTD.results.map((game, index) => (
           <div className={styles.cardGame} key={index}>
             <div
               className={styles.gameContent}

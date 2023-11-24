@@ -24,7 +24,7 @@ export const DailyJackpots = () => {
       </div>
       <div className={styles.content}>
         {dataDJ &&
-          dataDJ.results[0].map((game, index) => (
+          dataDJ.results.map((game, index) => (
             <div className={styles.cardGame} key={index}>
               <div
                 className={styles.gameContent}

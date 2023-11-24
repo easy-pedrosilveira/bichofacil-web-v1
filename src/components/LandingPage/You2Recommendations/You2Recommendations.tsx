@@ -22,7 +22,7 @@ export const You2Recommendations = () => {
       </div>
       <div className={styles.content}>
         {dataRY &&
-          dataRY.results[0].map((game, index) => (
+          dataRY.results.map((game, index) => (
             <div className={styles.cardGame} key={index}>
               <div
                 className={styles.gameContent}
