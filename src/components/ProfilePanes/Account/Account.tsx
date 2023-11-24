@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import styles from "./Account.module.css";
 import dataUser from "../../../data/user.json";
-import { Card } from "components";
+import { Card, AddCard } from "components";
 
 export const Account = () => {
   const user = dataUser;
   const cards = dataUser.payment_methods;
+  const [modal, setModal] = useState<boolean>(false);
 
   return (
+    <>
+    {modal ? <AddCard isOpen={setModal} /> : null}
     <section className={styles.sectionAccount}>
       <div className={styles.account}>
         <div className={styles.left}>
@@ -32,7 +35,7 @@ export const Account = () => {
         <h1> Formas de pagamento </h1>
         <div className={styles.contentPayemnt}>
           <div className={styles.add}>
-            <button>Adicionar</button>
+            <button onClick={(e) => {setModal(true)}}>Adicionar</button>
           </div>
           <div className={styles.cards}>
             {cards.length !== 0 ? (
@@ -51,5 +54,6 @@ export const Account = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
