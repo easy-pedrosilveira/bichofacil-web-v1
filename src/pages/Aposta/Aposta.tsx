@@ -1,10 +1,9 @@
 import React from 'react'
 import styles from "./Aposta.module.css";
 import { useEffect, useState } from "react";
-import {BuyCredits, Register, Login} from "components";
+import {BuyCredits} from "components";
 import user from "data/user.json";
-import { Link } from 'react-router-dom';
-
+import { Link } from "react-router-dom";
 
 interface Aposta {
     onModalChange: (isOpen: boolean) => void;
@@ -25,7 +24,7 @@ export const Aposta = () => {
       <div className={styles.contem}>
 
      <div className={styles.jogo}>
-      <iframe  width="100%" height="100%" src='https://api-test.salsagator.com/game?token=7f9d5928053fd92c797299e8d4a0e760&pn=doublex-staging&lang=pt&game=Candy&type=FREE' ></iframe>
+      <iframe  width="100%" height="100%" src={""} ></iframe>
      </div>
 
      <div className={styles.compra}>

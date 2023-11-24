@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Aposta } from "../../../pages/Aposta";
 
 export const NewGames = () => {
+  
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -59,9 +60,9 @@ export const NewGames = () => {
               </div>
               <div className={styles.play}>
                 {isDesktop ? (
-                    <Link to={game?.game_link}>
+                    <Link to={game?.game_link} >
                     <div className={styles.btnPlay}>Jogar</div>
-                  </Link>
+                   </Link>
                 ) : (
                   <Link to={`Aposta`}>
                   <div className={styles.btnPlay}>Jogar</div>
