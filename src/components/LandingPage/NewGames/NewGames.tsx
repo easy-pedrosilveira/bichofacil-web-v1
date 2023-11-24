@@ -40,7 +40,7 @@ export const NewGames = () => {
       </div>
       <div className={styles.content}>
         {dataNG &&
-          dataNG.results[0].map((game, index) => (
+          dataNG.results.map((game, index) => (
             <div className={styles.cardGame} key={index}>
               <div
                 className={styles.gameContent}
