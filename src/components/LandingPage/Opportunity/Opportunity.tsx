@@ -48,12 +48,13 @@ export const Opportunity = () => {
             </div>
             <div className={styles.play}>
                 {isDesktop ? (
-                    
-                    <div className={styles.btnPlay}><Link to={game?.game_link} >Jogar</Link></div>
-                  
+                    <Link to={game?.game_link}className={styles.btnPlay} >
+                    <div className={styles.btnPlay}>Jogar</div>
+                    </Link>
                 ) : (
-                  
-                  <div className={styles.btnPlay}>  <Link to={`Aposta`}>Jogar</Link></div>
+                  <Link to={`Aposta`}  className={styles.btnPlay}>
+                  <div className={styles.btnPlay}> Jogar</div>
+                  </Link>
                
                 )}
               </div>
