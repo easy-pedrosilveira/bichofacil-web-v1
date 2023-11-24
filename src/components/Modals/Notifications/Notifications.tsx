@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import useAuthContext from "data/hooks/useAuthContext";
 import { format } from "date-fns";
 import { useState, useEffect } from "react";
+import user from "data/user.json";
 import { apiAuth } from "providers";
 import { motion } from "framer-motion";
 
@@ -11,8 +12,7 @@ interface ModalProps {
 }
 
 export const Notifications = ({ onModalChange }: ModalProps) => {
-//   const { user, refreshUser } = useAuthContext();
-//   const newMessages = user?.messages || [];
+  const newMessages = user?.messages || [];
 
   const markReadMessage = async (messageId: string) => {
     try {
@@ -21,7 +21,7 @@ export const Notifications = ({ onModalChange }: ModalProps) => {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         })
         .then(function (response) {
-        //   refreshUser(true);
+          //   refreshUser(true);
         });
     } catch (error) {
       console.log(error);
@@ -39,13 +39,22 @@ export const Notifications = ({ onModalChange }: ModalProps) => {
         }
       }}
     >
-      <div className={styles.modal}>
+      <motion.div
+        initial={{ x: 900 }}
+        animate={{ x: 0 }}
+        transition={{
+          duration: 0.8,
+          delay: 0.5,
+          ease: [0, 0.71, 0.2, 1.01],
+        }}
+        className={styles.modal}
+      >
         <div className={styles.union}></div>
         <header className={styles.header}>
           <div className={styles.titleHeader}>Notificações</div>
         </header>
         <div className={styles.bodyModal}>
-          {/* {newMessages.length > 0 ? (
+          {newMessages.length > 0 ? (
             newMessages.map((message, index) => (
               <div
                 className={styles.Noti}
@@ -77,9 +86,9 @@ export const Notifications = ({ onModalChange }: ModalProps) => {
             ))
           ) : (
             <div className={styles.null}>Nenhuma notificação disponível.</div>
-          )} */}
+          )}
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

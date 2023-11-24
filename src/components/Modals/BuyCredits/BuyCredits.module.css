@@ -15,39 +15,35 @@
 }
 
 .modal {
-    width: 370px;
-    height: 450px;
+    width: 350px;
+    height: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 5vh;
-    background: #fff;
+    justify-content: space-evenly;
+    background: #201F2C;
     border-radius: 10px;
+    color: #fff;
 }
 
-.modal div{
+.header,
+.selectValue,
+.valueSelected,
+.payment {
+    width: 90%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    gap: 15px;
 }
-
-.header {
-    width: 90%;
-    height: 60px;
-    background: red;
-}
-
 .title {
     font-size: 17px;
     font-weight: 600;
 }
 
 .selectValue {
-    width: 90%;
     height: auto;
-    background: blue;
 }
 
 .subTitle {
@@ -57,18 +53,76 @@
     font-weight: 400;
 }
 
-.coins{
+.values {
     width: 100%;
-    background: yellow;
+    display: flex;
+    justify-content: center;
+    gap: 5vw;
+    overflow-x: scroll;
 }
 
-.coin{
-    width: 30px;
-    height: 30px;
-    background-image: url('../../../assets/images/coins.svg');
-    background-position: center;
-    background-size: cover;
+.coin {
+    min-width: 90px;
+    min-height: 90px;
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    background-image: url('../../../assets/images/coins-credits.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    font-weight: 600;
+    font-size: 17px;
+    color: #000;
+}
+
+.payment {
+    height: auto;
+}
+
+.cardPayment {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: inset 2px 2px 0px 0px #524DF5, inset -2px -2px 0px 0px #524DF5;
+    cursor: pointer;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: rgba(82, 77, 245, 0.20);
+}
+
+.icon img {
+    width: 35px;
+    height: 35px;
+}
+
+.txtPayment {
+    width: 60%;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+}
+
+.arrow {
+    width: 40px;
+    height: 40px;
+}
+
+.arrow img {
+    width: 35px;
+    height: 35px;
 }
