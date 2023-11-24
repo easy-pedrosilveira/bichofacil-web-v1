@@ -7,3 +7,4 @@ export * from './AccordeonFaq';
 export * from './LandingPage';
 export * from './ProfilePanes';
 export * from './CreditsIcon';
+export * from './Card';
