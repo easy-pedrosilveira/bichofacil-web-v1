@@ -9,6 +9,50 @@
    "identification":"52172879879",
    "credits_balance":"930.00",
    "winner_balance":"500.00",
+   "payment_methods": [
+      {
+         "type" : "Cartão de Crédito",
+         "name" : "Santander",
+         "number" : "5099",
+         "card_validation" : "09/24",
+         "pix_type": ""
+      },
+      {
+         "type" : "PIX",
+         "name" : "José Santos",
+         "number" : "412.312.412-19",
+         "card_validation" : "",
+         "pix_type": "CPF"
+      },
+      {
+         "type" : "Cartão de Crédito",
+         "name" : "Santander",
+         "number" : "5099",
+         "card_validation" : "09/24",
+         "pix_type": ""
+      },
+      {
+         "type" : "PIX",
+         "name" : "José Santos",
+         "number" : "412.312.412-19",
+         "card_validation" : "",
+         "pix_type": "CPF"
+      },
+      {
+         "type" : "Cartão de Crédito",
+         "name" : "Santander",
+         "number" : "5099",
+         "card_validation" : "09/24",
+         "pix_type": ""
+      },
+      {
+         "type" : "PIX",
+         "name" : "José Santos",
+         "number" : "412.312.412-19",
+         "card_validation" : "",
+         "pix_type": "CPF"
+      }
+   ],
    "messages":[
       {
          "user":"46304d50-c81a-46cc-9c04-a42e57ad81ab",
