@@ -16,7 +16,7 @@ export const Rotas = () => {
           <Route path="/profile" element={<Profile />} />
           <Route path="/modalities?" element={<Modalities />} />
           <Route path="/sobre-nos" element={<Sobre />} />
-          <Route path="/aposta" element={<Aposta />} />
+          <Route path="/aposta?" element={<Aposta />} />
           <Route path="*" element={<Error />} />
         </Routes>
         <CreditsIcon />

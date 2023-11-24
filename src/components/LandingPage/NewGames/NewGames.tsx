@@ -63,7 +63,7 @@ export const NewGames = () => {
                     <div className={styles.btnPlay}>Jogar</div>
                    </Link>
                 ) : (
-                  <Link to={`Aposta`}  className={styles.btnPlay}>
+                  <Link to={`aposta/${game?.game_link}`}  className={styles.btnPlay}>
                   <div className={styles.btnPlay}>Jogar</div>
                   </Link>
                 )}
