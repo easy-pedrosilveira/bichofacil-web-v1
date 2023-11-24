@@ -54,7 +54,8 @@ export const Modalities = () => {
         <div className={styles.title}>Explore outras modalidades</div>
         <div className={styles.cards}>
           {modalitiesGames.map((modalities, index) => (
-              <div className={styles.card} key={index}>
+            <div className={styles.card} key={index}>
+              <div className={styles.title}></div>
               <div className={styles.play}>
                 <div className={styles.btnPlay}>Jogar</div>
               </div>

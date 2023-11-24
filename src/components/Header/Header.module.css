@@ -85,23 +85,6 @@
     justify-content: center;
 }
 
-.btns {
-    color: white;
-    font-weight: 700;
-}
-
-.login {
-    width: 150px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    border-radius: 5px;
-    background: #524DF5;
-    box-shadow: -2px -5px 4px 0px rgba(0, 0, 0, 0.25) inset;
-}
-
 .itensLogged {
     gap: 2vw;
 }
@@ -138,18 +121,32 @@
     border-bottom: 2px solid #9A1AFF;
 }
 
-#profile {
-    border-bottom: 2px solid #524df5;
+#credits {
+    border-bottom: 2px solid #FA8A00;
 }
 
-.responsiveItems {
-    display: none;
+.btns {
+    color: white;
+    font-weight: 700;
 }
+
+.login {
+    width: 150px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+    background: #524DF5;
+    box-shadow: -2px -5px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
 
 @media (min-width: 200px) {
     @media (max-width: 500px) {
         .innerHeader {
-            width: 100%;
+            width: 90%;
         }
 
         .login {
@@ -162,7 +159,7 @@
         }
 
         .logo img {
-            width: 80px;
+            width: 60px;
         }
 
         .itensLogged {

@@ -1,11 +1,10 @@
 import styles from "./CreditsIcon.module.css";
-import Credits from "../../assets/images/buy-credits.svg";
+import Credits from "../../assets/images/credits.svg";
 import { useState } from "react";
 import { BuyCredits } from "components";
 
 export const CreditsIcon = () => {
   const [buyCredits, setBuyCredits] = useState(false);
-  console.log(buyCredits);
 
   const toggleBuyCredits = () => {
     setBuyCredits(!buyCredits);
@@ -19,9 +18,7 @@ export const CreditsIcon = () => {
       >
         <img src={Credits} alt="" />
       </div>
-      {buyCredits === true ? (
-        <BuyCredits onModalChange={toggleBuyCredits} />
-      ) : null}
+      {buyCredits ? <BuyCredits onModalChange={toggleBuyCredits} /> : null}
     </>
   );
 };

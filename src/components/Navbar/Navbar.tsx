@@ -1,6 +1,7 @@
 import styles from "./Navbar.module.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Notifications, BuyCredits } from "components";
 import user from "data/user.json";
 import Profile from "../../assets/images/profile.svg";
 import Credits from "../../assets/images/credits.svg";
@@ -25,6 +26,7 @@ interface NavbarProps {
 export const Navbar = ({ onNavChange }: NavbarProps) => {
   const [activeIcon, setActiveIcon] = useState("Inicio");
   const [buyCredits, setBuyCredits] = useState(false);
+  const [notifications, setNotifications] = useState(false);
 
   const menuSections = [
     {
@@ -65,72 +67,84 @@ export const Navbar = ({ onNavChange }: NavbarProps) => {
 
   const toggleBuyCredits = () => {
     setBuyCredits(!buyCredits);
+    onNavChange(false);
+  };
+
+  const toggleNotifications = () => {
+    setNotifications(!notifications);
+    onNavChange(false);
   };
 
   return (
-    <main className={styles.nav}>
-      <div className={styles.profile}>
-        <div className={styles.picture}>
-          <img src={Profile} alt="" />
+    <>
+      <main className={styles.nav}>
+        <div className={styles.profile}>
+          <div className={styles.picture}>
+            <img src={Profile} alt="" />
+          </div>
+          <div className={styles.txt}>
+            <div className={styles.hi}>Olá</div>
+            <div className={styles.userName}>{user?.first_name}</div>
+          </div>
         </div>
-        <div className={styles.txt}>
-          <div className={styles.hi}>Olá</div>
-          <div className={styles.userName}>{user?.first_name}</div>
+        <div className={styles.itemsUser}>
+          <div className={styles.noti}>
+            <img src={Bell} alt="bell" onClick={toggleNotifications} />
+          </div>
+          <Link to="/faq" className={styles.help}>
+            <img src={Help} alt="help" />
+          </Link>
+          <div className={styles.credits} onClick={toggleBuyCredits}>
+            <img src={Credits} alt="buy credits" />
+          </div>
         </div>
-      </div>
-      <div className={styles.itemsUser}>
-        <div className={styles.noti}>
-          <img src={Bell} alt="bell" />
+        <div className={styles.links}>
+          {menuSections.map((link, index) => (
+            <Link
+              to={link.path}
+              className={`${styles.default} ${
+                activeIcon === link.name ? styles.selected : ""
+              }`}
+              key={index}
+              onClick={() => {
+                handleActiveIcon(link.name);
+                onNavChange(false);
+              }}
+            >
+              <div className={styles.icon}>
+                <img
+                  src={activeIcon === link.name ? link.selectedIcon : link.icon}
+                  alt=""
+                />
+              </div>
+              <div
+                className={
+                  activeIcon === link.name ? styles.titleSelected : styles.title
+                }
+              >
+                {link.name}
+              </div>
+            </Link>
+          ))}
         </div>
-        <div className={styles.help}>
-          <img src={Help} alt="help" />
-        </div>
-        <div className={styles.credits} onClick={toggleBuyCredits}>
-          <img src={Credits} alt="buy credits" />
-        </div>
-      </div>
-      <div className={styles.links}>
-        {menuSections.map((link, index) => (
-          <Link
-            to={link.path}
-            className={`${styles.default} ${
-              activeIcon === link.name ? styles.selected : ""
-            }`}
-            key={index}
-            onClick={() => {
-              handleActiveIcon(link.name);
-              onNavChange(false);
-            }}
-          >
+        <div className={styles.logout}>
+          <div className={styles.default}>
             <div className={styles.icon}>
-              <img
-                src={activeIcon === link.name ? link.selectedIcon : link.icon}
-                alt=""
-              />
+              <img src={Logout} alt="" />
             </div>
             <div
-              className={
-                activeIcon === link.name ? styles.titleSelected : styles.title
-              }
+              className={styles.title}
+              style={{ color: "#302E3F", fontWeight: "600" }}
             >
-              {link.name}
+              Sair
             </div>
-          </Link>
-        ))}
-      </div>
-      <div className={styles.logout}>
-        <div className={styles.default}>
-          <div className={styles.icon}>
-            <img src={Logout} alt="" />
-          </div>
-          <div
-            className={styles.title}
-            style={{ color: "#302E3F", fontWeight: "600" }}
-          >
-            Sair
           </div>
         </div>
-      </div>
-    </main>
+      </main>
+      {notifications ? (
+        <Notifications onModalChange={toggleNotifications} />
+      ) : null}
+      {buyCredits ? <BuyCredits onModalChange={toggleBuyCredits} /> : null}
+    </>
   );
 };
