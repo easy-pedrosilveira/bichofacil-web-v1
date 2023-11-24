@@ -4,11 +4,11 @@
        "results" :[
            [
                {
-                  "game_name":"Cassino2x",
-                  "game_description":"Cassino prontinho para te dar vários tipos de premiações",
+                  "game_name":"Candy Bingo",
+                  "game_description":"Candy 3D",
                   "game_full_description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-                  "game_link":"https://www.jogo.com.br",
-                  "game_banner":"https://cdn.jornaldebrasilia.com.br/wp-content/uploads/2022/12/07111802/Captura-de-Tela-2022-12-07-as-11.17.54.png"
+                  "game_link":"https://api-test.salsagator.com/game?token=7f9d5928053fd92c797299e8d4a0e760&pn=doublex-staging&lang=pt&game=Candy3D&type=FREE",
+                  "game_banner":"https://i.pinimg.com/474x/50/6f/18/506f183bb98234c27f13bfc2eba5a337.jpg"
                },
                {
                   "game_name":"Jackpot Instant Win",
@@ -22,7 +22,7 @@
                   "game_description":"Tigre tá pagando muiiito",
                   "game_full_description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
                   "game_link":"https://www.jogo3.com.br",
-                  "game_banner":"https://s2-techtudo.glbimg.com/NV-5RTOngXtFn3XudPJHkNv_W7E=/0x0:808x526/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/B/W/QdZUZSSfGwB93jjcFFfA/fortune-tiger.png"
+                  "game_banner":"https://i.pinimg.com/564x/ed/21/89/ed2189c784bd19a64533dcafea0f2ae1.jpg"
                },
                {
                   "game_name":"Roleta do Burro",
@@ -39,11 +39,11 @@
        "results" :[
            [
                {
-                  "game_name":"Cassino2x NG",
-                  "game_description":"Cassino prontinho para te dar vários tipos de premiações",
+                  "game_name":"Candy Bingo",
+                  "game_description":"Candy 3D",
                   "game_full_description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-                  "game_link":"https://www.jogo.com.br",
-                  "game_banner":"https://cdn.jornaldebrasilia.com.br/wp-content/uploads/2022/12/07111802/Captura-de-Tela-2022-12-07-as-11.17.54.png"
+                  "game_link":"https://api-test.salsagator.com/game?token=7f9d5928053fd92c797299e8d4a0e760&pn=doublex-staging&lang=pt&game=Candy3D&type=FREE",
+                  "game_banner":"https://i.pinimg.com/474x/50/6f/18/506f183bb98234c27f13bfc2eba5a337.jpg"
                },
                {
                   "game_name":"Jackpot Instant Win NG",
