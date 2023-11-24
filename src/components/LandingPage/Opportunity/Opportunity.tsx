@@ -1,10 +1,17 @@
 import styles from "../StepLandingPage.module.css";
 import modalitiesGames from "data/modalitiesGames.json";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Aposta } from "../../../pages/Aposta";
 
 export const Opportunity = () => {
+
+  const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
+  
+  
   const dataTD = modalitiesGames.find((modality) => modality.game_id === "TD");
+
+  const isDesktop = viewportWidth >= 200 && viewportWidth <= 767;
   
   return (
     <main className={styles.containerGradient}>
@@ -40,8 +47,16 @@ export const Opportunity = () => {
               </div>
             </div>
             <div className={styles.play}>
-              <div className={styles.btnPlay}>Jogar</div>
-            </div>
+                {isDesktop ? (
+                    <Link to={game?.game_link}>
+                    <div className={styles.btnPlay}>Jogar</div>
+                  </Link>
+                ) : (
+                  <Link to={`Aposta`}>
+                  <div className={styles.btnPlay}>Jogar</div>
+                  </Link>
+                )}
+              </div>
           </div>
         ))}
       </div>
