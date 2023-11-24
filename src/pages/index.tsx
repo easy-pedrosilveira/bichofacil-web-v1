@@ -6,5 +6,6 @@ export * from './Faq';
 export * from './Profile';
 export * from './Modalities';
 export * from './Sobre'
+export * from './Aposta';
 
 
