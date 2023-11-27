@@ -1,6 +1,6 @@
 import styles from "./Modalities.module.css";
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import modalitiesGames from "data/modalitiesGames.json";
 
 interface GameResult {
@@ -25,7 +25,7 @@ export const Modalities = () => {
   const [key, value] = firstParam;
 
   useEffect(() => {
-      getUrl(key);
+    getUrl(key);
   }, [gameId]);
 
   const getUrl = (key: string) => {
@@ -33,16 +33,16 @@ export const Modalities = () => {
 
     switch (key) {
       case "opportunity":
-        setGameId("TD");
+        setGameId("Tendência");
         break;
       case "recommendations":
-        setGameId("RY");
+        setGameId("Recomendados You2");
         break;
       case "jackpots":
-        setGameId("JD");
+        setGameId("Jackpots Diários");
         break;
       case "newgames":
-        setGameId("NG");
+        setGameId("Novos Jogos");
         break;
       default:
         break;
@@ -54,28 +54,38 @@ export const Modalities = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.title}>{dataModality.map((item, index) => <span key={index}>{item.}</span>)}</div>
-      <div className={styles.modalities}>
-        {/* {dataModality?.map((games, index) => (
-          <span key={index}>{games?.results}</span>
-        ))} */}
-      </div>
-      <div className={styles.moreGames}>
-        <div className={styles.title}>Explore outras modalidades</div>
-        <div className={styles.cards}>
-        {dataModality.map((modality) => {
-  modality?.results.map((item, index) => (
-      <div className={styles.card} key={index}>
-        <div className={styles.title}>{modality.game_id}</div>
-        <div className={styles.play}>
-          <div className={styles.btnPlay}>Jogar</div>
+    <>
+      {dataModality.map((modality, index) => (
+        <div className={styles.container} key={index}>
+          <div className={styles.introduction}>
+            <div className={styles.title}>{modality?.game_id}</div>
+          </div>
+          <div className={styles.modalities}>
+            {modality.results.map((result, index) => (
+              <div className={styles.cardGame} key={index}>
+                <div
+                  className={styles.gameContent}
+                  style={{
+                    backgroundImage: `url(${result?.game_banner})`,
+                    backgroundRepeat: "no-repeat",
+                    backgroundSize: "cover",
+                  }}
+                >
+                  <div className={styles.info}>
+                    <div className={styles.gameName}>{result?.game_name}</div>
+                    <div className={styles.description}>
+                      {result?.game_description.slice(0, 20)}...
+                    </div>
+                  </div>
+                </div>
+                <div className={styles.play}>
+                  <div className={styles.btnPlay}>Jogar</div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-  ))
-})}
-        </div>
-      </div>
-    </div>
+      ))}
+    </>
   );
 };

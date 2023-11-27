@@ -1,9 +1,9 @@
 [
   {
-    "game_id": "TD",
+    "game_id": "Tendência",
     "results": [
       {
-        "game_name": "Cassino2x",
+        "game_name": "Cassino2x pora",
         "game_description": "Cassino prontinho para te dar vários tipos de premiações",
         "game_full_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
         "game_link": "https://www.jogo.com.br",
@@ -33,10 +33,10 @@
     ]
   },
   {
-    "game_id": "NG",
+    "game_id": "Novos Jogos",
     "results": [
       {
-        "game_name": "Cassino2x NG",
+        "game_name": "JOGO NG",
         "game_description": "Cassino prontinho para te dar vários tipos de premiações",
         "game_full_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
         "game_link": "https://www.jogo.com.br",
@@ -66,7 +66,7 @@
     ]
   },
   {
-    "game_id": "RY",
+    "game_id": "Recomendados You2",
     "results": [
       {
         "game_name": "Cassino2x RY",
@@ -99,7 +99,7 @@
     ]
   },
   {
-    "game_id": "JD",
+    "game_id": "Jackpots Diários",
     "results": [
       {
         "game_name": "Cassino2x JD",
