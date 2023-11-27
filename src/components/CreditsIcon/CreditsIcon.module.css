@@ -10,10 +10,19 @@
     justify-content: center;
     cursor: pointer;
     z-index: 9;
-    background-image: url('../../assets/images/back-credits.svg');
-    box-shadow: -2px -5px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    background: #201F2C;
+    box-shadow: -2px -9px 4px 0px #302E3F inset;
 }
 
 #credits {
     border: 2px solid #FA8A00;
+}
+
+
+@media (min-width: 200px) {
+    @media (max-width: 1000px) {
+        .icon {
+            bottom: 50%;
+        }
+    }
 }
