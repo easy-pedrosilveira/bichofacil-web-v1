@@ -10,7 +10,9 @@ import {
 export const Home = () => {
   return (
     <>
-      <ControlPromotional />
+      <div style={{width:'100%', height:'60vh', position:'relative', justifyContent:'center', alignItems:'center', overflow:'hidden'}}>
+        <ControlPromotional />
+      </div>
       <Opportunity />
       <NewGames />
       <You2Recommendations />

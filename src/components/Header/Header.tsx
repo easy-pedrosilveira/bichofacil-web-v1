@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 
 export const Header = () => {
   const { modalLogin, setModalLogin, modalRegister } = useAuthContext();
-  const [logado, setLogado] = useState(true);
+  const [logado, setLogado] = useState(false);
   const [notifications, setNotifications] = useState(false);
   const [expanded, setExpanded] = useState(false);
   const [buyCredits, setBuyCredits] = useState(false);
