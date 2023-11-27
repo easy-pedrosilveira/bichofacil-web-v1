@@ -1,19 +1,22 @@
 import styles from "./Header.module.css";
+import user from "data/user.json";
 import { useEffect, useState } from "react";
-import { Login, Notifications, BuyCredits, Register, Navbar } from "components";
+import { Login, Notifications, Register, Navbar, BuyCredits } from "components";
 import useAuthContext from "data/hooks/useAuthContext";
 import Logo from "../../assets/images/logo.svg";
 import Menu from "../../assets/images/menu.svg";
 import Bell from "../../assets/images/bell.svg";
 import Profile from "../../assets/images/profile.svg";
+import Credits from "../../assets/images/credits.svg";
 import { Link } from "react-router-dom";
 
 
 export const Header = () => {
   const { modalLogin, setModalLogin, modalRegister } = useAuthContext();
-  const [logado, setLogado] = useState(false);
+  const [logado, setLogado] = useState(true);
   const [notifications, setNotifications] = useState(false);
   const [expanded, setExpanded] = useState(false);
+  const [buyCredits, setBuyCredits] = useState(false);
   const [headerFixed, setHeaderFixed] = useState(false);
 
   const toggleNotifications = () => {
@@ -22,6 +25,10 @@ export const Header = () => {
 
   const toggleSidebar = () => {
     setExpanded(!expanded);
+  };
+
+  const toggleBuyCredits = () => {
+    setBuyCredits(!buyCredits);
   };
 
   useEffect(() => {
@@ -57,26 +64,27 @@ export const Header = () => {
                   expanded === true ? styles.expanded : null
                 }`}
               >
-                <Navbar />
+                <Navbar onNavChange={() => toggleSidebar()} />
               </nav>
             </>
           ) : null}
         </div>
         {logado === true ? (
           <div className={styles.itensLogged}>
-            <div className={styles.balence}>+9999</div>
+            <div className={styles.balence}>{user?.winner_balance}</div>
             <div
               className={styles.icon}
               id={styles.bell}
               onClick={toggleNotifications}
             >
               <img src={Bell} alt="" />
-              {notifications === true ? (
-                <Notifications onModalChange={toggleNotifications} />
-              ) : null}
             </div>
-            <div className={styles.icon} id={styles.profile}>
-              <img src={Profile} alt="" />
+            <div
+              className={styles.icon}
+              id={styles.credits}
+              onClick={toggleBuyCredits}
+            >
+              <img src={Credits} alt="" />
             </div>
           </div>
         ) : (
@@ -90,28 +98,13 @@ export const Header = () => {
             {modalLogin === true ? <Login /> : null}
           </div>
         )}
-        {logado === true && (
-          <div className={styles.responsiveItems}>
-            <div
-              className={styles.icon}
-              id={styles.bell}
-              onClick={toggleNotifications}
-            >
-              <img src={Bell} alt="" />
-              {notifications === true ? (
-                <Notifications onModalChange={toggleNotifications} />
-              ) : null}
-            </div>
-            <div className={styles.balence}>+9999</div>
-
-            <Link to="/profile" className={styles.icon} id={styles.profile}>
-              <img src={Profile} alt="" />
-            </Link>
-          </div>
-        )}
       </div>
       {modalLogin && !modalRegister ? <Login /> : null}
       {modalRegister && !modalLogin ? <Register /> : null}
+      {notifications ? (
+        <Notifications onModalChange={toggleNotifications} />
+      ) : null}
+      {buyCredits ? <BuyCredits onModalChange={toggleBuyCredits} /> : null}
     </main>
   );
 };

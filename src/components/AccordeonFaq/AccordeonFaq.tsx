@@ -1,5 +1,7 @@
 import { useRef } from "react";
 import styles from "./AccordeonFaq.module.css";
+import iconAbrir from "../../assets/images/iconAjuda.png";
+import iconFechar from "../../assets/images/iconMenos.png";
 
 interface AccordeonProps {
   helps: {title: string, content: string};
@@ -15,7 +17,7 @@ export const AccordeonFaq = ({helps, isActive, onClick }: AccordeonProps) => {
       <header className={styles.header} onClick={onClick}>
         <div className={styles.title}>{helps?.title}</div>
         <div className={styles.arrow}>
-          {isActive ? <img src="" alt="mais" /> : <img src="" alt="menos" />}
+          {isActive ? <img src={iconFechar} alt="mais" /> : <img src={iconAbrir} alt="menos" />}
         </div>
       </header>
       <div

@@ -1,10 +1,17 @@
 import styles from "../StepLandingPage.module.css";
 import modalitiesGames from "data/modalitiesGames.json";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Aposta } from "../../../pages/Aposta";
 
 export const Opportunity = () => {
+
+  const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
+  
+  
   const dataTD = modalitiesGames.find((modality) => modality.game_id === "TD");
+
+  const isDesktop = viewportWidth >= 200 && viewportWidth <= 767;
   
   return (
     <main className={styles.containerGradient}>
@@ -22,7 +29,7 @@ export const Opportunity = () => {
         </div>
       </div>
       <div className={styles.content}>
-      {dataTD && dataTD.results[0].map((game, index) => (
+      {dataTD && dataTD.results.map((game, index) => (
           <div className={styles.cardGame} key={index}>
             <div
               className={styles.gameContent}
@@ -40,8 +47,17 @@ export const Opportunity = () => {
               </div>
             </div>
             <div className={styles.play}>
-              <div className={styles.btnPlay}>Jogar</div>
-            </div>
+                {isDesktop ? (
+                    <Link to={game?.game_link}className={styles.btnPlay} >
+                    <div className={styles.btnPlay}>Jogar</div>
+                    </Link>
+                ) : (
+                  <Link to={`/aposta?iframeSrc=${encodeURIComponent(game?.game_link)}`} className={styles.btnPlay}>
+                  <div className={styles.btnPlay}> Jogar</div>
+                  </Link>
+               
+                )}
+              </div>
           </div>
         ))}
       </div>
