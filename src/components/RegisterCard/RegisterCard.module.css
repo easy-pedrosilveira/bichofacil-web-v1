@@ -103,9 +103,6 @@
             overflow-y: scroll;
             align-items: flex-start;
         }
-        .creditArea{
-            overflow-y: scroll;
-        }
       .break{
         flex-direction: column;
       }

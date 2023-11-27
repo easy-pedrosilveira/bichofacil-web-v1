@@ -90,11 +90,13 @@
 @media (min-width: 200px) {
     @media (max-width: 500px) {
         .modal{
-            height: 600px;
+            height: 550px;
         }
-        .contentCards{
+        .content{
             display: flex;
             align-items: center;
+            justify-content: center;
+            gap: 50px;
         }
     }
   }
