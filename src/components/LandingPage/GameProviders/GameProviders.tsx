@@ -26,12 +26,15 @@ const images = [
 ];
 
 export const GameProviders = () => {
+  const duplicatedImages = [...images, ...images, ...images, ...images, ...images];
+
+  const trackWidth = (210 + 20) * duplicatedImages.length;
   
   return (
     <div className={styles.container}>
       <div className={styles.sliderWrapper}>
-        <div className={styles.slideTrack}>
-          {images.map((item, index) => (
+      <div className={styles.slideTrack} style={{ width: `${trackWidth}px` }}>
+          {duplicatedImages.map((item, index) => (
             <div key={index} className={styles.sponsors}>
               <span>{item?.sponsors}</span>
             </div>

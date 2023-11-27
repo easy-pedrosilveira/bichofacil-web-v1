@@ -1,134 +1,142 @@
 [
-  {
-    "game_id": "Tendência",
-    "results": [
-      {
-        "game_name": "Cassino2x pora",
-        "game_description": "Cassino prontinho para te dar vários tipos de premiações",
-        "game_full_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        "game_link": "https://www.jogo.com.br",
-        "game_banner": "https://cdn.jornaldebrasilia.com.br/wp-content/uploads/2022/12/07111802/Captura-de-Tela-2022-12-07-as-11.17.54.png"
-      },
-      {
-        "game_name": "Jackpot Instant Win",
-        "game_description": "Jackpot feito para te fazer feliz",
-        "game_full_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
-        "game_link": "https://www.jogo2.com.br",
-        "game_banner": "https://play-lh.googleusercontent.com/S9KRqMO4XrUXAdVjwanKTUzPgzndCpEQP4fmBQ2GMCOUPZkNLx9LWuTcgyYhxcfcd_4"
-      },
-      {
-        "game_name": "Roleta do Tigre",
-        "game_description": "Tigre tá pagando muiiito",
-        "game_full_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
-        "game_link": "https://www.jogo3.com.br",
-        "game_banner": "https://s2-techtudo.glbimg.com/NV-5RTOngXtFn3XudPJHkNv_W7E=/0x0:808x526/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/B/W/QdZUZSSfGwB93jjcFFfA/fortune-tiger.png"
-      },
-      {
-        "game_name": "Roleta do Burro",
-        "game_description": "Burro tá pagando muiiito",
-        "game_full_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
-        "game_link": "https://www.jogo3.com.br",
-        "game_banner": "https://s2-techtudo.glbimg.com/NV-5RTOngXtFn3XudPJHkNv_W7E=/0x0:808x526/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/B/W/QdZUZSSfGwB93jjcFFfA/fortune-tiger.png"
-      }
-    ]
-  },
-  {
-    "game_id": "Novos Jogos",
-    "results": [
-      {
-        "game_name": "JOGO NG",
-        "game_description": "Cassino prontinho para te dar vários tipos de premiações",
-        "game_full_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        "game_link": "https://www.jogo.com.br",
-        "game_banner": "https://cdn.jornaldebrasilia.com.br/wp-content/uploads/2022/12/07111802/Captura-de-Tela-2022-12-07-as-11.17.54.png"
-      },
-      {
-        "game_name": "Jackpot Instant Win NG",
-        "game_description": "Jackpot feito para te fazer feliz",
-        "game_full_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
-        "game_link": "https://www.jogo2.com.br",
-        "game_banner": "https://play-lh.googleusercontent.com/S9KRqMO4XrUXAdVjwanKTUzPgzndCpEQP4fmBQ2GMCOUPZkNLx9LWuTcgyYhxcfcd_4"
-      },
-      {
-        "game_name": "Roleta do Tigre NG",
-        "game_description": "Tigre tá pagando muiiito",
-        "game_full_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
-        "game_link": "https://www.jogo3.com.br",
-        "game_banner": "https://s2-techtudo.glbimg.com/NV-5RTOngXtFn3XudPJHkNv_W7E=/0x0:808x526/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/B/W/QdZUZSSfGwB93jjcFFfA/fortune-tiger.png"
-      },
-      {
-        "game_name": "Roleta do Burro NG",
-        "game_description": "Burro tá pagando muiiito",
-        "game_full_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
-        "game_link": "https://www.jogo3.com.br",
-        "game_banner": "https://s2-techtudo.glbimg.com/NV-5RTOngXtFn3XudPJHkNv_W7E=/0x0:808x526/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/B/W/QdZUZSSfGwB93jjcFFfA/fortune-tiger.png"
-      }
-    ]
-  },
-  {
-    "game_id": "Recomendados You2",
-    "results": [
-      {
-        "game_name": "Cassino2x RY",
-        "game_description": "Cassino prontinho para te dar vários tipos de premiações",
-        "game_full_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        "game_link": "https://www.jogo.com.br",
-        "game_banner": "https://cdn.jornaldebrasilia.com.br/wp-content/uploads/2022/12/07111802/Captura-de-Tela-2022-12-07-as-11.17.54.png"
-      },
-      {
-        "game_name": "Jackpot Instant Win RY",
-        "game_description": "Jackpot feito para te fazer feliz",
-        "game_full_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
-        "game_link": "https://www.jogo2.com.br",
-        "game_banner": "https://play-lh.googleusercontent.com/S9KRqMO4XrUXAdVjwanKTUzPgzndCpEQP4fmBQ2GMCOUPZkNLx9LWuTcgyYhxcfcd_4"
-      },
-      {
-        "game_name": "Roleta do Tigre RY",
-        "game_description": "Tigre tá pagando muiiito",
-        "game_full_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
-        "game_link": "https://www.jogo3.com.br",
-        "game_banner": "https://s2-techtudo.glbimg.com/NV-5RTOngXtFn3XudPJHkNv_W7E=/0x0:808x526/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/B/W/QdZUZSSfGwB93jjcFFfA/fortune-tiger.png"
-      },
-      {
-        "game_name": "Roleta do Burro RY",
-        "game_description": "Burro tá pagando muiiito",
-        "game_full_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
-        "game_link": "https://www.jogo3.com.br",
-        "game_banner": "https://s2-techtudo.glbimg.com/NV-5RTOngXtFn3XudPJHkNv_W7E=/0x0:808x526/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/B/W/QdZUZSSfGwB93jjcFFfA/fortune-tiger.png"
-      }
-    ]
-  },
-  {
-    "game_id": "Jackpots Diários",
-    "results": [
-      {
-        "game_name": "Cassino2x JD",
-        "game_description": "Cassino prontinho para te dar vários tipos de premiações",
-        "game_full_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industJD. Lorem Ipsum has been the industJD's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        "game_link": "https://www.jogo.com.br",
-        "game_banner": "https://cdn.jornaldebrasilia.com.br/wp-content/uploads/2022/12/07111802/Captura-de-Tela-2022-12-07-as-11.17.54.png"
-      },
-      {
-        "game_name": "Jackpot Instant Win JD",
-        "game_description": "Jackpot feito para te fazer feliz",
-        "game_full_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industJD. Lorem Ipsum has been the industJD's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
-        "game_link": "https://www.jogo2.com.br",
-        "game_banner": "https://play-lh.googleusercontent.com/S9KRqMO4XrUXAdVjwanKTUzPgzndCpEQP4fmBQ2GMCOUPZkNLx9LWuTcgyYhxcfcd_4"
-      },
-      {
-        "game_name": "Roleta do Tigre JD",
-        "game_description": "Tigre tá pagando muiiito",
-        "game_full_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industJD. Lorem Ipsum has been the industJD's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
-        "game_link": "https://www.jogo3.com.br",
-        "game_banner": "https://s2-techtudo.glbimg.com/NV-5RTOngXtFn3XudPJHkNv_W7E=/0x0:808x526/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/B/W/QdZUZSSfGwB93jjcFFfA/fortune-tiger.png"
-      },
-      {
-        "game_name": "Roleta do Burro JD",
-        "game_description": "Burro tá pagando muiiito",
-        "game_full_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industJD. Lorem Ipsum has been the industJD's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
-        "game_link": "https://www.jogo3.com.br",
-        "game_banner": "https://s2-techtudo.glbimg.com/NV-5RTOngXtFn3XudPJHkNv_W7E=/0x0:808x526/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/B/W/QdZUZSSfGwB93jjcFFfA/fortune-tiger.png"
-      }
-    ]
-  }
+   {
+       "game_id" : "Tendência",
+       "results" :[
+           
+               {
+                  "game_name":"Zodiac",
+                  "game_description":"Zodiac Bingo",
+                  "game_full_description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                  "game_link":"https://api-test.salsagator.com/game?token=7f9d5928053fd92c797299e8d4a0e760&pn=doublex-staging&lang=pt&game=Zodiac&type=FREE",
+                  "game_banner":"https://i.pinimg.com/564x/8c/c9/f6/8cc9f6effb4c5ca7cb444fdadedd46c6.jpg"
+               },
+               {
+                  "game_name":"Flex",
+                  "game_description":"Flex Bingo",
+                  "game_full_description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+                  "game_link":"https://api-test.salsagator.com/game?token=7f9d5928053fd92c797299e8d4a0e760&pn=doublex-staging&lang=pt&game=Flex&type=FREE",
+                  "game_banner":"https://i.pinimg.com/736x/88/22/a1/8822a1b1258772084a6df34afb186039.jpg"
+               },
+               {
+                  "game_name":"Goal",
+                  "game_description":"Goal Bingo",
+                  "game_full_description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+                  "game_link":"https://api-test.salsagator.com/game?token=7f9d5928053fd92c797299e8d4a0e760&pn=doublex-staging&lang=pt&game=Goal&type=FREE",
+                  "game_banner":"https://i.pinimg.com/736x/32/08/c5/3208c509092d0e083523630c6fe8050a.jpg"
+               },
+               {
+                  "game_name":"Pirate",
+                  "game_description":"Pirate Bingo",
+                  "game_full_description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+                  "game_link":"https://www.jogo3.com.br",
+                  "game_banner":"https://i.pinimg.com/564x/f8/ee/44/f8ee44548d392d20bf342446db79287b.jpg"
+               }
+            ]
+       
+   },
+   {
+       "game_id" : "Novos Jogos",
+       "results" :[
+           
+               {
+                  "game_name":"Candy Bingo",
+                  "game_description":"Candy 3D",
+                  "game_full_description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                  "game_link":"https://api-test.salsagator.com/game?token=7f9d5928053fd92c797299e8d4a0e760&pn=doublex-staging&lang=pt&game=Candy3D&type=FREE",
+                  "game_banner":"https://i.pinimg.com/474x/50/6f/18/506f183bb98234c27f13bfc2eba5a337.jpg"
+               },
+               {
+                  "game_name":"Super Hot Bingo",
+                  "game_description":"Super Hot Bingo",
+                  "game_full_description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+                  "game_link":"https://api-test.salsagator.com/game?token=7f9d5928053fd92c797299e8d4a0e760&pn=doublex-staging&lang=pt&game=superHotBingo&type=FREE",
+                  "game_banner":"https://i.pinimg.com/564x/dc/b4/58/dcb458aee884afd19c7284ec38247e70.jpg"
+               },
+               {
+                  "game_name":"Super Pachinko",
+                  "game_description":"Super Pachinko",
+                  "game_full_description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+                  "game_link":"https://api-test.salsagator.com/game?token=7f9d5928053fd92c797299e8d4a0e760&pn=doublex-staging&lang=pt&game=SuperPachinko&type=FREE",
+                  "game_banner":"https://i.pinimg.com/736x/86/a3/4c/86a34c30ef246d15248a3fd0820906af.jpg"
+               },
+               {
+                  "game_name":"Show Ball",
+                  "game_description":"Show Ball",
+                  "game_full_description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+                  "game_link":"https://api-test.salsagator.com/game?token=7f9d5928053fd92c797299e8d4a0e760&pn=doublex-staging&lang=pt&game=ShowBall&type=FREE",
+                  "game_banner":"https://i.pinimg.com/564x/6b/64/a3/6b64a38a44179036fc771dc7b3c88cce.jpg"
+               }
+            ]
+       
+   },
+   {
+       "game_id" : "Recomendados You2",
+       "results" :[
+           
+               {
+                  "game_name":"Farm",
+                  "game_description":"Farm Bingo",
+                  "game_full_description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                  "game_link":"https://api-test.salsagator.com/game?token=7f9d5928053fd92c797299e8d4a0e760&pn=doublex-staging&lang=pt&game=Farm&type=FREE",
+                  "game_banner":"https://i.pinimg.com/564x/04/a8/09/04a8097e64d9e3220571339b8d6d4ebf.jpg"
+               },
+               {
+                  "game_name":"Super Pachinko Plus",
+                  "game_description":"Super Pachinko Plus",
+                  "game_full_description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+                  "game_link":"https://api-test.salsagator.com/game?token=7f9d5928053fd92c797299e8d4a0e760&pn=doublex-staging&lang=pt&game=SuperPachinkoPlus&type=FREE",
+                  "game_banner":"https://i.pinimg.com/736x/65/d6/cd/65d6cdfa3986b3d3a957459eb38b03a9.jpg"
+               },
+               {
+                  "game_name":"Jogo dos Bichos Praia ",
+                  "game_description":"Jogo dos Bichos Praia ",
+                  "game_full_description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+                  "game_link":"https://api-test.salsagator.com/game?token=7f9d5928053fd92c797299e8d4a0e760&pn=doublex-staging&lang=pt&game=JogodosBichosPraia&type=FREE",
+                  "game_banner":"https://i.pinimg.com/564x/f3/e6/75/f3e675d5fec984e558ac312dafa390dc.jpg"
+               },
+               {
+                  "game_name":"Crystal Monster",
+                  "game_description":"Crystal Monster",
+                  "game_full_description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+                  "game_link":"https://api-test.salsagator.com/game?token=7f9d5928053fd92c797299e8d4a0e760&pn=doublex-staging&lang=pt&game=CrystalMonster&type=FREE",
+                  "game_banner":"https://i.pinimg.com/564x/a3/3b/29/a33b296eb4e9b4d7a4e914b90e1f93ed.jpg"
+               }
+            ]
+       
+   },
+   {
+       "game_id" : "Jackpots Diários",
+       "results" :[
+           
+               {
+                  "game_name":"Cucas Swamp",
+                  "game_description":"Cucas Swamp",
+                  "game_full_description":"Lorem Ipsum is simply dummy text of the printing and typesetting industJD. Lorem Ipsum has been the industJD's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                  "game_link":"https://api-test.salsagator.com/game?token=7f9d5928053fd92c797299e8d4a0e760&pn=doublex-staging&lang=pt&game=CucasSwamp&type=FREE",
+                  "game_banner":"https://i.pinimg.com/564x/35/c8/c7/35c8c7527ad209eb66e3e45fcf605fe6.jpg"
+               },
+               {
+                  "game_name":"Melcochita",
+                  "game_description":"Melcochita",
+                  "game_full_description":"Lorem Ipsum is simply dummy text of the printing and typesetting industJD. Lorem Ipsum has been the industJD's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+                  "game_link":"https://api-test.salsagator.com/game?token=7f9d5928053fd92c797299e8d4a0e760&pn=doublex-staging&lang=pt&game=Melcochita&type=FREE",
+                  "game_banner":"https://i.pinimg.com/736x/ea/f6/2e/eaf62e479127343724bf365fc435d003.jpg"
+               },
+               {
+                  "game_name":"Roleta do Tigre JD",
+                  "game_description":"Tigre tá pagando muiiito",
+                  "game_full_description":"Lorem Ipsum is simply dummy text of the printing and typesetting industJD. Lorem Ipsum has been the industJD's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+                  "game_link":"https://www.jogo3.com.br",
+                  "game_banner":"https://s2-techtudo.glbimg.com/NV-5RTOngXtFn3XudPJHkNv_W7E=/0x0:808x526/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/B/W/QdZUZSSfGwB93jjcFFfA/fortune-tiger.png"
+               },
+               {
+                  "game_name":"Roleta do Burro JD",
+                  "game_description":"Burro tá pagando muiiito",
+                  "game_full_description":"Lorem Ipsum is simply dummy text of the printing and typesetting industJD. Lorem Ipsum has been the industJD's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+                  "game_link":"https://www.jogo3.com.br",
+                  "game_banner":"https://s2-techtudo.glbimg.com/NV-5RTOngXtFn3XudPJHkNv_W7E=/0x0:808x526/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/B/W/QdZUZSSfGwB93jjcFFfA/fortune-tiger.png"
+               }
+            ]
+       
+   }
 ]

@@ -1,10 +1,26 @@
 import styles from "../StepLandingPage.module.css";
 import modalitiesGames from "data/modalitiesGames.json";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Aposta } from "../../../pages/Aposta";
 
 export const NewGames = () => {
   const dataNG = modalitiesGames.find((modality) => modality.game_id === "Novos Jogos");
+  const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setViewportWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const isDesktop = viewportWidth >= 200 && viewportWidth <= 767;
 
   return (
     <main className={styles.container}>
@@ -16,7 +32,9 @@ export const NewGames = () => {
           </div>
         </div>
         <div className={styles.divBtn}>
-          <Link to={`/modalities?newgames`} className={styles.button}>Veja tudo</Link>
+          <Link to={`/modalities?newgames`} className={styles.button}>
+            Veja tudo
+          </Link>
         </div>
       </div>
       <div className={styles.content}>
@@ -39,7 +57,18 @@ export const NewGames = () => {
                 </div>
               </div>
               <div className={styles.play}>
-                <div className={styles.btnPlay}>Jogar</div>
+                {isDesktop ? (
+                    <Link to={game?.game_link}  className={styles.btnPlay}>
+                      
+                    <div className={styles.btnPlay}>Jogar</div>
+                   </Link>
+                ) : (
+                  <Link   to={`/aposta?iframeSrc=${encodeURIComponent(game?.game_link)}`}
+                  className={styles.btnPlay}>
+
+                   <div className={styles.btnPlay}>Jogar</div>
+                  </Link>
+                )}
               </div>
             </div>
           ))}

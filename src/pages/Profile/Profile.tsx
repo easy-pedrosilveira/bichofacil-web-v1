@@ -1,14 +1,14 @@
 import styles from "./Profile.module.css";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Account, Receipts, Extract, Settings } from "components";
+import { Account, Withdraw, Extract, Settings } from "components";
 import user from "data/user.json";
 import Credits from "../../assets/images/credits.svg";
 
 export const Profile = () => {
   const profilePanes = [
     { title: "Conta", content: <Account /> },
-    { title: "Comprovantes", content: <Receipts /> },
+    { title: "Saque", content: <Withdraw /> },
     { title: "Extratos", content: <Extract /> },
     { title: "Configurações", content: <Settings /> },
   ];

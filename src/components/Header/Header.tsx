@@ -10,6 +10,7 @@ import Profile from "../../assets/images/profile.svg";
 import Credits from "../../assets/images/credits.svg";
 import { Link } from "react-router-dom";
 
+
 export const Header = () => {
   const { modalLogin, setModalLogin, modalRegister } = useAuthContext();
   const [logado, setLogado] = useState(true);

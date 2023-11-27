@@ -4,6 +4,11 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export const DailyJackpots = () => {
+
+  const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
+
+  const isDesktop = viewportWidth >= 200 && viewportWidth <= 767;
+
   const dataDJ = modalitiesGames?.find(
     (modality) => modality?.game_id === "Jackpots Diários"
   );
@@ -42,7 +47,16 @@ export const DailyJackpots = () => {
                 </div>
               </div>
               <div className={styles.play}>
-                <div className={styles.btnPlay}>Jogar</div>
+                {isDesktop ? (
+                    <Link to={game?.game_link} className={styles.btnPlay}>
+                    <div className={styles.btnPlay}>Jogar</div>
+                    </Link>
+                ) : (
+                  <Link to={`/aposta?iframeSrc=${encodeURIComponent(game?.game_link)}`}className={styles.btnPlay}>
+                  <div className={styles.btnPlay}> Jogar</div>
+                  </Link>
+               
+                )}
               </div>
             </div>
           ))}
