@@ -11,7 +11,7 @@ export const AddCard = ({ isOpen }: ModalProps) => {
   const [typeCard, setTypeCard] = useState<string>("");
 
   const handleClick = (value: string) => {
-    setNextStep(!nextStep)
+    setNextStep(!nextStep);
     if (value === "pix") {
       setTypeCard(value);
     } else if (value === "creditCard") {
@@ -44,8 +44,8 @@ export const AddCard = ({ isOpen }: ModalProps) => {
               </div>
             </>
           ) : (
-            <div>
-              <RegisterCard isOpen={handleClick} typeCard={typeCard} />
+            <div className={styles.contentCards} style={{ width: "100%", height: "100%" }}>
+              <RegisterCard typeCard={typeCard} />
             </div>
           )}
         </div>

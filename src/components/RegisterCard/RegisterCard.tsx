@@ -1,15 +1,16 @@
-import React from 'react'
+import { AddCreditcard, AddPix } from "components";
+import React from "react";
+import styles from "./RegisterCard.module.css";
 
-interface RegisterCardProps{
-    isOpen:(value:string) => void;
-    typeCard: string;
+interface RegisterCardProps {
+  typeCard: string;
 }
 
-export const RegisterCard = ({isOpen, typeCard} : RegisterCardProps) => {
+export const RegisterCard = ({ typeCard }: RegisterCardProps) => {
   return (
-    <div>
-        
-    </div>
-    
-  )
-}
+      <div className={styles.content}>
+        {" "}
+        {typeCard === "pix" ? <AddPix /> : <AddCreditcard />}{" "}
+      </div>
+  );
+};

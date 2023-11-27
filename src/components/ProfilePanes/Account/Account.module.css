@@ -106,6 +106,19 @@
 
 @media (min-width: 200px) {
   @media (max-width: 500px) {
+    .account{
+      flex-direction: column-reverse;
+      width: 80%;
+      padding: 5%;
+    }
+    .left{
+      width: 90%;
+    }
+    .right{
+      flex-direction: row;
+      width: 100%;
+      padding: 5% 0;
+    }
     .add{
       justify-content: center;
     }

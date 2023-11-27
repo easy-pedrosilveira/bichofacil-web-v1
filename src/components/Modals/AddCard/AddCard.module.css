@@ -14,7 +14,8 @@
 
 .modal {
   width: 450px;
-  height: 550px;
+  min-height: 550px;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,7 +60,9 @@
     height: 100%;
     flex-direction: column;
     justify-content: space-evenly;
-    
+    width: 100%;
+    align-items: center;
+    transition: 200ms all;
 }
 
 .input{
@@ -71,6 +74,7 @@
     cursor: pointer;
     font-weight: 800;
     transition: 200ms all;
+    width: 50%;
 }
 
 .input:hover{
@@ -82,3 +86,15 @@
     background: #524DF5;
     box-shadow: -2px -5px 1px 0px rgba(0, 0, 0, 0.25) inset;
 }
+
+@media (min-width: 200px) {
+    @media (max-width: 500px) {
+        .modal{
+            height: 600px;
+        }
+        .contentCards{
+            display: flex;
+            align-items: center;
+        }
+    }
+  }
