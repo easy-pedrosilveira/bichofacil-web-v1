@@ -1,21 +1,25 @@
 import { apiAuth } from "providers";
-import styles from "./DeleteModal.module.css";
+import styles from "./DeletePaymentMethod.module.css";
 
 interface DeleteModalProps {
   onModalChange: (value: boolean) => void;
+  props: any;
 }
 
-export const DeleteModal = ({ onModalChange }: DeleteModalProps) => {
-  const deleteAccount = () => {
+export const DeletePaymentMethod = ({
+  onModalChange,
+  props,
+}: DeleteModalProps) => {
+  const deleteMethod = () => {
     apiAuth
-      .post("/disable", {
+      .post("/disable-method", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       })
       .then((response) => {
         if (response.status === 200) {
-          console.log("Usuário excluído!");
+          console.log("Cartão excluído!");
         } else {
           console.error("Houve algum erro!");
         }
@@ -37,10 +41,15 @@ export const DeleteModal = ({ onModalChange }: DeleteModalProps) => {
       }}
     >
       <div className={styles.modal}>
-        <div className={styles.title}>Excluir Conta</div>
+        <div className={styles.title}>
+          {props?.type === "PIX" ? "Excluir chave" : "Excluir cartão"}
+        </div>
+        <div className={styles.subTitle}>
+          {props?.type === "PIX" ? props?.number : props?.name}
+        </div>
         <div className={styles.paragraph}>
-          Tem certeza de que deseja excluir permanentemente sua conta? Esta ação
-          não pode ser desfeita.
+          Tem certeza de que deseja excluir permanentemente esse método de
+          pagamento? Esta ação não pode ser desfeita.
         </div>
         <div className={styles.btns}>
           <div
@@ -49,7 +58,7 @@ export const DeleteModal = ({ onModalChange }: DeleteModalProps) => {
           >
             Cancelar
           </div>
-          <div className={styles.btnConfirm} onClick={deleteAccount}>
+          <div className={styles.btnConfirm} onClick={deleteMethod}>
             Confirmar
           </div>
         </div>

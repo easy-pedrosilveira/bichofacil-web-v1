@@ -21,7 +21,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10%;
+    gap: 5%;
     border-radius: 10px;
     background: #fff;
     color: gray;
@@ -32,6 +32,10 @@
     width: 100%;
     text-align: center;
     font-size: 24px;
+    font-weight: 600;
+}
+
+.subTitle{
     font-weight: 600;
 }
 

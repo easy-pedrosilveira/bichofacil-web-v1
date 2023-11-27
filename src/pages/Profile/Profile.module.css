@@ -105,3 +105,15 @@
     padding: 3.5vh 0vw;
     height: auto;
 }
+
+@media (min-width: 200px) {
+    @media (max-width: 500px) {
+     .selectPanes{
+        flex-direction: column;
+        height: auto;
+        padding: 5%;
+        align-items: center;
+        gap: 10px;
+     }
+    }
+  }

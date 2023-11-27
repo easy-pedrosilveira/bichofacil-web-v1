@@ -2,16 +2,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  gap: 5vh;
 }
 
 .account {
   border-radius: 5px;
   border: 2px solid;
-  border-image: linear-gradient(
-    to right,
-    #524df5,
-    #9A1AFF
-  );
+  border-image: linear-gradient(to right,
+      #524df5,
+      #9A1AFF);
   border-image-slice: 1;
   width: 70%;
   height: auto;
@@ -35,6 +35,7 @@
   font-weight: 600;
   padding-left: 10px;
 }
+
 .info {
   padding: 2%;
   border-radius: 5px;
@@ -50,15 +51,83 @@
   justify-content: space-between;
 }
 
-.edit{
-    display: flex;
-    gap: 5px;
+.edit {
+  display: flex;
+  gap: 5px;
 }
 
-.editBtn{
-    width: 25px;
-    height: 25px;
-    background-image: url('../../../assets/images/mdi_edit.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
+.editBtn {
+  width: 25px;
+  height: 25px;
+  background-image: url('../../../assets/images/mdi_edit.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.payment {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.add{
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 0;
+}
+
+.add button {
+  width: 150px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 5px;
+  background: #524DF5;
+  box-shadow: -2px -5px 4px 0px rgba(0, 0, 0, 0.25) inset;
+  border: none;
+  color: #fff;
+}
+
+.contentPayemnt {
+  width: 100%;
+}
+
+.cards {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 3vw 0 0;
+}
+
+@media (min-width: 200px) {
+  @media (max-width: 500px) {
+    .account{
+      flex-direction: column-reverse;
+      width: 80%;
+      padding: 5%;
+    }
+    .left{
+      width: 90%;
+    }
+    .right{
+      flex-direction: row;
+      width: 100%;
+      padding: 5% 0;
+    }
+    .add{
+      justify-content: center;
+    }
+    .payment {
+      gap: 20px;
+    }
+
+    .payment h1 {
+      text-align: center;
+    }
+  }
 }
