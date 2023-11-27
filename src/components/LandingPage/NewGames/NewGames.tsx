@@ -60,11 +60,14 @@ export const NewGames = () => {
               <div className={styles.play}>
                 {isDesktop ? (
                     <Link to={game?.game_link}  className={styles.btnPlay}>
+                      
                     <div className={styles.btnPlay}>Jogar</div>
                    </Link>
                 ) : (
-                  <Link to={`aposta/${game?.game_link}`}  className={styles.btnPlay}>
-                  <div className={styles.btnPlay}>Jogar</div>
+                  <Link   to={`/aposta?iframeSrc=${encodeURIComponent(game?.game_link)}`}
+                  className={styles.btnPlay}>
+
+                   <div className={styles.btnPlay}>Jogar</div>
                   </Link>
                 )}
               </div>

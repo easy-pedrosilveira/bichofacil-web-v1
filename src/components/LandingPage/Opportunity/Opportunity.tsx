@@ -52,7 +52,7 @@ export const Opportunity = () => {
                     <div className={styles.btnPlay}>Jogar</div>
                     </Link>
                 ) : (
-                  <Link to={`Aposta`}  className={styles.btnPlay}>
+                  <Link to={`/aposta?iframeSrc=${encodeURIComponent(game?.game_link)}`} className={styles.btnPlay}>
                   <div className={styles.btnPlay}> Jogar</div>
                   </Link>
                
