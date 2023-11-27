@@ -5,8 +5,10 @@ import { Link } from "react-router-dom";
 
 export const You2Recommendations = () => {
   const dataRY = modalitiesGames.find((modality) => modality.game_id === "RY");
-
+  const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
+  const isDesktop = viewportWidth >= 200 && viewportWidth <= 767;
   return (
+    
     <main className={styles.containerGradient}>
       <div className={styles.introduction}>
         <div className={styles.texts}>
@@ -22,7 +24,7 @@ export const You2Recommendations = () => {
       </div>
       <div className={styles.content}>
         {dataRY &&
-          dataRY.results[0].map((game, index) => (
+          dataRY.results.map((game, index) => (
             <div className={styles.cardGame} key={index}>
               <div
                 className={styles.gameContent}
@@ -40,9 +42,16 @@ export const You2Recommendations = () => {
                 </div>
               </div>
               <div className={styles.play}>
-                <Link to="" className={styles.btnPlay}>
-                  Jogar
-                </Link>
+                {isDesktop ? (
+                    <Link to={game?.game_link} className={styles.btnPlay} >
+                    <div className={styles.btnPlay}>Jogar</div>
+                    </Link>
+                ) : (
+                  <Link to={`/aposta?iframeSrc=${encodeURIComponent(game?.game_link)}`} className={styles.btnPlay}>
+                  <div className={styles.btnPlay}> Jogar</div>
+                  </Link>
+               
+                )}
               </div>
             </div>
           ))}

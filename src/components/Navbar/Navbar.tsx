@@ -1,23 +1,65 @@
 import styles from "./Navbar.module.css";
 import { useState } from "react";
-import ToggleArrow from "../../assets/images/toggle-arrow.svg";
-import Credits from "../../assets/images/credits.svg";
-import GamesIcon from "../../assets/images/games.svg";
-import GamesSelected from "../../assets/images/games-selected.svg";
-import HelpIcon from "../../assets/images/help.svg";
-import HelpSelected from "../../assets/images/help-selected.svg";
-import ExitIcon from "../../assets/images/exit.svg";
-import ExitSelected from "../../assets/images/exit.svg";
 import { Link } from "react-router-dom";
+import { Notifications, BuyCredits } from "components";
+import user from "data/user.json";
+import Profile from "../../assets/images/profile.svg";
+import Credits from "../../assets/images/credits.svg";
+import Home from "../../assets/images/home.svg";
+import HomeSelected from "../../assets/images/home-selected.svg";
+import Games from "../../assets/images/games.svg";
+import GamesSelected from "../../assets/images/games-selected.svg";
+import Help from "../../assets/images/help.svg";
+import Bell from "../../assets/images/bell.svg";
+import Opportunity from "../../assets/images/opportunity.svg";
+import OpportunitySelected from "../../assets/images/opportunity-selected.svg";
+import Recommendations from "../../assets/images/recommendations.svg";
+import RecommendationsSelected from "../../assets/images/recommendations-selected.svg";
+import JackPots from "../../assets/images/jackpot.svg";
+import JackPotsSelected from "../../assets/images/jackpot-selected.svg";
+import Logout from "../../assets/images/logout.svg";
 
-interface NavBarProps {
-  onNavBarChange: (isOpen: boolean) => void;
+interface NavbarProps {
+  onNavChange: (isOpen: boolean) => void;
 }
 
-export const Navbar = ({ onNavBarChange }: NavBarProps) => {
-  const [expanded, setExpanded] = useState(false);
-  const [activeIcon, setActiveIcon] = useState("Games");
+export const Navbar = ({ onNavChange }: NavbarProps) => {
+  const [activeIcon, setActiveIcon] = useState("Inicio");
   const [buyCredits, setBuyCredits] = useState(false);
+  const [notifications, setNotifications] = useState(false);
+
+  const menuSections = [
+    {
+      name: "Inicio",
+      path: "/",
+      icon: Home,
+      selectedIcon: HomeSelected,
+    },
+    {
+      name: "Tendencias",
+      path: "/modalities?opportunity",
+      icon: Opportunity,
+      selectedIcon: OpportunitySelected,
+    },
+    {
+      name: "Recomendacoes",
+      path: "/modalities?recommendations",
+      icon: Recommendations,
+      selectedIcon: RecommendationsSelected,
+    },
+    {
+      name: "Jackpots",
+      path: "/modalities?jackpots",
+      icon: JackPots,
+      selectedIcon: JackPotsSelected,
+    },
+    {
+      name: "Novos Jogos",
+      path: "/modalities?newgames",
+      icon: Games,
+      selectedIcon: GamesSelected,
+    },
+  ];
 
   const handleActiveIcon = (iconName: string) => {
     setActiveIcon(iconName);
@@ -25,135 +67,84 @@ export const Navbar = ({ onNavBarChange }: NavBarProps) => {
 
   const toggleBuyCredits = () => {
     setBuyCredits(!buyCredits);
+    onNavChange(false);
+  };
+
+  const toggleNotifications = () => {
+    setNotifications(!notifications);
+    onNavChange(false);
   };
 
   return (
-    <main
-      className={`${expanded === true ? styles.expanded : styles.invisible}`}
-    >Pode aparecer</main>
+    <>
+      <main className={styles.nav}>
+        <div className={styles.profile}>
+          <div className={styles.picture}>
+            <img src={Profile} alt="" />
+          </div>
+          <div className={styles.txt}>
+            <div className={styles.hi}>Olá</div>
+            <div className={styles.userName}>{user?.first_name}</div>
+          </div>
+        </div>
+        <div className={styles.itemsUser}>
+          <div className={styles.noti}>
+            <img src={Bell} alt="bell" onClick={toggleNotifications} />
+          </div>
+          <Link to="/faq" className={styles.help}>
+            <img src={Help} alt="help" />
+          </Link>
+          <div className={styles.credits} onClick={toggleBuyCredits}>
+            <img src={Credits} alt="buy credits" />
+          </div>
+        </div>
+        <div className={styles.links}>
+          {menuSections.map((link, index) => (
+            <Link
+              to={link.path}
+              className={`${styles.default} ${
+                activeIcon === link.name ? styles.selected : ""
+              }`}
+              key={index}
+              onClick={() => {
+                handleActiveIcon(link.name);
+                onNavChange(false);
+              }}
+            >
+              <div className={styles.icon}>
+                <img
+                  src={activeIcon === link.name ? link.selectedIcon : link.icon}
+                  alt=""
+                />
+              </div>
+              <div
+                className={
+                  activeIcon === link.name ? styles.titleSelected : styles.title
+                }
+              >
+                {link.name}
+              </div>
+            </Link>
+          ))}
+        </div>
+        <div className={styles.logout}>
+          <div className={styles.default}>
+            <div className={styles.icon}>
+              <img src={Logout} alt="" />
+            </div>
+            <div
+              className={styles.title}
+              style={{ color: "#302E3F", fontWeight: "600" }}
+            >
+              Sair
+            </div>
+          </div>
+        </div>
+      </main>
+      {notifications ? (
+        <Notifications onModalChange={toggleNotifications} />
+      ) : null}
+      {buyCredits ? <BuyCredits onModalChange={toggleBuyCredits} /> : null}
+    </>
   );
 };
-{
-  /*
-    <nav
-      className={`${styles.nav} ${expanded === true ? styles.expanded : null}`}
-    >
-      <div className={styles.toggle} onClick={toggleSidebar}></div>
-      <div className={styles.profile}>
-        <div className={styles.person}>
-          <img src="" alt="" />
-        </div>
-        {expanded ? (
-          <div className={styles.userInfo}>
-            <div className={styles.userTag}>Apostador Nato</div>
-            <div className={styles.userName}>Lucas Gabriel</div>
-          </div>
-        ) : null}
-      </div>
-      <div className={styles.divisor} />
-      <div className={styles.navigation}>
-        <div
-          className={`${styles.credits} ${
-            expanded === true ? styles.activeIcon : null
-          }`}
-          onClick={toggleBuyCredits}
-        >
-          <img className={styles.img} src={Credits} alt="Comprar Creditos" />
-          {expanded ? (
-            <div className={styles.textSelected}>Comprar Creditos</div>
-          ) : null}
-        </div>
-        <Link
-          to="/"
-          className={`${styles.icons} ${
-            expanded === true ? styles.activeIcon : null
-          }`}
-          onClick={() => handleActiveIcon("Games")}
-        >
-          <img
-            className={styles.img}
-            src={activeIcon === "Games" ? GamesSelected : GamesIcon}
-            alt=""
-          />
-          {activeIcon && expanded ? (
-            <div
-              className={`${
-                activeIcon === "Games" ? styles.textSelected : styles.text
-              }`}
-            >
-              Games
-            </div>
-          ) : null}
-        </Link>
-        <Link
-          to="/"
-          className={`${styles.icons} ${expanded ? styles.activeIcon : null}`}
-          onClick={() => handleActiveIcon("Help")}
-        >
-          <img
-            className={styles.img}
-            src={activeIcon === "Help" ? HelpSelected : HelpIcon}
-            alt=""
-          />
-          {activeIcon && expanded ? (
-            <div
-              className={`${
-                activeIcon === "Help" ? styles.textSelected : styles.text
-              }`}
-            >
-              Ajuda
-            </div>
-          ) : null}
-        </Link>
-        <Link
-          to="/"
-          className={`${styles.icons} ${expanded ? styles.activeIcon : null}`}
-          onClick={() => handleActiveIcon("Link2")}
-        >
-          <img
-            className={styles.img}
-            src={activeIcon === "Link2" ? HelpSelected : HelpIcon}
-            alt=""
-          />
-          {activeIcon && expanded ? (
-            <div
-              className={`${
-                activeIcon === "Link2" ? styles.textSelected : styles.text
-              }`}
-            >
-              Ajuda
-            </div>
-          ) : null}
-        </Link>
-        <Link
-          to="/"
-          className={`${styles.icons} ${expanded ? styles.activeIcon : null}`}
-          onClick={() => handleActiveIcon("Link3")}
-        >
-          <img
-            className={styles.img}
-            src={activeIcon === "Link3" ? HelpSelected : HelpIcon}
-            alt=""
-          />
-          {activeIcon && expanded ? (
-            <div
-              className={`${
-                activeIcon === "Link3" ? styles.textSelected : styles.text
-              }`}
-            >
-              Ajuda
-            </div>
-          ) : null}
-        </Link>
-      </div>
-      <div className={styles.divisor}></div>
-      <div className={styles.exit}>
-        <div className={`${styles.icons} ${expanded ? styles.activeIcon : ""}`}>
-          <img src={ExitIcon} alt="" />
-          {expanded ? <div className={styles.text}>Sair</div> : null}
-        </div>
-      </div>
-      {buyCredits === true ? <></> : null}
-    </nav>
-*/
-}
