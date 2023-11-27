@@ -2,7 +2,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Home, Faq, Policy, Terms, Profile, Modalities, Sobre, Aposta } from "pages";
 import { Header, Error, Footer, CreditsIcon } from "components";
 
-
 export const Rotas = () => {
   return (
     <>

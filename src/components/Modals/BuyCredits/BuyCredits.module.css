@@ -37,6 +37,7 @@
     flex-direction: column;
     gap: 15px;
 }
+
 .title {
     font-size: 17px;
     font-weight: 600;
@@ -44,6 +45,7 @@
 
 .selectValue {
     height: auto;
+    gap: 20px;
 }
 
 .subTitle {
@@ -56,24 +58,27 @@
 .values {
     width: 100%;
     display: flex;
-    justify-content: center;
-    gap: 5vw;
+    gap: 1.5vw;
     overflow-x: scroll;
 }
 
 .coin {
-    min-width: 90px;
-    min-height: 90px;
+    min-width: 75px;
+    min-height: 75px;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: auto;
     cursor: pointer;
     background-image: url('../../../assets/images/coins-credits.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+}
+
+.value {
     font-weight: 600;
-    font-size: 17px;
+    font-size: 15px;
     color: #000;
 }
 

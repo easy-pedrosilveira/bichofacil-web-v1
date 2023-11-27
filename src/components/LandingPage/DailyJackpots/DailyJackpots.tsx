@@ -10,7 +10,7 @@ export const DailyJackpots = () => {
   const isDesktop = viewportWidth >= 200 && viewportWidth <= 767;
 
   const dataDJ = modalitiesGames?.find(
-    (modality) => modality?.game_id === "JD"
+    (modality) => modality?.game_id === "Jackpots Diários"
   );
 
   return (

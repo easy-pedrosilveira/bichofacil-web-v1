@@ -142,9 +142,8 @@
     box-shadow: -2px -5px 4px 0px rgba(0, 0, 0, 0.25) inset;
 }
 
-
 @media (min-width: 200px) {
-    @media (max-width: 500px) {
+    @media (max-width: 600px) {
         .innerHeader {
             width: 90%;
         }

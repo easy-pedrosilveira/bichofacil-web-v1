@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export const You2Recommendations = () => {
-  const dataRY = modalitiesGames.find((modality) => modality.game_id === "RY");
+  const dataRY = modalitiesGames.find((modality) => modality.game_id === "Recomendados You2");
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
   const isDesktop = viewportWidth >= 200 && viewportWidth <= 767;
   return (

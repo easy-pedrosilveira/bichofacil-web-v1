@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Aposta } from "../../../pages/Aposta";
 
 export const NewGames = () => {
+  const dataNG = modalitiesGames.find((modality) => modality.game_id === "Novos Jogos");
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -18,8 +19,6 @@ export const NewGames = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
-  const dataNG = modalitiesGames.find((modality) => modality.game_id === "NG");
 
   const isDesktop = viewportWidth >= 200 && viewportWidth <= 767;
 
