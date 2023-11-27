@@ -141,8 +141,8 @@ export const BuyCredits = ({ onModalChange }: ModalProps) => {
           </div>
         </motion.li>
       </motion.ul>
-      {pixModal === true ? <PixPayment /> : null}
-      {ticketModal === true ? <TicketPayment /> : null}
+      {pixModal === true ? <PixPayment onModalChange={toggleModalPix}/> : null}
+      {ticketModal === true ? <TicketPayment onModalChange={toggleModalTicket}/> : null}
     </>
   );
 };

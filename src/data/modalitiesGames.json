@@ -1,6 +1,6 @@
 [
    {
-       "game_id" : "TD",
+       "game_id" : "Tendência",
        "results" :[
            
                {
@@ -35,7 +35,7 @@
        
    },
    {
-       "game_id" : "NG",
+       "game_id" : "Novos Jogos",
        "results" :[
            
                {
@@ -70,7 +70,7 @@
        
    },
    {
-       "game_id" : "RY",
+       "game_id" : "Recomendados You2",
        "results" :[
            
                {
@@ -105,7 +105,7 @@
        
    },
    {
-       "game_id" : "JD",
+       "game_id" : "Jackpots Diários",
        "results" :[
            
                {

@@ -79,9 +79,13 @@ export const Navbar = ({ onNavChange }: NavbarProps) => {
     <>
       <main className={styles.nav}>
         <div className={styles.profile}>
-          <div className={styles.picture}>
+          <Link
+            to="/profile"
+            className={styles.picture}
+            onClick={(e) => onNavChange(false)}
+          >
             <img src={Profile} alt="" />
-          </div>
+          </Link>
           <div className={styles.txt}>
             <div className={styles.hi}>Olá</div>
             <div className={styles.userName}>{user?.first_name}</div>
@@ -101,28 +105,32 @@ export const Navbar = ({ onNavChange }: NavbarProps) => {
         <div className={styles.links}>
           {menuSections.map((link, index) => (
             <Link
-              to={link.path}
+              to={link?.path}
               className={`${styles.default} ${
-                activeIcon === link.name ? styles.selected : ""
+                activeIcon === link?.name ? styles.selected : ""
               }`}
               key={index}
               onClick={() => {
-                handleActiveIcon(link.name);
+                handleActiveIcon(link?.name);
                 onNavChange(false);
               }}
             >
               <div className={styles.icon}>
                 <img
-                  src={activeIcon === link.name ? link.selectedIcon : link.icon}
+                  src={
+                    activeIcon === link?.name ? link?.selectedIcon : link?.icon
+                  }
                   alt=""
                 />
               </div>
               <div
                 className={
-                  activeIcon === link.name ? styles.titleSelected : styles.title
+                  activeIcon === link?.name
+                    ? styles.titleSelected
+                    : styles.title
                 }
               >
-                {link.name}
+                {link?.name}
               </div>
             </Link>
           ))}

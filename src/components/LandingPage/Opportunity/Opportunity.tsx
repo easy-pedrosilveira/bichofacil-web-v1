@@ -5,12 +5,9 @@ import { Link } from "react-router-dom";
 import { Aposta } from "../../../pages/Aposta";
 
 export const Opportunity = () => {
+  const dataTD = modalitiesGames.find((modality) => modality.game_id === "Tendência");
 
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
-  
-  
-  const dataTD = modalitiesGames.find((modality) => modality.game_id === "TD");
-
   const isDesktop = viewportWidth >= 200 && viewportWidth <= 767;
   
   return (
