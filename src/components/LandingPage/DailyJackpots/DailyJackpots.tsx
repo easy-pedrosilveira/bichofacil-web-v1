@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export const DailyJackpots = () => {
   const dataDJ = modalitiesGames?.find(
-    (modality) => modality?.game_id === "JD"
+    (modality) => modality?.game_id === "Jackpots Diários"
   );
 
   return (

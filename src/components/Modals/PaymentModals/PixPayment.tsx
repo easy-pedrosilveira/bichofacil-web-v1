@@ -6,7 +6,7 @@ interface ModalProps {
   onModalChange: (isOpen: boolean) => void;
 }
 
-export const PixPayment = () => {
+export const PixPayment = ({ onModalChange }: ModalProps) => {
   // const { user, DecryptPass } = useAuthContext()
   // const { value, setReturnPix } = useBuyCreditsContext()
   // const { returnPix } = useBuyCreditsContext()
@@ -107,7 +107,12 @@ export const PixPayment = () => {
           <div className={styles.btnCopy} onClick={(e) => copyToClipboard(e)}>
             Copiar Código PIX
           </div>
-          <div className={styles.finalization}>Finalizar</div>
+          <div
+            className={styles.finalization}
+            onClick={(e) => onModalChange(false)}
+          >
+            Finalizar
+          </div>
         </div>
       </div>
     </main>

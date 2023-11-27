@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export const Opportunity = () => {
-  const dataTD = modalitiesGames.find((modality) => modality.game_id === "TD");
+  const dataTD = modalitiesGames.find((modality) => modality.game_id === "Tendência");
   
   return (
     <main className={styles.containerGradient}>

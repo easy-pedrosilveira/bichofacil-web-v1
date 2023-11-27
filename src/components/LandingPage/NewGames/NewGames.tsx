@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export const NewGames = () => {
-  const dataNG = modalitiesGames.find((modality) => modality.game_id === "NG");
+  const dataNG = modalitiesGames.find((modality) => modality.game_id === "Novos Jogos");
 
   return (
     <main className={styles.container}>

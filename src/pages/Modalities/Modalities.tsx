@@ -26,7 +26,7 @@ export const Modalities = () => {
 
   useEffect(() => {
     getUrl(key);
-  }, [gameId]);
+  }, [gameId, key]);
 
   const getUrl = (key: string) => {
     let filteredData: GamesProps[] = [];
@@ -61,7 +61,7 @@ export const Modalities = () => {
             <div className={styles.title}>{modality?.game_id}</div>
           </div>
           <div className={styles.modalities}>
-            {modality.results.map((result, index) => (
+            {modality?.results.map((result, index) => (
               <div className={styles.cardGame} key={index}>
                 <div
                   className={styles.gameContent}
