@@ -4,7 +4,7 @@
     "content": "Parabéns por realizar seu primeiro cadastro! Como recompensa, você ganhou 50 pontos de CashBack.",
     "type": "Points",
     "cashBack": 50,
-    "value": 0,
+    "xp": 100,
     "new": true,
     "seen": false
   },
@@ -13,7 +13,7 @@
     "content": "Parabéns pela sua primeira vitória no jogo! Você recebeu 10 pontos e 10 créditos como reconhecimento pelo seu sucesso.",
     "type": "Points & Credits",
     "cashBack": 10,
-    "value": 10.0,
+    "xp": 70,
     "new": true,
     "seen": false
   },
@@ -22,7 +22,7 @@
     "content": "Parabéns pelo seu primeiro depósito! Como agradecimento, você recebeu 25 pontos de CashBack para impulsionar sua jornada.",
     "type": "Points",
     "cashBack": 25,
-    "value": 0,
+    "xp": 140,
     "new": true,
     "seen": false
   },
@@ -31,7 +31,7 @@
     "content": "Você alcançou um incrível marco de 50 dias consecutivos conectado! Como reconhecimento, adicionamos 30 pontos à sua conta.",
     "type": "Points",
     "cashBack": 30,
-    "value": 0,
+    "xp": 200,
     "new": true,
     "seen": false
   },
@@ -40,7 +40,7 @@
     "content": "Parabéns pelo seu status de 'Rei do Shopping'! Seus gastos ultrapassaram 1000 reais, e como agradecimento, você ganhou 50 pontos de CashBack.",
     "type": "Points",
     "cashBack": 50,
-    "value": 0,
+    "xp": 300,
     "new": true,
     "seen": false
   }

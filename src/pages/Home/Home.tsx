@@ -10,7 +10,8 @@ import {
 import { useState } from "react";
 
 export const Home = () => {
-  const [bonus, setBonus] = useState(false);
+  const [bonus, setBonus] = useState(true);
+
   return (
     <>
       <ControlPromotional />
@@ -19,7 +20,7 @@ export const Home = () => {
       <You2Recommendations />
       <DailyJackpots />
       <GameProviders />
-      <BonusModal />
+      {bonus ? <BonusModal onModalChange={setBonus}/> : null}
     </>
   );
 };
