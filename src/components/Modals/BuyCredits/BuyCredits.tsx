@@ -1,8 +1,9 @@
 import styles from "./BuyCredits.module.css";
 import { useEffect, useState } from "react";
-import Pix from "../../../assets/images/Pix.svg";
-import Boleto from "../../../assets/images/Barcode.svg";
-import Arrow from "../../../assets/images/Angle-double-right.svg";
+import Pix from "assets/images/Pix.svg";
+import Boleto from "assets/images/Barcode.svg";
+import Arrow from "assets/images/Angle-double-right.svg";
+import Close from "assets/images/close.svg";
 import { PixPayment, TicketPayment } from "components";
 import { motion } from "framer-motion";
 
@@ -89,6 +90,9 @@ export const BuyCredits = ({ onModalChange }: ModalProps) => {
         }}
       >
         <motion.li className={styles.modal} variants={item}>
+          <div className={styles.close}>
+            <img src={Close} alt="X" onClick={(e) => onModalChange(false)} />
+          </div>
           <div className={styles.header}>
             <div className={styles.title}>Depósito</div>
           </div>
@@ -141,8 +145,10 @@ export const BuyCredits = ({ onModalChange }: ModalProps) => {
           </div>
         </motion.li>
       </motion.ul>
-      {pixModal === true ? <PixPayment onModalChange={toggleModalPix}/> : null}
-      {ticketModal === true ? <TicketPayment onModalChange={toggleModalTicket}/> : null}
+      {pixModal === true ? <PixPayment onModalChange={toggleModalPix} /> : null}
+      {ticketModal === true ? (
+        <TicketPayment onModalChange={toggleModalTicket} />
+      ) : null}
     </>
   );
 };

@@ -52,7 +52,7 @@ export const DailyJackpots = () => {
                     <div className={styles.btnPlay}>Jogar</div>
                     </Link>
                 ) : (
-                  <Link to={`/aposta?iframeSrc=${encodeURIComponent(game?.game_link)}`}className={styles.btnPlay}>
+                  <Link to={`/games?iframeSrc=${encodeURIComponent(game?.game_link)}`}className={styles.btnPlay}>
                   <div className={styles.btnPlay}> Jogar</div>
                   </Link>
                
