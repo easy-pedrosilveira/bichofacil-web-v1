@@ -1,6 +1,6 @@
 import styles from "../StepLandingPage.module.css";
 import modalitiesGames from "data/modalitiesGames.json";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export const You2Recommendations = () => {
@@ -9,6 +9,25 @@ export const You2Recommendations = () => {
   );
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
   const isDesktop = viewportWidth >= 200 && viewportWidth <= 767;
+
+  useEffect(() => {
+    const handleResize = () => {
+      setViewportWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <main className={styles.containerGradient}>
       <div className={styles.introduction}>
@@ -46,7 +65,11 @@ export const You2Recommendations = () => {
               </div>
               <div className={styles.play}>
                 {isDesktop ? (
-                  <Link to={game?.game_link} className={styles.btnPlay}>
+                  <Link
+                    to={game?.game_link}
+                    className={styles.btnPlay}
+                    onClick={scrollToTop}
+                  >
                     <div className={styles.btnPlay}>Jogar</div>
                   </Link>
                 ) : (
@@ -56,7 +79,9 @@ export const You2Recommendations = () => {
                     )}`}
                     className={styles.btnPlay}
                   >
-                    <div className={styles.btnPlay}> Jogar</div>
+                    <div className={styles.btnPlay} onClick={scrollToTop}>
+                      Jogar
+                    </div>
                   </Link>
                 )}
               </div>
