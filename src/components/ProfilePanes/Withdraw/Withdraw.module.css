@@ -1,0 +1,35 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5vh;
+}
+
+.introduction {
+    width: 95%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3vw;
+}
+
+.introduction button {
+    background-color: white;
+    border: none;
+    width: 150px;
+    height: 45px;
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: 100ms all;
+    color: #000;
+    cursor: pointer;
+}
+
+.content{
+    width: 95%;
+    height: auto;
+}

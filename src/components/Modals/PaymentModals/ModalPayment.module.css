@@ -81,3 +81,13 @@
 .finalization{
     background: #524DF5;
 }
+
+@media (min-width: 200px) {
+    @media (max-width: 350px) {
+
+        .modal {
+            width: 95%;
+            height: 500px;
+        }
+    }
+}
