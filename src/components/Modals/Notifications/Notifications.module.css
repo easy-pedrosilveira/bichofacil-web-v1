@@ -142,3 +142,13 @@
     background: #fff;
     border-radius: 0px 0px 12px 12px;
 }
+
+@media (min-width: 200px) {
+    @media (max-width: 350px) {
+
+        .modal {
+            width: 95%;
+            height: auto;
+        }
+    }
+}
