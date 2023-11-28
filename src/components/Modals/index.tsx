@@ -6,3 +6,4 @@ export * from './DeleteModal';
 export * from './DeletePaymentMethod';
 export * from './AddCard';
 export * from './PaymentModals';
+export * from './BonusModal';

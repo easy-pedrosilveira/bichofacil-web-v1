@@ -5,9 +5,12 @@ import {
   You2Recommendations,
   DailyJackpots,
   GameProviders,
+  BonusModal,
 } from "components";
+import { useState } from "react";
 
 export const Home = () => {
+  const [bonus, setBonus] = useState(false);
   return (
     <>
       <ControlPromotional />
@@ -16,6 +19,7 @@ export const Home = () => {
       <You2Recommendations />
       <DailyJackpots />
       <GameProviders />
+      <BonusModal />
     </>
   );
 };

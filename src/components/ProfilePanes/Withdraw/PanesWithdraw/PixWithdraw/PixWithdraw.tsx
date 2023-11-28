@@ -1,27 +1,9 @@
-import styles from "./PanesWithdraw.module.css";
+import styles from "./PixWithdraw.module.css";
 
-export const DepositWithdraw = () => {
+export const PixWithdraw = () => {
   return (
     <div className={styles.form}>
       <div className={styles.getInformation}>
-        <div className={styles.info}>
-          <div className={styles.label}>Selecione o banco</div>
-          <input
-            type="text"
-            className={styles.input}
-            placeholder="Digite seu nome"
-          />
-        </div>
-        <div className={styles.info}>
-          <div className={styles.infoCheckboxes}>
-            <input type="checkbox" className={styles.inputCheckboxes} />
-            <div className={styles.labelCheckboxes}>Poupança</div>
-          </div>
-          <div className={styles.infoCheckboxes}>
-            <input type="checkbox" className={styles.inputCheckboxes} />
-            <div className={styles.labelCheckboxes}>Corrente</div>
-          </div>
-        </div>
         <div className={styles.info}>
           <div className={styles.label}>Nome</div>
           <input
@@ -39,19 +21,11 @@ export const DepositWithdraw = () => {
           />
         </div>
         <div className={styles.info}>
-          <div className={styles.label}>Agência</div>
+          <div className={styles.label}>Chave PIX</div>
           <input
             type="text"
             className={styles.input}
-            placeholder="Digite sua Agência"
-          />
-        </div>
-        <div className={styles.info}>
-          <div className={styles.label}>Conta</div>
-          <input
-            type="text"
-            className={styles.input}
-            placeholder="Digite sua Conta"
+            placeholder="Digite seu Chave PIX"
           />
         </div>
         <div className={styles.info}>
