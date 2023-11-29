@@ -1,0 +1,15 @@
+.footer {
+    width: 100%;
+    height: 295px;
+    background: linear-gradient(180deg, #324AC9 0%, #192494 100%);
+}
+
+.innerFooter{
+    width: 90%;
+}
+
+.bottomFooter{
+    width: 100%;
+    height: 62px;
+    background: #192494;
+}

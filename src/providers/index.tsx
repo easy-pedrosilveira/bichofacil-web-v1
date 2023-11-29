@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://54.76.180.109/api/v2'
+const BASE_URL = 'http://3.98.4.18/'
 
 export const apiRouteOpen = axios.create({
     headers: {

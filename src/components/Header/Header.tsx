@@ -10,8 +10,9 @@ export const Header = () => {
   // } = useAuthContext();
   // const { setProfilePanels } = useAppContext();
 
-
   return (
-    <main></main>
+    <main className={styles.header}>
+      <div className={styles.innerHeader}></div>
+    </main>
   );
 };
