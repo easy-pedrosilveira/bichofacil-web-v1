@@ -1,7 +1,7 @@
 import styles from "./Profile.module.css";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Account, Withdraw, Extract, Settings } from "components";
+import { Account, Withdraw, Extract, Settings, BuyCredits } from "components";
 import user from "data/user.json";
 import Credits from "../../assets/images/credits.svg";
 import useAppContext from "data/hooks/useAppContext";
@@ -16,7 +16,11 @@ export const Profile = () => {
     { title: "Extratos", content: <Extract /> },
     { title: "Configurações", content: <Settings /> },
   ];
+  const [buyCredits, setBuyCredits] = useState(false);
 
+  const toggleBuyCredits = () => {
+    setBuyCredits(!buyCredits);
+  };
   const [selectedTab, setSelectedTab] = useState(profilePanes[profilePanels]);
 
   useEffect(() => {
@@ -28,23 +32,7 @@ export const Profile = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.introduction}>
-        <div className={styles.profile}>
-          <div className={styles.picture}>
-            {/* <img src={Person} alt="" /> */}
-          </div>
-          <div className={styles.texts}>
-            <div className={styles.name}>{user?.first_name} </div>
-          </div>
-        </div>
-        <div className={styles.btn}>
-          <div className={styles.credits}>
-            <img src={Credits} alt="" />
-            <span>Depositar</span>
-          </div>
-        </div>
-      </div>
+    <>
       <div className={styles.content}>
         <div className={styles.selectPanes}>
           {profilePanes.map((tab) => (
@@ -77,5 +65,7 @@ export const Profile = () => {
         </div>
       </div>
     </div>
+    {buyCredits ? <BuyCredits onModalChange={toggleBuyCredits}/> : null}
+</>
   );
 };

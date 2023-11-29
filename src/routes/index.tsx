@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Home, Faq, Policy, Terms, Profile, Modalities, Sobre, Aposta } from "pages";
+import { Home, Faq, Policy, Terms, Profile, Modalities, Sobre, Aposta, Games } from "pages";
 import { Header, Error, Footer, CreditsIcon } from "components";
 
 export const Rotas = () => {
@@ -16,6 +16,7 @@ export const Rotas = () => {
           <Route path="/modalities?" element={<Modalities />} />
           <Route path="/sobre-nos" element={<Sobre />} />
           <Route path="/aposta?" element={<Aposta />} />
+          <Route path="/games?" element={<Games />} />
           <Route path="*" element={<Error />} />
         </Routes>
         <CreditsIcon />

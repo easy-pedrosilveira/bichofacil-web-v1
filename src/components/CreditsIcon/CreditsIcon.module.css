@@ -9,7 +9,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    z-index: 9;
+    z-index: 1;
     background: #201F2C;
     box-shadow: -2px -9px 4px 0px #302E3F inset;
 }

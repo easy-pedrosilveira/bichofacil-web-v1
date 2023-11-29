@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./Aposta.module.css";
 import { useEffect, useState } from "react";
 import { BuyCredits } from "components";
@@ -34,7 +33,6 @@ export const Aposta = () => {
             ></iframe>
           ) : null}
         </div>
-
         <div className={styles.compra}>
           <div className={styles.inf}>
             {logado === true ? (

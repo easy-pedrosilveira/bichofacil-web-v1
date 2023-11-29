@@ -5,8 +5,11 @@ import { Link } from "react-router-dom";
 import { Aposta } from "../../../pages/Aposta";
 
 export const NewGames = () => {
-  const dataNG = modalitiesGames.find((modality) => modality.game_id === "Novos Jogos");
+  const dataNG = modalitiesGames.find(
+    (modality) => modality.game_id === "Novos Jogos"
+  );
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
+  const isDesktop = viewportWidth >= 200 && viewportWidth <= 767;
 
   useEffect(() => {
     const handleResize = () => {
@@ -20,7 +23,12 @@ export const NewGames = () => {
     };
   }, []);
 
-  const isDesktop = viewportWidth >= 200 && viewportWidth <= 767;
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <main className={styles.container}>
@@ -32,7 +40,11 @@ export const NewGames = () => {
           </div>
         </div>
         <div className={styles.divBtn}>
-          <Link to={`/modalities?newgames`} className={styles.button}>
+          <Link
+            to={`/modalities?newgames`}
+            className={styles.button}
+            onClick={scrollToTop}
+          >
             Veja tudo
           </Link>
         </div>
@@ -58,15 +70,23 @@ export const NewGames = () => {
               </div>
               <div className={styles.play}>
                 {isDesktop ? (
-                    <Link to={game?.game_link}  className={styles.btnPlay}>
-                      
+                  <Link
+                    to={game?.game_link}
+                    className={styles.btnPlay}
+                    onClick={scrollToTop}
+                  >
                     <div className={styles.btnPlay}>Jogar</div>
-                   </Link>
+                  </Link>
                 ) : (
-                  <Link   to={`/aposta?iframeSrc=${encodeURIComponent(game?.game_link)}`}
-                  className={styles.btnPlay}>
-
-                   <div className={styles.btnPlay}>Jogar</div>
+                  <Link
+                    to={`/games?iframeSrc=${encodeURIComponent(
+                      game?.game_link
+                    )}`}
+                    className={styles.btnPlay}
+                  >
+                    <div className={styles.btnPlay} onClick={scrollToTop}>
+                      Jogar
+                    </div>
                   </Link>
                 )}
               </div>

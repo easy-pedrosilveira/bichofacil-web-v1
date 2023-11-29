@@ -54,6 +54,7 @@
 .btns {
     width: 90%;
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
@@ -80,4 +81,36 @@
 
 .btnDelete {
     border: 1px solid #970808;
+}
+
+@media (min-width: 200px) {
+    @media (max-width: 550px) {
+
+        .logout,
+        .delete {
+            justify-content: center;
+            text-align: center;
+        }
+
+        .section {
+            justify-content: center;
+        }
+
+        .icon {
+            display: none;
+        }
+
+        .paragraph {
+            text-indent: 0px;
+        }
+
+        .btns {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .btns div {
+            margin-left: 0px;
+        }
+    }
 }
