@@ -1,10 +1,94 @@
 .header {
     width: 100%;
     height: 92px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
     background: linear-gradient(180deg, #313BAC 0%, #2737C0 100%);
     box-shadow: 0px -4px 0px 0px #305FC6 inset, 0px 4px 16px 0px rgba(0, 0, 0, 0.25);
 }
 
 .innerHeader {
     width: 90%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background: red; */
+}
+
+.menu {
+    display: none;
+}
+
+.logo {
+    width: auto;
+    height: 100%;
+}
+
+.logo img {
+    width: 150px;
+    height: 75px;
+}
+
+.itemsContainer {
+    width: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.links {
+    color: #C6D6FF;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid #324AC9;
+}
+
+.authUserItem,
+.btnLogin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 0px 5px transparent;
+    color: #FFF;
+    font-weight: 700;
+    border-radius: 24px;
+}
+
+.authUserItem {
+    padding: 8px 12px;
+    font-size: 16px;
+    gap: 8px;
+    border: 1px solid #324AC9;
+}
+
+.btnLogin {
+    padding: 8px 20px;
+    font-size: 18px;
+    border: 1px solid #FFEC7A;
+}
+
+.authUserItem:hover,
+.btnLogin:hover {
+    transition: all .3s ease-in-out;
+    box-shadow: 0px 0px 0px 5px #ffffff1a;
+}
+
+.authUserItem:hover {
+    background: #324AC9;
+}
+
+.btnLogin:hover {
+    background: linear-gradient(180deg, #FFCA7A 0%, #FFA51E 100%);
 }

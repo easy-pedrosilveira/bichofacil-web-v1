@@ -18,6 +18,8 @@ export const Login = () => {
   // };
 
   return (
-    <main>Login</main>
+    <main className={styles.backDrop}>
+      <div className={styles.modal}>Login</div>
+    </main>
   );
 };
