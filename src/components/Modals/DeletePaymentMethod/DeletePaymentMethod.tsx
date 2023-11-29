@@ -1,5 +1,7 @@
 import { apiAuth } from "providers";
 import styles from "./DeletePaymentMethod.module.css";
+import { motion } from "framer-motion";
+import { item } from "utils";
 
 interface DeleteModalProps {
   onModalChange: (value: boolean) => void;
@@ -40,7 +42,12 @@ export const DeletePaymentMethod = ({
         }
       }}
     >
-      <div className={styles.modal}>
+      <motion.div
+        variants={item}
+        initial="hidden"
+        animate="visible"
+        className={styles.modal}
+      >
         <div className={styles.title}>
           {props?.type === "PIX" ? "Excluir chave" : "Excluir cartão"}
         </div>
@@ -62,7 +69,7 @@ export const DeletePaymentMethod = ({
             Confirmar
           </div>
         </div>
-      </div>
+      </motion.div>
     </main>
   );
 };

@@ -12,7 +12,7 @@ export function AuthProvider(props: any) {
   const [modalRegister, setModalRegister] = useState<boolean>(false);
   const [user,setUser] = useState();
   const [userExists, setUserExists] = useState<boolean>(false);
-  const [isLogged, setisLogged] = useState<boolean>(false);
+  const [isLogged, setisLogged] = useState<boolean>(true);
 
   const [bodyLogin, setBodyLogin] = useState({
     email: "",
@@ -84,13 +84,13 @@ export function AuthProvider(props: any) {
     }
   }, [localStorage.getItem("token"), userExists]);
 
-  useEffect(() => {
-    if (userExists) {
-      setisLogged(true);
-    } else {
-      setisLogged(false);
-    }
-  }, [user]);
+  // useEffect(() => {
+  //   if (userExists) {
+  //     setisLogged(true);
+  //   } else {
+  //     setisLogged(false);
+  //   }
+  // }, [user]);
 
 const logout = () => {
   localStorage.removeItem("token");
@@ -117,6 +117,7 @@ const logout = () => {
         longitude,
         modalLogin,
         modalRegister,
+        isLogged,
         handleEmailChange,
         handlePasswordChange,
         handleLogin,

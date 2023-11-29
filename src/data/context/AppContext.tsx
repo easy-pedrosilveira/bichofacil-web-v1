@@ -7,6 +7,7 @@ const AppContext = createContext<IAppContext>({} as IAppContext)
 export function AppProvider(props: any) {
   const [appConfig, setAppConfig] = useState({} as IAppConfig)
   const [loading, setLoading] = useState<boolean>(false)
+  const [profilePanels, setProfilePanels] = useState<number>(0);
 
   function getConfig() {
     apiRouteOpen.get('/general-settings/').then(function (response) {
@@ -16,6 +17,7 @@ export function AppProvider(props: any) {
         }
       }
       setAppConfig(response?.data)
+      setProfilePanels(0);
     })
   }
 
@@ -43,6 +45,8 @@ export function AppProvider(props: any) {
       value={{
         appConfig,
         loading,
+        profilePanels,
+        setProfilePanels,
       }}
     >
       {props.children}

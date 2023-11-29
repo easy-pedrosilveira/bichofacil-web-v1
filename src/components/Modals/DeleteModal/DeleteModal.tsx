@@ -1,5 +1,7 @@
 import { apiAuth } from "providers";
 import styles from "./DeleteModal.module.css";
+import { motion } from "framer-motion";
+import { item } from "utils";
 
 interface DeleteModalProps {
   onModalChange: (value: boolean) => void;
@@ -36,7 +38,12 @@ export const DeleteModal = ({ onModalChange }: DeleteModalProps) => {
         }
       }}
     >
-      <div className={styles.modal}>
+      <motion.div
+        variants={item}
+        initial="hidden"
+        animate="visible"
+        className={styles.modal}
+      >
         <div className={styles.title}>Excluir Conta</div>
         <div className={styles.paragraph}>
           Tem certeza de que deseja excluir permanentemente sua conta? Esta ação
@@ -53,7 +60,7 @@ export const DeleteModal = ({ onModalChange }: DeleteModalProps) => {
             Confirmar
           </div>
         </div>
-      </div>
+      </motion.div>
     </main>
   );
 };

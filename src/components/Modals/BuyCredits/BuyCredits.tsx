@@ -5,6 +5,7 @@ import Boleto from "../../../assets/images/Barcode.svg";
 import Arrow from "../../../assets/images/Angle-double-right.svg";
 import { PixPayment, TicketPayment } from "components";
 import { motion } from "framer-motion";
+import { item } from "utils";
 
 interface ModalProps {
   onModalChange: (isOpen: boolean) => void;
@@ -53,25 +54,7 @@ export const BuyCredits = ({ onModalChange }: ModalProps) => {
     setTicketModal(!ticketModal);
   };
 
-  const container = {
-    hidden: { opacity: 1, scale: 0 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-    },
-  };
+  const container = {};
 
   return (
     <>
@@ -141,8 +124,10 @@ export const BuyCredits = ({ onModalChange }: ModalProps) => {
           </div>
         </motion.li>
       </motion.ul>
-      {pixModal === true ? <PixPayment onModalChange={toggleModalPix}/> : null}
-      {ticketModal === true ? <TicketPayment onModalChange={toggleModalTicket}/> : null}
+      {pixModal === true ? <PixPayment onModalChange={toggleModalPix} /> : null}
+      {ticketModal === true ? (
+        <TicketPayment onModalChange={toggleModalTicket} />
+      ) : null}
     </>
   );
 };

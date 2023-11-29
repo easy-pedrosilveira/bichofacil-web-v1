@@ -1,88 +1,38 @@
-import styles from "./ControlPromotional.module.css";
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { wrap } from "popmotion";
-// import { Promo01 } from "./Promotions";
-import Arrow from "../../../assets/images/Arrow-right.svg";
+import React, { useState, useEffect } from "react";
+import styles from './ControlPromotional.module.css';
+
+const images = [
+  "https://img.freepik.com/vetores-premium/banner-de-convite-de-cassino-online-para-site-com-maquina-caca-niqueis-de-botao-fichas-de-poquer-de-roleta-de-cassino-e-cartas-de-baralho-em-cena-vermelha-com-anel-de-neon-amarelo-no-fundo_7993-7691.jpg",
+  "https://img.freepik.com/premium-psd/casino-royal-flyer-social-media-post-template_25996-1193.jpg",
+  "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/casino-banner-design-template-d50428bdf34d5f9160f513e08ddf145b_screen.jpg?ts=1659342147"
+]
 
 export const ControlPromotional = () => {
-  const [[page, direction], setPage] = useState([0, 0]);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const variants = {
-    enter: (direction: number) => {
-      return {
-        x: direction > 0 ? 1000 : -1000,
-        opacity: 0,
-      };
-    },
-    center: {
-      zIndex: 1,
-      x: 0,
-      opacity: 1,
-    },
-    exit: (direction: number) => {
-      return {
-        zIndex: 0,
-        x: direction < 0 ? 1000 : -1000,
-        opacity: 0,
-      };
-    },
-  };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Avança para a próxima imagem
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000);
 
-  const swipeConfidenceThreshold = 10000;
-  const swipePower = (offset: number, velocity: number) => {
-    return Math.abs(offset) * velocity;
-  };
-
-  // const componentsArray = [Promo01];
-
-  // const componentIndex = wrap(0, componentsArray.length, page);
-
-  const paginate = (newDirection: number) => {
-    setPage([page + newDirection, newDirection]);
-  };
-
-  // const CurrentComponent = componentsArray[componentIndex];
+    // Limpa o intervalo quando o componente é desmontado
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <main className={styles.container}>
-      <AnimatePresence initial={false} custom={direction}>
-        <motion.div
-          key={page}
-          custom={direction}
-          variants={variants}
-          initial="enter"
-          animate="center"
-          exit="exit"
-          transition={{
-            x: { type: "spring", stiffness: 300, damping: 30 },
-            opacity: { duration: 0.2 },
-          }}
-          drag="x"
-          dragConstraints={{ left: 0, right: 0 }}
-          dragElastic={1}
-          onDragEnd={(e, { offset, velocity }) => {
-            const swipe = swipePower(offset.x, velocity.x);
-
-            if (swipe < -swipeConfidenceThreshold) {
-              paginate(1);
-            } else if (swipe > swipeConfidenceThreshold) {
-              paginate(-1);
-            }
-          }}
-          className={styles.promotions}
-        >
-          
-        </motion.div>
-      </AnimatePresence>
-      <div className={styles.controls}>
-        <div className={styles.next} onClick={() => paginate(1)}>
-          <img src={Arrow} alt="" />
-        </div>
-        <div className={styles.prev} onClick={() => paginate(-1)}>
-          <img src={Arrow} alt=""  style={{ rotate : "180deg"}}/>
-        </div>
-      </div>
-    </main>
+    <div className={styles.slider_container}>
+      {images.map((image, index) => (
+        <div
+          key={index}
+          className={`${styles.slider_image} ${
+            index === currentImageIndex ? styles.active : index < currentImageIndex ? styles.previous : styles.next
+          }`}
+          style={{ backgroundImage: `url(${image})` }}
+        />
+      ))}
+    </div>
   );
 };
