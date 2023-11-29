@@ -29,6 +29,7 @@ export const Aposta = () => {
               width="100%"
               height="500px"
               frameBorder="0"
+              sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
             ></iframe>
           ) : null}
         </div>
@@ -45,7 +46,6 @@ export const Aposta = () => {
             <p className={styles.cedula} onClick={toggleBuyCredits}>
               .
             </p>
-            {/*<h4 className={styles.apst}>Aposta: 0,00</h4>*/}
           </div>
         </div>
       </div>

@@ -1,16 +1,21 @@
 import styles from "./Login.module.css";
-import { useState } from "react";
 import useAuthContext from "data/hooks/useAuthContext";
+import { motion } from "framer-motion";
+import { item } from "utils";
 
 export const Login = () => {
-  const { handleEmailChange, handlePasswordChange, handleLogin, setModalLogin, setModalRegister } =
-    useAuthContext();
-  const [open, setOpen] = useState(true);
+  const {
+    handleEmailChange,
+    handlePasswordChange,
+    handleLogin,
+    setModalLogin,
+    setModalRegister,
+  } = useAuthContext();
 
-  const handleSpanClick = () =>{
+  const handleSpanClick = () => {
     setModalLogin(false);
     setModalRegister(true);
-  }
+  };
 
   return (
     <main
@@ -23,8 +28,13 @@ export const Login = () => {
         }
       }}
     >
-      <div className={styles.modal}>
-        <div className={styles.logoLogin}/>
+      <motion.div
+        variants={item}
+        initial="hidden"
+        animate="visible"
+        className={styles.modal}
+      >
+        <div className={styles.logoLogin} />
         <div className={styles.introduction}>Faça seu Login</div>
         <form onSubmit={(e) => handleLogin(e)} className={styles.form}>
           <div className={styles.info}>
@@ -55,8 +65,11 @@ export const Login = () => {
             Entrar
           </button>
         </form>
-        <div className={styles.register}>Ainda não possui uma conta? <span onClick={handleSpanClick}> Crie uma conta! </span></div>
-      </div>
+        <div className={styles.register}>
+          Ainda não possui uma conta?{" "}
+          <span onClick={handleSpanClick}> Crie uma conta! </span>
+        </div>
+      </motion.div>
     </main>
   );
 };

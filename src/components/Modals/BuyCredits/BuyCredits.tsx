@@ -6,6 +6,7 @@ import Arrow from "assets/images/Angle-double-right.svg";
 import Close from "assets/images/close.svg";
 import { PixPayment, TicketPayment } from "components";
 import { motion } from "framer-motion";
+import { item } from "utils";
 
 interface ModalProps {
   onModalChange: (isOpen: boolean) => void;
@@ -54,25 +55,7 @@ export const BuyCredits = ({ onModalChange }: ModalProps) => {
     setTicketModal(!ticketModal);
   };
 
-  const container = {
-    hidden: { opacity: 1, scale: 0 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-    },
-  };
+  const container = {};
 
   return (
     <>

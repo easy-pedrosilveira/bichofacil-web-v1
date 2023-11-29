@@ -4,19 +4,17 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export const DailyJackpots = () => {
+  const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
+  const isDesktop = viewportWidth >= 0 && viewportWidth <= 767;
   const dataDJ = modalitiesGames?.find(
     (modality) => modality?.game_id === "Jackpots Diários"
   );
-  const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
-  const isDesktop = viewportWidth >= 200 && viewportWidth <= 767;
 
   useEffect(() => {
     const handleResize = () => {
       setViewportWidth(window.innerWidth);
     };
-
     window.addEventListener("resize", handleResize);
-
     return () => {
       window.removeEventListener("resize", handleResize);
     };
