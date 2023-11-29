@@ -1,9 +1,2 @@
 export * from './Login';
-export * from './Register';
-export * from './Notifications';
-export * from './BuyCredits';
-export * from './DeleteModal';
-export * from './DeletePaymentMethod';
-export * from './AddCard';
-export * from './PaymentModals';
-export * from './BonusModal';
+
