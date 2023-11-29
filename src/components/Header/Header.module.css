@@ -223,5 +223,8 @@
             left: 0;
             box-shadow: none;
         }
+        .withdraw{
+            display: none;
+        }
     }
 }
