@@ -172,3 +172,15 @@
         }
     }
 }
+
+@media (min-width: 1500px) {
+    @media (max-width: 2000px) {
+        .cardGame {
+            width: 370px;
+        }
+        
+        .gameContent {
+            height: 350px;
+        }
+    }
+}

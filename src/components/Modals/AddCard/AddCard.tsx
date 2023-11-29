@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styles from "./AddCard.module.css";
 import { RegisterCard } from "components";
+import { motion } from "framer-motion";
+import { item } from "utils";
 
 interface ModalProps {
   isOpen: (value: boolean) => void;
@@ -23,7 +25,12 @@ export const AddCard = ({ isOpen }: ModalProps) => {
 
   return (
     <div className={styles.background}>
-      <div className={styles.modal}>
+      <motion.div
+        variants={item}
+        initial="hidden"
+        animate="visible"
+        className={styles.modal}
+      >
         <div className={styles.title}>
           <div>
             <span> Cadastrar forma de pagamento </span>
@@ -44,12 +51,15 @@ export const AddCard = ({ isOpen }: ModalProps) => {
               </div>
             </>
           ) : (
-            <div className={styles.contentCards} style={{ width: "100%", height: "100%" }}>
+            <div
+              className={styles.contentCards}
+              style={{ width: "100%", height: "100%" }}
+            >
               <RegisterCard typeCard={typeCard} />
             </div>
           )}
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

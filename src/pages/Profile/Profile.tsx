@@ -1,11 +1,15 @@
 import styles from "./Profile.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Account, Withdraw, Extract, Settings } from "components";
 import user from "data/user.json";
 import Credits from "../../assets/images/credits.svg";
+import useAppContext from "data/hooks/useAppContext";
+import { item } from "utils";
 
 export const Profile = () => {
+  const { profilePanels } = useAppContext();
+
   const profilePanes = [
     { title: "Conta", content: <Account /> },
     { title: "Saque", content: <Withdraw /> },
@@ -13,7 +17,11 @@ export const Profile = () => {
     { title: "Configurações", content: <Settings /> },
   ];
 
-  const [selectedTab, setSelectedTab] = useState(profilePanes[0]);
+  const [selectedTab, setSelectedTab] = useState(profilePanes[profilePanels]);
+
+  useEffect(() => {
+    setSelectedTab(profilePanes[profilePanels]);
+  }, [profilePanels]);
 
   const handleTabClick = (tab: any) => {
     setSelectedTab(tab);
@@ -58,10 +66,10 @@ export const Profile = () => {
           <AnimatePresence>
             <motion.div
               key={selectedTab.title}
-              initial={{ y: 10, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: -10, opacity: 0 }}
-              transition={{ duration: 0.2 }}
+              variants={item}
+              initial="hidden"
+              animate="visible"
+              transition={{ duration: 0.5 }}
             >
               {selectedTab.content}
             </motion.div>

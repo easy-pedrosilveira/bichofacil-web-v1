@@ -1,18 +1,20 @@
-import { Theme, GlobalStyles } from 'themes';
-import { Rotas } from 'routes';
-import { AuthProvider } from 'data/context';
+import { Theme, GlobalStyles } from "themes";
+import { Rotas } from "routes";
+import { AuthProvider, AppProvider } from "data";
 
 export const App = () => {
   return (
     <div>
       <Theme>
-        <AuthProvider>
-        <GlobalStyles />
-        <Rotas />
-        </AuthProvider>
+        <AppProvider>
+          <AuthProvider>
+            <GlobalStyles />
+            <Rotas />
+          </AuthProvider>
+        </AppProvider>
       </Theme>
     </div>
   );
-}
+};
 
 export default App;
