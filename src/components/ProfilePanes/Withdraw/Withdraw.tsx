@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import styles from "./Withdraw.module.css";
 import { useState } from "react";
-// import { PixWithdraw, DepositWithdraw } from "components";
+import { PixWithdraw, DepositWithdraw } from "components";
 
 export const Withdraw = () => {
   const [active, setActive] = useState("Pix");
@@ -43,7 +43,7 @@ export const Withdraw = () => {
             exit={{ x: -100, opacity: 0 }}
             transition={{ duration: 0.2 }}
           >
-            {/* {active === "Pix" ? <PixWithdraw /> : <DepositWithdraw />} */}
+            {active === "Pix" ? <PixWithdraw /> : <DepositWithdraw />}
           </motion.div>
         </AnimatePresence>
       </div>
