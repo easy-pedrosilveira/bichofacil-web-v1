@@ -7,18 +7,16 @@ import Eye from "assets/icons/eye-password.svg";
 import { item } from "utils";
 
 export const Login = () => {
-  // const {
-  //   handleEmailChange,
-  //   handlePasswordChange,
-  //   handleLogin,
-  //   setModalLogin,
-  //   setModalRegister,
-  // } = useAuthContext();
+  const {
+    handleEmailChange,
+    handlePasswordChange,
+    handleLogin,
+    setModalLogin,
+  } = useAuthContext();
 
-  // const handleSpanClick = () => {
-  //   setModalLogin(false);
-  //   setModalRegister(true);
-  // };
+  const handleSpanClick = () => {
+    setModalLogin(false);
+  };
 
   return (
     <main
@@ -27,7 +25,7 @@ export const Login = () => {
         const containerElement = e.currentTarget as HTMLElement;
         const clickedElement = e.target as HTMLElement;
         if (containerElement === clickedElement) {
-          // setModalLogin(false);
+          setModalLogin(false);
         }
       }}
     >
@@ -40,7 +38,7 @@ export const Login = () => {
           </div>
         </div>
         <form
-          // onSubmit={(e) => handleLogin(e)}
+          onSubmit={(e) => handleLogin(e)}
           className={styles.form}
         >
           <div className={styles.info}>
@@ -51,7 +49,7 @@ export const Login = () => {
               id="email"
               className={styles.input}
               placeholder="Insira seu Email"
-              // onChange={(e) => handleEmailChange(e)}
+              onChange={(e) => handleEmailChange(e)}
               autoComplete="username"
             />
           </div>
@@ -67,7 +65,10 @@ export const Login = () => {
               // onChange={(e) => handlePasswordChange(e)}
               className={styles.input}
             />
-           <Link to="/forget-password" className={styles.stayLogged}>Esqueceu a senha?</Link>
+            <img src={Eye} alt="" className={styles.icon} />
+            <Link to="/forget-password" className={styles.stayLogged}>
+              Esqueceu a senha?
+            </Link>
           </div>
           <button type="submit" className={styles.btn}>
             Entrar
