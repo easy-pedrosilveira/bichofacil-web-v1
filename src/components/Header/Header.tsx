@@ -7,15 +7,14 @@ import Notifications from "assets/imgs/notifications.svg";
 import { Login } from "components";
 import { Link, useNavigate } from "react-router-dom";
 import { useWindowSize } from "data/hooks/useWindowSize";
-import { dropdown, itemDropdown } from "utils";
-import { AnimatePresence, motion } from "framer-motion";
+import {dropdown, itemDropdown} from 'utils'
 
 export const Header = () => {
-  const [logado, setLogado] = useState(true);
+  const [logado, setLogado] = useState(false);
   const [modalLogin, setModalLogin] = useState(false);
+  const [dropdown, setDropdown] = useState(false);
   const navigate = useNavigate();
   const { width } = useWindowSize();
-  const [openDropdown, setOpenDropdown] = useState(false);
 
   const toggleModalLogin = () => {
     setModalLogin(!modalLogin);
@@ -27,10 +26,6 @@ export const Header = () => {
     } else {
       toggleModalLogin();
     }
-  };
-
-  const toggleDropdown = () => {
-    setOpenDropdown(!openDropdown);
   };
 
   // const {
@@ -76,26 +71,9 @@ export const Header = () => {
               </div>
             )}
             {logado ? (
-              <AnimatePresence>
-                <motion.div
-                  initial="closed"
-                  animate="open"
-                  exit="closed"
-                  variants={dropdown}
-                  className={`${styles.authUserItem} ${styles.linksHidden}`}
-                  onClick={toggleDropdown}
-                >
-                  Meu Perfil <img src={Arrow} alt="" />
-                  {openDropdown && (
-                    <div className={styles.backDrop}>
-                      <motion.div {...itemDropdown}>Edit</motion.div>
-                      <motion.div {...itemDropdown}>Share</motion.div>
-                      <motion.div {...itemDropdown}>Delete</motion.div>
-                      <motion.div {...itemDropdown}>Report</motion.div>
-                    </div>
-                  )}
-                </motion.div>
-              </AnimatePresence>
+              <div className={`${styles.authUserItem} ${styles.linksHidden}`}>
+                Meu Perfil <img src={Arrow} alt="" />
+              </div>
             ) : (
               <div className={styles.btnLogin} onClick={toggleModalLogin}>
                 Entrar

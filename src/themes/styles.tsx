@@ -9,12 +9,13 @@ export const GlobalStyles = createGlobalStyle<{ theme: ThemeType }>`
   *{
     margin:0;
     padding:0;
-    border:0,
+    border:none,
     box-sizing: border-box;
     list-style:none;
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
     font-family: 'Ubuntu', sans-serif;
+    outline: none;
   }
   body{
     color: #fff;
