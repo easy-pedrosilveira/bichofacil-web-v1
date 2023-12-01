@@ -1,17 +1,24 @@
 import { Theme, GlobalStyles } from "themes";
 import { Rotas } from "routes";
-import { AuthProvider, AppProvider } from "data";
+import { AppProvider, GameProvider, AuthProvider, BetsProvider } from "data/context";
+import { BrowserRouter } from "react-router-dom";
 
 export const App = () => {
   return (
     <div>
       <Theme>
-        <AppProvider>
+        <GlobalStyles />
+        <BrowserRouter>
           <AuthProvider>
-            <GlobalStyles />
-            <Rotas />
+            <AppProvider>
+              <GameProvider>
+                <BetsProvider>
+                <Rotas />
+                </BetsProvider>
+              </GameProvider>
+            </AppProvider>
           </AuthProvider>
-        </AppProvider>
+        </BrowserRouter>
       </Theme>
     </div>
   );

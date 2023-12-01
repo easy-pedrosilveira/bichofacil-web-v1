@@ -1,57 +1,76 @@
-import { createContext, useEffect, useState } from 'react'
-import { IAppContext, IAppConfig } from 'interfaces'
-import { apiRouteOpen } from 'providers'
+import { createContext, useEffect, useState } from "react";
+import { IAppConfig, IAppContext } from "interfaces";
+import { IHelps } from "interfaces";
+import { apiRouteOpen } from "providers";
+import Cookies from "js-cookie";
 
-const AppContext = createContext<IAppContext>({} as IAppContext)
+const AppContext = createContext<IAppContext>({} as IAppContext);
 
 export function AppProvider(props: any) {
-  const [appConfig, setAppConfig] = useState({} as IAppConfig)
-  const [loading, setLoading] = useState<boolean>(false)
-  const [profilePanels, setProfilePanels] = useState<number>(0);
+  const [appConfig, setAppConfig] = useState({} as IAppConfig);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [helps, setHelps] = useState<IHelps[]>([]);
+  const [initialImgs, setInitialImgs] = useState([]);
+  useEffect(() => {
+    if (Cookies.get("cookiesAccepted") === "false") {
+      Cookies.set("cookiesAccepted", "false", { expires: 30 });
+    } else {
+      Cookies.set("cookiesAccepted", "true", { expires: 30 });
+    }
+  }, []);
+
+  useEffect(() => {
+    if (Cookies.get("carouselVisualized") === "false") {
+      Cookies.set("carouselVisualized", "false", { expires: 0 });
+    } else {
+      Cookies.set("carouselVisualized", "true", { expires: 0 });
+    }
+  }, []);
 
   function getConfig() {
-    apiRouteOpen.get('/general-settings/').then(function (response) {
+    apiRouteOpen.get("/general-settings/").then(function (response) {
       if (response?.data?.allow_game === false) {
-        if (typeof window !== 'undefined') {
-          window.close()
+        if (typeof window !== "undefined") {
+          window.close();
         }
       }
-      setAppConfig(response?.data)
-      setProfilePanels(0);
-    })
+      setInitialImgs(response?.data?.imgs);
+      setAppConfig(response?.data);
+    });
   }
 
   function getHelps() {
-    setLoading(true)
-    apiRouteOpen.get('/help/')
+    setLoading(true);
+    apiRouteOpen
+      .get("/help/")
       .then(function (response) {
-
+        setHelps(response.data);
       })
       .catch(function (error) {
-        console.log(error)
+        console.log(error);
       })
       .finally(function () {
-        setLoading(false)
-      })
+        setLoading(false);
+      });
   }
 
   useEffect(() => {
-    getConfig()
-    getHelps()
-  }, [])
+    getConfig();
+    getHelps();
+  }, []);
 
   return (
     <AppContext.Provider
       value={{
         appConfig,
         loading,
-        profilePanels,
-        setProfilePanels,
+        helps,
+        initialImgs,
       }}
     >
       {props.children}
     </AppContext.Provider>
-  )
+  );
 }
 
-export default AppContext
+export default AppContext;

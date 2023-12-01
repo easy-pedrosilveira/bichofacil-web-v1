@@ -7,16 +7,8 @@ import Eye from "assets/icons/eye-password.svg";
 import { item } from "utils";
 
 export const Login = () => {
-  const {
-    handleEmailChange,
-    handlePasswordChange,
-    handleLogin,
-    setModalLogin,
-  } = useAuthContext();
-
-  const handleSpanClick = () => {
-    setModalLogin(false);
-  };
+  const { bodyLogin, handleEmailChange, handlePasswordChange, handleLogin } =
+    useAuthContext();
 
   return (
     <main
@@ -25,7 +17,7 @@ export const Login = () => {
         const containerElement = e.currentTarget as HTMLElement;
         const clickedElement = e.target as HTMLElement;
         if (containerElement === clickedElement) {
-          setModalLogin(false);
+          handleLogin(false);
         }
       }}
     >
@@ -37,10 +29,7 @@ export const Login = () => {
             Insira suas credencias para iniciar
           </div>
         </div>
-        <form
-          onSubmit={(e) => handleLogin(e)}
-          className={styles.form}
-        >
+        <form onSubmit={(e) => handleLogin(e)} className={styles.form}>
           <div className={styles.info}>
             <div className={styles.label}>E-mail</div>
             <input

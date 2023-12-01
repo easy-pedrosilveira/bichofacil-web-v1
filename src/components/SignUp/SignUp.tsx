@@ -12,7 +12,6 @@ import Eye from "assets/icons/eye-password.svg";
 import Calendar from "assets/icons/calendar.svg";
 
 export const SignUp = () => {
-  const { setModalRegister } = useAuthContext();
   const { handleSubmit } = useForm();
   const [birthdate, setBirthdate] = useState<string>("");
   const [firstname, setFirstName] = useState<string>("");

@@ -1,7 +1,51 @@
-.container{
+.container {
+    position: relative;
     width: 100%;
     height: 100vh;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.introduction {
+    width: 85%;
+    height: auto;
+    display: flex;
     align-items: center;
     justify-content: center;
+    margin: 48px 0px 63px 0px;
+}
+
+.btnPlay {
+    width: 236px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 35px;
+    border: 4px solid var(--blue-blue-02, #3F73E3);
+    background: linear-gradient(180deg, #3157CC -32.03%, #192494 100%);
+    color: #FFF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.shadow {
+    position: absolute;
+    top: 12vh;
+    width: 806px;
+    height: 301px;
+    border-radius: 806px;
+    opacity: 0.5;
+    background: #324AC9;
+    z-index: -1;
+}
+
+.content {
+    width: 85%;
+    height: auto;
+    border: 1px solid;
 }

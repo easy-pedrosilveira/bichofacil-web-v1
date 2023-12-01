@@ -1,0 +1,153 @@
+ 
+[
+    {
+        "grupo": "Avestruz",
+        "numero_grupo": "01",
+        "numeros": ["01", "02", "03", "04"],
+        "animal":"../../assets/images/bichos/avestruz.svg"
+    },
+    {
+        "grupo": "Águia",
+        "numero_grupo": "02",
+        "numeros": ["05", "06", "07", "08"],
+        "animal":"../assets/images/bichos/aguia.svg"
+    },
+    {
+        "grupo": "Burro",
+        "numero_grupo": "03",
+        "numeros": ["09", "10", "11", "12"],
+        "animal":"../assets/images/bichos/burro.svg"
+    },
+    {
+        "grupo": "Borboleta",
+        "numero_grupo": "04",
+        "numeros": ["13", "14", "15", "16"],
+        "animal":"../assets/images/bichos/borboleta.svg"
+    },
+    {
+        "grupo": "Cachorro",
+        "numero_grupo": "05",
+        "numeros": ["17", "18", "19", "20"],
+        "animal":"../assets/images/bichos/cachorro.svg"
+    },
+    {
+        "grupo": "Cabra",
+        "numero_grupo": "06",
+        "numeros": ["21", "22", "23", "24"],
+        "animal":"../assets/images/bichos/cabra.svg"
+    },
+    {
+        "grupo": "Carneiro",
+        "numero_grupo": "07",
+        "numeros": ["25", "26", "27", "28"],
+        "animal":"../assets/images/bichos/carneiro.svg"
+    },
+    {
+        "grupo": "Camelo",
+        "numero_grupo": "08",
+        "numeros": ["29", "30", "31", "32"],
+        "animal":"../assets/images/bichos/camelo.svg"
+    },
+    {
+        "grupo": "Cobra",
+        "numero_grupo": "09",
+        "numeros": ["33", "34", "35", "36"],
+        "animal":"../assets/images/bichos/cobra.svg"
+    },
+    {
+        "grupo": "Coelho",
+        "numero_grupo": "10",
+        "numeros": ["37", "38", "39", "40"],
+        "animal":"../assets/images/bichos/coelho.svg"
+    },
+    {
+        "grupo": "Cavalo",
+        "numero_grupo": "11",
+        "numeros": ["41", "42", "43", "44"],
+        "animal":"../assets/images/bichos/cavalo.svg"
+    },
+    {
+        "grupo": "Elefante",
+        "numero_grupo": "12",
+        "numeros": ["45", "46", "47", "48"],
+        "animal":"../assets/images/bichos/elefante.svg"
+    },
+    {
+        "grupo": "Galo",
+        "numero_grupo": "13",
+        "numeros": ["49", "50", "51", "52"],
+        "animal":"../assets/images/bichos/galo.svg"
+    },
+    {
+        "grupo": "Gato",
+        "numero_grupo": "14",
+        "numeros": ["53", "54", "55", "56"],
+        "animal":"../assets/images/bichos/gato.svg"
+    },
+    {
+        "grupo": "Jacaré",
+        "numero_grupo": "15",
+        "numeros": ["57", "58", "59", "60"],
+        "animal":"../assets/images/bichos/jacare.svg"
+    },
+    {
+        "grupo": "Leão",
+        "numero_grupo": "16",
+        "numeros": ["61", "62", "63", "64"],
+        "animal":"../assets/images/bichos/leao.svg"
+    },
+    {
+        "grupo": "Macaco",
+        "numero_grupo": "17",
+        "numeros": ["65", "66", "67", "68"],
+        "animal":"../assets/images/bichos/macaco.svg"
+    },
+    {
+        "grupo": "Porco",
+        "numero_grupo": "18",
+        "numeros": ["69", "70", "71", "72"],
+        "animal":"../assets/images/bichos/porco.svg"
+    },
+    {
+        "grupo": "Pavão",
+        "numero_grupo": "19",
+        "numeros": ["73", "74", "75", "76"],
+        "animal":"../assets/images/bichos/pavao.svg"
+    },
+    {
+        "grupo": "Peru",
+        "numero_grupo": "20",
+        "numeros": ["77", "78", "79", "80"],
+        "animal":"../assets/images/bichos/peru.svg"
+    },
+    {
+        "grupo": "Touro",
+        "numero_grupo": "21",
+        "numeros": ["81", "82", "83", "84"],
+        "animal":"../assets/images/bichos/touro.svg"
+    },
+    {
+        "grupo": "Tigre",
+        "numero_grupo": "22",
+        "numeros": ["85", "86", "87", "88"],
+        "animal":"../assets/images/bichos/tigre.svg"
+    },
+    {
+        "grupo": "Urso",
+        "numero_grupo": "23",
+        "numeros": ["89", "90", "91", "92"],
+        "animal":"../assets/images/bichos/urso.svg"
+    },
+    {
+        "grupo": "Veado",
+        "numero_grupo": "24",
+        "numeros": ["93", "94", "95", "96"],
+        "animal":"../assets/images/bichos/veado.svg"
+    },
+    {
+        "grupo": "Vaca",
+        "numero_grupo": "25",
+        "numeros": ["97", "98", "99", "00"],
+        "animal":"../assets/images/bichos/vaca.svg"
+    }
+]
