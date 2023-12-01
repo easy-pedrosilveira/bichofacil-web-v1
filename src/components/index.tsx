@@ -7,3 +7,4 @@ export * from "./SignUp";
 export * from "./IntroBar";
 export * from "./Cards";
 export * from "./CarouselResults";
+export * from "./MyProfilePanes";

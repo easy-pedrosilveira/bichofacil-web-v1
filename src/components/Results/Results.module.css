@@ -49,3 +49,11 @@
     height: auto;
     display: flex;
 }
+
+@media (min-width: 200px) {
+    @media (max-width: 820px) {
+        .shadow {
+            display: none;
+        }
+    }
+}

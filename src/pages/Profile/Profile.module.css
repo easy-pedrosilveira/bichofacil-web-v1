@@ -1,0 +1,132 @@
+.container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile {
+    position: relative;
+    width: 85%;
+    height: 97px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 80px;
+    background: var(--blue-blue-03, #324AC9);
+    margin-bottom: 46px;
+}
+
+.innerProfile {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 80px;
+}
+
+.txt {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.userName {
+    color: #FFF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.userEmail {
+    color: var(--blue-blue-01, #C6D6FF);
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.edit {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.editTxt {
+    color: var(--WHITE, #FFF);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.btn {
+    position: absolute;
+    bottom: -2.5vh;
+    width: 280px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 33px;
+    background: #71C638;
+    color: var(--WHITE, #FFF);
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    cursor: pointer;
+}
+
+@media (min-width: 200px) {
+    @media (max-width: 1200px) {
+        .profile {
+            position: static;
+            height: auto;
+            flex-direction: column;
+            background: transparent;
+            margin-bottom: 40px;
+        }
+
+        .innerProfile {
+            position: relative;
+            width: 280px;
+            background: var(--blue-blue-03, #324AC9);
+            height: 85px;
+        }
+
+        .txt {
+            width: 100%;
+            text-align: center;
+        }
+
+        .icon {
+            position: absolute;
+            top: -2vh;
+            right: .5vw;
+            background: #2D39B4;
+        }
+
+        .editTxt {
+            display: none;
+        }
+
+        .btn {
+            position: relative
+        }
+    }
+}

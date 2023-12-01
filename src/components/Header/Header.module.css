@@ -93,10 +93,6 @@
     background: linear-gradient(180deg, #FFCA7A 0%, #FFA51E 100%);
 }
 
-.backDrop{
-    position: absolute;
-    background: red;
-}
 
 @media (min-width: 200px) {
     @media (max-width: 800px) {

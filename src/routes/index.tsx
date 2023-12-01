@@ -12,11 +12,11 @@ export const Rotas = () => {
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="*" element={<Error />} />
-        <Route path="/modalities" element={<Modalities />} />
+        <Route path="/profile" element={<Profile />} />
+
         {isLogged && (
           <>
-            {/* <Route path="/modalities" element={<Modalities />} /> */}
-            <Route path="/profile" element={<Profile />} />
+            <Route path="/modalities" element={<Modalities />} />
           </>
         )}
       </Routes>
