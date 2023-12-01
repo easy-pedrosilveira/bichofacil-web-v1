@@ -7,7 +7,7 @@ export const Results = () => {
   const { isLogged, handleOpenModalLogin } = useAuthContext();
   const navigate = useNavigate();
 
-  const handleNotifications = () => {
+  const handleNotifications = () => {    
     if (isLogged === true) {
       navigate("/modalities");
     } else {

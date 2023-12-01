@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from 'react'
-import { ResultGamesProps, IGameContext, Modalidades, IModalities, Loterias } from 'interfaces'
+import { ResultGamesProps, IGameContext, Modalities, IModalities, Loterias } from 'interfaces'
 import { apiRouteOpen } from 'providers'
 
 const GameContext = createContext<IGameContext>({} as IGameContext)
@@ -8,8 +8,8 @@ export function GameProvider(props: any) {
   const [data, setData] = useState<ResultGamesProps[]>([]);
   const [lotteries, setLotteries] = useState<Loterias[]>([]);
   const [fullLotteries, setFullLotteries]= useState<Loterias[]>([])
-  const [fullModalidades, setfullModalities] = useState<Modalidades[]>([]);
-  const [modalidades, setModalidades] = useState<IModalities[]>([]);
+  const [fullModalities, setfullModalities] = useState<Modalities[]>([]);
+  const [modalities, setModalities] = useState<IModalities[]>([]);
   const [blockNumbers, setBlockNumbers] = useState<string[]>([]);
   const [time, setTime] = useState<Date>(new Date());
   const [urlResults, setUrlResults] = useState<string>('/results/');
@@ -71,7 +71,7 @@ export function GameProvider(props: any) {
     apiRouteOpen
       .get('/modalities/')
       .then(function (response) {
-        setModalidades(response.data.modalities)
+        setModalities(response.data.modalities)
         setfullModalities(response.data)
         setBlockNumbers(response.data.block_numbers)
       })
@@ -89,8 +89,8 @@ export function GameProvider(props: any) {
     <GameContext.Provider
       value={{
         data,
-        fullModalidades,
-        modalidades,
+        fullModalities,
+        modalities,
         blockNumbers,
         betDate,
         lotteries,

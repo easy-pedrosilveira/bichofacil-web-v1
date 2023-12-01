@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Close from "assets/icons/close.svg";
 import Eye from "assets/icons/eye-password.svg";
 import { item } from "utils";
+import { useState } from "react";
 
 export const Login = () => {
   const {
@@ -12,9 +13,14 @@ export const Login = () => {
     handleEmailChange,
     handlePasswordChange,
     handleLogin,
-    showModal,
     handleOpenModalLogin,
   } = useAuthContext();
+
+  const [showPassword, setShowPassword] = useState(false);
+
+  const toggleShowPassword = () => {
+    setShowPassword((prevShowPassword) => !prevShowPassword);
+  };
 
   return (
     <main
@@ -28,7 +34,12 @@ export const Login = () => {
       }}
     >
       <div className={styles.modal}>
-        <img src={Close} alt="" className={styles.close} />
+        <img
+          src={Close}
+          alt=""
+          className={styles.close}
+          onClick={(e) => handleOpenModalLogin()}
+        />
         <div className={styles.txt}>
           <div className={styles.title}>Olá, bem vindo!</div>
           <div className={styles.paragraph}>
@@ -53,14 +64,13 @@ export const Login = () => {
             <input
               id="password"
               name="password"
-              type="password"
-              placeholder="Insira sua Senha"
-              autoComplete="current-password"
-              required
-              onChange={(e) => handlePasswordChange(e)}
+              type={showPassword ? "text" : "password"}
+              value={bodyLogin?.password}
               className={styles.input}
+              placeholder="Senha"
+              onChange={(e) => handlePasswordChange(e)}
             />
-            <img src={Eye} alt="" className={styles.icon} />
+            <img src={Eye} alt="" className={styles.icon} onClick={toggleShowPassword}/>
             <Link to="/forget-password" className={styles.stayLogged}>
               Esqueceu a senha?
             </Link>

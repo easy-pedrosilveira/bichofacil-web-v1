@@ -14,7 +14,7 @@ export interface ResultGamesProps {
   result: ResultProps[]
 }
 
-export interface Modalidades {
+export interface Modalities {
   date: string;
   block_numbers: string[];
   modalities: IModalities[];
@@ -45,8 +45,8 @@ export interface Loterias{
 
 export interface IGameContext {
   data: ResultGamesProps[]
-  modalidades: IModalities[]
-  fullModalidades: Modalidades[]
+  modalities: IModalities[]
+  fullModalities: Modalities[]
   lotteries: Loterias[]
   blockNumbers: string[]
   betDate: string
