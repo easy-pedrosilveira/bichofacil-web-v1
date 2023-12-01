@@ -32,11 +32,10 @@ export const CardResults = ({ data }: cardProps) => {
       <div className={styles.content}>
         {data?.result.map((result, index) => (
           <div className={styles.innerContent} key={index}>
-            <div className={styles.positionNumber}>{result?.position}</div>
-            <div className={styles.positionNumber}>{result?.number}</div>
-            <div className={styles.groupAnimal}>{result?.group}</div>
-            <div className={styles.groupAnimal}>{result?.animal}</div>
-            <div className={styles.test}>oi</div>
+            <div className={styles.positionNumber}>{result?.posicao}</div>
+            <div className={styles.positionNumber}>{result?.numero}</div>
+            <div className={styles.groupAnimal}>{result?.grupo}</div>
+            <div className={styles.groupAnimal}>{result?.bicho}</div>
           </div>
         ))}
       </div>

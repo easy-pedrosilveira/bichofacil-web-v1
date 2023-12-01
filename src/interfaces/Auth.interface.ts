@@ -11,10 +11,10 @@ export interface IResponseLogin {
 export interface IContextAuth {
   handleLogin: any;
   handleLogout: () => void;
-  handleOpenModalLogin?: any;
+  handleOpenModalLogin: () => void;
   handleEmailChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handlePasswordChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  refreshUser: (refresh : boolean) => void;
+  refreshUser: (refresh: boolean) => void;
   bodyLogin: ILogin;
   showModal: boolean;
   user: IUserAuth | undefined;
@@ -25,7 +25,7 @@ export interface IContextAuth {
   isLogged: boolean;
   credits: number;
   winning: number;
-  purchase:IPurchase | undefined;
+  purchase: IPurchase | undefined;
   longitude: number;
   latitude: number;
 }
@@ -69,10 +69,10 @@ export interface IMessagesUser {
 
 export interface IPurchase {
   Payment_info: string;
-  qrcode:string;
-  payment_type:string;
+  qrcode: string;
+  payment_type: string;
   user: string;
-  qrcode_text:string;
+  qrcode_text: string;
 }
 
 export interface IPixKeyUser {

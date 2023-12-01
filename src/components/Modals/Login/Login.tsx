@@ -7,8 +7,14 @@ import Eye from "assets/icons/eye-password.svg";
 import { item } from "utils";
 
 export const Login = () => {
-  const { bodyLogin, handleEmailChange, handlePasswordChange, handleLogin } =
-    useAuthContext();
+  const {
+    bodyLogin,
+    handleEmailChange,
+    handlePasswordChange,
+    handleLogin,
+    showModal,
+    handleOpenModalLogin,
+  } = useAuthContext();
 
   return (
     <main
@@ -17,7 +23,7 @@ export const Login = () => {
         const containerElement = e.currentTarget as HTMLElement;
         const clickedElement = e.target as HTMLElement;
         if (containerElement === clickedElement) {
-          handleLogin(false);
+          handleOpenModalLogin();
         }
       }}
     >
@@ -51,7 +57,7 @@ export const Login = () => {
               placeholder="Insira sua Senha"
               autoComplete="current-password"
               required
-              // onChange={(e) => handlePasswordChange(e)}
+              onChange={(e) => handlePasswordChange(e)}
               className={styles.input}
             />
             <img src={Eye} alt="" className={styles.icon} />

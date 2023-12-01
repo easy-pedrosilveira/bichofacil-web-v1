@@ -1,10 +1,10 @@
 import { Dispatch, SetStateAction } from 'react'
 
 export interface ResultProps {
-    animal: string
-    group: string
-    number: string
-    position: string
+    bicho: string
+    grupo: string
+    numero: string
+    posicao: string
   }
 
 export interface ResultGamesProps {

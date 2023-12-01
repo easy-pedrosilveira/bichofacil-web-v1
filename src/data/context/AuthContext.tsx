@@ -67,8 +67,8 @@ export function AuthProvider(props: any) {
   };
 
   // função que abre e fecha modal de login
-  const handleOpenModalLogin = (bool: boolean) => {
-    setShowModal(bool);
+  const handleOpenModalLogin = () => {
+    setShowModal(!showModal);
   };
   //função que busca o usuario no DB através do email
   const getUserByToken = async () => {
@@ -90,7 +90,7 @@ export function AuthProvider(props: any) {
       setMessages(userData.messages);
       setTickets(userData.tickets);
       setPixKey(userData.pix_key);
-      handleOpenModalLogin(false);
+      handleOpenModalLogin();
 
       if (response.status === 200) {
         setUserExists(true);

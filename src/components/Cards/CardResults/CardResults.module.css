@@ -1,5 +1,5 @@
 .card {
-    width: 312px;
+    width: 310px;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -49,12 +49,14 @@
     gap: 18px;
     border-radius: 16px;
     background: var(--YELLOW-01, #FFEC7A);
-    padding: 15px 0px;
+    padding: 24px 0px;
     margin-bottom: 20px;
 }
 
 .innerContent {
     width: 90%;
+    display: flex;
+    gap: 10px;
 }
 
 .positionNumber,

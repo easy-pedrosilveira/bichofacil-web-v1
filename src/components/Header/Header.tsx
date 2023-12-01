@@ -7,24 +7,20 @@ import Notifications from "assets/imgs/notifications.svg";
 import { Login } from "components";
 import { Link, useNavigate } from "react-router-dom";
 import { useWindowSize } from "data/hooks/useWindowSize";
-import {dropdown, itemDropdown} from 'utils'
+import { dropdown, itemDropdown } from "utils";
+import useAuthContext from "data/hooks/useAuthContext";
 
 export const Header = () => {
-  const [logado, setLogado] = useState(false);
-  const [modalLogin, setModalLogin] = useState(false);
+  const { isLogged, handleOpenModalLogin, showModal } = useAuthContext();
   const [dropdown, setDropdown] = useState(false);
   const navigate = useNavigate();
   const { width } = useWindowSize();
 
-  const toggleModalLogin = () => {
-    setModalLogin(!modalLogin);
-  };
-
   const handleNotifications = () => {
-    if (logado === true) {
+    if (isLogged === true) {
       navigate("/notifications");
     } else {
-      toggleModalLogin();
+      handleOpenModalLogin();
     }
   };
 
@@ -49,8 +45,8 @@ export const Header = () => {
           </Link>
           <div className={styles.itemsContainer}>
             <Link
-              to={logado ? "/modalities" : "/"}
-              onClick={logado ? undefined : toggleModalLogin}
+              to={isLogged ? "/modalities" : "/"}
+              onClick={isLogged ? undefined : handleOpenModalLogin}
               className={`${styles.links} ${styles.linksHidden}`}
             >
               Jogar Agora
@@ -61,28 +57,28 @@ export const Header = () => {
             >
               Ajuda
             </Link>
-            {width < 801 && logado ? (
+            {width < 801 && isLogged ? (
               <div onClick={handleNotifications} className={styles.icon}>
                 <img src={Notifications} alt="" />
               </div>
-            ) : width < 801 && !logado ? null : (
+            ) : width < 801 && !isLogged ? null : (
               <div onClick={handleNotifications} className={styles.icon}>
                 <img src={Notifications} alt="" />
               </div>
             )}
-            {logado ? (
+            {isLogged ? (
               <div className={`${styles.authUserItem} ${styles.linksHidden}`}>
                 Meu Perfil <img src={Arrow} alt="" />
               </div>
             ) : (
-              <div className={styles.btnLogin} onClick={toggleModalLogin}>
+              <div className={styles.btnLogin} onClick={handleOpenModalLogin}>
                 Entrar
               </div>
             )}
           </div>
         </div>
       </main>
-      {modalLogin ? <Login /> : null}
+      {showModal ? <Login /> : null}
     </>
   );
 };
