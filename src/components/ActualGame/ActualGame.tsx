@@ -1,12 +1,14 @@
-import { motion } from "framer-motion";
 import styles from "./ActualGame.module.css";
+import { motion } from "framer-motion";
 import { IModalities } from "interfaces";
+import { PlacingGame, MaskGame, AmountBet, BetDateLottery } from "components";
+import { useState } from "react";
 
 interface BetProps {
   actualModalities: IModalities;
 }
 export const ActualGame = ({ actualModalities }: BetProps) => {
-  console.log(actualModalities);
+  const [dataPlacing, setDataPlacing] = useState<number[]>([]);
 
   return (
     <motion.div
@@ -17,14 +19,15 @@ export const ActualGame = ({ actualModalities }: BetProps) => {
         duration: 0.8,
         delay: 0.5,
         ease: [0, 0.71, 0.2, 1.01],
-      }}>
-    <form className={styles.formGame}>
-      <div>Colocação</div>
-      <div>{actualModalities?.name}</div>
-      <div>Valor Apostado</div>
-      <div>Data da Aposta</div>
-      <div>Loteria</div>
-    </form>
+      }}
+    >
+      <form className={styles.formGame}>
+        <PlacingGame placing={actualModalities} dataPlacing={setDataPlacing} />
+        <MaskGame mask={actualModalities} />
+        <AmountBet amount={actualModalities} />
+        <BetDateLottery dateAndLottery={actualModalities} />
+        <div className={styles.btnFinish}>Finalizar Aposta</div>
+      </form>
     </motion.div>
   );
 };

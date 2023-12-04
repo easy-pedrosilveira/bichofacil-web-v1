@@ -9,3 +9,4 @@ export * from "./Cards";
 export * from "./CarouselResults";
 export * from "./MyProfilePanes";
 export * from "./ActualGame";
+export * from "./GamesSteps";

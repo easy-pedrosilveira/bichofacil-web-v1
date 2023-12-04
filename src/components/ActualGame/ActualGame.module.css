@@ -1,4 +1,4 @@
-.container{
+.container {
     width: 100%;
     height: 100%;
     display: flex;
@@ -8,10 +8,28 @@
 
 .formGame {
     width: 592px;
-    height: 1000px;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 48px 48px 0px 0px;
     background: #313BAC;
+}
+
+.btnFinish {
+    width: 384px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: var(--WHITE, #FFF);
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border-radius: 33px;
+    background: #71C638;
+    cursor: pointer;
+    margin-bottom: 61px;
 }
