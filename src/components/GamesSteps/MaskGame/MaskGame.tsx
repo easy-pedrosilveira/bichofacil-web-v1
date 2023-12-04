@@ -18,6 +18,7 @@ export const MaskGame = ({ mask }: MaskGameProps) => {
         />
       </div>
       <div className={styles.selected}></div>
+      <div className={styles.underline}></div>
     </div>
   );
 };

@@ -67,8 +67,8 @@ export function AuthProvider(props: any) {
   };
 
   // função que abre e fecha modal de login
-  const handleOpenModalLogin = () => {
-    setShowModal(!showModal);
+  const handleOpenModalLogin = (bool: boolean) => {
+    setShowModal(bool);
   };
   //função que busca o usuario no DB através do email
   const getUserByToken = async () => {
@@ -90,7 +90,7 @@ export function AuthProvider(props: any) {
       setMessages(userData.messages);
       setTickets(userData.tickets);
       setPixKey(userData.pix_key);
-      handleOpenModalLogin();
+      handleOpenModalLogin(true);
 
       if (response.status === 200) {
         setUserExists(true);
@@ -176,7 +176,7 @@ export function AuthProvider(props: any) {
               toast.error(
                 "Seu token está invalido, por favor faça o login novamente!"
               );
-              setShowModal(true);
+              // setShowModal(true);
               setErrorShown(true); // Marque a mensagem como mostrada
             }
           }

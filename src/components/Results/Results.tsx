@@ -11,7 +11,7 @@ export const Results = () => {
     if (isLogged === true) {
       navigate("/modalities");
     } else {
-      handleOpenModalLogin();
+      handleOpenModalLogin(true);
     }
   };
   return (

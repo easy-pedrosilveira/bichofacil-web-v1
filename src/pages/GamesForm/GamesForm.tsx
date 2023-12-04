@@ -21,7 +21,6 @@ export const GamesForm = () => {
     findGamePerPathName();
   }, [modalities, location.pathname]);
 
-  console.log(actualGame);
   return (
     <>
       <IntroBar

@@ -4,7 +4,7 @@ import { Header, Error, Footer } from "components";
 import useAuthContext from "data/hooks/useAuthContext";
 
 export const Rotas = () => {
-  const { isLogged } = useAuthContext();
+  const { isLogged, handleOpenModalLogin } = useAuthContext();
   return (
     <>
       <Header />
@@ -12,14 +12,13 @@ export const Rotas = () => {
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="*" element={<Error />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/modalities" element={<Modalities />} />
-        <Route path="/games-form/:id" element={<GamesForm />} />
-        {isLogged && (
+        {isLogged ? (
           <>
-            {/* <Route path="/modalities" element={<Modalities />} /> */}
+            <Route path="/modalities" element={<Modalities />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/games-form/:id" element={<GamesForm />} />
           </>
-        )}
+        ) : null}
       </Routes>
       <Footer />
     </>

@@ -15,11 +15,9 @@ export const Profile = () => {
           <div className={styles.txt}>
             <div className={styles.userName}>
               {user?.first_name}
-              Carlos Oliveira
             </div>
             <div className={styles.userEmail}>
               {user?.email}
-              carlosoliveira@email.com.br
             </div>
           </div>
           <div className={styles.edit}>

@@ -1,17 +1,17 @@
-import { Dispatch, SetStateAction } from 'react'
+import { Dispatch, SetStateAction } from "react";
 
 export interface ResultProps {
-    bicho: string
-    grupo: string
-    numero: string
-    posicao: string
-  }
+  bicho: string;
+  grupo: string;
+  numero: string;
+  posicao: string;
+}
 
 export interface ResultGamesProps {
-  lottery_date: string
-  lottery_name: string
-  lottery_type: string
-  result: ResultProps[]
+  lottery_date: string;
+  lottery_name: string;
+  lottery_type: string;
+  result: ResultProps[];
 }
 
 export interface Modalities {
@@ -36,22 +36,23 @@ export interface IModalities {
   max_allowed_number: number;
 }
 
-export interface Loterias{
-    lottery_name: string
-    lottery_type: string
-    lottery_time: string
-    lottery_day: number[]
+export interface Loterias {
+  lottery_name: string;
+  lottery_type: string;
+  lottery_time: string;
+  lottery_day: number[];
 }
 
 export interface IGameContext {
-  data: ResultGamesProps[]
-  modalities: IModalities[]
-  fullModalities: Modalities[]
-  lotteries: Loterias[]
-  blockNumbers: string[]
-  betDate: string
-  getApiTime: () => void,
-  setUrlResults: Dispatch<SetStateAction<string>>
-  setBetDate: Dispatch<SetStateAction<string>>
+  data: ResultGamesProps[];
+  modalities: IModalities[];
+  fullModalities: Modalities[];
+  lotteries: Loterias[];
+  fullLotteries: Loterias[];
+  blockNumbers: string[];
+  betDate: string;
+  getApiTime: () => void;
+  setUrlResults: Dispatch<SetStateAction<string>>;
+  setBetDate: Dispatch<SetStateAction<string>>;
+  getFilteredLotteries: (value: string) => void;
 }
-

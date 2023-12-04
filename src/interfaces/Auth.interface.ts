@@ -11,7 +11,7 @@ export interface IResponseLogin {
 export interface IContextAuth {
   handleLogin: any;
   handleLogout: () => void;
-  handleOpenModalLogin: () => void;
+  handleOpenModalLogin: (value: boolean) => void;
   handleEmailChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handlePasswordChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   refreshUser: (refresh: boolean) => void;

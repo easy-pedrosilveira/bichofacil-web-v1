@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
 import styles from "./PlacingGame.module.css";
+import { useEffect, useState } from "react";
 import { IModalities } from "interfaces";
 
 interface PlacingGameProps {

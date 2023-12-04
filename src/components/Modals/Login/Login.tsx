@@ -29,7 +29,7 @@ export const Login = () => {
         const containerElement = e.currentTarget as HTMLElement;
         const clickedElement = e.target as HTMLElement;
         if (containerElement === clickedElement) {
-          handleOpenModalLogin();
+          handleOpenModalLogin(false);
         }
       }}
     >
@@ -38,7 +38,7 @@ export const Login = () => {
           src={Close}
           alt=""
           className={styles.close}
-          onClick={(e) => handleOpenModalLogin()}
+          onClick={(e) => handleOpenModalLogin(false)}
         />
         <div className={styles.txt}>
           <div className={styles.title}>Olá, bem vindo!</div>

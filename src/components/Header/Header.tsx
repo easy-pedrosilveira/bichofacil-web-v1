@@ -1,10 +1,10 @@
 import styles from "./Header.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Logo from "assets/imgs/logo.svg";
 import Arrow from "assets/icons/arrow.svg";
 import Menu from "assets/icons/menu.svg";
 import Notifications from "assets/imgs/notifications.svg";
-import { Login } from "components";
+import { Login, ModalProfile } from "components";
 import { Link, useNavigate } from "react-router-dom";
 import { useWindowSize } from "data/hooks/useWindowSize";
 import { dropdown, itemDropdown } from "utils";
@@ -12,7 +12,8 @@ import useAuthContext from "data/hooks/useAuthContext";
 
 export const Header = () => {
   const { isLogged, handleOpenModalLogin, showModal } = useAuthContext();
-  const [dropdown, setDropdown] = useState(false);
+  const [modalProfile, setModalProfile] = useState(false);
+  const [isHeaderFixed, setIsHeaderFixed] = useState(false);
   const navigate = useNavigate();
   const { width } = useWindowSize();
 
@@ -20,22 +21,34 @@ export const Header = () => {
     if (isLogged === true) {
       navigate("/notifications");
     } else {
-      handleOpenModalLogin();
+      handleOpenModalLogin(true);
     }
   };
 
-  // const {
-  //   modalLogin,
-  //   setModalLogin,
-  //   modalRegister,
-  //   setModalRegister,
-  //   isLogged,
-  // } = useAuthContext();
-  // const { setProfilePanels } = useAppContext();
+  const handleModalProfile = () => {
+    setModalProfile(!modalProfile)
+  }
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsHeaderFixed(true);
+      } else {
+        setIsHeaderFixed(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
 
   return (
     <>
-      <main className={styles.header}>
+    <main className={`${styles.header} ${isHeaderFixed ? styles.fixed : ""}`}>
         <div className={styles.innerHeader}>
           <div className={styles.menu}>
             <img src={Menu} alt="" />
@@ -46,7 +59,7 @@ export const Header = () => {
           <div className={styles.itemsContainer}>
             <Link
               to={isLogged ? "/modalities" : "/"}
-              onClick={isLogged ? undefined : handleOpenModalLogin}
+              onClick={(e) => isLogged ? undefined : handleOpenModalLogin(true)}
               className={`${styles.links} ${styles.linksHidden}`}
             >
               Jogar Agora
@@ -67,11 +80,11 @@ export const Header = () => {
               </div>
             )}
             {isLogged ? (
-              <div className={`${styles.authUserItem} ${styles.linksHidden}`}>
+              <div className={`${styles.authUserItem} ${styles.linksHidden}`} onClick={handleModalProfile}>
                 Meu Perfil <img src={Arrow} alt="" />
               </div>
             ) : (
-              <div className={styles.btnLogin} onClick={handleOpenModalLogin}>
+              <div className={styles.btnLogin} onClick={(e) => handleOpenModalLogin(true)}>
                 Entrar
               </div>
             )}
@@ -79,6 +92,7 @@ export const Header = () => {
         </div>
       </main>
       {showModal ? <Login /> : null}
+      {modalProfile ? <ModalProfile /> : null}
     </>
   );
 };
