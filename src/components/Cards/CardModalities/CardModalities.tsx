@@ -10,7 +10,7 @@ export const CardModalities = ({ modalities }: CardModalitiesProps) => {
   return (
     <>
       {modalities?.map((modalitie, index) => (
-        <div className={styles.card}>
+        <div className={styles.card} key={index}>
           <div className={styles.txt}>
             <div className={styles.title}>{modalitie?.name}</div>
             <div className={styles.underline}></div>

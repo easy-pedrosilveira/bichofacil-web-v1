@@ -8,3 +8,4 @@ export * from "./IntroBar";
 export * from "./Cards";
 export * from "./CarouselResults";
 export * from "./MyProfilePanes";
+export * from "./ActualGame";

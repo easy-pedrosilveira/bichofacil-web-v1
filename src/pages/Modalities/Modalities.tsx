@@ -4,6 +4,8 @@ import useGameContext from "data/hooks/useGameContext";
 
 export const Modalities = () => {
   const { modalities } = useGameContext();
+  console.log(modalities);
+
   return (
     <div className={styles.container}>
       <IntroBar
