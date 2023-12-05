@@ -38,6 +38,7 @@
     justify-content: space-evenly;
     border-radius: 61px;
     background: var(--blue-blue-03, #324AC9);
+    cursor: pointer;
 }
 
 .text {
