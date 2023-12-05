@@ -13,6 +13,7 @@ import useAuthContext from "data/hooks/useAuthContext";
 export const Header = () => {
   const { isLogged, handleOpenModalLogin, showModal } = useAuthContext();
   const [modalProfile, setModalProfile] = useState(false);
+  const [linkActive, setLinkActive] = useState("");
   const [isHeaderFixed, setIsHeaderFixed] = useState(false);
   const navigate = useNavigate();
   const { width } = useWindowSize();
@@ -25,9 +26,13 @@ export const Header = () => {
     }
   };
 
+  const handleLinkActive = (linkName: string) => {
+    setLinkActive(linkName);
+  };
+
   const handleModalProfile = () => {
-    setModalProfile(!modalProfile)
-  }
+    setModalProfile(!modalProfile);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,10 +50,9 @@ export const Header = () => {
     };
   }, []);
 
-
   return (
     <>
-    <main className={`${styles.header} ${isHeaderFixed ? styles.fixed : ""}`}>
+      <main className={`${styles.header} ${isHeaderFixed ? styles.fixed : ""}`}>
         <div className={styles.innerHeader}>
           <div className={styles.menu}>
             <img src={Menu} alt="" />
@@ -59,14 +63,16 @@ export const Header = () => {
           <div className={styles.itemsContainer}>
             <Link
               to={isLogged ? "/modalities" : "/"}
-              onClick={(e) => isLogged ? undefined : handleOpenModalLogin(true)}
-              className={`${styles.links} ${styles.linksHidden}`}
+              onClick={(e) =>
+                isLogged ? undefined : handleOpenModalLogin(true)
+              }
+              className={`${styles.links} ${linkActive === "Play Now" ? styles.linkActive : ""} ${styles.linksHidden}`}
             >
               Jogar Agora
             </Link>
             <Link
               to={"/help"}
-              className={`${styles.links} ${styles.linksHidden}`}
+              className={`${styles.links} ${linkActive === "Help" ? styles.linkActive : ""} ${styles.linksHidden}`}
             >
               Ajuda
             </Link>
@@ -80,11 +86,17 @@ export const Header = () => {
               </div>
             )}
             {isLogged ? (
-              <div className={`${styles.authUserItem} ${styles.linksHidden}`} onClick={handleModalProfile}>
+              <div
+                className={`${styles.authUserItem} ${styles.linksHidden}`}
+                onClick={handleModalProfile}
+              >
                 Meu Perfil <img src={Arrow} alt="" />
               </div>
             ) : (
-              <div className={styles.btnLogin} onClick={(e) => handleOpenModalLogin(true)}>
+              <div
+                className={styles.btnLogin}
+                onClick={(e) => handleOpenModalLogin(true)}
+              >
                 Entrar
               </div>
             )}

@@ -11,6 +11,8 @@ export function AppProvider(props: any) {
   const [loading, setLoading] = useState<boolean>(false);
   const [helps, setHelps] = useState<IHelps[]>([]);
   const [initialImgs, setInitialImgs] = useState([]);
+  const [profilePanels, setProfilePanels] = useState<number>(0);
+
   useEffect(() => {
     if (Cookies.get("cookiesAccepted") === "false") {
       Cookies.set("cookiesAccepted", "false", { expires: 30 });
@@ -36,6 +38,7 @@ export function AppProvider(props: any) {
       }
       setInitialImgs(response?.data?.imgs);
       setAppConfig(response?.data);
+      setProfilePanels(0);
     });
   }
 
@@ -66,6 +69,8 @@ export function AppProvider(props: any) {
         loading,
         helps,
         initialImgs,
+        profilePanels,
+        setProfilePanels,
       }}
     >
       {props.children}

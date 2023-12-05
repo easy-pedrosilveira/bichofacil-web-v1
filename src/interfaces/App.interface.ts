@@ -36,4 +36,6 @@ export interface IAppContext {
   loading: boolean
   appConfig: IAppConfig
   initialImgs: string[]
+  profilePanels: number;
+  setProfilePanels: (value: number) => void;
 }

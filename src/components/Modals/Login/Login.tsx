@@ -70,7 +70,12 @@ export const Login = () => {
               placeholder="Senha"
               onChange={(e) => handlePasswordChange(e)}
             />
-            <img src={Eye} alt="" className={styles.icon} onClick={toggleShowPassword}/>
+            <img
+              src={Eye}
+              alt=""
+              className={styles.icon}
+              onClick={toggleShowPassword}
+            />
             <Link to="/forget-password" className={styles.stayLogged}>
               Esqueceu a senha?
             </Link>
@@ -81,7 +86,11 @@ export const Login = () => {
         </form>
         <div className={styles.notAccount}>
           <div className={styles.paragraph}>Ainda não tem uma conta? </div>
-          <Link to="/register" className={styles.register}>
+          <Link
+            to="/register"
+            className={styles.register}
+            onClick={(e) => handleOpenModalLogin(false)}
+          >
             Cadastre-se!
           </Link>
         </div>
