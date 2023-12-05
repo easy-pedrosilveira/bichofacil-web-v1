@@ -87,7 +87,7 @@
 
 .totalPages,
 .selectedPage {
-    color: #FFF;
+    color: #3F73E3;
     text-align: center;
     font-size: 16px;
     font-style: normal;
@@ -97,7 +97,7 @@
 }
 
 .selectedPage {
-    color: #3F73E3;
+    color: #FFF;
     font-size: 17px;
 }
 

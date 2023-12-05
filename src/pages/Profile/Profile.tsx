@@ -76,10 +76,15 @@ export const Profile = () => {
         <motion.div
           className={styles.content}
           key={selectedTab.title}
-          variants={item}
-          initial="hidden"
-          animate="visible"
-          transition={{ duration: 0.5 }}
+          initial={{ x: 100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{ x: -100, opacity: 0 }}
+          transition={{
+            duration: 0.6,
+            type: "spring",
+            stiffness: 400,
+            damping: 20,
+          }}
         >
           {selectedTab && (
             <img
