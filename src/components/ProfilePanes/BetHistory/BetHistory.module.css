@@ -53,3 +53,58 @@
 .data {
     width: 65%;
 }
+
+.pagination {
+    width: 95%;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+    margin-bottom: 45px;
+}
+
+.back,
+.next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    outline: none;
+    border: none;
+}
+
+.back {
+    width: 20px;
+    height: 20px;
+    margin-right: 9px;
+}
+
+.back img {
+    width: 16px;
+    height: 16px;
+}
+
+.totalPages,
+.selectedPage {
+    color: #FFF;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.selectedPage {
+    color: #3F73E3;
+    font-size: 17px;
+}
+
+.next {
+    color: var(--blue-blue-02, #3F73E3);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
