@@ -13,6 +13,7 @@ import useAppContext from "data/hooks/useAppConfig";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { item } from "utils";
+import { Link } from "react-router-dom";
 
 const profilePanes = [
   { title: "Pules", content: <BetHistory /> },
@@ -48,12 +49,12 @@ export const Profile = () => {
             <div className={styles.userName}>{user?.first_name}</div>
             <div className={styles.userEmail}>{user?.email}</div>
           </div>
-          <div className={styles.edit}>
+          <Link to="/personal-data" className={styles.edit}>
             <div className={styles.icon}>
               <img src={Edit} alt="" />
             </div>
             <div className={styles.editTxt}>Editar Perfil</div>
-          </div>
+          </Link>
         </div>
         <div className={styles.btn}>Efetuar depósito</div>
       </div>

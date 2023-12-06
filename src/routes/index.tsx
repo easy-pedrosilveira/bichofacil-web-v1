@@ -8,7 +8,7 @@ import {
   FooterLinks,
   Help,
 } from "pages";
-import { Header, Error, Footer } from "components";
+import { Header, Error, Footer, PersonalData } from "components";
 import useAuthContext from "data/hooks/useAuthContext";
 
 export const Rotas = () => {
@@ -22,15 +22,12 @@ export const Rotas = () => {
         <Route path="/faq/?" element={<FooterLinks />} />
         <Route path="help" element={<Help />} />
         <Route path="*" element={<Error />} />
-        
-        <Route path="/modalities" element={<Modalities />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/games-form/:id" element={<GamesForm />} />
         {isLogged ? (
           <>
-            {/* <Route path="/modalities" element={<Modalities />} />
+            <Route path="/modalities" element={<Modalities />} />
             <Route path="/profile" element={<Profile />} />
-            <Route path="/games-form/:id" element={<GamesForm />} /> */}
+            <Route path="/personal-data" element={<PersonalData />} />
+            <Route path="/games-form/:id" element={<GamesForm />} />
           </>
         ) : null}
       </Routes>
