@@ -5,3 +5,4 @@ export * from './Profile';
 export * from './GamesForm';
 export * from './FooterLinks';
 export * from './Help';
+export * from './Notifications';

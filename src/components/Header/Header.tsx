@@ -2,9 +2,9 @@ import styles from "./Header.module.css";
 import { useEffect, useState } from "react";
 import Logo from "assets/imgs/logo.svg";
 import Arrow from "assets/icons/arrow.svg";
-import Menu from "assets/icons/menu.svg";
+import MenuIcon from "assets/icons/menu.svg";
 import Notifications from "assets/imgs/notifications.svg";
-import { Login, ModalProfile } from "components";
+import { Login, ModalProfile, Menu } from "components";
 import { Link, useNavigate } from "react-router-dom";
 import { useWindowSize } from "data/hooks/useWindowSize";
 import { dropdown, itemDropdown } from "utils";
@@ -14,6 +14,7 @@ export const Header = () => {
   const { isLogged, handleOpenModalLogin, showModal } = useAuthContext();
   const [modalProfile, setModalProfile] = useState(false);
   const [linkActive, setLinkActive] = useState("");
+  const [expanded, setExpanded] = useState(false);
   const [isHeaderFixed, setIsHeaderFixed] = useState(false);
   const navigate = useNavigate();
   const { width } = useWindowSize();
@@ -32,6 +33,10 @@ export const Header = () => {
 
   const handleModalProfile = () => {
     setModalProfile(!modalProfile);
+  };
+
+  const toggleExpanded = () => {
+    setExpanded(!expanded);
   };
 
   useEffect(() => {
@@ -54,9 +59,18 @@ export const Header = () => {
     <>
       <main className={`${styles.header} ${isHeaderFixed ? styles.fixed : ""}`}>
         <div className={styles.innerHeader}>
-          <div className={styles.menu}>
-            <img src={Menu} alt="" />
-          </div>
+          <>
+            <div className={styles.menu} onClick={toggleExpanded}>
+              <img src={MenuIcon} alt="" />
+            </div>
+            <nav
+              className={`${styles.nav} ${
+                expanded === true ? styles.expanded : null
+              }`}
+            >
+              <Menu onMenuChange={() => toggleExpanded()} />
+            </nav>
+          </>
           <Link to="/" className={styles.logo}>
             <img src={Logo} alt="" />
           </Link>
@@ -66,13 +80,17 @@ export const Header = () => {
               onClick={(e) =>
                 isLogged ? undefined : handleOpenModalLogin(true)
               }
-              className={`${styles.links} ${linkActive === "Play Now" ? styles.linkActive : ""} ${styles.linksHidden}`}
+              className={`${styles.links} ${
+                linkActive === "Play Now" ? styles.linkActive : ""
+              } ${styles.linksHidden}`}
             >
               Jogar Agora
             </Link>
             <Link
               to={"/help"}
-              className={`${styles.links} ${linkActive === "Help" ? styles.linkActive : ""} ${styles.linksHidden}`}
+              className={`${styles.links} ${
+                linkActive === "Help" ? styles.linkActive : ""
+              } ${styles.linksHidden}`}
             >
               Ajuda
             </Link>

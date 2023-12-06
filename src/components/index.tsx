@@ -10,3 +10,4 @@ export * from "./CarouselResults";
 export * from "./ProfilePanes";
 export * from "./ActualGame";
 export * from "./GamesSteps";
+export * from "./Menu";

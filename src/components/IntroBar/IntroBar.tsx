@@ -1,6 +1,6 @@
 import styles from "./IntroBar.module.css";
-import { Link } from "react-router-dom";
 import Arrow from "assets/icons/arrow-intro.svg";
+import { Link } from "react-router-dom";
 
 interface IntroProps {
   title: string;
@@ -9,6 +9,16 @@ interface IntroProps {
 }
 
 export const IntroBar = ({ title, paragraph, navigate }: IntroProps) => {
+  // const handleNavigate = () => {
+  //   if (navigate === "previous") {
+  //     // Voltar para a página anterior
+  //     history.back();
+  //   } else {
+  //     // Navegar para a rota fornecida
+  //     history.go(navigate);
+  //   }
+  // };
+
   return (
     <div className={styles.container}>
       <div className={styles.innerIntro}>
