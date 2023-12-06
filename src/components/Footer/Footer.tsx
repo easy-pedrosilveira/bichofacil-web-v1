@@ -25,28 +25,28 @@ export const Footer = () => {
         <div className={styles.infoLinks}>
           <div className={styles.links}>
             <Link
-              to="/policy-privacy"
+              to={`/faq/policy-privacy`}
               className={styles.item}
               onClick={scrollToTop}
             >
               Política de Privacidade
             </Link>
             <Link
-              to="/responsible-gaming"
+              to={`/faq/responsible-gaming`}
               className={styles.item}
               onClick={scrollToTop}
             >
               Jogo Resposável
             </Link>
             <Link
-              to="/terms-conditions"
+              to={`/faq/terms-conditions`}
               className={styles.item}
               onClick={scrollToTop}
             >
               Termos e Condições
             </Link>
             <Link
-              to="/policy-aml"
+              to={`/faq/policy-aml`}
               className={styles.item}
               onClick={scrollToTop}
             >
@@ -62,7 +62,9 @@ export const Footer = () => {
           <div className={styles.lastInfo}>
             Copyright@2022. Bicho Fácil - Todos os direitos reservados.
           </div>
-          <div className={styles.lastInfo} id={styles.doubtBottom}>duvidas@bichofacil.com</div>
+          <div className={styles.lastInfo} id={styles.doubtBottom}>
+            duvidas@bichofacil.com
+          </div>
         </div>
         <div className={styles.toTop} onClick={scrollToTop}>
           <img src={Arrow} alt="Ao topo" style={{ rotate: "180deg" }} />

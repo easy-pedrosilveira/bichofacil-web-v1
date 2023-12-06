@@ -9,7 +9,6 @@ interface cardProps {
 }
 
 export const CardResults = ({ data }: cardProps) => {
-  console.log(data);
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.5 }}

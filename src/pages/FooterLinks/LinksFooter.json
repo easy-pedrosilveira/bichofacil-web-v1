@@ -1,0 +1,71 @@
+[
+    {
+      "link_id": "Política de Privacidade",
+      "content": [
+        {
+          "title": "Política de Privacidade",
+          "paragraph": "Lorem ipsum dolor sit amet consectetur. Volutpat egestas neque felis maecenas ut ullamcorper vel. Facilisis penatibus dolor egestas elit. Dictum cras vitae pulvinar amet interdum. Magna lectus donec facilisi a condimentum. In interdum lectus auctor volutpat varius tristique ultrices."
+        },
+        {
+          "title": "Informações Coletadas",
+          "paragraph": "Lorem ipsum dolor sit amet consectetur. Volutpat egestas neque felis maecenas ut ullamcorper vel. Facilisis penatibus dolor egestas elit. Dictum cras vitae pulvinar amet interdum. Magna lectus donec facilisi a condimentum. In interdum lectus auctor volutpat varius tristique ultrices."
+        },
+        {
+          "title": "Informações de Uso",
+          "paragraph": "Lorem ipsum dolor sit amet consectetur. Volutpat egestas neque felis maecenas ut ullamcorper vel. Facilisis penatibus dolor egestas elit. Dictum cras vitae pulvinar amet interdum. Magna lectus donec facilisi a condimentum. In interdum lectus auctor volutpat varius tristique ultrices."
+        }
+      ]
+    },
+    {
+      "link_id": "Jogo Resposável",
+      "content": [
+        {
+          "title": "Jogo Resposável",
+          "paragraph": "Lorem ipsum dolor sit amet consectetur. Volutpat egestas neque felis maecenas ut ullamcorper vel. Facilisis penatibus dolor egestas elit. Dictum cras vitae pulvinar amet interdum. Magna lectus donec facilisi a condimentum. In interdum lectus auctor volutpat varius tristique ultrices."
+        },
+        {
+          "title": "Informações Coletadas",
+          "paragraph": "Lorem ipsum dolor sit amet consectetur. Volutpat egestas neque felis maecenas ut ullamcorper vel. Facilisis penatibus dolor egestas elit. Dictum cras vitae pulvinar amet interdum. Magna lectus donec facilisi a condimentum. In interdum lectus auctor volutpat varius tristique ultrices."
+        },
+        {
+          "title": "Informações de Uso",
+          "paragraph": "Lorem ipsum dolor sit amet consectetur. Volutpat egestas neque felis maecenas ut ullamcorper vel. Facilisis penatibus dolor egestas elit. Dictum cras vitae pulvinar amet interdum. Magna lectus donec facilisi a condimentum. In interdum lectus auctor volutpat varius tristique ultrices."
+        }
+      ]
+    },
+    {
+      "link_id": "Termos e Condições",
+      "content": [
+        {
+          "title": "Termos e Condições",
+          "paragraph": "Lorem ipsum dolor sit amet consectetur. Volutpat egestas neque felis maecenas ut ullamcorper vel. Facilisis penatibus dolor egestas elit. Dictum cras vitae pulvinar amet interdum. Magna lectus donec facilisi a condimentum. In interdum lectus auctor volutpat varius tristique ultrices."
+        },
+        {
+          "title": "Informações Coletadas",
+          "paragraph": "Lorem ipsum dolor sit amet consectetur. Volutpat egestas neque felis maecenas ut ullamcorper vel. Facilisis penatibus dolor egestas elit. Dictum cras vitae pulvinar amet interdum. Magna lectus donec facilisi a condimentum. In interdum lectus auctor volutpat varius tristique ultrices."
+        },
+        {
+          "title": "Informações de Uso",
+          "paragraph": "Lorem ipsum dolor sit amet consectetur. Volutpat egestas neque felis maecenas ut ullamcorper vel. Facilisis penatibus dolor egestas elit. Dictum cras vitae pulvinar amet interdum. Magna lectus donec facilisi a condimentum. In interdum lectus auctor volutpat varius tristique ultrices."
+        }
+      ]
+    },
+    {
+      "link_id": "Política e aml",
+      "content": [
+        {
+          "title": "Política e aml",
+          "paragraph": "Lorem ipsum dolor sit amet consectetur. Volutpat egestas neque felis maecenas ut ullamcorper vel. Facilisis penatibus dolor egestas elit. Dictum cras vitae pulvinar amet interdum. Magna lectus donec facilisi a condimentum. In interdum lectus auctor volutpat varius tristique ultrices."
+        },
+        {
+          "title": "Informações Coletadas",
+          "paragraph": "Lorem ipsum dolor sit amet consectetur. Volutpat egestas neque felis maecenas ut ullamcorper vel. Facilisis penatibus dolor egestas elit. Dictum cras vitae pulvinar amet interdum. Magna lectus donec facilisi a condimentum. In interdum lectus auctor volutpat varius tristique ultrices."
+        },
+        {
+          "title": "Informações de Uso",
+          "paragraph": "Lorem ipsum dolor sit amet consectetur. Volutpat egestas neque felis maecenas ut ullamcorper vel. Facilisis penatibus dolor egestas elit. Dictum cras vitae pulvinar amet interdum. Magna lectus donec facilisi a condimentum. In interdum lectus auctor volutpat varius tristique ultrices."
+        }
+      ]
+    }
+  ]
+  

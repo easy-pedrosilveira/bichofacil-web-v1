@@ -1,0 +1,16 @@
+.title {
+    color: var(--graygray-05, #33303E);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.paragraph {
+    color: var(--graygray-04, #5F5C6B);
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
