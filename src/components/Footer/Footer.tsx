@@ -25,28 +25,28 @@ export const Footer = () => {
         <div className={styles.infoLinks}>
           <div className={styles.links}>
             <Link
-              to={`/faq/policy-privacy`}
+              to={`/policy-privacy`}
               className={styles.item}
               onClick={scrollToTop}
             >
               Política de Privacidade
             </Link>
             <Link
-              to={`/faq/responsible-gaming`}
+              to={`/responsible-gaming`}
               className={styles.item}
               onClick={scrollToTop}
             >
               Jogo Resposável
             </Link>
             <Link
-              to={`/faq/terms-conditions`}
+              to={`/terms-conditions`}
               className={styles.item}
               onClick={scrollToTop}
             >
               Termos e Condições
             </Link>
             <Link
-              to={`/faq/policy-aml`}
+              to={`/policy-aml`}
               className={styles.item}
               onClick={scrollToTop}
             >

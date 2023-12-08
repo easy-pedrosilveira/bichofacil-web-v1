@@ -24,7 +24,8 @@
     justify-content: space-between;
 }
 
-.menu {
+.menu,
+.nav {
     display: none;
 }
 
@@ -125,15 +126,18 @@
     @media (max-width: 800px) {
 
         .menu {
+            display: block;
             width: auto;
             height: 100%;
             display: flex;
             align-items: center;
+            cursor: pointer;
         }
 
         .nav {
             position: fixed;
             top: 0px;
+            display: block;
             left: -280px;
             width: 280px;
             height: 100vh;

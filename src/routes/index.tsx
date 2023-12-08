@@ -5,9 +5,12 @@ import {
   Modalities,
   Profile,
   GamesForm,
-  FooterLinks,
   Help,
   Notifications,
+  PolicyPrivacy,
+  ResponsibleGaming,
+  PolicyAml,
+  TermsConditions,
 } from "pages";
 import { Header, Error, Footer, PersonalData } from "components";
 import useAuthContext from "data/hooks/useAuthContext";
@@ -20,9 +23,12 @@ export const Rotas = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/faq/?" element={<FooterLinks />} />
         <Route path="help" element={<Help />} />
         <Route path="*" element={<Error />} />
+        <Route path="/policy-privacy" element={<PolicyPrivacy />} />
+        <Route path="/responsible-gaming" element={<ResponsibleGaming />} />
+        {/* <Route path="/terms-conditions" element={<TermsConditions />} />
+        <Route path="/policy-aml" element={<PolicyAml />} /> */}
         {isLogged ? (
           <>
             <Route path="/modalities" element={<Modalities />} />

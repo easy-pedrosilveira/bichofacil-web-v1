@@ -11,7 +11,7 @@ interface MenuProps {
 }
 
 export const Menu = ({ onMenuChange }: MenuProps) => {
-  const { user } = useAuthContext();
+  const { isLogged, user, handleOpenModalLogin, showModal } = useAuthContext();
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -29,36 +29,38 @@ export const Menu = ({ onMenuChange }: MenuProps) => {
           onClick={() => onMenuChange(false)}
         />
       </div>
-      <div className={styles.dropdown}>
-        <div className={styles.dropdownToggle} onClick={toggleDropdown}>
-          <span className={styles.userName}>Olá, {user?.first_name}</span>
-          <img src={Arrow} alt="" />
-        </div>
-        {dropdownOpen && (
-          <div className={styles.dropdownContent}>
-            <Link to="/profile" onClick={() => onMenuChange(false)}>
-              <span className={styles.links}>Meu Perfil</span>
-            </Link>
-            <Link to="/profile" onClick={() => onMenuChange(false)}>
-              <span className={styles.links}>Pules</span>
-            </Link>
-            <Link to="/profile" onClick={() => onMenuChange(false)}>
-              <span className={styles.links}>Movimentações</span>
-            </Link>
-            <Link to="/profile" onClick={() => onMenuChange(false)}>
-              <span className={styles.links}>Efetuar saque</span>
-            </Link>
-            <Link to="/profile" onClick={() => onMenuChange(false)}>
-              <span className={styles.links}>Carteira</span>
-            </Link>
-            <div>
-              <span className={styles.links} style={{ color: "#FF7369" }}>
-                Desconectar
-              </span>
-            </div>
+      {isLogged ? (
+        <div className={styles.dropdown}>
+          <div className={styles.dropdownToggle} onClick={toggleDropdown}>
+            <span className={styles.userName}>Olá, {user?.first_name}</span>
+            <img src={Arrow} alt="" />
           </div>
-        )}
-      </div>
+          {dropdownOpen && (
+            <div className={styles.dropdownContent}>
+              <Link to="/profile" onClick={() => onMenuChange(false)}>
+                <span className={styles.links}>Meu Perfil</span>
+              </Link>
+              <Link to="/profile" onClick={() => onMenuChange(false)}>
+                <span className={styles.links}>Pules</span>
+              </Link>
+              <Link to="/profile" onClick={() => onMenuChange(false)}>
+                <span className={styles.links}>Movimentações</span>
+              </Link>
+              <Link to="/profile" onClick={() => onMenuChange(false)}>
+                <span className={styles.links}>Efetuar saque</span>
+              </Link>
+              <Link to="/profile" onClick={() => onMenuChange(false)}>
+                <span className={styles.links}>Carteira</span>
+              </Link>
+              <div>
+                <span className={styles.links} style={{ color: "#FF7369" }}>
+                  Desconectar
+                </span>
+              </div>
+            </div>
+          )}
+        </div>
+      ) : null}
       <div className={styles.anotherLinks}>
         <Link to="/">
           <span className={styles.links} onClick={() => onMenuChange(false)}>
