@@ -54,8 +54,6 @@ export const SelectProfilePanes = () => {
     }
   }, [width, profilePanels]);
 
-  console.log(arrowPosition);
-
   return (
     <div className={styles.profilePanels}>
       <div className={styles.underlineReponsive}></div>

@@ -1,0 +1,113 @@
+.container {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 69px 0px 87px 0px;
+}
+
+.defaultExtracts {
+    width: 100%;
+    height: 56px;
+    border-radius: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--blue-blue-03, #324AC9);
+}
+
+.icon {
+    width: 5%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon img {
+    width: 27px;
+    height: 27px;
+}
+
+.title {
+    width: 80%;
+    color: #FFF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.hours {
+    width: 10%;
+    color: var(--blue-blue-01, #C6D6FF);
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-align: right;
+}
+
+.noExtracts {
+    color: var(--YELLOW-01, #FFEC7A);
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.pagination {
+    width: 95%;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.back,
+.next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    outline: none;
+    border: none;
+}
+
+.back {
+    width: 20px;
+    height: 20px;
+    margin-right: 9px;
+}
+
+.back img {
+    width: 16px;
+    height: 16px;
+}
+
+.totalPages,
+.selectedPage {
+    color: #3F73E3;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.selectedPage {
+    color: #FFF;
+    font-size: 17px;
+}
+
+.next {
+    color: var(--blue-blue-02, #3F73E3);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}

@@ -56,6 +56,7 @@ export interface IExtractsUser {
   read_status: boolean;
   title: string;
   user: string;
+  increment: number;
 }
 
 export interface IMessagesUser {

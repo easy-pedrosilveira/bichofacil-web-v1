@@ -16,7 +16,7 @@ import { Header, Error, Footer, PersonalData } from "components";
 import useAuthContext from "data/hooks/useAuthContext";
 
 export const Rotas = () => {
-  const { isLogged, handleOpenModalLogin } = useAuthContext();
+  const { isLogged } = useAuthContext();
   return (
     <>
       <Header />

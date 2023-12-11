@@ -5,7 +5,7 @@ export * from "./Profile";
 export * from "./GamesForm";
 export * from "./Help";
 export * from "./Notifications";
-export * from "./PolicyPrivacy";
 export * from "./ResponsibleGaming";
+export * from "./PolicyPrivacy";
 export * from "./TermsConditions";
 export * from "./PolicyAml";
