@@ -35,7 +35,9 @@ export const ExtractMessage = ({ onModalChange, extracts }: ModalProps) => {
           <div className={styles.title}> {extracts?.title}</div>
           <div className={styles.info}>
             <div className={styles.label}>Valor:</div>
-            <div className={styles.data}>R${extracts?.value}</div>
+            <div className={styles.data}>
+              R${extracts?.value}
+            </div>
           </div>
           <div className={styles.info}>
             <div className={styles.label}>Data:</div>

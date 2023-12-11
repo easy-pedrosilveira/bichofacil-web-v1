@@ -168,10 +168,15 @@
         }
 
         .contentResponsive {
-            position: fixed;
-            top: 95px;
+            position: absolute;
+            top: 0px;
             width: 100%;
-            background: red;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 5;
+            background: #313BAC;
         }
 
         .innerIntro {

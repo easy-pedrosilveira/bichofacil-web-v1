@@ -21,6 +21,10 @@ export const Notifications = () => {
 
   const goToPage = (page: any) => {
     setCurrentPage(page);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   const markReadMessage = async (messageId: string) => {

@@ -24,8 +24,11 @@ export const TransactionLog = () => {
 
   const goToPage = (page: any) => {
     setCurrentPage(page);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
-
   const toggleModalExtractMessage = (props: IExtractsUser) => {
     setExtractMessage(!extractMessage);
     setDataExtract(props);
