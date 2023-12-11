@@ -31,7 +31,7 @@ export const Header = () => {
     setLinkActive(linkName);
   };
 
-  const handleModalProfile = () => {
+  const toggleModalProfile = () => {
     setModalProfile(!modalProfile);
   };
 
@@ -106,7 +106,7 @@ export const Header = () => {
             {isLogged ? (
               <div
                 className={`${styles.authUserItem} ${styles.linksHidden}`}
-                onClick={handleModalProfile}
+                onClick={toggleModalProfile}
               >
                 Meu Perfil <img src={Arrow} alt="" />
               </div>
@@ -122,7 +122,7 @@ export const Header = () => {
         </div>
       </main>
       {showModal ? <Login /> : null}
-      {modalProfile ? <ModalProfile /> : null}
+      {modalProfile ? <ModalProfile onModalChange={toggleModalProfile} /> : null}
     </>
   );
 };

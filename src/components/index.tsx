@@ -7,6 +7,7 @@ export * from "./SignUp";
 export * from "./IntroBar";
 export * from "./Cards";
 export * from "./CarouselResults";
+export * from "./SelectProfilePanes";
 export * from "./ProfilePanes";
 export * from "./ActualGame";
 export * from "./GamesSteps";

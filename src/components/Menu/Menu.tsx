@@ -1,10 +1,11 @@
 import styles from "./Menu.module.css";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "assets/imgs/logo.svg";
 import Close from "assets/icons/close-white.svg";
 import Arrow from "assets/icons/arrow.svg";
 import useAuthContext from "data/hooks/useAuthContext";
+import useAppContext from "data/hooks/useAppConfig";
 
 interface MenuProps {
   onMenuChange: (isOpen: boolean) => void;
@@ -12,7 +13,14 @@ interface MenuProps {
 
 export const Menu = ({ onMenuChange }: MenuProps) => {
   const { isLogged, user, handleOpenModalLogin, showModal } = useAuthContext();
+  const { setProfilePanels } = useAppContext();
+  const navigate = useNavigate();
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const linkToProfile = (value: number) => {
+    setProfilePanels(value);
+    navigate("/profile");
+    onMenuChange(false);
+  };
 
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
@@ -37,21 +45,21 @@ export const Menu = ({ onMenuChange }: MenuProps) => {
           </div>
           {dropdownOpen && (
             <div className={styles.dropdownContent}>
-              <Link to="/profile" onClick={() => onMenuChange(false)}>
+              <div onClick={(e) => linkToProfile(0)}>
                 <span className={styles.links}>Meu Perfil</span>
-              </Link>
-              <Link to="/profile" onClick={() => onMenuChange(false)}>
+              </div>
+              <div onClick={(e) => linkToProfile(0)}>
                 <span className={styles.links}>Pules</span>
-              </Link>
-              <Link to="/profile" onClick={() => onMenuChange(false)}>
+              </div>
+              <div onClick={(e) => linkToProfile(1)}>
                 <span className={styles.links}>Movimentações</span>
-              </Link>
-              <Link to="/profile" onClick={() => onMenuChange(false)}>
+              </div>
+              <div onClick={(e) => linkToProfile(2)}>
                 <span className={styles.links}>Efetuar saque</span>
-              </Link>
-              <Link to="/profile" onClick={() => onMenuChange(false)}>
+              </div>
+              <div >
                 <span className={styles.links}>Carteira</span>
-              </Link>
+              </div>
               <div>
                 <span className={styles.links} style={{ color: "#FF7369" }}>
                   Desconectar
@@ -67,12 +75,18 @@ export const Menu = ({ onMenuChange }: MenuProps) => {
             Resutados
           </span>
         </Link>
-        <Link to="/">
+        <Link
+          to={isLogged ? "/modalities" : "/"}
+          onClick={(e) => (isLogged ? undefined : handleOpenModalLogin(true))}
+        >
           <span className={styles.links} onClick={() => onMenuChange(false)}>
             Jogar Agora
           </span>
         </Link>
-        <Link to="/">
+        <Link
+          to=""
+          onClick={(e) => (isLogged ? undefined : handleOpenModalLogin(true))}
+        >
           <span className={styles.links} onClick={() => onMenuChange(false)}>
             Carteira
           </span>

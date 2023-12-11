@@ -35,10 +35,10 @@
 
 .shadow {
     position: absolute;
-    top: 12vh;
+    top: 12.5vh;
     width: 806px;
-    height: 301px;
-    border-radius: 806px;
+    height: 200px;
+    border-radius: 300px 300px 0px 0px;
     opacity: 0.5;
     background: #324AC9;
     z-index: -1;

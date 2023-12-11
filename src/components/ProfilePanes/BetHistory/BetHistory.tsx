@@ -1,6 +1,8 @@
 import styles from "./BetHistory.module.css";
 import { useState } from "react";
 import Arrow from "assets/icons/arrow-results.svg";
+import { IntroBar } from "components/IntroBar";
+import { useWindowSize } from "data";
 
 const betHistories = [
   {
@@ -134,6 +136,7 @@ const betHistories = [
 const itemsPerPage = 3;
 
 export const BetHistory = () => {
+  const { width } = useWindowSize();
   const [currentPage, setCurrentPage] = useState(1);
 
   const startIndex = (currentPage - 1) * itemsPerPage;
