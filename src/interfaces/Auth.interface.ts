@@ -57,6 +57,7 @@ export interface IExtractsUser {
   title: string;
   user: string;
   increment: number;
+  value: string;
 }
 
 export interface IMessagesUser {
