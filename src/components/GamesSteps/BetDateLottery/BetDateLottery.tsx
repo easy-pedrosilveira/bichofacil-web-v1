@@ -45,13 +45,15 @@ export const BetDateLottery = ({
     setSelectedLottery(selectedLotteries);
   };
 
-  const options = lotteries.length ? lotteries.map((item) => ({
-    value: item.lottery_type,
-    label: item.lottery_name
-  })) : fullLotteries.map((item) => ({
-    value: item.lottery_type,
-    label: item.lottery_name
-  }));
+  const options = lotteries.length
+    ? lotteries.map((item) => ({
+        value: item.lottery_type,
+        label: item.lottery_name,
+      }))
+    : fullLotteries.map((item) => ({
+        value: item.lottery_type,
+        label: item.lottery_name,
+      }));
 
   useEffect(() => {
     dataDate(selectedDate);
@@ -73,6 +75,7 @@ export const BetDateLottery = ({
           max={maxDate.toISOString().split("T")[0]}
         />
       </div>
+      <div className={styles.underline}></div>
       <div className={styles.lotteryes}>
         <div className={styles.title}>Loteria</div>
         <Select

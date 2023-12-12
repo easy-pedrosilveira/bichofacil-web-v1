@@ -9,8 +9,18 @@ interface BetProps {
 }
 export const ActualGame = ({ actualModalities }: BetProps) => {
   const [dataPlacing, setDataPlacing] = useState<number[]>([]);
+  const [dataAmount, setDataAmount] = useState<number>(0);
   const [dataDate, setDataDate] = useState<string>("");
   const [dataLottery, setDataLottery] = useState<string[]>([]);
+
+  const tableData = {
+    dataPlacing,
+    dataAmount,
+    dataDate,
+    dataLottery,
+  };
+
+  console.table(tableData);
 
   return (
     <motion.div
@@ -26,7 +36,7 @@ export const ActualGame = ({ actualModalities }: BetProps) => {
       <form className={styles.formGame}>
         <PlacingGame placing={actualModalities} dataPlacing={setDataPlacing} />
         <MaskGame mask={actualModalities} />
-        <AmountBet amount={actualModalities} />
+        <AmountBet amount={actualModalities} dataAmount={setDataAmount} />
         <BetDateLottery
           dateAndLottery={actualModalities}
           dataDate={setDataDate}
