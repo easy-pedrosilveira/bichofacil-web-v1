@@ -2,8 +2,10 @@
     width: 100%;
     height: auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 24px;
 }
 
 .content {
@@ -11,23 +13,30 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-    border: 1px solid;
 }
 
 .message {
     width: 100%;
-    height: 92px;
+    height: auto;
     display: flex;
+    align-items: flex-start;
     justify-content: center;
+    gap: 6px;
     border-radius: 16px;
+    padding: 16px 0px;
     background: var(--blue-blue-03, #324AC9);
+    cursor: pointer;
 }
 
-.new{
-    width: 10%;
+.new {
+    width: 15px;
+    height: 21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.newMessage{
+.newMessage {
     width: 8px;
     height: 8px;
     border-radius: 50%;
@@ -35,10 +44,11 @@
 }
 
 .texts {
-    width: 90%;
+    width: 95%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 15px;
 }
 
 .title {
@@ -55,5 +65,60 @@
     font-size: 15px;
     font-style: normal;
     font-weight: 300;
+    line-height: normal;
+}
+
+.pagination {
+    width: 85%;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+    margin-bottom: 45px;
+}
+
+.back,
+.next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    outline: none;
+    border: none;
+}
+
+.back {
+    width: 20px;
+    height: 20px;
+    margin-right: 9px;
+}
+
+.back img {
+    width: 16px;
+    height: 16px;
+}
+
+.totalPages,
+.selectedPage {
+    color: #3F73E3;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.selectedPage {
+    color: #FFF;
+    font-size: 17px;
+}
+
+.next {
+    color: var(--blue-blue-02, #3F73E3);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
     line-height: normal;
 }

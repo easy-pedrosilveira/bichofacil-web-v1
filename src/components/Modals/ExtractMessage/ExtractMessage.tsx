@@ -11,8 +11,6 @@ interface ModalProps {
 }
 
 export const ExtractMessage = ({ onModalChange, extracts }: ModalProps) => {
-  console.log(extracts?.description);
-
   return (
     <div
       className={styles.backDrop}

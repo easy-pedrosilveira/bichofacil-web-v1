@@ -85,10 +85,10 @@ export interface IPixKeyUser {
 
 export interface ITicketsUser {
   bet_date: string;
-  bet_value: string;
+  bet_value: number;
   created_date: string;
   id: string;
-  ip_address: null | string;
+  ip_address: string | null;
   localization: {
     latitude: number;
     longitude: number;
@@ -98,15 +98,10 @@ export interface ITicketsUser {
   numbers: string[];
   payment_type: string;
   positions: number[];
+  prize_data: any[]; 
   prize_winner: boolean;
-  prize_data: {
-    bet: string;
-    id: number;
-    prize_number: string[];
-    prize_position: number;
-    prize_value: string;
-    processed: boolean;
-    total_value: string;
-    user: string;
-  }[];
+  processed: boolean;
+  register_number: string;
+  results: any[]; 
+  total_value: number;
 }

@@ -2,8 +2,9 @@ import styles from "./BetHistory.module.css";
 import Arrow from "assets/icons/arrow-results.svg";
 import { useContext, useState } from "react";
 import AuthContext from "data/context/AuthContext";
+import { format } from "date-fns";
 
-const itemsPerPage = 3;
+const itemsPerPage = 4;
 
 export const BetHistory = () => {
   const { user } = useContext(AuthContext);
@@ -22,7 +23,14 @@ export const BetHistory = () => {
     });
   };
 
-  console.log(tickets)
+  const formatPositions = (positions: any) => {
+    const minPosition = Math.min(...positions);
+    const maxPosition = Math.max(...positions);
+
+    return `${minPosition}º ao ${maxPosition}º Prêmio`;
+  };
+
+  console.log(tickets);
 
   return (
     <div className={styles.container}>
@@ -30,33 +38,58 @@ export const BetHistory = () => {
         <div className={styles.betHistory} key={index}>
           <div className={styles.columnDark}>
             <div className={styles.title}>Nº da Pule</div>
-            {/* <div className={styles.data}>{bet.numeroPule}</div> */}
+            <div className={styles.data}>{bet?.id}</div>
           </div>
           <div className={styles.column}>
             <div className={styles.title}>Data da Aposta</div>
-            {/* <div className={styles.data}>{bet.dataAposta}</div> */}
+            <div className={styles.data}>
+              {format(new Date(bet?.created_date), "dd/MM/yyyy")}
+            </div>
           </div>
           <div className={styles.columnDark}>
             <div className={styles.title}>Aposta</div>
-            {/* <div className={styles.data}>{bet.aposta}</div> */}
+            <div className={styles.data}>
+              <div className={styles.data}>
+                {bet?.modality} - {formatPositions(bet?.positions)}
+              </div>
+            </div>
           </div>
           <div className={styles.column}>
             <div className={styles.title}>Números</div>
             <div className={styles.data}>
-              {/* {bet.numerosApostados.join(" - ")} */}
+              {bet?.numbers.length !== 0
+                ? bet.numbers.map((bets, index) => (
+                    <span key={index}>
+                      {bets}
+                      {index < bet.numbers.length - 1 ? " - " : ""}
+                    </span>
+                  ))
+                : null}
             </div>
           </div>
           <div className={styles.columnDark}>
             <div className={styles.title}>Data Loteria</div>
-            {/* <div className={styles.data}>{bet?.dataLoteria}</div> */}
+            <div className={styles.data}>
+              {" "}
+              {format(new Date(bet?.bet_date), "dd/MM/yyyy")}
+            </div>
           </div>
           <div className={styles.column}>
             <div className={styles.title}>Loteria</div>
-            {/* <div className={styles.data}>{bet?.loteria}</div> */}
+            <div className={styles.data}>
+              {bet.lotteries.length !== 0
+                ? bet.lotteries.map((bets, index) => (
+                    <span key={index}>
+                      {bets}
+                      {index < bet.lotteries.length - 1 ? " - " : ""}
+                    </span>
+                  ))
+                : null}
+            </div>
           </div>
           <div className={styles.columnDark}>
             <div className={styles.title}>Total</div>
-            {/* <div className={styles.data}>{bet.totalApostado}</div> */}
+            <div className={styles.data}>{bet?.total_value.toFixed(2)}</div>
           </div>
         </div>
       ))}

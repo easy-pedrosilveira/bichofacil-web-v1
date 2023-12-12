@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+.backDrop {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.224);
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(1px);
+    z-index: 10;
+}
+
+.modal {
+    width: 330px;
+    height: 370px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    border-radius: 16px;
+    background: var(--WHITE, #FFF);
+}
+
+.header {
+    width: 100%;
+    height: 57px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid var(--blue-blue-01, #C6D6FF);
+}
+
+.innerHeader {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.intro {
+    color: var(--graygray-03, #7A7786);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.body {
+    height: 343px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.innerBody {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.title {
+    color: var(--blue-blue-03, #324AC9);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.content {
+    color: var(--graygray-03, #7A7786);
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.closeBtn {
+    width: 143px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 33px;
+    background: var(--blue-blue-03, #324AC9);
+}

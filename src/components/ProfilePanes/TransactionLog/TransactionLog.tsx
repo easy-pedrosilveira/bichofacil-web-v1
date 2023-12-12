@@ -15,7 +15,6 @@ export const TransactionLog = () => {
   const [dataExtract, setDataExtract] = useState<IExtractsUser>()
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
-
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const currentExtracts = extracts.slice(startIndex, endIndex);
