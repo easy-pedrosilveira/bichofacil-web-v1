@@ -35,11 +35,22 @@
 }
 
 .input {
-    width: 240px;
-    height: 48px;
+    width: 270px;
+    height: 52px;
     border-radius: 32px;
     border: 1px solid var(--blue-blue-02, #3F73E3);
     background: var(--WHITE, #FFF);
+    color: var(--graygray-03, #7A7786);
+    font-variant-numeric: lining-nums tabular-nums;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    text-indent: 10px;
+    line-height: normal;
+}
+
+input[type="date"] {
+    padding-right: 10px;
 }
 
 .underline {
@@ -54,13 +65,16 @@
         .container {
             width: 100%;
         }
+
         .title {
             font-size: 18px;
         }
+
         .lotteryes {
             margin-bottom: 32px;
         }
-        .underline{
+
+        .underline {
             width: 90%;
         }
     }
