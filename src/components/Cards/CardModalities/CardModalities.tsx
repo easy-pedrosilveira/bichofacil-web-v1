@@ -7,6 +7,12 @@ interface CardModalitiesProps {
 }
 
 export const CardModalities = ({ modalities }: CardModalitiesProps) => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <>
       {modalities?.map((modalitie, index) => (
@@ -20,6 +26,7 @@ export const CardModalities = ({ modalities }: CardModalitiesProps) => {
               className={styles.btn}
               style={{ color: "white" }}
               to={`/games-form/${modalitie.short_name}`}
+              onClick={scrollToTop}
             >
               JOGAR
             </Link>

@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+.backDrop {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.224);
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(1px);
+    z-index: 10;
+}
+
+.modal {
+    width: 448px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 16px;
+    box-shadow: 0px 4px 23px 0px rgba(0, 0, 0, 0.25);
+    background: #fff;
+    z-index: 1;
+}
+
+.header {
+    width: 100%;
+    height: 57px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid var(--blue-blue-01, #C6D6FF);
+}
+
+.innerHeader {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title {
+    color: var(--graygray-03, #7A7786);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.close {
+    width: 34px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.body {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.valueGame {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 36px;
+}
+
+.valueTxt {
+    color: var(--graygray-03, #7A7786);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.value {
+    color: var(--blue-blue-05, #192494);
+    font-family: Poppins;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 58px;
+}
+
+.balance {
+    width: 384px;
+    height: 54px;
+    display: flex;
+    justify-content: space-around;
+    gap: 100px;
+    align-items: center;
+    border-radius: 32px;
+    background: #F0F0F0;
+    margin-bottom: 19px;
+}
+
+.debited {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    color: #7A7786;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 23px;
+}
+
+.debitedTxt {
+    color: var(--graygray-04, #5F5C6B);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.btn {
+    width: 384px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 33px;
+    background: #71C638;
+    color: var(--WHITE, #FFF);
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    cursor: pointer;
+    margin-bottom: 30px;
+}

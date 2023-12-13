@@ -3,6 +3,7 @@ export * from "./Register";
 export * from "./Modalities";
 export * from "./Profile";
 export * from "./GamesForm";
+export * from "./GameSummary";
 export * from "./Help";
 export * from "./Notifications";
 export * from "./ResponsibleGaming";

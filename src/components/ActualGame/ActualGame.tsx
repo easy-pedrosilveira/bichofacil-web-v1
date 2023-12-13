@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { IModalities } from "interfaces";
 import { PlacingGame, MaskGame, AmountBet, BetDateLottery } from "components";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 interface BetProps {
   actualModalities: IModalities;
@@ -42,7 +43,9 @@ export const ActualGame = ({ actualModalities }: BetProps) => {
           dataDate={setDataDate}
           dataLottery={setDataLottery}
         />
-        <div className={styles.btnFinish}>Finalizar Aposta</div>
+        <Link to="/game-summary" className={styles.btnFinish}>
+          Finalizar Aposta
+        </Link>
       </form>
     </motion.div>
   );

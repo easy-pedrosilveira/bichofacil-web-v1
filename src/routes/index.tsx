@@ -11,6 +11,7 @@ import {
   ResponsibleGaming,
   PolicyAml,
   TermsConditions,
+  GameSummary,
 } from "pages";
 import { Header, Error, Footer, PersonalData } from "components";
 import useAuthContext from "data/hooks/useAuthContext";
@@ -35,6 +36,7 @@ export const Rotas = () => {
             <Route path="/profile" element={<Profile />} />
             <Route path="/personal-data" element={<PersonalData />} />
             <Route path="/games-form/:id" element={<GamesForm />} />
+            <Route path="/game-summary" element={<GameSummary />} />
             <Route path="/notifications" element={<Notifications />} />
           </>
         ) : null}
