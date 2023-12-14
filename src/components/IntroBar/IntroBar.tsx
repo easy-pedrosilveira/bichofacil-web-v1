@@ -1,32 +1,27 @@
 import styles from "./IntroBar.module.css";
 import Arrow from "assets/icons/arrow-intro.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 interface IntroProps {
   title: string;
   paragraph: string;
-  navigate: string;
 }
 
-export const IntroBar = ({ title, paragraph, navigate }: IntroProps) => {
-  // const handleNavigate = () => {
-  //   if (navigate === "previous") {
-  //     // Voltar para a página anterior
-  //     history.back();
-  //   } else {
-  //     // Navegar para a rota fornecida
-  //     history.go(navigate);
-  //   }
-  // };
+export const IntroBar = ({ title, paragraph }: IntroProps) => {
+  const navigate = useNavigate();
+
+  const handleGoBack = () => {
+    navigate(-1); 
+  };
 
   return (
     <div className={styles.container}>
       <div className={styles.innerIntro}>
         <div className={styles.left}>
-          <Link to={navigate} className={styles.arrow}>
+          <div onClick={handleGoBack} className={styles.arrow}>
             <img src={Arrow} alt="" />
             <div style={{ color: "#fff", fontSize: "15px" }}>voltar</div>
-          </Link>
+          </div>
         </div>
         <div className={styles.middle}>
           <div className={styles.txt}>

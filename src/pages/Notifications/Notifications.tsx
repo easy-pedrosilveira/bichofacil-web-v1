@@ -35,7 +35,7 @@ export const Notifications = () => {
 
   return (
     <>
-      <IntroBar title={"Notificações"} paragraph={""} navigate={"/"} />
+      <IntroBar title={"Notificações"} paragraph={""}  />
       <div className={styles.container}>
         <div className={styles.content}>
           {currentMessages.length > 0 ? (

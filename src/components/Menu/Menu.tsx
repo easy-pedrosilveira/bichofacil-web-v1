@@ -16,6 +16,7 @@ export const Menu = ({ onMenuChange }: MenuProps) => {
   const { setProfilePanels } = useAppContext();
   const navigate = useNavigate();
   const [dropdownOpen, setDropdownOpen] = useState(false);
+
   const linkToProfile = (value: number) => {
     setProfilePanels(value);
     navigate("/profile");
@@ -45,9 +46,9 @@ export const Menu = ({ onMenuChange }: MenuProps) => {
           </div>
           {dropdownOpen && (
             <div className={styles.dropdownContent}>
-              <div onClick={(e) => linkToProfile(0)}>
+              <Link to="/profile">
                 <span className={styles.links}>Meu Perfil</span>
-              </div>
+              </Link>
               <div onClick={(e) => linkToProfile(0)}>
                 <span className={styles.links}>Pules</span>
               </div>
@@ -57,7 +58,7 @@ export const Menu = ({ onMenuChange }: MenuProps) => {
               <div onClick={(e) => linkToProfile(2)}>
                 <span className={styles.links}>Efetuar saque</span>
               </div>
-              <div >
+              <div>
                 <span className={styles.links}>Carteira</span>
               </div>
               <div>

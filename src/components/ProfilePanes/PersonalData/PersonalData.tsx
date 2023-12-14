@@ -30,7 +30,7 @@ export const PersonalData = () => {
 
   return (
     <>
-      <IntroBar title={"Meu Perfil"} paragraph={""} navigate={"/profile"} />
+      <IntroBar title={"Meu Perfil"} paragraph={""} />
       <div className={styles.container}>
         <div className={styles.personal}>
           <div className={styles.title}>Dados Pessoais</div>

@@ -16,7 +16,6 @@ export const GameSummary = () => {
       <IntroBar
         title={`Nome da Modalidade`}
         paragraph={"Resumo do Jogo"}
-        navigate={""}
       />
       <div className={styles.container}>
         <CardSummary />

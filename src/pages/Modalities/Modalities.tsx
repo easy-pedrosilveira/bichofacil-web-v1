@@ -10,7 +10,6 @@ export const Modalities = () => {
       <IntroBar
         title={"Jogar Agora"}
         paragraph={"Selecione uma modalidade"}
-        navigate={"/"}
       />
       <div className={styles.content}>
         {modalities ? <CardModalities modalities={modalities} /> : null}

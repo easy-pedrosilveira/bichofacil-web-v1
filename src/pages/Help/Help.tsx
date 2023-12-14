@@ -28,7 +28,7 @@ export const Help = () => {
 
   return (
     <>
-      <IntroBar title={"Ajuda"} paragraph={""} navigate={"/"} />
+      <IntroBar title={"Ajuda"} paragraph={""} />
       <div className={styles.container}>
         <div className={styles.search}>
           <div className={styles.title}>Pesquisar</div>

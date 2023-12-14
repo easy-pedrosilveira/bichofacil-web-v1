@@ -26,7 +26,6 @@ export const GamesForm = () => {
       <IntroBar
         title={`${actualGame?.name}`}
         paragraph={""}
-        navigate={"/modalities"}
       />
       {actualGame ? <ActualGame actualModalities={actualGame} /> : null}
     </>

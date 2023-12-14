@@ -10,7 +10,7 @@ export const Profile = () => {
 
   return (
     <main className={styles.container}>
-      <IntroBar title={"Meu Perfil"} paragraph={""} navigate={"/"} />
+      <IntroBar title={"Meu Perfil"} paragraph={""} />
       <div className={styles.profile}>
         <div className={styles.innerProfile}>
           <div className={styles.txt}>

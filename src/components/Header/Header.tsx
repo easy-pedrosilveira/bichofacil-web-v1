@@ -7,7 +7,6 @@ import Notifications from "assets/imgs/notifications.svg";
 import { Login, ModalProfile, Menu } from "components";
 import { Link, useNavigate } from "react-router-dom";
 import { useWindowSize } from "data/hooks/useWindowSize";
-import { dropdown, itemDropdown } from "utils";
 import useAuthContext from "data/hooks/useAuthContext";
 
 export const Header = () => {
