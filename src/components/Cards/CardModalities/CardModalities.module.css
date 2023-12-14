@@ -55,3 +55,23 @@
     border-radius: 33px;
     background: var(--blue-blue-03, #324AC9);
 }
+
+@media (min-width: 200px) {
+    @media (max-width: 490px) {
+        .card {
+            width: 148px;
+            height: 140px;
+            border-radius: 12px;
+            border: 2px solid var(--blue-blue-02, #3F73E3);
+        }
+
+        .title {
+            font-size: 18px;
+        }
+
+        .btn {
+            width: 124px;
+            height: 44px;
+        }
+    }
+}

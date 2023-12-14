@@ -47,7 +47,12 @@ export const Menu = ({ onMenuChange }: MenuProps) => {
           {dropdownOpen && (
             <div className={styles.dropdownContent}>
               <Link to="/profile">
-                <span className={styles.links}>Meu Perfil</span>
+                <span
+                  className={styles.links}
+                  onClick={(e) => onMenuChange(false)}
+                >
+                  Meu Perfil
+                </span>
               </Link>
               <div onClick={(e) => linkToProfile(0)}>
                 <span className={styles.links}>Pules</span>

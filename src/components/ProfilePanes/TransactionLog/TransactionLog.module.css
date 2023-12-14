@@ -20,12 +20,11 @@
     border-radius: 36px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     background: var(--blue-blue-03, #324AC9);
 }
 
 .icon {
-    width: 5%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -37,8 +36,13 @@
     height: 27px;
 }
 
+.content {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
 .title {
-    width: 80%;
     color: #FFF;
     font-size: 16px;
     font-style: normal;
@@ -47,7 +51,6 @@
 }
 
 .hours {
-    width: 10%;
     color: var(--blue-blue-01, #C6D6FF);
     font-size: 17px;
     font-style: normal;
@@ -117,4 +120,31 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+}
+
+
+@media (min-width: 200px) {
+    @media (max-width: 580px) {
+
+        .container {
+            width: 85%;
+            margin: 20px 0px 40px 0px;
+        }
+
+        .defaultExtracts {
+            height: 94px;
+            border-radius: 16px;
+        }
+
+        .icon {
+            width: 5%;
+        }
+
+        .content {
+            width: 80%;
+            flex-direction: column;
+            gap: 8px;
+            align-items: flex-start;
+        }
+    }
 }

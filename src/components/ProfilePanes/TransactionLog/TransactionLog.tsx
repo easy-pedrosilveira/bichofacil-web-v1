@@ -12,7 +12,7 @@ export const TransactionLog = () => {
   const { user } = useContext(AuthContext);
   const extracts = user?.extracts || [];
   const [extractMessage, setExtractMessage] = useState(false);
-  const [dataExtract, setDataExtract] = useState<IExtractsUser>()
+  const [dataExtract, setDataExtract] = useState<IExtractsUser>();
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
   const startIndex = (currentPage - 1) * itemsPerPage;
@@ -51,9 +51,11 @@ export const TransactionLog = () => {
                     <img src={Negative} alt="" />
                   )}
                 </div>
-                <div className={styles.title}>{extract?.title}</div>
-                <div className={styles.hours}>
-                  {format(new Date(extract?.date), "hh:mm")}
+                <div className={styles.content}>
+                  <div className={styles.title}>{extract?.title}</div>
+                  <div className={styles.hours}>
+                    {format(new Date(extract?.date), "hh:mm")}
+                  </div>
                 </div>
               </div>
             ))

@@ -25,6 +25,7 @@
 .arrow {
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .txt {

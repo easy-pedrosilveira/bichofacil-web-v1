@@ -20,6 +20,8 @@
     @media (max-width: 1200px) {
         .content {
             justify-content: center;
+            gap: 13px;
+            margin: 10px 0px 69px 0px;
         }
     }
 }
