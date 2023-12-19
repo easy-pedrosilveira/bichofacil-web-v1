@@ -6,3 +6,4 @@ export * from "./ExtractMessage";
 export * from "./NewNotifications";
 export * from "./PaymentGame";
 export * from "./PaymentSuccessful";
+export * from "./InsufficientBalance";

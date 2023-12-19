@@ -52,7 +52,7 @@ export function AuthProvider(props: any) {
 
   // checando se o usuário está logado
   const [userExists, setUserExists] = useState<boolean>(false);
-  const [isLogged, setisLogged] = useState<boolean>(false);
+  const [isLogged, setIsLogged] = useState<boolean>(false);
 
   //funções para manipular email e senha do usuario
   const [bodyLogin, setBodyLogin] = useState({
@@ -113,9 +113,9 @@ export function AuthProvider(props: any) {
 
   useEffect(() => {
     if (userExists) {
-      setisLogged(true);
+      setIsLogged(true);
     } else {
-      setisLogged(false);
+      setIsLogged(false);
     }
   }, [user]);
 
@@ -158,7 +158,7 @@ export function AuthProvider(props: any) {
   //função para encerrar a sessão do usuário
   const handleLogout = () => {
     localStorage.removeItem("token");
-    setisLogged(false);
+    setIsLogged(false);
     navigate("/");
   };
 

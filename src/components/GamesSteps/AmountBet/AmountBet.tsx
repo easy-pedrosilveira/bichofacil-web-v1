@@ -1,7 +1,9 @@
 import styles from "./AmountBet.module.css";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { IModalities } from "interfaces";
 import { toast } from "react-toastify";
+import AuthContext from "data/context/AuthContext";
+import { InsufficientBalance } from "components";
 
 interface AmountBetProps {
   amount: IModalities;
@@ -10,6 +12,7 @@ interface AmountBetProps {
 
 export const AmountBet = ({ amount, dataAmount }: AmountBetProps) => {
   const [inputValue, setInputValue] = useState<number>(0);
+  const { user } = useContext(AuthContext);
 
   useEffect(() => {
     if (inputValue < 0) {
@@ -23,9 +26,15 @@ export const AmountBet = ({ amount, dataAmount }: AmountBetProps) => {
   }, [inputValue, amount?.max_bet_value]);
 
   const handleButtonClick = (value: number) => {
+    const creditsBalance = parseFloat(user?.credits_balance || "0");
+
     if (value <= amount?.max_bet_value) {
       setInputValue(value);
-    } else {
+    }
+    // if (value > creditsBalance) {
+    //   <InsufficientBalance />;
+    // } 
+    else {
       toast.error(`Valor máximo para aposta é: ${amount?.max_bet_value}`);
     }
   };
