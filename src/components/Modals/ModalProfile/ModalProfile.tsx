@@ -8,12 +8,19 @@ interface ModalProps {
 }
 
 export const ModalProfile = ({ onModalChange }: ModalProps) => {
+  const { handleLogout } = useAuthContext();
   const { setProfilePanels } = useAppContext();
   const navigate = useNavigate();
+  
   const linkToProfile = (value: number) => {
     setProfilePanels(value);
     navigate("/profile");
     onModalChange(false);
+  };
+
+  const toggleLogout = () => {
+    onModalChange(false);
+    handleLogout();
   };
 
   return (
@@ -58,7 +65,9 @@ export const ModalProfile = ({ onModalChange }: ModalProps) => {
         // onClick={(e) => linkToProfile(0)}
         className={styles.links}
       >
-        <span className={styles.exit}>Desconectar</span>
+        <span className={styles.exit} onClick={(e) => toggleLogout()}>
+          Desconectar
+        </span>
       </Link>
     </div>
   );

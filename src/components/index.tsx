@@ -12,3 +12,4 @@ export * from "./ProfilePanes";
 export * from "./ActualGame";
 export * from "./GamesSteps";
 export * from "./Menu";
+export * from "./BuyCredits";

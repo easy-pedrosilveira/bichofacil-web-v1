@@ -10,7 +10,8 @@ import { useWindowSize } from "data/hooks/useWindowSize";
 import useAuthContext from "data/hooks/useAuthContext";
 
 export const Header = () => {
-  const { isLogged, handleOpenModalLogin, showModal } = useAuthContext();
+  const { isLogged, handleOpenModalLogin, showModal, messages } =
+    useAuthContext();
   const [modalProfile, setModalProfile] = useState(false);
   const [linkActive, setLinkActive] = useState("");
   const [expanded, setExpanded] = useState(false);
@@ -24,10 +25,6 @@ export const Header = () => {
     } else {
       handleOpenModalLogin(true);
     }
-  };
-
-  const handleLinkActive = (linkName: string) => {
-    setLinkActive(linkName);
   };
 
   const toggleModalProfile = () => {
@@ -96,10 +93,16 @@ export const Header = () => {
             {width < 801 && isLogged ? (
               <div onClick={handleNotifications} className={styles.icon}>
                 <img src={Notifications} alt="" />
+                {messages?.read_status ? null : (
+                  <div className={styles.newNotification}></div>
+                )}
               </div>
             ) : width < 801 && !isLogged ? null : (
               <div onClick={handleNotifications} className={styles.icon}>
                 <img src={Notifications} alt="" />
+                {messages?.read_status ? null : (
+                  <div className={styles.newNotification}></div>
+                )}
               </div>
             )}
             {isLogged ? (
@@ -121,7 +124,9 @@ export const Header = () => {
         </div>
       </main>
       {showModal ? <Login /> : null}
-      {modalProfile ? <ModalProfile onModalChange={toggleModalProfile} /> : null}
+      {modalProfile ? (
+        <ModalProfile onModalChange={toggleModalProfile} />
+      ) : null}
     </>
   );
 };

@@ -72,68 +72,57 @@ export const SelectProfilePanes = () => {
           </div>
         ))}
       </div>
-      {width >= 701
-        ? selectedTab && (
-            <motion.div
-              className={styles.content}
-              key={selectedTab.title}
-              initial={{ x: 10, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: -100, opacity: 0 }}
-              transition={{
-                duration: 0.6,
-                type: "spring",
-                stiffness: 400,
-                damping: 20,
-              }}
-            >
-              {selectedTab && (
-                <img
-                  src={Polygon}
-                  alt=""
-                  className={styles.arrowIndicator}
-                  style={{ left: arrowPosition.left }}
-                />
-              )}
-              {selectedTab.content}
-            </motion.div>
-          )
-        : selectedTab &&
-          (selectedTab.title != "" ? (
-            <motion.div
-              key={selectedTab.title}
-              className={styles.contentResponsive}
-              transition={{
-                duration: 0.6,
-                type: "spring",
-                stiffness: 400,
-                damping: 20,
-              }}
-            >
+      {selectedTab && (
+        <motion.div
+          key={selectedTab.title}
+          className={width >= 701 ? styles.content : styles.contentResponsive}
+          initial={{ x: width >= 701 ? 10 : 0, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{ x: -100, opacity: 0 }}
+          transition={{
+            duration: 0.6,
+            type: "spring",
+            stiffness: 400,
+            damping: 20,
+          }}
+        >
+          {width >= 701 && (
+            <img
+              src={Polygon}
+              alt=""
+              className={styles.arrowIndicator}
+              style={{ left: arrowPosition.left }}
+            />
+          )}
+          {width >= 701 ||
+            (selectedTab.title !== "" && (
               <div className={styles.container}>
                 <div className={styles.innerIntro}>
                   <div className={styles.left}>
-                    <div
-                      onClick={(e) => toggleClose()}
-                      className={styles.arrow}
-                    >
-                      <img src={Arrow} alt="" />
-                      <div style={{ color: "#fff", fontSize: "15px" }}>
-                        voltar
+                    {width < 701 && (
+                      <div
+                        onClick={(e) => toggleClose()}
+                        className={styles.arrow}
+                      >
+                        <img src={Arrow} alt="" />
+                        <div style={{ color: "#fff", fontSize: "15px" }}>
+                          voltar
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </div>
                   <div className={styles.middle}>
                     <div className={styles.txt}>
-                      <div className={styles.title}>{selectedTab?.title}</div>
+                      <div className={styles.title}>{selectedTab.title}</div>
                     </div>
                   </div>
                   <div className={styles.right}></div>
                 </div>
               </div>
-              {selectedTab.content}
-            </motion.div>
-          ) : null)}
+            ))}
+          {selectedTab.content}
+        </motion.div>
+      )}
     </div>
   );
 };

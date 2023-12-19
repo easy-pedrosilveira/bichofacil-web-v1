@@ -21,7 +21,7 @@ export interface BetInterface {
   game_name: string;
 }
 
-export interface finalBetInterface {
+export interface finallyBetInterface {
   positions: number[];
   numbers: string[];
   modality: string;

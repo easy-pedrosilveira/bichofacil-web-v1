@@ -12,7 +12,8 @@ interface MenuProps {
 }
 
 export const Menu = ({ onMenuChange }: MenuProps) => {
-  const { isLogged, user, handleOpenModalLogin, showModal } = useAuthContext();
+  const { isLogged, user, handleOpenModalLogin, showModal, handleLogout } =
+    useAuthContext();
   const { setProfilePanels } = useAppContext();
   const navigate = useNavigate();
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -25,6 +26,11 @@ export const Menu = ({ onMenuChange }: MenuProps) => {
 
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
+  };
+
+  const toggleLogout = () => {
+    onMenuChange(false);
+    handleLogout();
   };
 
   return (
@@ -67,7 +73,11 @@ export const Menu = ({ onMenuChange }: MenuProps) => {
                 <span className={styles.links}>Carteira</span>
               </div>
               <div>
-                <span className={styles.links} style={{ color: "#FF7369" }}>
+                <span
+                  className={styles.links}
+                  style={{ color: "#FF7369" }}
+                  onClick={(e) => toggleLogout()}
+                >
                   Desconectar
                 </span>
               </div>

@@ -136,6 +136,7 @@ export function AuthProvider(props: any) {
         .then(async (res) => {
           if (res.status === 200) {
             const access_token = res?.data?.access;
+            setShowModal(false)
             // Armazenar o token no localStorage
             localStorage.setItem("token", access_token);
             await getUserByToken();
