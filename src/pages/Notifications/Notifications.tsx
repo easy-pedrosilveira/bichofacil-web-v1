@@ -9,7 +9,7 @@ import Arrow from "assets/icons/arrow-results.svg";
 import { IMessagesUser } from "interfaces";
 
 export const Notifications = () => {
-  const { user } = useContext(AuthContext);
+  const { user, refreshUser } = useContext(AuthContext);
   const messages = user?.messages || [];
   const [notifications, setNotifications] = useState(false);
   const [dataMessage, setDataMessage] = useState<IMessagesUser>();
@@ -22,7 +22,20 @@ export const Notifications = () => {
 
   const toggleModalNotifications = (props: IMessagesUser) => {
     setNotifications(!notifications);
-    setDataMessage(props);
+  };
+
+  const markReadMessage = async (messageId: string) => {
+    try {
+      await apiAuth
+        .get(`/message/${messageId}`, {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        })
+        .then(function (response) {
+          refreshUser(true);
+        });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const goToPage = (page: any) => {
@@ -35,15 +48,17 @@ export const Notifications = () => {
 
   return (
     <>
-      <IntroBar title={"Notificações"} paragraph={""}  />
+      <IntroBar title={"Notificações"} paragraph={""} />
       <div className={styles.container}>
         <div className={styles.content}>
           {currentMessages.length > 0 ? (
             currentMessages.map((notification, index) => (
               <div
                 className={styles.message}
-                // onClick={(e) => markReadMessage(notification.cod_message)}
-                onClick={(e) => toggleModalNotifications(notification)}
+                onClick={
+                  (e) => markReadMessage(notification.cod_message)
+                  // toggleModalNotifications(props)
+                }
                 key={index}
                 style={
                   notification?.read_status === true

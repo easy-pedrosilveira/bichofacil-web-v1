@@ -17,20 +17,7 @@ export const NewNotifications = ({
 }: ModalProps) => {
   const { refreshUser } = useContext(AuthContext);
 
-  const markReadMessage = async (messageId: string) => {
-    try {
-      await apiAuth
-        .get(`/message/${messageId}`, {
-          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-        })
-        .then(function (response) {
-          refreshUser(true);
-          onModalChange(false);
-        });
-    } catch (error) {
-      console.log(error);
-    }
-  };
+ 
 
   console.log(notifications?.read_status)
 
