@@ -2,7 +2,11 @@ import styles from "./PaymentSuccessful.module.css";
 import { Link } from "react-router-dom";
 import Check from "assets/icons/check-payment.svg";
 
-export const PaymentSuccessful = () => {
+interface ModalProps {
+  onModalChange: (isOpen: boolean) => void;
+}
+
+export const PaymentSuccessful = ({ onModalChange }: ModalProps) => {
   return (
     <div className={styles.backDrop}>
       <div className={styles.modal}>

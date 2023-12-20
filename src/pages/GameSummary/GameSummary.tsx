@@ -4,7 +4,6 @@ import useBetContext from "data/hooks/useBetContext";
 import { useState } from "react";
 import { finallyBetInterface } from "interfaces";
 
-
 export const GameSummary = () => {
   const { bets } = useBetContext();
   const [betData, setBetData] = useState<finallyBetInterface>();
@@ -16,19 +15,25 @@ export const GameSummary = () => {
 
   return (
     <>
-      <IntroBar
-        title={`Nome da Modalidade`}
-        paragraph={"Resumo do Jogo"}
-      />
+      <IntroBar title={`Nome da Modalidade`} paragraph={"Resumo do Jogo"} />
       <div className={styles.container}>
-        <CardSummary bets={bets} onBetData={setBetData}/>
+        <CardSummary bets={bets} onBetData={setBetData} />
         <div className={styles.divBtn}>
-          <div className={styles.btn} onClick={togglePaymentGame}>
+          <div
+            className={styles.btn}
+            onClick={togglePaymentGame}
+          >
             Finalizar
           </div>
         </div>
       </div>
-      {paymentGame ? <PaymentGame /> : null}
+      {paymentGame ? (
+        <PaymentGame
+          onModalChange={togglePaymentGame}
+          betData={betData}
+          total_value={bets[0].total_value}
+        />
+      ) : null}
     </>
   );
 };

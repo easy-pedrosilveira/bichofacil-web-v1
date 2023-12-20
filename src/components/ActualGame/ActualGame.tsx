@@ -1,7 +1,13 @@
 import styles from "./ActualGame.module.css";
 import { motion } from "framer-motion";
 import { IModalities, BetInterface } from "interfaces";
-import { PlacingGame, NumberMask, AmountBet, BetDateLottery } from "components";
+import {
+  PlacingGame,
+  NumberMask,
+  AmountBet,
+  BetDateLottery,
+  Timer,
+} from "components";
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useBetContext from "data/hooks/useBetContext";
@@ -141,6 +147,7 @@ export const ActualGame = ({ actualModalities }: BetProps) => {
           dataDate={setDataDate}
           dataLottery={setDataLottery}
         />
+        <Timer />
         <button type="submit" className={styles.btnFinish}>
           Finalizar Aposta
         </button>

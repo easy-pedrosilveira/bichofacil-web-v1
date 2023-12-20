@@ -15,6 +15,11 @@ export const CardSummary = ({ bets, onBetData }: SummaryProps) => {
   const [nameGame, setNameGame] = useState<string>("");
   const [formattedDate, setFormattedDate] = useState("");
 
+  const formatLotteryName = (name: string) => {
+    const formattedName = name.replace(/([a-zA-Z]+)([0-9]+)/, "$1 - $2h");
+    return formattedName;
+  };
+
   useEffect(() => {
     const date = new Date(bets[0].bet_date);
 
@@ -59,21 +64,24 @@ export const CardSummary = ({ bets, onBetData }: SummaryProps) => {
   return (
     <div className={styles.container}>
       <div className={styles.summaryGame}>
-        <div className={styles.column}>
+        <div className={styles.columnDark}>
           <div className={styles.title}>Data da Aposta</div>
-          <div className={styles.data}>{bets?.[0].dateNow}</div>
+          <div className={styles.data}>{bets[0].dateNow}</div>
+        </div>
+        <div className={styles.column}>
+          <div className={styles.title}>Modalidade</div>
+          <div className={styles.data}>{bets[0].game_name}</div>
         </div>
         <div className={styles.columnDark}>
           <div className={styles.title}>Aposta</div>
           <div className={styles.data}>
-            <div className={styles.data}>
-              {bets[0].positions.map((position, index) => (
-                <span key={index}>
-                  {position}
-                  {index < bets[0].positions.length - 1 ? " - " : ""}
-                </span>
-              ))}
-            </div>
+            {bets[0].game_name} {" - "}
+            {bets[0].positions.map((position, index) => (
+              <span key={index}>
+                {position}
+                {index < bets[0].positions.length - 1 ? " - " : ""}
+              </span>
+            ))}
           </div>
         </div>
         <div className={styles.column}>
@@ -95,14 +103,15 @@ export const CardSummary = ({ bets, onBetData }: SummaryProps) => {
           <div className={styles.data}>
             {bets[0].lotteries.map((bet, index) => (
               <span key={index}>
-                {bet} {index < bets[0].lotteries.length - 1 ? " , " : " "}
+                {formatLotteryName(bet)}
+                {index < bets[0].lotteries.length - 1 ? " , " : " "}
               </span>
             ))}
           </div>
         </div>
         <div className={styles.columnDark}>
           <div className={styles.title}>Total</div>
-          {bets[0].total_value.toFixed(2)}
+          <div className={styles.data}>R${" "}{bets[0].total_value.toFixed(2)}</div>
         </div>
       </div>
     </div>
