@@ -13,3 +13,7 @@ export * from "./ActualGame";
 export * from "./GamesSteps";
 export * from "./Menu";
 export * from "./BuyCredits";
+export * from "./AddPaymentForms";
+export * from "./RegisterPaymetForms";
+export * from "./AddPix";
+export * from "./AddCardCredit";
