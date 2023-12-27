@@ -28,6 +28,7 @@ export interface IContextAuth {
   purchase: IPurchase | undefined;
   longitude: number;
   latitude: number;
+  loading: boolean;
 }
 
 export interface IUserAuth {

@@ -20,6 +20,7 @@ export const GlobalStyles = createGlobalStyle<{ theme: ThemeType }>`
   body{
     color: #fff;
     background: url(${Background}) center/cover no-repeat;  
+    background-color: #202B9B;
   }
   main{
     display:flex;

@@ -9,10 +9,10 @@ import {
   Notifications,
   PolicyPrivacy,
   ResponsibleGaming,
-  PolicyAml,
-  TermsConditions,
   GameSummary,
 } from "pages";
+import { TermsConditions } from "../pages/TermsConditions/TermsConditions";
+import { PolicyAml } from "../pages/PolicyAml/PolicyAml";
 import { Header, Error, Footer, PersonalData } from "components";
 import useAuthContext from "data/hooks/useAuthContext";
 
@@ -28,8 +28,8 @@ export const Rotas = () => {
         <Route path="*" element={<Error />} />
         <Route path="/policy-privacy" element={<PolicyPrivacy />} />
         <Route path="/responsible-gaming" element={<ResponsibleGaming />} />
-        {/* <Route path="/terms-conditions" element={<TermsConditions />} />
-        <Route path="/policy-aml" element={<PolicyAml />} /> */}
+        <Route path="/terms-conditions" element={<TermsConditions />} />
+        <Route path="/policy-aml" element={<PolicyAml />} />
         {isLogged ? (
           <>
             <Route path="/modalities" element={<Modalities />} />

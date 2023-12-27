@@ -24,6 +24,7 @@ export function AuthProvider(props: any) {
 
   // abertura e fechamento do modal de login
   const [showModal, setShowModal] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   // armazenamento do token e o dos dados do usuario atual
   const [user, setUser] = useState<IUserAuth>();
@@ -130,13 +131,13 @@ export function AuthProvider(props: any) {
   const handleLogin = async (e: any) => {
     try {
       e.preventDefault();
+      setLoading(true); // Ativar o indicador de loading
 
       await apiAuth
         .post("/user/token/obtain/", bodyLogin)
         .then(async (res) => {
           if (res.status === 200) {
             const access_token = res?.data?.access;
-            setShowModal(false)
             // Armazenar o token no localStorage
             localStorage.setItem("token", access_token);
             await getUserByToken();
@@ -148,7 +149,13 @@ export function AuthProvider(props: any) {
           if (error.response) {
             const message = error.response.data.detail;
             toast.error(message);
+          } else if (error.code === 'ERR_NETWORK') {
+            // Timeout ocorreu
+            toast.error('A requisição expirou devido a um timeout.');
           }
+        })
+        .finally(() => {
+          setLoading(false); 
         });
     } catch (error) {
       console.log(error);
@@ -228,6 +235,7 @@ export function AuthProvider(props: any) {
         handlePasswordChange,
         handleOpenModalLogin,
         refreshUser,
+        loading,
         isLogged,
         bodyLogin,
         showModal,
