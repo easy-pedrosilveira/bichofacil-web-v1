@@ -10,3 +10,4 @@ export * from "./ResponsibleGaming";
 export * from "./PolicyPrivacy";
 export * from "./TermsConditions";
 export * from "./PolicyAml";
+export * from "./ResetPassword";

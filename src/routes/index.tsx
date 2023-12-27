@@ -10,6 +10,7 @@ import {
   PolicyPrivacy,
   ResponsibleGaming,
   GameSummary,
+  ResetPassword
 } from "pages";
 import { TermsConditions } from "../pages/TermsConditions/TermsConditions";
 import { PolicyAml } from "../pages/PolicyAml/PolicyAml";
@@ -30,6 +31,14 @@ export const Rotas = () => {
         <Route path="/responsible-gaming" element={<ResponsibleGaming />} />
         <Route path="/terms-conditions" element={<TermsConditions />} />
         <Route path="/policy-aml" element={<PolicyAml />} />
+        <Route
+          path="/api/v2/user/reset-password/confirm/:param1/:param2/"
+          element={<ResetPassword />}
+        />
+        <Route
+          path="/reset-password"
+          element={<ResetPassword />}
+        />
         {isLogged ? (
           <>
             <Route path="/modalities" element={<Modalities />} />
