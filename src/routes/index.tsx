@@ -10,7 +10,7 @@ import {
   PolicyPrivacy,
   ResponsibleGaming,
   GameSummary,
-  ResetPassword
+  ResetPassword,
 } from "pages";
 import { TermsConditions } from "../pages/TermsConditions/TermsConditions";
 import { PolicyAml } from "../pages/PolicyAml/PolicyAml";
@@ -21,7 +21,9 @@ export const Rotas = () => {
   const { isLogged } = useAuthContext();
   return (
     <>
-      <Header />
+      <div style={{ position: "relative", height: "99px"}}>
+        <Header />
+      </div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
@@ -35,14 +37,11 @@ export const Rotas = () => {
           path="/api/v2/user/reset-password/confirm/:param1/:param2/"
           element={<ResetPassword />}
         />
-        <Route
-          path="/reset-password"
-          element={<ResetPassword />}
-        />
+        <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/profile" element={<Profile />} />
         {isLogged ? (
           <>
             <Route path="/modalities" element={<Modalities />} />
-            <Route path="/profile" element={<Profile />} />
             <Route path="/personal-data" element={<PersonalData />} />
             <Route path="/games-form/:id" element={<GamesForm />} />
             <Route path="/game-summary" element={<GameSummary />} />

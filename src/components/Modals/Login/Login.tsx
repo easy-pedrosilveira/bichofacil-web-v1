@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Close from "assets/icons/close.svg";
 import Eye from "assets/icons/eye-password.svg";
 import { useState } from "react";
-import { Grid } from "react-loader-spinner";
+import { ThreeDots } from "react-loader-spinner";
 import { UserIdetification } from "components";
 import { item } from "utils";
 
@@ -102,10 +102,9 @@ export const Login = () => {
             </form>
           ) : (
             <div>
-              <Grid
+              <ThreeDots
                 height="60"
                 width="60"
-                // radius={1}
                 color="#202B9B"
                 ariaLabel="puff-loading"
                 wrapperStyle={{}}
@@ -126,7 +125,7 @@ export const Login = () => {
           </div>
         </div>
       </motion.div>
-      {!userIdetification ? (
+      {userIdetification ? (
         <UserIdetification onModalChange={toggleUserIdetification} />
       ) : null}
     </>

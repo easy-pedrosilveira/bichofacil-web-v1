@@ -1,0 +1,115 @@
+.step{
+    width: 100%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #ffffff59 transparent;
+}
+
+.card {
+    width: 315px;
+    height: 108px;
+    border-radius: 32px;
+    border: 4px solid #FC0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: var(--WHITE, #FFF);
+    cursor: pointer;
+    padding: 5px 0px;
+    margin: auto;
+}
+
+.money {
+    width: 60px;
+    height: 60px;
+}
+
+.values,
+.btnNow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cifrao {
+    color: #FC0;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.value {
+    font-variant-numeric: lining-nums tabular-nums;
+    font-family: "Poppins", sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -2px;
+    background: linear-gradient(180deg, #3F73E3 0%, #192494 99.48%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btnNow{
+    gap: 9px;
+}
+
+.text {
+    color: var(--GRAY-GRAY-03, #7A7786);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.btn {
+    width: 105px;
+    height: 48px;
+    border-radius: 33px;
+    background: var(--BLUE-Blue-03, #324AC9);
+    outline: none;
+    border: none;
+    color: var(--WHITE, #FFF);
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+@media (min-width: 200px) {
+    @media (max-width: 700px) {
+        .innerIntro {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .arrow div {
+            display: none;
+        }
+
+        .arrow img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .txt {
+            align-items: center;
+        }
+
+        .title {
+            font-size: 18px;
+        }
+
+        .paragraph {
+            font-size: 14px;
+        }
+    }
+}

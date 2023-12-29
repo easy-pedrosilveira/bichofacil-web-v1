@@ -1,5 +1,5 @@
-import { CarouselResults } from "components";
 import styles from "./Results.module.css";
+import { CarouselResults } from "components";
 import { useNavigate } from "react-router-dom";
 import useAuthContext from "data/hooks/useAuthContext";
 

@@ -35,25 +35,25 @@ export const Header = () => {
     setExpanded(!expanded);
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsHeaderFixed(true);
-      } else {
-        setIsHeaderFixed(false);
-      }
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (window.scrollY > 0) {
+  //       setIsHeaderFixed(true);
+  //     } else {
+  //       setIsHeaderFixed(false);
+  //     }
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
+  //   window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   return (
     <>
-      <main className={`${styles.header} ${isHeaderFixed ? styles.fixed : ""}`}>
+      <main className={styles.header}>
         <div className={styles.innerHeader}>
           <>
             <div className={styles.menu} onClick={toggleExpanded}>

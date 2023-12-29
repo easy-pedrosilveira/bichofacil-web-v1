@@ -13,8 +13,6 @@ export const Profile = () => {
     setBuyCredits(!buyCredits);
   };
 
-  console.log(user)
-
   return (
     <>
       <main className={styles.container}>
@@ -38,7 +36,7 @@ export const Profile = () => {
         </div>
         <SelectProfilePanes />
       </main>
-      {buyCredits ? <BuyCredits /> : null}
+      {buyCredits ? <BuyCredits onModalChange={toggleBuyCredits}/> : null}
     </>
   );
 };

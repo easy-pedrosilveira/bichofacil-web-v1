@@ -5,6 +5,7 @@ import {
   GameProvider,
   AuthProvider,
   BetsProvider,
+  BuyCreditsProvider,
 } from "data/context";
 import { BrowserRouter } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
@@ -30,11 +31,13 @@ export const App = () => {
           />
           <AuthProvider>
             <AppProvider>
-              <GameProvider>
-                <BetsProvider>
-                  <Rotas />
-                </BetsProvider>
-              </GameProvider>
+              <BuyCreditsProvider>
+                <GameProvider>
+                  <BetsProvider>
+                    <Rotas />
+                  </BetsProvider>
+                </GameProvider>
+              </BuyCreditsProvider>
             </AppProvider>
           </AuthProvider>
         </BrowserRouter>

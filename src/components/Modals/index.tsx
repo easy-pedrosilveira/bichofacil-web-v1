@@ -8,3 +8,4 @@ export * from "./PaymentGame";
 export * from "./PaymentSuccessful";
 export * from "./InsufficientBalance";
 export * from "./UserIdetification";
+export * from "./BuyCredits";
