@@ -30,28 +30,33 @@ export const BetHistory = () => {
     return `${minPosition}º ao ${maxPosition}º Prêmio`;
   };
 
-  console.log(tickets);
-
   return (
     <div className={styles.container}>
       {currentTickets.map((bet, index) => (
         <div className={styles.betHistory} key={index}>
           <div className={styles.columnDark}>
             <div className={styles.title}>Nº da Pule</div>
-            <div className={styles.data}>{bet?.id}</div>
+            <div className={styles.data}>{bet?.register_number}</div>
           </div>
           <div className={styles.column}>
-            <div className={styles.title}>Data da Aposta</div>
-            <div className={styles.data}>
-              {format(new Date(bet?.created_date), "dd/MM/yyyy")}
-            </div>
-          </div>
-          <div className={styles.columnDark}>
             <div className={styles.title}>Aposta</div>
             <div className={styles.data}>
               <div className={styles.data}>
                 {bet?.modality} - {formatPositions(bet?.positions)}
               </div>
+            </div>
+          </div>
+          <div className={styles.columnDark}>
+            <div className={styles.title}>Posições</div>
+            <div className={styles.data}>
+              {bet?.positions.length !== 0
+                ? bet.positions.map((bets, index) => (
+                    <span key={index}>
+                      {bets}
+                      {index < bet.positions.length - 1 ? " - " : ""}
+                    </span>
+                  ))
+                : null}
             </div>
           </div>
           <div className={styles.column}>
@@ -68,13 +73,6 @@ export const BetHistory = () => {
             </div>
           </div>
           <div className={styles.columnDark}>
-            <div className={styles.title}>Data Loteria</div>
-            <div className={styles.data}>
-              {" "}
-              {format(new Date(bet?.bet_date), "dd/MM/yyyy")}
-            </div>
-          </div>
-          <div className={styles.column}>
             <div className={styles.title}>Loteria</div>
             <div className={styles.data}>
               {bet.lotteries.length !== 0
@@ -87,8 +85,24 @@ export const BetHistory = () => {
                 : null}
             </div>
           </div>
+          <div className={styles.column}>
+            <div className={styles.title}>Data Loteria</div>
+            <div className={styles.data}>
+              {format(new Date(bet?.bet_date), "dd/MM/yyyy")}
+            </div>
+          </div>
           <div className={styles.columnDark}>
-            <div className={styles.title}>Total</div>
+            <div className={styles.title}>Data Aposta</div>
+            <div className={styles.data}>
+              {format(new Date(bet?.created_date), "dd/MM/yyyy")}
+            </div>
+          </div>
+          <div className={styles.column}>
+            <div className={styles.title}>Valor do jogo</div>
+            <div className={styles.data}>{bet?.bet_value.toFixed(2)}</div>
+          </div>
+          <div className={styles.columnDark}>
+            <div className={styles.title}>Valor Total do Jogo</div>
             <div className={styles.data}>{bet?.total_value.toFixed(2)}</div>
           </div>
         </div>

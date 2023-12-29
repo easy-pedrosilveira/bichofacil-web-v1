@@ -25,7 +25,6 @@ export interface IContextAuth {
   isLogged: boolean;
   credits: number;
   winning: number;
-  purchase: IPurchase | undefined;
   longitude: number;
   latitude: number;
   loading: boolean;
@@ -68,14 +67,6 @@ export interface IMessagesUser {
   read_status: boolean;
   title: string;
   user: string;
-}
-
-export interface IPurchase {
-  Payment_info: string;
-  qrcode: string;
-  payment_type: string;
-  user: string;
-  qrcode_text: string;
 }
 
 export interface IPixKeyUser {

@@ -6,7 +6,6 @@ import {
   IMessagesUser,
   IPixKeyUser,
   ITicketsUser,
-  IPurchase,
 } from "interfaces";
 import { apiAuth } from "providers";
 import { createContext, useEffect, useState } from "react";
@@ -34,13 +33,7 @@ export function AuthProvider(props: any) {
   //informações do usuário
   const [tickets, setTickets] = useState<ITicketsUser>();
   const [messages, setMessages] = useState<IMessagesUser>();
-  const [purchase, setPurchase] = useState<IPurchase>({
-    Payment_info: "",
-    qrcode: "",
-    payment_type: "",
-    user: "",
-    qrcode_text: "",
-  });
+
   const [pixKey, setPixKey] = useState<IPixKeyUser>();
   const [extracts, setExtracts] = useState<IExtractsUser>();
   const [credits, setCredits] = useState(0);
@@ -95,6 +88,7 @@ export function AuthProvider(props: any) {
 
       if (response.status === 200) {
         setUserExists(true);
+        setShowModal(false);
       } else {
         toast.error("Faça login novamente!");
         setUserExists(false);
@@ -246,7 +240,6 @@ export function AuthProvider(props: any) {
         messages,
         pixKey,
         extracts,
-        purchase,
         latitude,
         longitude,
       }}
