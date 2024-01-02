@@ -34,22 +34,12 @@ export const WithdrawalProcess = () => {
             <img src={Arrow} alt="" style={{ rotate: "180deg" }} />
           </div>
         </div>
-        <div className={styles.title}>Formas de Pagamento</div>
-        <div className={styles.btns}>
-          <div className={styles.openModals} onClick={toggleOpenFormsPayment}>
-            <div className={styles.text}>Adicionar</div>
-            <img src={Arrow} alt="" style={{ rotate: "180deg" }} />
-          </div>
-        </div>
       </div>
       {openPixWithdraw ? (
         <PixWithdraw onModalChange={toggleOpenPixWithdraw} />
       ) : null}
       {openBankWithdraw ? (
         <BankWithdraw onModalChange={toggleOpenBankWithdraw} />
-      ) : null}
-      {openFormsPayment ? (
-        <AddPaymentForms onModalChange={toggleOpenFormsPayment} />
       ) : null}
     </>
   );

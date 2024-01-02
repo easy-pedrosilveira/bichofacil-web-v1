@@ -1,12 +1,18 @@
-import { IntroBar } from "components";
+import { AddPaymentForms, IntroBar, UpdateCard } from "components";
 import styles from "./PersonalData.module.css";
-import { useContext } from "react";
+import card from "./card.module.css";
+import { useContext, useState } from "react";
 import AuthContext from "data/context/AuthContext";
 import { useWindowSize } from "data";
+import { DeletePayment } from "components/Modals/DeletePayment";
 
 export const PersonalData = () => {
-  const { user, tickets, refreshUser } = useContext(AuthContext);
+  const { user, pixKey, cards } = useContext(AuthContext);
   const { width } = useWindowSize();
+  const [addModal, setAddModal] = useState<boolean>(false);
+  const [deleteModal, setDeleteModal] = useState<boolean>(false);
+  const [updateModal, setUpdateModal] = useState<boolean>(false);
+  const [type, setType] = useState<string>("");
 
   const formatCPF = (cpf: any) => {
     if (!cpf) return "";
@@ -28,6 +34,15 @@ export const PersonalData = () => {
     const year = date.getFullYear();
 
     return `${day}/${month}/${year}`;
+  };
+
+  const toggleUpdate = (typeCard: string) => {
+    setType(typeCard);
+    setUpdateModal(!updateModal);
+  };
+
+  const toggleDelete = () => {
+    setDeleteModal(!deleteModal);
   };
 
   return (
@@ -131,18 +146,104 @@ export const PersonalData = () => {
         <div className={styles.bank}>
           <div className={styles.title}>Dados Bancários</div>
           <div className={styles.data}>
-            <div className={styles.infosCenter}>
-              <div className={styles.labelCenter}>Chave PIX</div>
-              <input
-                type="text"
-                className={styles.inputVariant}
-                value={`${user?.pix_key?.keys || ""}`}
-              />
+            <div className={styles.cards}>
+              {cards !== null &&
+                typeof cards === "object" &&
+                Object.keys(cards).length > 0 && (
+                  <>
+                    <div className={card.contentCard}>
+                      <div className={card.innerContent}>
+                        <div className={card.topContent}>
+                          <h3>Cartão</h3>
+                          <div>
+                            <button
+                              type="button"
+                              onClick={(e) => toggleUpdate("card")}
+                            >
+                              Alterar metodo
+                            </button>
+                            <button type="button" onClick={toggleDelete}>
+                              Excluir metodo
+                            </button>
+                          </div>
+                        </div>
+                        <div className={card.bottomContent}>
+                          <div className={card.item}>
+                            <span>Numero do cartão</span>
+                            <p>{cards.card_number.substring(0, 4)}</p>
+                          </div>
+                          <div className={card.item}>
+                            <span>Validade</span>
+                            <p>{cards.expiration_date}</p>
+                          </div>
+                          <div className={card.item}>
+                            <span>Nome do titular</span>
+                            <p>{cards.cardholder_name}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                )}
+              {pixKey !== null &&
+                typeof pixKey === "object" &&
+                Object.keys(pixKey as object).length > 0 && (
+                  <div className={card.contentCard}>
+                    <div className={card.innerContent}>
+                      <div className={card.topContent}>
+                        <h3>Transferência via PIX</h3>
+                        <div>
+                          <button
+                            type="button"
+                            onClick={(e) => toggleUpdate("pix")}
+                          >
+                            Alterar metodo
+                          </button>
+                          <button type="button" onClick={toggleDelete}>
+                            Excluir metodo
+                          </button>
+                        </div>
+                      </div>
+                      <div className={card.bottomContent}>
+                        <div className={card.item}>
+                          <span>Chave Cadastrada</span>
+                          <p>{pixKey.key}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              {cards !== null &&
+                typeof cards === "object" &&
+                Object.keys(cards).length === 0 &&
+                pixKey !== null &&
+                typeof pixKey === "object" &&
+                Object.keys(pixKey).length === 0 && (
+                  <div style={{ textAlign: "center" }}>
+                    Nenhuma forma de pagamento!
+                  </div>
+                )}
             </div>
           </div>
         </div>
-        <div className={styles.btn}>Salvar Alterações</div>
+        <div
+          className={styles.btn}
+          onClick={(e) => {
+            setAddModal(true);
+          }}
+        >
+          Adicionar Forma de Pagamento
+        </div>
       </div>
+      {addModal ? (
+        <AddPaymentForms onModalChange={setAddModal} />
+      ) : null}
+      {updateModal ? (
+        <UpdateCard onModalChange={setUpdateModal} type={type} />
+      ) : null}
+      {deleteModal === true ? (
+        <DeletePayment props={"oi"} onModalChange={setDeleteModal} />
+      ) : null}
     </>
   );
 };

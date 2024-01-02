@@ -47,4 +47,3 @@ export const MethodPayment = ({
     </div>
   );
 };
-2

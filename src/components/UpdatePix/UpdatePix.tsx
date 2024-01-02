@@ -4,7 +4,7 @@ import InputMask from "react-input-mask";
 import { apiAuth } from "providers";
 import { toast } from "react-toastify";
 
-export const AddPix = () => {
+export const UpdatePix = () => {
   const [mask, setMask] = useState<string>("999.999.999-99");
   const [title, setTitle] = useState<string>("CPF");
   const [option, setOption] = useState<string>("cpf");
@@ -71,7 +71,7 @@ export const AddPix = () => {
 
     if (errors === false) {
       try {
-        const response = await apiAuth.post("/pixkeys/", pixData, {
+        const response = await apiAuth.put("/pixkeys/", pixData, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`, // Passa o token no cabeçalho da solicitação
           },
@@ -95,7 +95,7 @@ export const AddPix = () => {
     <div className={styles.addArea}>
       <div className={styles.title}>Tipo de chave</div>
       <form>
-      <div className={styles.inputArea}>
+        <div className={styles.inputArea}>
           <input
             type="radio"
             name="pixOption"

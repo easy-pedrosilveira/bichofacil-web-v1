@@ -17,3 +17,6 @@ export * from "./RegisterPaymetForms";
 export * from "./AddPix";
 export * from "./AddCardCredit";
 export * from "./StepsBuyCredits";
+export * from './UpdatePix'
+export * from './UpdateCardCredit'
+export * from './UpdateCardComponent'

@@ -20,7 +20,8 @@ export interface IContextAuth {
   user: IUserAuth | undefined;
   extracts: IExtractsUser | undefined;
   messages: IMessagesUser | undefined;
-  pixKey: IPixKeyUser | undefined;
+  pixKey: IPixKeyUser | null;
+  cards: ICardUser | null;
   tickets: ITicketsUser | undefined;
   isLogged: boolean;
   credits: number;
@@ -42,7 +43,8 @@ export interface IUserAuth {
   description: string;
   mother_name: string;
   phone: string;
-  pix_key: IPixKeyUser[];
+  pix_key: IPixKeyUser;
+  card: ICardUser;
   referral_code: string;
   tickets: ITicketsUser[];
   winner_balance: string;
@@ -70,9 +72,15 @@ export interface IMessagesUser {
 }
 
 export interface IPixKeyUser {
-  key: string;
-  key_type: string;
-  user: string;
+  key: any;
+}
+
+export interface ICardUser {
+  card_number: string;
+  cardholder_name: string;
+  edit_available: boolean;
+  expiration_date: string;
+  security_code: string;
 }
 
 export interface ITicketsUser {

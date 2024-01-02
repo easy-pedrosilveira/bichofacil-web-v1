@@ -9,3 +9,4 @@ export * from "./PaymentSuccessful";
 export * from "./InsufficientBalance";
 export * from "./UserIdetification";
 export * from "./BuyCredits";
+export * from './UpdateCard'
