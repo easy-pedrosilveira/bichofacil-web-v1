@@ -10,11 +10,10 @@ interface StepsProps {
 }
 
 export const Deposit = ({ nextStep, depositData }: StepsProps) => {
-  const values = [5, 10, 20, 25, 50, 75, 100, 200];
-  const [selectedValue, setSelectedValue] = useState(0);
+  const values = [5, 10, 20, 25, 50, 75, 100, 200, 1000];
 
   const handleValueSelection = (value: number) => {
-    setSelectedValue(value);
+    depositData(value);
     nextStep();
   };
 
@@ -24,9 +23,7 @@ export const Deposit = ({ nextStep, depositData }: StepsProps) => {
         {values.map((value, index) => (
           <div
             key={value}
-            className={`${styles.card} ${
-              selectedValue === value ? styles.selected : ""
-            }`}
+            className={styles.card}
             onClick={() => handleValueSelection(value)}
           >
             {index === 0 ? (

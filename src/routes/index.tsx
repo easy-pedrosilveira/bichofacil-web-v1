@@ -21,7 +21,7 @@ export const Rotas = () => {
   const { isLogged } = useAuthContext();
   return (
     <>
-      <div style={{ position: "relative", height: "99px"}}>
+      <div style={{ position: "relative", height: "95.1px" }}>
         <Header />
       </div>
       <Routes>
@@ -37,8 +37,8 @@ export const Rotas = () => {
           path="/api/v2/user/reset-password/confirm/:param1/:param2/"
           element={<ResetPassword />}
         />
-        <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
         {isLogged ? (
           <>
             <Route path="/modalities" element={<Modalities />} />

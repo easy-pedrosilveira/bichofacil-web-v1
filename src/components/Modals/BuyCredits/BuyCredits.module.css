@@ -70,7 +70,6 @@
 }
 
 .txt {
-    width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -79,7 +78,6 @@
 }
 
 .title {
-    width: 100%;
     color: #FFF;
     text-align: center;
     font-size: 22px;
@@ -89,7 +87,6 @@
 }
 
 .paragraph {
-    width: 100%;
     color: var(--blue-blue-01, #C6D6FF);
     text-align: center;
     font-family: "Poppins", sans-serif;
@@ -100,6 +97,6 @@
 }
 
 .formSteps {
-    width: 90%;
+    width: 100%;
     height: auto;
 }

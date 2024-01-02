@@ -1,7 +1,87 @@
-.step{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.step {
     width: 100%;
     height: 350px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: 36px;
+}
+
+.valueSelected {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.box {
+    width: 240px;
+    height: 79px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    border-radius: 61px;
+    background: var(--BLUE-Blue-02, #3F73E3);
+    font-family: "Poppins", sans-serif;
+}
+
+.sifrao {
+    color: var(--BLUE-Blue-01, #C6D6FF);
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.value {
+    color: var(--WHITE, #FFF);
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.modify {
+    color: #C6D6FF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.methods{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 8px;
+}
+
+.payments {
+    width: 315px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 61px;
+    background: var(--blue-blue-03, #192494);
+    cursor: pointer;
+}
+
+.text {
+    width: 65%;
+    color: #FFF;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.payments img {
+    width: 32px;
+    height: 32px;
 }

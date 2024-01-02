@@ -9,14 +9,21 @@ interface ModalProps {
   onModalChange: (isOpen: boolean) => void;
 }
 export const BuyCredits = ({ onModalChange }: ModalProps) => {
-  const { page, handleDepositData, nextStep, prevStep } =
-    useBuyCreditsContext();
+  const {
+    page,
+    handleDepositData,
+    depositValue,
+    handleMethodData,
+    typePayment,
+    nextStep,
+    prevStep,
+  } = useBuyCreditsContext();
 
   const titlesSteps = [
     `Carteira`,
     `Pagamento`,
-    `Pagamento Pix/Boleto/Cartao de Credito`,
-    `Pagamento Pix/Boleto/Cartao de Credito`,
+    `Pagamento ${typePayment}`,
+    `Pagamento ${typePayment}`,
   ];
 
   const paragraphSteps = [
@@ -30,7 +37,22 @@ export const BuyCredits = ({ onModalChange }: ModalProps) => {
       case 0:
         return <Deposit depositData={handleDepositData} nextStep={nextStep} />;
       case 1:
-        return <MethodPayment />;
+        return (
+          <MethodPayment
+            methodData={handleMethodData}
+            depositValue={depositValue}
+            prevStep={prevStep}
+            nextStep={nextStep}
+          />
+        );
+      case 2:
+        return (
+          <>
+            {typePayment === "pix" && <>PiX</>}
+            {typePayment === "boleto" && <>Boleto Boleto</>}
+            {typePayment === "cartao de credito" && <>CartaoCredito</>}
+          </>
+        );
       default:
         return null;
     }
@@ -48,11 +70,11 @@ export const BuyCredits = ({ onModalChange }: ModalProps) => {
       }}
     >
       <div className={styles.modal}>
-      <motion.div
-          animate={{
-            x: page === 0 ? 0 : page === 1 ? 100 : 200,
-            originX: 0.5, 
-          }}
+        <motion.div
+          // animate={{
+          //   x: page === 0 ? 0 : page === 1 ? 100 : 200,
+          //   originX: 0.5,
+          // }}
           className={styles.innerModal}
         >
           <div className={styles.innerIntro}>
