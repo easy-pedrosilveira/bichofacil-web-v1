@@ -92,7 +92,7 @@ export const UpdateCardCredit = () => {
         </div>
       </form>
       <button type="button" onClick={handleSubmit}>
-        Cadastrar
+        Alterar
       </button>
     </div>
   );

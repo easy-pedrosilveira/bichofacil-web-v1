@@ -144,7 +144,7 @@ export const UpdatePix = () => {
             />
           </div>
           <button type="button" onClick={(e) => handleSubmit()}>
-            Cadastrar
+            Alterar
           </button>
         </div>
       </form>
