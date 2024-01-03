@@ -1,5 +1,10 @@
 import styles from "./BuyCredits.module.css";
-import { Deposit, MethodPayment } from "components";
+import {
+  Deposit,
+  MethodPayment,
+  PaymentCompletion,
+  SummaryPayment,
+} from "components";
 import Arrow from "assets/icons/arrow-intro.svg";
 import Close from "assets/icons/close-white.svg";
 import { motion } from "framer-motion";
@@ -10,35 +15,54 @@ interface ModalProps {
 }
 export const BuyCredits = ({ onModalChange }: ModalProps) => {
   const {
-    page,
     handleDepositData,
-    depositValue,
     handleMethodData,
-    typePayment,
     nextStep,
     prevStep,
+    infoBuyCredits,
+    page,
+    depositValue,
+    typePayment,
   } = useBuyCreditsContext();
+
+  console.log(infoBuyCredits);
 
   const titlesSteps = [
     `Carteira`,
     `Pagamento`,
-    `Pagamento ${typePayment}`,
+    `Pagamento ${
+      typePayment || typePayment === "credit_card" ? "Cartão de Crédito" : null
+    }`,
     `Pagamento ${typePayment}`,
   ];
 
   const paragraphSteps = [
     `Selecione um valor para depositar`,
     `Escolha o método de pagamento`,
-    `Insira seu CPF para continuar`,
+    `${
+      typePayment === "boleto"
+        ? "Será enviado para o seu e-mail a comprovação dessa operação."
+        : typePayment === "pix"
+        ? `Insira ou confirme sua Chave Pix para continuar`
+        : ``
+    }`,
+    ``,
   ];
 
   const pageDisplay = () => {
     switch (page) {
       case 0:
-        return <Deposit depositData={handleDepositData} nextStep={nextStep} />;
+        return (
+          <Deposit
+            infoBuyCredits={infoBuyCredits}
+            depositData={handleDepositData}
+            nextStep={nextStep}
+          />
+        );
       case 1:
         return (
           <MethodPayment
+            infoBuyCredits={infoBuyCredits}
             methodData={handleMethodData}
             depositValue={depositValue}
             prevStep={prevStep}
@@ -47,11 +71,19 @@ export const BuyCredits = ({ onModalChange }: ModalProps) => {
         );
       case 2:
         return (
-          <>
-            {typePayment === "pix" && <>PiX</>}
-            {typePayment === "boleto" && <>Boleto Boleto</>}
-            {typePayment === "cartao de credito" && <>CartaoCredito</>}
-          </>
+          <SummaryPayment
+            typePayment={typePayment}
+            depositValue={depositValue}
+            prevStep={prevStep}
+            nextStep={nextStep}
+          />
+        );
+      case 3:
+        return (
+          <PaymentCompletion
+            typePayment={typePayment}
+            depositValue={depositValue}
+          />
         );
       default:
         return null;

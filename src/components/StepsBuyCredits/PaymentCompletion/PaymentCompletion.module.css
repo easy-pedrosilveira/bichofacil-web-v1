@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.step {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.box {
+    width: 327px;
+    height: 330px;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    padding: 35px 15px;
+    background: var(--primary-colors-white, #FFF);
+}
+
+.txts {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.title {
+    color: #373435;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.paragraph {
+    color: var(--GRAY-GRAY-03, #7A7786);
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+}
+
+.code {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.codeTxt {
+    color: var(--BLUE-Blue-02, #3F73E3);
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.barCode {
+    width: 279px;
+    height: 52px;
+    border-radius: 32px;
+    border: 1px solid var(--WHITE, #FFF);
+    background: #F0F0F0;
+}
+
+.code .btn {
+    width: 279px;
+    margin-top: 11px;
+    padding: 0;
+    color: var(--WHITE, #FFF);
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.alert {
+    width: 85%;
+    color: var(--GRAY-GRAY-03, #7A7786);
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.btn {
+    width: 327px;
+    padding: 0px 15px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 33px;
+    background: var(--BLUE-Blue-02, #3F73E3);
+    color: var(--WHITE, #FFF);
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}

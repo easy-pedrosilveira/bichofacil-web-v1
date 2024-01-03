@@ -8,21 +8,19 @@ export const CarouselResults = () => {
   const { data } = useGameContext();
   const [sliderPosition, setSliderPosition] = useState(0);
 
-  const leftClick = (e: any) => {
-    e.preventDefault();
-    setSliderPosition((prevPosition) => prevPosition - 1);
+  const handleNextSlide = () => {
+    setSliderPosition((prevPosition) => prevPosition + 1);
   };
 
-  const rightClick = (e: any) => {
-    e.preventDefault();
-    setSliderPosition((prevPosition) => prevPosition + 1);
+  const handlePrevSlide = () => {
+    setSliderPosition((prevPosition) => prevPosition - 1);
   };
 
   return (
     <div className={styles.container}>
       <div className={styles.slider}>
         {data ? (
-          data !== undefined || [] ? (
+          data.length > 0 ? (
             data.map((item, index) => {
               const uniqueKey = `${item.lottery_date}-${item.lottery_name}-${item.lottery_type}`;
               return (
@@ -33,17 +31,17 @@ export const CarouselResults = () => {
             })
           ) : null
         ) : (
-          <>VSFD MLK 🤙 🤙</>
+          <>Sem Resultados no momento</>
         )}
       </div>
-      <div className={styles.buttons}>
-        <div className={styles.btns} onClick={leftClick}>
-          <img src={Arrow} alt="" />
+      {/* <div className={styles.buttons}>
+        <div className={styles.btns} onClick={handlePrevSlide}>
+          <img src={Arrow} alt="Previous" />
         </div>
-        <div className={styles.btns} onClick={rightClick} style={{}}>
-          <img src={Arrow} alt="" style={{ rotate: "180deg" }} />
+        <div className={styles.btns} onClick={handleNextSlide}>
+          <img src={Arrow} alt="Next" style={{ transform: "rotate(180deg)" }} />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -169,7 +169,7 @@
 
         .contentResponsive {
             position: absolute;
-            top: 0px;
+            top: -7px;
             width: 100%;
             height: auto;
             display: flex;

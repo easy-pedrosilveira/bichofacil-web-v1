@@ -19,7 +19,6 @@
 }
 
 .buttons {
-    position: absolute;
     width: 85%;
     display: flex;
     justify-content: space-between;
@@ -34,16 +33,14 @@
     justify-content: center;
     border: none;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 @media (min-width: 200px) {
     @media (max-width: 1000px) {
         .slider {
             width: 100%;
-        }
-
-        .buttons {
-            width: 110%;
+            padding-bottom: 10px;
         }
     }
 }

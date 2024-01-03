@@ -27,10 +27,16 @@
     width: 100%;
     height: 42px;
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     border-radius: 8px;
     padding: 3px 0px;
+}
+
+.innerBetHistory {
+    width: 95%;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .columnDark {
@@ -52,7 +58,7 @@
 }
 
 .data {
-    width: 65%;
+    width: auto;
 }
 
 .pagination {
@@ -112,21 +118,27 @@
 
 @media (min-width: 200px) {
     @media (max-width: 700px) {
-        .container{
+        .container {
             margin-top: 0px;
         }
 
-        .betHistory{
-            width: 90%;
+        .betHistory {
+            width: 80%;
         }
 
-        .title, .data {
-            width: 45%;
+        .column,
+        .columnDark {
+            height: auto;
+            padding: 15px 0px;
+        }
+
+        .innerBetHistory {
+            justify-content: space-between;
+        }
+
+        .title {
+            width: auto;
             font-weight: 400;
-        }
-
-        .data{
-            text-align: right;
         }
     }
 }

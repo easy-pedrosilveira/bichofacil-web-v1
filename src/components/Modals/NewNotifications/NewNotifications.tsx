@@ -17,10 +17,6 @@ export const NewNotifications = ({
 }: ModalProps) => {
   const { refreshUser } = useContext(AuthContext);
 
- 
-
-  console.log(notifications?.read_status)
-
   return (
     <div
       className={styles.backDrop}
@@ -28,7 +24,7 @@ export const NewNotifications = ({
         const containerElement = e.currentTarget as HTMLElement;
         const clickedElement = e.target as HTMLElement;
         if (containerElement === clickedElement) {
-        //   markReadMessage(notifications?.read_status)
+          onModalChange(false);
         }
       }}
     >
@@ -36,9 +32,7 @@ export const NewNotifications = ({
         <div className={styles.header}>
           <div className={styles.innerHeader}>
             <div className={styles.intro}>Mensagem</div>
-            <img src={Close} alt="" 
-            // onClick={(e) => markReadMessage(notifications?.read_status)} 
-            />
+            <img src={Close} alt="" onClick={(e) => onModalChange(false)} />
           </div>
         </div>
         <div className={styles.body}>
@@ -48,8 +42,9 @@ export const NewNotifications = ({
           </div>
         </div>
         <div className={styles.btn}>
-          <div className={styles.closeBtn} 
-        //   onClick={(e) => markReadMessage(notifications?.read_status)}
+          <div
+            className={styles.closeBtn}
+            onClick={(e) => onModalChange(false)}
           >
             Fechar
           </div>

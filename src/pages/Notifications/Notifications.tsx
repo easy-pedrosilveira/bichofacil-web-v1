@@ -9,19 +9,19 @@ import Arrow from "assets/icons/arrow-results.svg";
 import { IMessagesUser } from "interfaces";
 
 export const Notifications = () => {
-  const { user, refreshUser } = useContext(AuthContext);
-  const messages = user?.messages || [];
+  const { user, refreshUser, messages } = useContext(AuthContext);
+  const notificationsUser = user?.messages || [];
   const [notifications, setNotifications] = useState(false);
-  const [dataMessage, setDataMessage] = useState<IMessagesUser>();
-  const itemsPerPage = 5;
+  const itemsPerPage = 9;
   const [currentPage, setCurrentPage] = useState(1);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-  const currentMessages = messages.slice(startIndex, endIndex);
-  const totalPages = Math.ceil(messages.length / itemsPerPage);
+  const currentMessages = notificationsUser.slice(startIndex, endIndex);
+  const totalPages = Math.ceil(notificationsUser.length / itemsPerPage);
 
-  const toggleModalNotifications = (props: IMessagesUser) => {
+  const toggleModalNotifications = () => {
     setNotifications(!notifications);
+    // markReadMessage(messages?.cod_message);
   };
 
   const markReadMessage = async (messageId: string) => {
@@ -55,10 +55,9 @@ export const Notifications = () => {
             currentMessages.map((notification, index) => (
               <div
                 className={styles.message}
-                onClick={
-                  (e) => markReadMessage(notification.cod_message)
-                  // toggleModalNotifications(props)
-                }
+                // onClick={(e) =>
+                //   toggleModalNotifications(notification?.cod_message)
+                // }
                 key={index}
                 style={
                   notification?.read_status === true
@@ -152,7 +151,7 @@ export const Notifications = () => {
       {notifications ? (
         <NewNotifications
           onModalChange={setNotifications}
-          notifications={dataMessage}
+          notifications={undefined}
         />
       ) : null}
     </>

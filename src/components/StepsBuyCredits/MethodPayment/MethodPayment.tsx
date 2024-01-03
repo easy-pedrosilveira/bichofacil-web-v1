@@ -1,11 +1,13 @@
+import { InfoBuyCredits } from "interfaces";
 import styles from "./MethodPayment.module.css";
 import Arrow from "assets/icons/arrow-intro.svg";
 
 interface StepsProps {
+  infoBuyCredits: InfoBuyCredits | null;
   methodData: (type: string) => void;
+  depositValue: number;
   nextStep: () => void;
   prevStep: () => void;
-  depositValue: number;
 }
 
 export const MethodPayment = ({
@@ -13,12 +15,13 @@ export const MethodPayment = ({
   nextStep,
   prevStep,
   depositValue,
+  infoBuyCredits,
 }: StepsProps) => {
-  const typePayment = ["pix", "boleto", "cartao de credito"];
-
+  const boletoMinAmount = parseFloat(infoBuyCredits?.boleto_min_amount || "");
+  console.log(boletoMinAmount);
   const handleTypePayment = (type: string) => {
     methodData(type);
-    // nextStep();
+    nextStep();
   };
 
   return (
@@ -33,18 +36,47 @@ export const MethodPayment = ({
         </div>
       </div>
       <div className={styles.methods}>
-        {typePayment.map((type, index) => (
+        {infoBuyCredits?.allow_pix ? (
           <div
             className={styles.payments}
-            key={index}
-            onClick={() => handleTypePayment(type)}
+            onClick={() => handleTypePayment("pix")}
           >
-            <div className={styles.text}>{type}</div>
+            <div className={styles.text}>Pix</div>
             <img src={Arrow} alt="" style={{ rotate: "180deg" }} />
           </div>
-        ))}
+        ) : null}
+
+        {infoBuyCredits?.allow_prize ? (
+          <div
+            className={styles.payments}
+            onClick={() => handleTypePayment("prize")}
+          >
+            <div className={styles.text}>Premios</div>
+            <img src={Arrow} alt="" style={{ rotate: "180deg" }} />
+          </div>
+        ) : null}
+
+        {infoBuyCredits?.allow_codebar === true &&
+        boletoMinAmount <= depositValue ? (
+          <div
+            className={styles.payments}
+            onClick={() => handleTypePayment("boleto")}
+          >
+            <div className={styles.text}>Boleto</div>
+            <img src={Arrow} alt="" style={{ rotate: "180deg" }} />
+          </div>
+        ) : null}
+
+        {infoBuyCredits?.allow_credit_card ? (
+          <div
+            className={styles.payments}
+            onClick={() => handleTypePayment("credit_card")}
+          >
+            <div className={styles.text}>Cartão de Crédito</div>
+            <img src={Arrow} alt="" style={{ rotate: "180deg" }} />
+          </div>
+        ) : null}
       </div>
     </div>
   );
 };
-2

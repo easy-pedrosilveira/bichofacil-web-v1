@@ -56,11 +56,11 @@
 
         .container {
             flex-direction: column-reverse;
-            margin-top: 48px;
+            margin-top: 30px;
         }
 
         .introduction {
-            margin: 20px 0px 64px 0px;
+            margin: 0px 0px 65px 0px;
         }
 
         .btnPlay {
@@ -70,6 +70,11 @@
 
         .shadow {
             display: none;
+        }
+
+        .content {
+            margin-bottom: 31px;
+
         }
     }
 }

@@ -3,15 +3,19 @@ import ANotes from "assets/icons/a-notes.svg";
 import TwoNotes from "assets/icons/two-notes.svg";
 import ThreeNotes from "assets/icons/three-notes.svg";
 import { useState } from "react";
+import { InfoBuyCredits } from "interfaces";
 
 interface StepsProps {
+  infoBuyCredits: InfoBuyCredits | null;
   nextStep: () => void;
   depositData: (value: number) => void;
 }
 
-export const Deposit = ({ nextStep, depositData }: StepsProps) => {
-  const values = [5, 10, 20, 25, 50, 75, 100, 200, 1000];
-
+export const Deposit = ({
+  infoBuyCredits,
+  nextStep,
+  depositData,
+}: StepsProps) => {
   const handleValueSelection = (value: number) => {
     depositData(value);
     nextStep();
@@ -20,7 +24,7 @@ export const Deposit = ({ nextStep, depositData }: StepsProps) => {
   return (
     <>
       <div className={styles.step}>
-        {values.map((value, index) => (
+        {infoBuyCredits?.values.map((value, index) => (
           <div
             key={value}
             className={styles.card}
@@ -28,9 +32,9 @@ export const Deposit = ({ nextStep, depositData }: StepsProps) => {
           >
             {index === 0 ? (
               <img src={ANotes} alt="" className={styles.money} />
-            ) : index > 0 && index <= values.length - 3 ? (
+            ) : index > 0 && index <= infoBuyCredits?.values.length - 3 ? (
               <img src={TwoNotes} alt="" className={styles.money} />
-            ) : index >= values.length - 2 ? (
+            ) : index >= infoBuyCredits?.values.length - 2 ? (
               <img src={ThreeNotes} alt="" className={styles.money} />
             ) : null}
             <div className={styles.values}>
