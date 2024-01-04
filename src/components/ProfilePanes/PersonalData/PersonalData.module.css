@@ -7,25 +7,18 @@
 }
 
 .personal,
-.security,
 .bank {
     width: 600px;
     height: auto;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     gap: 36px;
     margin-bottom: 32px;
 }
 
-.cards{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.personal,
-.security {
+.personal {
     width: 600px;
     padding-bottom: 40px;
     border-bottom: 1px solid #3F73E3;
@@ -105,22 +98,8 @@
     width: 50%;
 }
 
-.btn {
-    width: auto;
-    height: 48px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    border-radius: 33px;
-    background: #71C638;
-    margin: 20px 0px 87px 0px;
-    cursor: pointer;
-    padding: 0px 20px;
-}
-
 @media (min-width: 200px) {
-    @media (max-width: 580px) {
+    @media (max-width: 610px) {
 
         .personal,
         .security,
@@ -128,15 +107,19 @@
             width: 85%;
             gap: 20px;
         }
-        .infosVariant{
+
+        .infosVariant {
             flex-direction: column;
         }
-        .infosCenter{
+
+        .infosCenter {
             width: 100%;
             text-align: none;
             align-items: none;
         }
-        .inputVariant, .labelCenter {
+
+        .inputVariant,
+        .labelCenter {
             width: 100%;
         }
     }

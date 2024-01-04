@@ -42,9 +42,9 @@ export const BetHistory = () => {
           </div>
           <div className={styles.column}>
             <div className={styles.innerBetHistory}>
-              <div className={styles.title}>Aposta</div>
+              <div className={styles.title}>Modalidade</div>
               <div className={styles.data}>
-                {bet?.modality} - {formatPositions(bet?.positions)}
+                {bet?.modality}
               </div>
             </div>
           </div>
