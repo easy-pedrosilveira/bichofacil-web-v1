@@ -1,11 +1,10 @@
 .card {
     width: 312px;
-    height: 390px;
+    height: 432px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 20px;
+    justify-content: space-evenly;
     border-radius: 16px;
     background: #FFF2A4;
     color: #000;
@@ -18,7 +17,10 @@
     align-items: center;
     flex-direction: column;
     gap: 8px;
-    /* margin-top: 18px; */
+}
+
+.innerTxts {
+    width: 90%;
 }
 
 .title {
@@ -37,21 +39,17 @@
     line-height: normal;
 }
 
-.innerTxts {
-    width: 90%;
-}
-
 .content {
     width: 95%;
-    height: auto;
+    height: 270px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
     gap: 18px;
     border-radius: 16px;
     background: var(--YELLOW-01, #FFEC7A);
-    padding: 30px 0px;
+    padding: 24px 0px;
 }
 
 .innerContent {

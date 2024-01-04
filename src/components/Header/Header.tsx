@@ -15,7 +15,6 @@ export const Header = () => {
   const [modalProfile, setModalProfile] = useState(false);
   const [linkActive, setLinkActive] = useState("");
   const [expanded, setExpanded] = useState(false);
-  const [isHeaderFixed, setIsHeaderFixed] = useState(false);
   const navigate = useNavigate();
   const { width } = useWindowSize();
 

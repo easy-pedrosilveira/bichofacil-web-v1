@@ -6,7 +6,7 @@ import Edit from "assets/icons/edit.svg";
 import { Link } from "react-router-dom";
 
 export const Profile = () => {
-  const { user, tickets, refreshUser } = useContext(AuthContext);
+  const { user, refreshUser } = useContext(AuthContext);
   const [buyCredits, setBuyCredits] = useState(false);
 
   const toggleBuyCredits = () => {
