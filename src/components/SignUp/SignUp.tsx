@@ -18,6 +18,7 @@ export const SignUp = () => {
   const [firstname, setFirstName] = useState<string>("");
   const [lastname, setLastName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
+  const [confirmEmail, setConfirmEmail] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [confirmpassword, setConfirmPassword] = useState<string>("");
@@ -32,6 +33,7 @@ export const SignUp = () => {
     const cpfValidation = validateCpf();
     const passwordValidation = validatePassword();
     const confirmPasswordValidation = validatePasswordEqual();
+    const confirmEmailValidation = validateEmailEqual();
 
     if (
       nameValidation &&
@@ -40,7 +42,8 @@ export const SignUp = () => {
       phoneValidation &&
       cpfValidation &&
       passwordValidation &&
-      confirmPasswordValidation
+      confirmPasswordValidation &&
+      confirmEmailValidation
     ) {
       const formData = {
         firstname,
@@ -107,6 +110,24 @@ export const SignUp = () => {
       const month = parseInt(parts[1], 10);
       const year = parseInt(parts[2], 10);
 
+      // Verificar se o formato da data é válido
+      if (
+        day < 1 ||
+        day > 31 ||
+        month < 1 ||
+        month > 12 ||
+        year < 1900 ||
+        isNaN(day) ||
+        isNaN(month) ||
+        isNaN(year)
+      ) {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          birthdate: "Data de nascimento inválida.",
+        }));
+        return false;
+      }
+
       const currentDate = new Date();
       const minDate = new Date(
         currentDate.getFullYear() - MinAge,
@@ -140,6 +161,12 @@ export const SignUp = () => {
         }));
         return true;
       }
+    } else {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        birthdate: "Formato de data inválido.",
+      }));
+      return false;
     }
   };
 
@@ -224,6 +251,22 @@ export const SignUp = () => {
     }
   };
 
+  const validateEmailEqual = () => {
+    if (email !== confirmEmail) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        emailConfirmation: "Os emails não coincidem",
+      }));
+      return false;
+    } else {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        emailConfirmation: "",
+      }));
+      return true;
+    }
+  };
+
   return (
     <motion.div
       className={styles.container}
@@ -272,6 +315,26 @@ export const SignUp = () => {
             }}
           />
           {errors.email && <p style={{ color: "red" }}>{errors.email}</p>}
+        </div>
+        <div className={styles.info}>
+          <div className={styles.label}>Confirme seu E-mail</div>
+          <input
+            type="email"
+            className={styles.input}
+            placeholder="Confirme seu E-mail"
+            required
+            autoComplete="username"
+            onChange={(e) => {
+              setConfirmEmail(e.target.value);
+              setErrors({
+                ...errors,
+                emailConfirmation: "",
+              });
+            }}
+          />
+          {errors.emailConfirmation && (
+            <p style={{ color: "red" }}>{errors.emailConfirmation}</p>
+          )}
         </div>
         <div className={styles.info}>
           <div className={styles.label}>CPF</div>

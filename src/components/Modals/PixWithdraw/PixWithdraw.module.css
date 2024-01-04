@@ -105,6 +105,16 @@
     text-align: center;
 }
 
+.valueKey{
+    background-color: #3F73E3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 32px;
+    font-size: 18px;
+    padding: 25px;
+}
+
 .btn {
     width: 384px;
     height: 48px;
@@ -114,6 +124,7 @@
     align-items: center;
     border-radius: 33px;
     background: #71C638;
+    cursor: pointer;
 }
 
 @media (min-width: 200px) {

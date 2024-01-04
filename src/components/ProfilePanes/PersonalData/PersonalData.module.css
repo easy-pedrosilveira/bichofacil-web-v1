@@ -9,7 +9,7 @@
 .personal,
 .security,
 .bank {
-    width: 500px;
+    width: 600px;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -18,9 +18,15 @@
     margin-bottom: 32px;
 }
 
+.cards{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .personal,
 .security {
-    width: 500px;
+    width: 600px;
     padding-bottom: 40px;
     border-bottom: 1px solid #3F73E3;
 }
@@ -100,7 +106,7 @@
 }
 
 .btn {
-    width: 240px;
+    width: auto;
     height: 48px;
     display: flex;
     justify-content: center;
@@ -110,6 +116,7 @@
     background: #71C638;
     margin: 20px 0px 87px 0px;
     cursor: pointer;
+    padding: 0px 20px;
 }
 
 @media (min-width: 200px) {

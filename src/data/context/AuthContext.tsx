@@ -6,6 +6,7 @@ import {
   IMessagesUser,
   IPixKeyUser,
   ITicketsUser,
+  ICardUser,
 } from "interfaces";
 import { apiAuth } from "providers";
 import { createContext, useEffect, useState } from "react";
@@ -33,8 +34,8 @@ export function AuthProvider(props: any) {
   //informações do usuário
   const [tickets, setTickets] = useState<ITicketsUser>();
   const [messages, setMessages] = useState<IMessagesUser>();
-
-  const [pixKey, setPixKey] = useState<IPixKeyUser>();
+  const [pixKey, setPixKey] = useState<IPixKeyUser | null>(null);
+  const [cards, setCards] = useState<ICardUser | null>(null);
   const [extracts, setExtracts] = useState<IExtractsUser>();
   const [credits, setCredits] = useState(0);
   const [winning, setWinning] = useState(0);
@@ -84,6 +85,7 @@ export function AuthProvider(props: any) {
       setMessages(userData.messages);
       setTickets(userData.tickets);
       setPixKey(userData.pix_key);
+      setCards(userData.card);
       handleOpenModalLogin(true);
 
       if (response.status === 200) {
@@ -239,6 +241,7 @@ export function AuthProvider(props: any) {
         tickets,
         messages,
         pixKey,
+        cards,
         extracts,
         latitude,
         longitude,

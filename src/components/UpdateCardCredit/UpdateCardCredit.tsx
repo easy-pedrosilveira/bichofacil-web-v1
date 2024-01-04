@@ -4,7 +4,7 @@ import InputMask from "react-input-mask";
 import { apiAuth } from "providers";
 import { toast } from "react-toastify";
 
-export const AddCardCredit = () => {
+export const UpdateCardCredit = () => {
   const [cardNumber, setCardNumber] = useState("");
   const [expirationDate, setExpirationDate] = useState("");
   const [securityCode, setSecurityCode] = useState("");
@@ -35,7 +35,7 @@ export const AddCardCredit = () => {
     };
 
     try {
-      const response = await apiAuth.post("/cards/", formattedData, {
+      const response = await apiAuth.put("/cards/", formattedData, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`, // Passa o token no cabeçalho da solicitação
         },
@@ -92,7 +92,7 @@ export const AddCardCredit = () => {
         </div>
       </form>
       <button type="button" onClick={handleSubmit}>
-        Cadastrar
+        Alterar
       </button>
     </div>
   );
