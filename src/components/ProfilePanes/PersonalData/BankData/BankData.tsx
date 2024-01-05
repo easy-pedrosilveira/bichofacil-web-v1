@@ -102,7 +102,7 @@ export const BankData = () => {
         pixKey !== null &&
         typeof pixKey === "object" &&
         Object.keys(pixKey).length === 0 && (
-          <div style={{ textAlign: "center" }}>Nenhuma forma de pagamento!</div>
+          <div style={{ textAlign: "center" }}>Nenhuma forma de pagamento cadastrada!</div>
         )}
       <div className={styles.divBtn}>
         <div

@@ -19,19 +19,23 @@ export const BuyCredits = ({ onModalChange }: ModalProps) => {
     handleMethodData,
     nextStep,
     prevStep,
+    postSubmitPayment,
     infoBuyCredits,
     page,
     depositValue,
     typePayment,
+    dataPayment
   } = useBuyCreditsContext();
-
-  console.log(infoBuyCredits);
 
   const titlesSteps = [
     `Carteira`,
     `Pagamento`,
     `Pagamento ${
-      typePayment || typePayment === "credit_card" ? "Cartão de Crédito" : null
+      typePayment === "credit_card"
+        ? "Cartão de Crédito"
+        : typePayment === "prize"
+        ? "Premios"
+        : typePayment
     }`,
     `Pagamento ${typePayment}`,
   ];
@@ -43,7 +47,7 @@ export const BuyCredits = ({ onModalChange }: ModalProps) => {
       typePayment === "boleto"
         ? "Será enviado para o seu e-mail a comprovação dessa operação."
         : typePayment === "pix"
-        ? `Insira ou confirme sua Chave Pix para continuar`
+        ? `Confirme sua Chave Pix para continuar`
         : ``
     }`,
     ``,
@@ -74,17 +78,19 @@ export const BuyCredits = ({ onModalChange }: ModalProps) => {
           <SummaryPayment
             typePayment={typePayment}
             depositValue={depositValue}
-            prevStep={prevStep}
             nextStep={nextStep}
+            onSubmit={postSubmitPayment}
           />
         );
       case 3:
-        return (
+        return typePayment === "pix" || typePayment === "boleto" ? (
           <PaymentCompletion
             typePayment={typePayment}
             depositValue={depositValue}
+            dataPayment={dataPayment}
           />
-        );
+        ) : typePayment === "prize" ||
+          typePayment === "credit_card" ? null : null;
       default:
         return null;
     }
@@ -101,17 +107,14 @@ export const BuyCredits = ({ onModalChange }: ModalProps) => {
         }
       }}
     >
-      <div className={styles.modal}>
-        <motion.div
-          // animate={{
-          //   x: page === 0 ? 0 : page === 1 ? 100 : 200,
-          //   originX: 0.5,
-          // }}
-          className={styles.innerModal}
-        >
+      <div
+        className={styles.modal}
+        style={{ alignItems: page === 3 ? "center" : "" }}
+      >
+        <motion.div className={styles.innerModal}>
           <div className={styles.innerIntro}>
             <div className={styles.left}>
-              {page === 0 ? null : (
+              {page === 0 || page === 3 ? null : (
                 <div className={styles.arrow}>
                   <img src={Arrow} alt="" onClick={prevStep} />
                 </div>

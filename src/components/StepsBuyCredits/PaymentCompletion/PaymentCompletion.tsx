@@ -1,14 +1,18 @@
+import { IPayment } from "interfaces";
 import styles from "./PaymentCompletion.module.css";
 
 interface StepsProps {
   typePayment: string;
   depositValue: number;
+  dataPayment: IPayment | null;
 }
 
 export const PaymentCompletion = ({
   typePayment,
   depositValue,
+  dataPayment,
 }: StepsProps) => {
+  console.log(dataPayment);
   return (
     <div className={styles.step}>
       <div className={styles.box}>

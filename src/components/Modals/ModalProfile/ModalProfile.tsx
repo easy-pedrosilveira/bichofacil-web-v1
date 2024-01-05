@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import useAuthContext from "data/hooks/useAuthContext";
 import useAppContext from "data/hooks/useAppConfig";
 import useBuyCreditsContext from "data/hooks/useBuyCreditsContext";
-import { BuyCredits } from "components";
 
 interface ModalProps {
   onModalChange: (isOpen: boolean) => void;
@@ -20,6 +19,11 @@ export const ModalProfile = ({ onModalChange }: ModalProps) => {
     setProfilePanels(value);
     navigate("/profile");
     onModalChange(false);
+  };
+
+  const openBuyCreditsModal = () => {
+    handleOpenModalBuyCredits(true);
+    onModalChange(false);  
   };
 
   const toggleLogout = () => {
@@ -59,7 +63,7 @@ export const ModalProfile = ({ onModalChange }: ModalProps) => {
           <span className={styles.text}>Efetuar saque</span>
         </Link>
         <div
-          onClick={(e) => handleOpenModalBuyCredits(true)}
+          onClick={(e) => openBuyCreditsModal()}
           className={styles.links}
         >
           <span className={styles.text}>Carteira</span>
@@ -70,9 +74,6 @@ export const ModalProfile = ({ onModalChange }: ModalProps) => {
           </span>
         </div>
       </div>
-      {openBuyCredits ? (
-        <BuyCredits onModalChange={handleOpenModalBuyCredits} />
-      ) : null}
     </>
   );
 };

@@ -25,6 +25,12 @@
     cursor: pointer;
 }
 
+.links:hover {
+    transition: all .3s ease-in-out;
+    border-radius: 20px;
+    background: #F0F0F0;
+}
+
 .text,
 .exit {
     width: 85%;
@@ -37,10 +43,4 @@
 
 .exit {
     color: #FF2876;
-}
-
-.text:hover
-.exit:hover {
-    transition: all .3s ease-in-out;
-    background: #ffffff1a;
 }

@@ -11,15 +11,28 @@ export interface InfoBuyCredits {
   cashback_percent: number;
 }
 
+export interface Purchase {
+  value: number;
+  payment_type: string;
+}
+
+export interface IPayment {
+  image: string;
+  cod: string;
+  message: string;
+}
+
 export interface IBuyCredits {
   handleOpenModalBuyCredits: (value: boolean) => void;
+  handleDepositData: (value: number) => void;
+  handleMethodData: (formPayment: string) => void;
+  nextStep: () => void;
+  prevStep: () => void;
+  postSubmitPayment: () => void;
   openBuyCredits: boolean;
   infoBuyCredits: InfoBuyCredits | null;
   page: number;
-  handleDepositData: (value: number) => void;
   depositValue: number;
-  handleMethodData: (formPayment: string) => void;
   typePayment: string;
-  nextStep: () => void;
-  prevStep: () => void;
+  dataPayment: IPayment | null;
 }

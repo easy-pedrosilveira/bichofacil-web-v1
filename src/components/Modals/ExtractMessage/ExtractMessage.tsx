@@ -11,6 +11,7 @@ interface ModalProps {
 }
 
 export const ExtractMessage = ({ onModalChange, extracts }: ModalProps) => {
+  console.log(extracts?.description);
   return (
     <div
       className={styles.backDrop}
@@ -33,9 +34,7 @@ export const ExtractMessage = ({ onModalChange, extracts }: ModalProps) => {
           <div className={styles.title}> {extracts?.title}</div>
           <div className={styles.info}>
             <div className={styles.label}>Valor:</div>
-            <div className={styles.data}>
-              R${extracts?.value}
-            </div>
+            <div className={styles.data}>R${extracts?.value}</div>
           </div>
           <div className={styles.info}>
             <div className={styles.label}>Data:</div>
@@ -43,7 +42,7 @@ export const ExtractMessage = ({ onModalChange, extracts }: ModalProps) => {
               <div className={styles.data}>
                 {extracts?.date &&
                   format(
-                    new Date(extracts.date),
+                    new Date(extracts?.date),
                     `EEEE, d 'de' LLLL 'de' yyyy`,
                     { locale: ptBR }
                   )}
@@ -59,7 +58,7 @@ export const ExtractMessage = ({ onModalChange, extracts }: ModalProps) => {
             ))}
           </div>
         </div>
-        <div className={styles.btn}>Compartilhar</div>
+        {/* <div className={styles.btn}>Compartilhar</div> */}
       </div>
     </div>
   );

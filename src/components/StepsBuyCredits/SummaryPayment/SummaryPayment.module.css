@@ -49,7 +49,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 24px;
+    gap: 18px;
 }
 
 .infos {
@@ -59,9 +59,23 @@
     gap: 4px;
 }
 
+.infoVariant {
+    width: 311px;
+    display: flex;
+    gap: 16px;
+}
+
+.infoVariant .infos {
+    width: 250px;
+}
+
+#cvc {
+    width: 118px;
+}
+
 .label {
     color: var(--BLUE-Blue-01, #C6D6FF);
-    font-size: 16px;
+    font-size: 15px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -96,4 +110,14 @@
     font-weight: 700;
     line-height: normal;
     cursor: pointer;
+}
+
+.nothing {
+    color: var(--YELLOW-01, #FFEC7A);
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }

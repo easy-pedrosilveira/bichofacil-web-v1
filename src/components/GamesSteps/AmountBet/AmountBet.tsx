@@ -32,7 +32,7 @@ export const AmountBet = ({ amount, dataAmount }: AmountBetProps) => {
       setInputValue(value);
     }
     // if (value > creditsBalance) {
-    //   <InsufficientBalance />;
+    //  colocar variavel para abrir esse componente <InsufficientBalance />;
     // } 
     else {
       toast.error(`Valor máximo para aposta é: ${amount?.max_bet_value}`);

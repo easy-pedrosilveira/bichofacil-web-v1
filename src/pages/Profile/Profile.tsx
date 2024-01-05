@@ -4,14 +4,11 @@ import { useContext, useState } from "react";
 import AuthContext from "data/context/AuthContext";
 import Edit from "assets/icons/edit.svg";
 import { Link } from "react-router-dom";
+import useBuyCreditsContext from "data/hooks/useBuyCreditsContext";
 
 export const Profile = () => {
   const { user, refreshUser } = useContext(AuthContext);
-  const [buyCredits, setBuyCredits] = useState(false);
-
-  const toggleBuyCredits = () => {
-    setBuyCredits(!buyCredits);
-  };
+  const { openBuyCredits, handleOpenModalBuyCredits } = useBuyCreditsContext();
 
   return (
     <>
@@ -30,13 +27,14 @@ export const Profile = () => {
               <div className={styles.editTxt}>Editar Perfil</div>
             </Link>
           </div>
-          <div className={styles.btn} onClick={toggleBuyCredits}>
+          <div className={styles.btn} onClick={(e) => handleOpenModalBuyCredits(true)}>
             Efetuar depósito
           </div>
         </div>
         <SelectProfilePanes />
       </main>
-      {buyCredits ? <BuyCredits onModalChange={toggleBuyCredits}/> : null}
-    </>
+      {openBuyCredits ? (
+        <BuyCredits onModalChange={handleOpenModalBuyCredits} />
+      ) : null}    </>
   );
 };

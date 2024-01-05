@@ -1,6 +1,7 @@
 import { createContext, useContext, useState } from "react";
-import { IBuyCredits, InfoBuyCredits } from "interfaces";
+import { IBuyCredits, InfoBuyCredits, IPayment } from "interfaces";
 import { apiAuth } from "providers";
+import { toast } from "react-toastify";
 
 interface BuyCreditsData {
   deposit: {
@@ -29,6 +30,8 @@ export const BuyCreditsProvider = ({ children }: any) => {
   });
   const [depositValue, setDepositValue] = useState<number>(0);
   const [typePayment, setTypePayment] = useState<string>("");
+  const [dataPayment, setDataPayment] = useState<IPayment | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const handleOpenModalBuyCredits = (bool: boolean) => {
     setOpenBuyCredits(bool);
@@ -46,7 +49,7 @@ export const BuyCreditsProvider = ({ children }: any) => {
 
       if (response.status === 200) {
         const data = response.data;
-        console.log(data)
+        console.log(data);
         setInfoBuyCredits(data);
       } else {
         console.log("Erro ao obter dados da API:", response.status);
@@ -92,6 +95,41 @@ export const BuyCreditsProvider = ({ children }: any) => {
     });
   };
 
+  const postSubmitPayment = async () => {
+    try {
+      setLoading(true);
+      const { deposit, method } = buyCreditsData;
+      const { value } = deposit;
+      const { formPayment } = method;
+
+      const dataPayment = {
+        value: value,
+        payment_type: formPayment,
+      };
+      await apiAuth
+        .post("/purchase/", dataPayment, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        })
+        .then(async (response) => {
+          if (response.status === 200) {
+            setDataPayment(response.data);
+          } else {
+            console.error("Erro desconhecido");
+          }
+        })
+        .catch((error) => {
+          toast.error(error);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
+    } catch (error) {
+      toast.error("error");
+    }
+  };
+
   return (
     <BuyCreditsContext.Provider
       value={{
@@ -100,6 +138,8 @@ export const BuyCreditsProvider = ({ children }: any) => {
         handleMethodData,
         nextStep,
         prevStep,
+        postSubmitPayment,
+        dataPayment,
         openBuyCredits,
         infoBuyCredits,
         page,

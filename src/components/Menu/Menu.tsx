@@ -6,6 +6,7 @@ import Close from "assets/icons/close-white.svg";
 import Arrow from "assets/icons/arrow.svg";
 import useAuthContext from "data/hooks/useAuthContext";
 import useAppContext from "data/hooks/useAppConfig";
+import useBuyCreditsContext from "data/hooks/useBuyCreditsContext";
 
 interface MenuProps {
   onMenuChange: (isOpen: boolean) => void;
@@ -17,6 +18,7 @@ export const Menu = ({ onMenuChange }: MenuProps) => {
   const { setProfilePanels } = useAppContext();
   const navigate = useNavigate();
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const { openBuyCredits, handleOpenModalBuyCredits } = useBuyCreditsContext();
 
   const linkToProfile = (value: number) => {
     setProfilePanels(value);
@@ -28,9 +30,14 @@ export const Menu = ({ onMenuChange }: MenuProps) => {
     setDropdownOpen(!dropdownOpen);
   };
 
-  const toggleLogout = () => {
+  const openBuyCreditsModal = () => {
+    handleOpenModalBuyCredits(true);
     onMenuChange(false);
+  };
+
+  const toggleLogout = () => {
     handleLogout();
+    onMenuChange(false);
   };
 
   return (
@@ -66,7 +73,7 @@ export const Menu = ({ onMenuChange }: MenuProps) => {
               <div onClick={(e) => linkToProfile(1)}>
                 <span className={styles.links}>Movimentações</span>
               </div>
-              <div onClick={(e) => linkToProfile(2)}>
+              <div onClick={(e) => openBuyCreditsModal()}>
                 <span className={styles.links}>Efetuar saque</span>
               </div>
               <div>

@@ -11,3 +11,4 @@ export * from "./UserIdetification";
 export * from "./BuyCredits";
 export * from "./UpdateCard";
 export * from "./DeletePayment";
+export * from "./PaymentCompleted";

@@ -1,5 +1,5 @@
-import { InfoBuyCredits } from "interfaces";
 import styles from "./MethodPayment.module.css";
+import { InfoBuyCredits } from "interfaces";
 import Arrow from "assets/icons/arrow-intro.svg";
 
 interface StepsProps {
@@ -46,16 +46,6 @@ export const MethodPayment = ({
           </div>
         ) : null}
 
-        {infoBuyCredits?.allow_prize ? (
-          <div
-            className={styles.payments}
-            onClick={() => handleTypePayment("prize")}
-          >
-            <div className={styles.text}>Premios</div>
-            <img src={Arrow} alt="" style={{ rotate: "180deg" }} />
-          </div>
-        ) : null}
-
         {infoBuyCredits?.allow_codebar === true &&
         boletoMinAmount <= depositValue ? (
           <div
@@ -63,6 +53,16 @@ export const MethodPayment = ({
             onClick={() => handleTypePayment("boleto")}
           >
             <div className={styles.text}>Boleto</div>
+            <img src={Arrow} alt="" style={{ rotate: "180deg" }} />
+          </div>
+        ) : null}
+
+        {infoBuyCredits?.allow_prize ? (
+          <div
+            className={styles.payments}
+            onClick={() => handleTypePayment("prize")}
+          >
+            <div className={styles.text}>Premios</div>
             <img src={Arrow} alt="" style={{ rotate: "180deg" }} />
           </div>
         ) : null}
