@@ -12,7 +12,13 @@ interface AmountBetProps {
 
 export const AmountBet = ({ amount, dataAmount }: AmountBetProps) => {
   const [inputValue, setInputValue] = useState<number>(0);
+  const [insufficientBalance, setInsufficientBalance] = useState(false);
   const { user } = useContext(AuthContext);
+  const creditsBalance = parseFloat(user?.credits_balance || "0");
+
+  const toggleModalInsufficientBalance = () => {
+    setInsufficientBalance(!insufficientBalance);
+  };
 
   useEffect(() => {
     if (inputValue < 0) {
@@ -26,15 +32,13 @@ export const AmountBet = ({ amount, dataAmount }: AmountBetProps) => {
   }, [inputValue, amount?.max_bet_value]);
 
   const handleButtonClick = (value: number) => {
-    const creditsBalance = parseFloat(user?.credits_balance || "0");
-
     if (value <= amount?.max_bet_value) {
       setInputValue(value);
     }
-    // if (value > creditsBalance) {
-    //  colocar variavel para abrir esse componente <InsufficientBalance />;
-    // } 
-    else {
+
+    if (value > creditsBalance) {
+      toggleModalInsufficientBalance();
+    } else {
       toast.error(`Valor máximo para aposta é: ${amount?.max_bet_value}`);
     }
   };
@@ -46,41 +50,46 @@ export const AmountBet = ({ amount, dataAmount }: AmountBetProps) => {
   const staticValues = [5, 20, 50, 100];
 
   return (
-    <div className={styles.container}>
-      <div className={styles.title}>Valor Apostado</div>
-      <div className={styles.valueSelect}>
-        <div className={styles.rS}>R$</div>
-        <input
-          className={styles.input}
-          type="text"
-          value={inputValue.toLocaleString("pt-BR", {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2,
-          })}
-          onChange={(e) => {
-            const parsedValue = parseFloat(
-              e.target.value.replace(",", ".").replace(/[^\d.-]/g, "")
-            );
-            setInputValue(isNaN(parsedValue) ? 0 : parsedValue);
-          }}
-        />
-      </div>
-      <div className={styles.chooseValues}>
-        {staticValues.map((value) => (
-          <div
-            key={value}
-            className={styles.values}
-            onClick={() => handleButtonClick(value)}
-          >
-            <span className={styles.coin}>R$ </span>{" "}
-            {value.toLocaleString("pt-BR", {
+    <>
+      <div className={styles.container}>
+        <div className={styles.title}>Valor Apostado</div>
+        <div className={styles.valueSelect}>
+          <div className={styles.rS}>R$</div>
+          <input
+            className={styles.input}
+            type="text"
+            value={inputValue.toLocaleString("pt-BR", {
               minimumFractionDigits: 2,
               maximumFractionDigits: 2,
             })}
-          </div>
-        ))}
+            onChange={(e) => {
+              const parsedValue = parseFloat(
+                e.target.value.replace(",", ".").replace(/[^\d.-]/g, "")
+              );
+              setInputValue(isNaN(parsedValue) ? 0 : parsedValue);
+            }}
+          />
+        </div>
+        <div className={styles.chooseValues}>
+          {staticValues.map((value) => (
+            <div
+              key={value}
+              className={styles.values}
+              onClick={() => handleButtonClick(value)}
+            >
+              <span className={styles.coin}>R$ </span>{" "}
+              {value.toLocaleString("pt-BR", {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2,
+              })}
+            </div>
+          ))}
+        </div>
+        <div className={styles.underline}></div>
       </div>
-      <div className={styles.underline}></div>
-    </div>
+      {insufficientBalance ? (
+        <InsufficientBalance onModalChange={toggleModalInsufficientBalance} />
+      ) : null}
+    </>
   );
 };

@@ -98,9 +98,8 @@ export const Notifications = () => {
                     }}
                   >
                     {notification?.read_status === false
-                      ? notification?.message.slice(0, 43)
-                      : notification?.message.slice(0, 77)}
-                    ...
+                      ? notification?.message.slice(0, 60)
+                      : notification?.message.slice(0, 80)}...
                   </div>
                   <div
                     className={styles.dates}
@@ -116,7 +115,7 @@ export const Notifications = () => {
               </div>
             ))
           ) : (
-            <div className={styles.null}>Nenhuma notificação disponível.</div>
+            <div className={styles.null}>Nenhuma notificação no momento.</div>
           )}
         </div>
         <div className={styles.pagination}>

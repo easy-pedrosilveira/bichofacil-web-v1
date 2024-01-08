@@ -15,6 +15,7 @@
 }
 
 .modal {
+    position: relative;
     width: 311px;
     height: 371px;
     display: flex;
@@ -22,8 +23,14 @@
     align-items: center;
     justify-content: center;
     border-radius: 16px;
-    gap: 53px;
+    gap: 30px;
     background: var(--WHITE, #FFF);
+}
+
+.close {
+    position: absolute;
+    top: 1.5vh;
+    right: 1vw;
 }
 
 .introduction {
@@ -72,4 +79,22 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+}
+
+
+@media (min-width: 200px) {
+    @media (max-width: 375px) {
+        .modal {
+            width: 90%;
+        }
+
+        .title {
+            font-size: 18px;
+        }
+
+        .btn {
+            width: 90%;
+            font-weight: 500;
+        }
+    }
 }

@@ -25,12 +25,7 @@ export function BetsProvider(props: any) {
       value={{
         bets,
         gameType,
-        tradicional,
-        insta,
-        instantLottery,
-        setInstantLottery,
         setBets,
-        setGameType,
       }}
     >
       {props.children}

@@ -1,23 +1,20 @@
 import styles from "./WithdrawalProcess.module.css";
 import { useState } from "react";
 import Arrow from "assets/icons/arrow-intro.svg";
-import { PixWithdraw, BankWithdraw, AddPaymentForms } from "components";
+import { PixWithdraw, BankWithdraw } from "components";
+import { toast } from "react-toastify";
 
 export const WithdrawalProcess = () => {
   const [openPixWithdraw, setOpenPixWithDraw] = useState(false);
   const [openBankWithdraw, setOpenBankWithDraw] = useState(false);
-  const [openFormsPayment, setOpenFormsPayment] = useState<boolean>(false);
 
   const toggleOpenPixWithdraw = () => {
     setOpenPixWithDraw(!openPixWithdraw);
   };
 
   const toggleOpenBankWithdraw = () => {
-    setOpenBankWithDraw(!openBankWithdraw);
-  };
-
-  const toggleOpenFormsPayment = () => {
-    setOpenFormsPayment(!openFormsPayment);
+    // setOpenBankWithDraw(!openBankWithdraw);
+    toast.info("Desativado no momento!");
   };
 
   return (
@@ -29,7 +26,11 @@ export const WithdrawalProcess = () => {
             <div className={styles.text}>Pix</div>
             <img src={Arrow} alt="" style={{ rotate: "180deg" }} />
           </div>
-          <div className={styles.openModals} onClick={toggleOpenBankWithdraw}>
+          <div
+            className={styles.openModals}
+            onClick={toggleOpenBankWithdraw}
+            style={{ opacity: "0.7" }}
+          >
             <div className={styles.text}>Transferência Bancária</div>
             <img src={Arrow} alt="" style={{ rotate: "180deg" }} />
           </div>

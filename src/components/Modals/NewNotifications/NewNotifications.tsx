@@ -1,10 +1,8 @@
 import styles from "./NewNotifications.module.css";
 import { IMessagesUser } from "interfaces";
 import Close from "assets/icons/close.svg";
-import { useContext, useState } from "react";
-import AuthContext from "data/context/AuthContext";
-import { apiAuth } from "providers";
-import { message } from "antd";
+import { motion } from "framer-motion";
+import { item } from "utils";
 
 interface ModalProps {
   onModalChange: (isOpen: boolean) => void;
@@ -15,10 +13,11 @@ export const NewNotifications = ({
   onModalChange,
   selectedNotification,
 }: ModalProps) => {
-  const { refreshUser } = useContext(AuthContext);
-
   return (
-    <div
+    <motion.div
+      variants={item}
+      initial="hidden"
+      animate="visible"
       className={styles.backDrop}
       onClick={(e) => {
         const containerElement = e.currentTarget as HTMLElement;
@@ -38,7 +37,9 @@ export const NewNotifications = ({
         <div className={styles.body}>
           <div className={styles.innerBody}>
             <div className={styles.title}>{selectedNotification?.title}</div>
-            <div className={styles.content}>{selectedNotification?.message}</div>
+            <div className={styles.content}>
+              {selectedNotification?.message}
+            </div>
           </div>
         </div>
         <div className={styles.btn}>
@@ -50,6 +51,6 @@ export const NewNotifications = ({
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };

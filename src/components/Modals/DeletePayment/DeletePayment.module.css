@@ -2,8 +2,8 @@
 
 .backDrop {
     position: fixed;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.224);
     right: 0;
     top: 0;
@@ -15,80 +15,118 @@
 }
 
 .modal {
-    width: 450px;
-    height: 300px;
+    position: relative;
+    width: 360px;
+    height: 390px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 5%;
-    border-radius: 10px;
-    background: #fff;
-    color: gray;
-    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 16px;
+    background: var(--WHITE, #FFF);
 }
 
-.title{
+.close {
+    position: absolute;
+    top: 1.5vh;
+    right: 1vw;
+}
+
+.introduction {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+}
+
+.error {
+    width: 112px;
+    height: 112px;
+}
+
+.insufficient {
+    color: #FF4C3F;
+    text-align: center;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.paragraph {
     width: 100%;
+    color: var(--GRAY-GRAY-04, #5F5C6B);
     text-align: center;
-    font-size: 24px;
-    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
 }
 
-.paragraph{
+.btns {
     width: 90%;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
 }
 
-.btns{
+.cancel,
+.confirm {
+    width: 45%;
+    height: 48px;
     display: flex;
-    width: 90%;
-    justify-content: space-around;
-}
-
-.btnCancel, .btnConfirm{
-    width: 125px;
-    height: 50px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    color: white;
-    background: #970808;
-    box-shadow: -2px -5px 4px 0px rgba(0, 0, 0, 0.25) inset;
-    cursor: pointer;
+    align-items: center;
+    border-radius: 32px;
+    color: var(--WHITE, #FFF);
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
 }
 
-.btnConfirm{
-    color: #970808;
-    background: transparent;
-    box-shadow: none;
-    border: 2px solid #970808;
+.cancel {
+    background: #FF4C3F;
+}
+
+.confirm {
+    border: 2px solid #5F5C6B;
+    color: #5F5C6B;
+}
+
+@media (min-width: 200px) {
+    @media (max-width: 375px) {
+        .modal {
+            width: 90%;
+            height: auto;
+            padding: 15px 0px;
+            gap: 15px;
+        }
+        
+        .title {
+            font-size: 18px;
+        }
+
+        .btns {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .cancel,
+        .confirm {
+            width: 100%;
+            font-weight: 500;
+        }
+    }
 }
 
 @media (min-width: 200px) {
     @media (max-width: 500px) {
-        .modal{
-            width: 300px;
-            height: auto;
-        }
-        .title{
-            font-size: 18px;
-            padding: 5%;
-        }
-        .content{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 50px;
-        }
-
-        .btns{
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            padding: 20px;
+        .error {
+            width: 80px;
+            height: 80px;
         }
     }
-  }
+}

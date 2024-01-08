@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import useAuthContext from "data/hooks/useAuthContext";
 import useAppContext from "data/hooks/useAppConfig";
 import useBuyCreditsContext from "data/hooks/useBuyCreditsContext";
+import { item } from "utils";
+import { motion } from "framer-motion";
 
 interface ModalProps {
   onModalChange: (isOpen: boolean) => void;
@@ -33,7 +35,10 @@ export const ModalProfile = ({ onModalChange }: ModalProps) => {
 
   return (
     <>
-      <div className={styles.modal}>
+       <motion.div
+        variants={item}
+        initial="hidden"
+        animate="visible" className={styles.modal}>
         <Link
           to="/profile"
           onClick={(e) => linkToProfile(0)}
@@ -73,7 +78,7 @@ export const ModalProfile = ({ onModalChange }: ModalProps) => {
             Desconectar
           </span>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

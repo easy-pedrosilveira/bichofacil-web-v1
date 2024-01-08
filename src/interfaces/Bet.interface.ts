@@ -1,12 +1,7 @@
 export interface IBetContext {
   bets: BetInterface[];
-  instantLottery: string;
-  setInstantLottery: (data: string) => void;
   gameType: string;
-  tradicional: boolean;
-  insta: boolean;
   setBets: (data: BetInterface[]) => void;
-  setGameType: (data: string) => void;
 }
 
 export interface BetInterface {

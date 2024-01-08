@@ -9,8 +9,6 @@ import {
   Timer,
 } from "components";
 import { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import useBetContext from "data/hooks/useBetContext";
 import BetContext from "data/context/BetContext";
 import { useNavigate } from "react-router-dom";
 import useGameContext from "data/hooks/useGameContext";
@@ -79,11 +77,6 @@ export const ActualGame = ({ actualModalities }: BetProps) => {
       toast.error("Selecione as posições!");
       hasErrors = true;
     }
-
-    // if (numbers.length === 0) {
-    //   toast.error("Selecione os números ou os grupos!");
-    //   hasErrors = true;
-    // }
 
     if (dataAmount === 0) {
       toast.error("Selecione os créditos!");

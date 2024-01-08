@@ -18,11 +18,11 @@ export const Timer = () => {
     }
   }, [totalTimeSeconds]);
 
-  useEffect(() => {
-    if (totalTimeSeconds === 0) {
-      window.location.reload();
-    }
-  }, [totalTimeSeconds]);
+  // useEffect(() => {
+  //   if (totalTimeSeconds === 0) {
+  //     window.location.reload();
+  //   }
+  // }, [totalTimeSeconds]);
 
   return (
     <div className={styles.backDrop}>

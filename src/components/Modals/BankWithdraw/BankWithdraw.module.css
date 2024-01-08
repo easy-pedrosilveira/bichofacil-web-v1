@@ -156,6 +156,7 @@
     align-items: center;
     border-radius: 33px;
     background: #71C638;
+    cursor: pointer;
 }
 
 @media (min-width: 200px) {

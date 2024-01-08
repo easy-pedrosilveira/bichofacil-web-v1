@@ -105,14 +105,16 @@
     text-align: center;
 }
 
-.valueKey{
-    background-color: #3F73E3;
+.valueKey {
+    width: 100%;
+    height: 48px;
+    background: #C6D6FF;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 32px;
     font-size: 18px;
-    padding: 25px;
+    color: #324AC9;
 }
 
 .btn {
@@ -129,7 +131,10 @@
 
 @media (min-width: 200px) {
     @media (max-width: 450px) {
-        .modal,.btn, .infos{
+
+        .modal,
+        .btn,
+        .infos {
             width: 95%;
         }
     }

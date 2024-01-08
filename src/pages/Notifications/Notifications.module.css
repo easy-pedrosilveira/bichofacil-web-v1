@@ -68,6 +68,15 @@
     line-height: normal;
 }
 
+.null {
+    color: var(--YELLOW-01, #FFEC7A);
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
 .pagination {
     width: 85%;
     height: 25px;

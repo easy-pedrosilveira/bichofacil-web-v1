@@ -1,17 +1,17 @@
-import { apiAuth } from "providers";
 import styles from "./DeletePayment.module.css";
+import { apiAuth } from "providers";
 import { motion } from "framer-motion";
 import { item } from "utils";
 import { toast } from "react-toastify";
+import Alert from "assets/icons/alert.svg";
+import Close from "assets/icons/close.svg";
 
 interface DeleteModalProps {
   onModalChange: (value: boolean) => void;
   props: any;
 }
 
-export const DeletePayment = ({
-  onModalChange,
-}: DeleteModalProps) => {
+export const DeletePayment = ({ onModalChange }: DeleteModalProps) => {
   const deleteMethod = () => {
     apiAuth
       .post("/disable-method/", {
@@ -53,21 +53,25 @@ export const DeletePayment = ({
         animate="visible"
         className={styles.modal}
       >
-        <div className={styles.title}>
-          Excluir metodo de pagamento
-        </div>
-        <div className={styles.paragraph}>
-          Tem certeza de que deseja excluir permanentemente esse método de
-          pagamento? Esta ação não pode ser desfeita.
+        <img
+          src={Close}
+          alt=""
+          className={styles.close}
+          onClick={(e) => onModalChange(false)}
+        />
+        <div className={styles.introduction}>
+          <img src={Alert} alt="" className={styles.error} />
+          <div className={styles.insufficient}>Excluir metodo de pagamento</div>
+          <div className={styles.paragraph}>
+            Tem certeza de que deseja excluir permanentemente esse método de
+            pagamento? Esta ação não pode ser desfeita.
+          </div>
         </div>
         <div className={styles.btns}>
-          <div
-            className={styles.btnCancel}
-            onClick={() => onModalChange(false)}
-          >
+          <div className={styles.cancel} onClick={() => onModalChange(false)}>
             Cancelar
           </div>
-          <div className={styles.btnConfirm} onClick={deleteMethod}>
+          <div className={styles.confirm} onClick={deleteMethod}>
             Confirmar
           </div>
         </div>

@@ -128,7 +128,13 @@ export const PaymentGame = ({
           </div>
         </div>
       </div>
-      {paymentSuccessful ? <PaymentSuccessful onModalChange={togglePaymentSuccessful}/> : null}
+      {paymentSuccessful ? (
+        <PaymentSuccessful
+          title="Pagamento realizado com sucesso!"
+          route="/"
+          onModalChange={togglePaymentSuccessful}
+        />
+      ) : null}
     </>
   );
 };

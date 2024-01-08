@@ -1,10 +1,11 @@
-import useAuthContext from "data/hooks/useAuthContext";
 import styles from "./PixWithdraw.module.css";
+import useAuthContext from "data/hooks/useAuthContext";
 import Close from "assets/icons/close.svg";
 import { toast } from "react-toastify";
 import { apiAuth } from "providers";
 import { useState } from "react";
 import { ThreeDots } from "react-loader-spinner";
+import { PaymentSuccessful } from "../PaymentSuccessful";
 
 interface ModalProps {
   onModalChange: (isOpen: boolean) => void;
@@ -13,12 +14,15 @@ interface ModalProps {
 export const PixWithdraw = ({ onModalChange }: ModalProps) => {
   const { user, refreshUser } = useAuthContext();
   const [inputValue, setInputValue] = useState<number>(0);
+  const [withDrawSuccessful, setWithDrawSuccessful] = useState(false);
   const pix = user?.pix_key;
   const [loading, setLoading] = useState<boolean>(false);
   let BalanceString = user?.credits_balance || "0";
   let BalanceNumber = parseFloat(BalanceString);
 
-  console.log(inputValue);
+  const toggleWithDrawSuccessful = () => {
+    setWithDrawSuccessful(!withDrawSuccessful);
+  };
 
   const handleSubmit = async () => {
     setLoading(true);
@@ -60,7 +64,7 @@ export const PixWithdraw = ({ onModalChange }: ModalProps) => {
         if (response.status === 200) {
           toast.success(response.data.detail);
           refreshUser(true);
-          onModalChange(false);
+          toggleWithDrawSuccessful(); // ou onModalChange(false);
         }
       } catch (error: any) {
         if (error.response) {
@@ -79,75 +83,87 @@ export const PixWithdraw = ({ onModalChange }: ModalProps) => {
   };
 
   return (
-    <div
-      className={styles.backDrop}
-      onClick={(e) => {
-        const containerElement = e.currentTarget as HTMLElement;
-        const clickedElement = e.target as HTMLElement;
-        if (containerElement === clickedElement) {
-          onModalChange(false);
-        }
-      }}
-    >
-      <div className={styles.modal}>
-        <div className={styles.header}>
-          <div className={styles.innerHeader}>
-            <div className={styles.title}>Saque por PIX</div>
-            <div className={styles.close} onClick={(e) => onModalChange(false)}>
-              <img src={Close} alt="" />
+    <>
+      <div
+        className={styles.backDrop}
+        onClick={(e) => {
+          const containerElement = e.currentTarget as HTMLElement;
+          const clickedElement = e.target as HTMLElement;
+          if (containerElement === clickedElement) {
+            onModalChange(false);
+          }
+        }}
+      >
+        <div className={styles.modal}>
+          <div className={styles.header}>
+            <div className={styles.innerHeader}>
+              <div className={styles.title}>Saque por PIX</div>
+              <div
+                className={styles.close}
+                onClick={(e) => onModalChange(false)}
+              >
+                <img src={Close} alt="" />
+              </div>
             </div>
           </div>
-        </div>
-        <div className={styles.body}>
-          <div className={styles.infos}>
-            <div className={styles.label}>Digite o valor</div>
-            <input
-              type="number"
-              placeholder="R$ 0,00"
-              className={styles.input}
-              onChange={(e) => setInputValue(parseFloat(e.target.value))}
-            />
-            <div className={styles.valueUser}>
-              Valor disponível para saque: R$ {user?.credits_balance}
+          <div className={styles.body}>
+            <div className={styles.infos}>
+              <div className={styles.label}>Digite o valor</div>
+              <input
+                type=""
+                placeholder="R$ 0,00"
+                className={styles.input}
+                onChange={(e) => setInputValue(parseFloat(e.target.value))}
+              />
+              <div className={styles.valueUser}>
+                Valor disponível para saque: R$ {user?.winner_balance}
+              </div>
             </div>
+            {loading ? (
+              <ThreeDots
+                height="60"
+                width="60"
+                color="#202B9B"
+                ariaLabel="puff-loading"
+                wrapperStyle={{}}
+                wrapperClass=""
+                visible={true}
+              />
+            ) : (
+              <>
+                <div className={styles.infos}>
+                  <div className={styles.label}>Chave pix:</div>
+                  {pix !== null &&
+                    typeof pix === "object" &&
+                    Object.keys(pix as object).length > 0 && (
+                      <div className={styles.valueKey}>{pix?.key}</div>
+                    )}
+                  {pix !== null &&
+                    typeof pix === "object" &&
+                    Object.keys(pix).length === 0 && (
+                      <div
+                        className={styles.valueKey}
+                        style={{ textAlign: "center" }}
+                      >
+                        Nenhuma chave pix cadastrada!
+                      </div>
+                    )}
+                </div>
+                <div className={styles.btn} onClick={handleSubmit}>
+                  Sacar
+                </div>
+              </>
+            )}
           </div>
-          {loading ? (
-            <ThreeDots
-              height="60"
-              width="60"
-              color="#202B9B"
-              ariaLabel="puff-loading"
-              wrapperStyle={{}}
-              wrapperClass=""
-              visible={true}
-            />
-          ) : (
-            <>
-              <div className={styles.infos}>
-                <div className={styles.label}>Chave pix:</div>
-                {pix !== null &&
-                  typeof pix === "object" &&
-                  Object.keys(pix as object).length > 0 && (
-                    <div className={styles.valueKey}>{pix?.key}</div>
-                  )}
-                {pix !== null &&
-                  typeof pix === "object" &&
-                  Object.keys(pix).length === 0 && (
-                    <div
-                      className={styles.valueKey}
-                      style={{ textAlign: "center" }}
-                    >
-                      Nenhuma chave pix cadastrada!
-                    </div>
-                  )}
-              </div>
-              <div className={styles.btn} onClick={handleSubmit}>
-                Sacar
-              </div>
-            </>
-          )}
         </div>
       </div>
-    </div>
+      {withDrawSuccessful ? (
+        <PaymentSuccessful
+          title="Saque realizado com sucesso!"
+          route="/notifications"
+          onModalChange={toggleWithDrawSuccessful}
+        />
+      ) : null}
+    </>
   );
 };
