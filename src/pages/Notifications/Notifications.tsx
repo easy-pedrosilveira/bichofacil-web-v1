@@ -9,9 +9,11 @@ import Arrow from "assets/icons/arrow-results.svg";
 import { IMessagesUser } from "interfaces";
 
 export const Notifications = () => {
-  const { user, refreshUser, messages } = useContext(AuthContext);
+  const { user, refreshUser } = useContext(AuthContext);
   const notificationsUser = user?.messages || [];
   const [notifications, setNotifications] = useState(false);
+  const [selectedNotification, setSelectedNotification] =
+    useState<IMessagesUser | null>(null);
   const itemsPerPage = 9;
   const [currentPage, setCurrentPage] = useState(1);
   const startIndex = (currentPage - 1) * itemsPerPage;
@@ -19,18 +21,18 @@ export const Notifications = () => {
   const currentMessages = notificationsUser.slice(startIndex, endIndex);
   const totalPages = Math.ceil(notificationsUser.length / itemsPerPage);
 
-  const toggleModalNotifications = () => {
-    setNotifications(!notifications);
-    // markReadMessage(messages?.cod_message);
-  };
-
-  const markReadMessage = async (messageId: string) => {
+  const markReadMessage = async (
+    messageId: string,
+    selected: IMessagesUser | null
+  ) => {
     try {
       await apiAuth
         .get(`/message/${messageId}`, {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         })
         .then(function (response) {
+          setNotifications(!notifications);
+          setSelectedNotification(selected);
           refreshUser(true);
         });
     } catch (error) {
@@ -55,18 +57,16 @@ export const Notifications = () => {
             currentMessages.map((notification, index) => (
               <div
                 className={styles.message}
-                // onClick={(e) =>
-                //   toggleModalNotifications(notification?.cod_message)
-                // }
+                onClick={(e) => markReadMessage(notification.cod_message, notification)}
                 key={index}
                 style={
-                  notification?.read_status === true
+                  notification?.read_status === false
                     ? { background: "#fff" }
                     : { background: "" }
                 }
               >
                 <div className={styles.new}>
-                  {notification?.read_status === true ? (
+                  {notification?.read_status === false ? (
                     <motion.div
                       initial={{ opacity: 0, scale: 0.5 }}
                       animate={{ opacity: 1, scale: 1 }}
@@ -83,7 +83,7 @@ export const Notifications = () => {
                   <div
                     className={styles.title}
                     style={
-                      notification?.read_status === true
+                      notification?.read_status === false
                         ? { color: "#324AC9" }
                         : { color: "" }
                     }
@@ -94,10 +94,10 @@ export const Notifications = () => {
                     className={styles.paragraph}
                     style={{
                       color:
-                        notification?.read_status === true ? "#7A7786" : "",
+                        notification?.read_status === false ? "#7A7786" : "",
                     }}
                   >
-                    {notification?.read_status === true
+                    {notification?.read_status === false
                       ? notification?.message.slice(0, 43)
                       : notification?.message.slice(0, 77)}
                     ...
@@ -105,7 +105,7 @@ export const Notifications = () => {
                   <div
                     className={styles.dates}
                     style={
-                      notification?.read_status === true
+                      notification?.read_status === false
                         ? { color: "#5F5C6B" }
                         : { color: "" }
                     }
@@ -151,7 +151,7 @@ export const Notifications = () => {
       {notifications ? (
         <NewNotifications
           onModalChange={setNotifications}
-          notifications={undefined}
+          selectedNotification={selectedNotification}
         />
       ) : null}
     </>

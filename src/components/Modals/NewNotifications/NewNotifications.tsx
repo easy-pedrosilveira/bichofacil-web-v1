@@ -8,12 +8,12 @@ import { message } from "antd";
 
 interface ModalProps {
   onModalChange: (isOpen: boolean) => void;
-  notifications: IMessagesUser | undefined;
+  selectedNotification: IMessagesUser | null;
 }
 
 export const NewNotifications = ({
   onModalChange,
-  notifications,
+  selectedNotification,
 }: ModalProps) => {
   const { refreshUser } = useContext(AuthContext);
 
@@ -37,8 +37,8 @@ export const NewNotifications = ({
         </div>
         <div className={styles.body}>
           <div className={styles.innerBody}>
-            <div className={styles.title}>{notifications?.title}</div>
-            <div className={styles.content}>{notifications?.message}</div>
+            <div className={styles.title}>{selectedNotification?.title}</div>
+            <div className={styles.content}>{selectedNotification?.message}</div>
           </div>
         </div>
         <div className={styles.btn}>
