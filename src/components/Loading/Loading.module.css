@@ -1,0 +1,56 @@
+.container {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background: url("../../assets/imgs/background.svg") center/cover no-repeat;
+    background-color: #202B9B;
+    z-index: 11;
+}
+
+.logo {
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+}
+
+.top,
+.bottom {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.bottom {
+    justify-content: flex-end;
+}
+
+.top img {
+    width: 270px;
+}
+
+.bottom img {
+    width: 260px;
+}
+
+.load {
+    color: var(--BLUE-Blue-01, #C6D6FF);
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 6.56px;
+}
+
+@media (min-width: 200px) {
+    @media (max-width: 500px) {
+        .container {
+            opacity: 0.95;
+            background: #192494;
+        }
+    }
+}

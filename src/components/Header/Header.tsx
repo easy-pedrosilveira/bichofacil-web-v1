@@ -10,13 +10,23 @@ import { useWindowSize } from "data/hooks/useWindowSize";
 import useAuthContext from "data/hooks/useAuthContext";
 
 export const Header = () => {
-  const { isLogged, handleOpenModalLogin, showModal, messages } =
-    useAuthContext();
+  const {
+    user,
+    refreshUser,
+    isLogged,
+    handleOpenModalLogin,
+    showModal,
+    messages,
+  } = useAuthContext();
   const [modalProfile, setModalProfile] = useState(false);
   const [linkActive, setLinkActive] = useState("");
   const [expanded, setExpanded] = useState(false);
   const navigate = useNavigate();
   const { width } = useWindowSize();
+  const [unreadMessagesCount, setUnreadMessagesCount] = useState(0);
+  const [prevMessagesCount, setPrevMessagesCount] = useState(0);
+  const newUnreadMessagesCount =
+    user?.messages?.filter((message) => !message.read_status).length || 0;
 
   const handleNotifications = () => {
     if (isLogged === true) {
@@ -34,21 +44,17 @@ export const Header = () => {
     setExpanded(!expanded);
   };
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     if (window.scrollY > 0) {
-  //       setIsHeaderFixed(true);
-  //     } else {
-  //       setIsHeaderFixed(false);
-  //     }
-  //   };
+  useEffect(() => {
+    const newUnreadMessagesCount =
+      user?.messages?.filter((message) => !message.read_status).length || 0;
 
-  //   window.addEventListener("scroll", handleScroll);
-
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
+    if (newUnreadMessagesCount > prevMessagesCount) {
+      refreshUser(true);
+      setPrevMessagesCount(newUnreadMessagesCount);
+    }
+    setUnreadMessagesCount(newUnreadMessagesCount);
+    refreshUser(true);
+  }, [newUnreadMessagesCount]);
 
   return (
     <>
@@ -92,14 +98,14 @@ export const Header = () => {
             {width < 801 && isLogged ? (
               <div onClick={handleNotifications} className={styles.icon}>
                 <img src={Notifications} alt="" />
-                {messages?.read_status ? null : (
+                {unreadMessagesCount > 0 && (
                   <div className={styles.newNotification}></div>
                 )}
               </div>
             ) : width < 801 && !isLogged ? null : (
               <div onClick={handleNotifications} className={styles.icon}>
                 <img src={Notifications} alt="" />
-                {messages?.read_status ? null : (
+                {unreadMessagesCount > 0 && (
                   <div className={styles.newNotification}></div>
                 )}
               </div>

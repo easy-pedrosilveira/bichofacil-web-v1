@@ -11,24 +11,37 @@ import {
   ResponsibleGaming,
   GameSummary,
   ResetPassword,
+  ActivationUser,
 } from "pages";
 import { TermsConditions } from "../pages/TermsConditions/TermsConditions";
 import { PolicyAml } from "../pages/PolicyAml/PolicyAml";
-import { Header, Error, Footer, PersonalData } from "components";
+import { Header, Error, Footer, PersonalData, Loading } from "components";
 import useAuthContext from "data/hooks/useAuthContext";
+import useAppContext from "data/hooks/useAppConfig";
 
 export const Rotas = () => {
   const { isLogged } = useAuthContext();
+  const { loading } = useAppContext();
+
+  const hiddenHeaderFooter = ![
+    "/api/v2/user/activation/:param1/:param2",
+    "/api/v2/user/reset-password/confirm/:param1/:param2/",
+    "/*",
+  ].includes(window.location.pathname);
+
   return (
     <>
-      <div style={{ position: "relative", height: "95.1px" }}>
-        <Header />
-      </div>
+      {loading && <Loading />}
+      {hiddenHeaderFooter && (
+        <div style={{ position: "relative", height: "95.1px" }}>
+          <Header />
+        </div>
+      )}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/register" element={<Register />} />
+        {isLogged ? null : <Route path="/register" element={<Register />} />}
         <Route path="help" element={<Help />} />
-        <Route path="*" element={<Error />} />
+        <Route path="/*" element={<Error />} />
         <Route path="/policy-privacy" element={<PolicyPrivacy />} />
         <Route path="/responsible-gaming" element={<ResponsibleGaming />} />
         <Route path="/terms-conditions" element={<TermsConditions />} />
@@ -38,7 +51,10 @@ export const Rotas = () => {
           element={<ResetPassword />}
         />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/reset-password" element={<ResetPassword />} />
+        <Route
+          path="/api/v2/user/activation/:param1/:param2"
+          element={<ActivationUser />}
+        />
         {isLogged ? (
           <>
             <Route path="/modalities" element={<Modalities />} />
@@ -47,9 +63,11 @@ export const Rotas = () => {
             <Route path="/game-summary" element={<GameSummary />} />
             <Route path="/notifications" element={<Notifications />} />
           </>
-        ) : null}
+        ) : (
+          <Route path="/*" element={<Error />} />
+        )}
       </Routes>
-      <Footer />
+      {hiddenHeaderFooter && <Footer />}
     </>
   );
 };

@@ -20,3 +20,4 @@ export * from "./StepsBuyCredits";
 export * from './UpdatePix'
 export * from './UpdateCardCredit'
 export * from './UpdateCardComponent'
+export * from './Loading'

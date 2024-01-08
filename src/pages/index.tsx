@@ -11,3 +11,4 @@ export * from "./PolicyPrivacy";
 export * from "./TermsConditions";
 export * from "./PolicyAml";
 export * from "./ResetPassword";
+export * from "./ActivationUser";
